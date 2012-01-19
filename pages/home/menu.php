@@ -1,12 +1,14 @@
 <?php
 
-Layout_Menu::render(array(
+Layout_Menu::render('Home', array(
   'Concepts' => array(
     'Actions' => '/home/concepts/actions',
-    'Xid' => '/home/concepts/xid'
+    'Permissions' => '/home/concepts/permissions',
+    'Xid' => '/home/concepts/xid',
   ),
   'Templates' => array(
-    'Reference' => '/home/templates/reference'
+    'Reference' => '/home/templates/reference',
+    'Files' => '/home/templates/files',
   )
 ));
 
