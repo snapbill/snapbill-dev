@@ -7,8 +7,8 @@ class Layout_Menu {
   static function render($menu) {
     Layout_Page::header();
     ?>
-<div class="sidebar">
-  <div class="well">
+<div class="span4">
+  <div id="menu" class="well">
   <?php foreach ($menu as $section => $links) { ?>
     <h5><?php echo HTML($section); ?></h5>
     <ul>
