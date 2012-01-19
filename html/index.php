@@ -4,7 +4,7 @@ require 'free/common.php';
 Autoload::addPath('layout', array('_'), True, 'layout');
 Autoload::addPath('components');
 
-$uri = Uri::interpretRequest();
+$uri = Request::getUri();
 
 $view = View::findExact($uri, 'pages');
 if (!$view) {
