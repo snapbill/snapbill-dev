@@ -1,3 +1,6 @@
 [submodule "ext/bootstrap"]
 	path = ext/bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "ext/components"]
+	path = ext/components
+	url = git@github.com:lusion/Components.git
