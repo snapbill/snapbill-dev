@@ -4,3 +4,6 @@
 [submodule "ext/components"]
 	path = ext/components
 	url = git@github.com:lusion/Components.git
+[submodule "ext/php-markdown"]
+	path = ext/php-markdown
+	url = git://github.com/wolfie/php-markdown.git
