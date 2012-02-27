@@ -30,6 +30,7 @@ class View {
         $filename = array_shift($extra);
         return new MarkdownView($path . $filename . '.txt', $extra);
       }elseif (file_exists($path . $extra[0].'.php')) {
+        $filename = array_shift($extra);
         return new View($path . $filename .'.php', $extra);
       }elseif (is_dir($path . $extra[0])) {
         $path .= array_shift($extra).'/';
