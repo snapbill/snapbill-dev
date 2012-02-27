@@ -1,0 +1,10 @@
+Making Requests
+===============
+
+The SnapBill API is based off HTTP requests using only the *GET* and *POST* verbs. GET is used for discovery, while POST is used for actual API requests.
+
+* GET /v1 - Retrieve a listing of possible commands
+* GET /v1/client/add - Retrieve the form for adding a new client
+* POST /v1/client/add - Add a new client to the system
+* POST /v1/client/84/get - Get the full accoutn details of a client
+* POST /v1/client/list - Get a list of clients matching an optional search query
