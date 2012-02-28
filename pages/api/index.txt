@@ -20,7 +20,7 @@ tl;dr examples
 Adding a new client leaving out a number of fields
 
     $ curl -u user:pass -d "firstname=josh&email=josh@example.com" \
-    >      http://api.snap/v1/client/add.json
+    >      https://api.snapbill.com/v1/client/add.json
     {"type":"result","status":"ok","id":81412}
 
 
