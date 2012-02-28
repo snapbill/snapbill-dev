@@ -1,0 +1,18 @@
+API Summary
+===========
+
+The base URL for all requests is https://api.snapbill.com/
+
+### /v1/client ###  {#client}
+
+* /add
+* /list
+* /{CLIENT_ID}/get
+* /{CLIENT_ID}/update
+* /{CLIENT_ID}/delete
+
+
+### /v1/batch ###  {#batch}
+
+* /list
+* /{BATCH_ID}/get
