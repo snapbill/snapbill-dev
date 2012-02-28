@@ -1,0 +1,26 @@
+Templates - Files
+=================
+
+
+You can attach files to your templates just by using the "**@attachment:<filename\>**" special code at the top of your template wiki.
+
+
+Uploading your files
+--------------------
+
+Uploading the files is easy. Simply go to
+[billing.snapbill.com/files](https://billing.snapbill.com/files) and make sure
+to use the filename that you want to appear in the email. Be sure to set it to
+not encrypt, and if you ever want to update the file just choose Replace in
+the "what to do if file exists" dropdown.
+
+Linking to the file from templates
+----------------------------------
+
+As mentioned before you need to use the **@attachment** tag, and simply list it at the top. For instance if you want to attach policy.pdf, your file should look like:
+
+    @subject:Welcome to SnapBill
+    @attachment:policy.pdf
+
+    == Hi $client->firstname ==
+    Welcome to ......

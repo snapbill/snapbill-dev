@@ -1,0 +1,45 @@
+Permissions
+===========
+
+System design
+-------------
+
+The SnapBill permission system runs according to a
+[longest prefix match](#longest-prefix) based URL system that matches the
+structure within SnapBill. By default all users simply have the **/**
+permission enabled. You can enable or disable **/client** (access to a single
+client) or **/contact/update** (ability to update a contact)
+
+
+Longest prefix match    {#longest-prefix}
+--------------------
+
+The system works by looking for the **ALLOW**/**DENY** code on the longest matching prefix of the current URL or required permission. For example if you wanted to disallow access to everything by default, allow access to single clients (but not to update them) - you could use the following rules:
+
+<pre>
+<strong>DENY</strong> /
+<strong>ALLOW</strong> /client
+<strong>DENY </strong> /client/update
+</pre>
+
+
+Simple examples
+---------------
+
+Allow access to search and view clients, but not to do anything else with them
+<pre>
+<strong>DENY </strong> /
+<strong>ALLOW</strong> /clients
+<strong>ALLOW</strong> /client
+<strong>DENY </strong> /client/*
+</pre>
+
+
+Allow access to the system as usual, but don't allow anything in the setup or
+statistics area
+<pre>
+<strong>ALLOW</strong> /
+<strong>DENY </strong> /setup
+<strong>DENY </strong> /statistics
+</pre>
+

@@ -9,7 +9,11 @@ Layout_Menu::render('Home', array(
   'Templates' => array(
     'Reference' => '/home/templates/reference',
     'Files' => '/home/templates/files',
-  )
+  ),
+  'Other' => array(
+    'API' => '/api',
+    'Blog' => '/blog',
+  ),
 ));
 
 Layout_Page::content();
