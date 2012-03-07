@@ -23,6 +23,8 @@ class Layout_Page {
 <title>SnapBill Developers</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
 </head>
 <body>
 

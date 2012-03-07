@@ -5,7 +5,10 @@ Layout_Menu::render('API', array(
     'Making Requests' => '/api/introduction/requests',
   ),
   'API' => array(
-    'Client' => '/api/client',
+    'Client' => array(
+      '' => '/api/client',
+      '/client/add' => '/api/client#add',
+    ),
     'Batch' => '/api/api#batch',
   ),
   'Other' => array(

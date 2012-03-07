@@ -20,3 +20,7 @@ span.extended img.extend {
   padding: 8px;
   cursor: pointer;
 }
+
+a:active {
+  color: #777;
+}

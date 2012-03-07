@@ -11,4 +11,6 @@ $(function() {
     );
   });
 
+  // Load in google pretty printer
+  prettyPrint();
 });

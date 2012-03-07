@@ -1,0 +1,15 @@
+API Reference: Client
+===========
+
+The base URL for all requests is https://api.snapbill.com/
+
+### /v1/client/add ###  {#add}
+
+Creates a new client and returns the details
+
+<pre class="prettyprint">
+    $ curl -u user:pass -d "firstname=josh&email=josh@example.com" \
+    >      https://api.snapbill.com/v1/client/add.json
+    {"type":"result","status":"ok","id":81412}
+</pre>
+
