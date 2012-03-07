@@ -28,7 +28,7 @@ class View {
 
       if (file_exists($path . $extra[0] . '.txt')) {
         $filename = array_shift($extra);
-        return new MarkdownView($path . $filename . '.txt', $extra);
+        return new View_Markdown($path . $filename . '.txt', $extra);
       }elseif (file_exists($path . $extra[0].'.php')) {
         $filename = array_shift($extra);
         return new View($path . $filename .'.php', $extra);
@@ -36,7 +36,7 @@ class View {
         $path .= array_shift($extra).'/';
         continue;
       }elseif (file_exists($path . 'index.txt')) {
-        return new MarkdownView($path . 'index.txt', $extra);
+        return new View_Markdown($path . 'index.txt', $extra);
       }elseif (file_exists($path . 'index.php')) {
         return new View($path . 'index.php', $extra);
       }else{
@@ -45,7 +45,7 @@ class View {
     }
 
     if (file_exists($path . 'index.txt')) {
-      return new MarkdownView($path . 'index.txt', $extra);
+      return new View_Markdown($path . 'index.txt', $extra);
     }elseif (file_exists($path . 'index.php')) {
       return new View($path . 'index.php', $extra);
     }
@@ -72,26 +72,3 @@ class View {
 }
 
 
-class MarkdownView extends View {
-  function render() {
-    $extra = $this->extra;
-
-    // Try load the menu
-    $menu_dir = dirname($this->path);
-    do {
-      if (file_exists($menu_dir . '/menu.php')) {
-        require $menu_dir . '/menu.php';
-        break;
-      }
-      $i = strrpos($menu_dir, '/');
-      if ($i == FALSE)
-        break;
-      $menu_dir = substr($menu_dir, 0, $i);
-    } while(TRUE);
-
-    $content = file_get_contents($this->path);
-    echo '<div class="page span12">';
-    echo Markdown($content);
-    echo '</div>';
-  }
-}
