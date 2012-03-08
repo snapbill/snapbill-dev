@@ -59,6 +59,15 @@ section.api-call em:after {
   font-style: normal;
   color: #BBB;
 }
+
+section:target h3:before {
+  content: "● ";
+  color: #669;
+  font-weight: bold;
+}
+section:target h3 {
+  margin-left: -20px;
+}
 /*
 section:target {
   background-color: #fafae6;

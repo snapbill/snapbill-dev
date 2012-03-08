@@ -12,13 +12,13 @@ $(function() {
   });
 
   // Highlights when clicking anchors
-  $('a').live('click', function() {
+  /*$('a').live('click', function() {
     var href = $(this).attr('href');
-    console.log(href);
     if (href.substring(0,1) == '#') {
       $(href).find('h3').css('background-color', '#cef').animate({'background-color':'#fff'}, 800, 'swing');
     }
-  });
+  });*/
+
   // Load in google pretty printer
   prettyPrint();
 
