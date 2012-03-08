@@ -8,18 +8,16 @@ class Layout_Menu {
     Layout_Page::header();
     $uri = Request::getUri();
     ?>
-<div class="span4">
-  <div id="menu" class="well">
+<div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
     <?php
       $heading = HTML($section);
-      if (count($uri) > 1) {
-        $heading = '<a href="/'.$uri->getPart(0).'">'.$heading.'</a>';
-      }
-      print "<h2>$heading</h2>";
+      print "<h3>$heading</h3>";
   ?>
   <?php foreach ($menu as $section => $links) { ?>
-    <h5><?php echo HTML($section); ?></h5>
-    <ul>
+    <li class="nav-header"><?php echo HTML($section); ?></li>
     <?php foreach ($links as $title => $href) {
       $html = HTML($title);
 
@@ -29,23 +27,21 @@ class Layout_Menu {
         $href = $href[''];
       }else $children = null;
 
-      if ($uri->get() != $href) {
-        $html = '<a href="'.HTML($href).'">'.$html.'</a>';
-      }else $html = '<span>'.$html.'</span>';
-
-      if ($children) {
-        $html .= '<ul>';
-        foreach ($children as $title => $href) {
-          if (!$title) continue;
-          $html .= '<li><a href="'.HTML($href).'">'.HTML($title).'</a></li>';
-        }
-        $html .= '</ul>';
+      if ($uri->get() == $href) {
+        print '<li class="active"><a href="'.HTML($href).'">'.$html.'</a></li>';
+      }else{
+        print '<li><a href="'.HTML($href).'">'.$html.'</a></li>';
       }
 
-      print "<li>$html</li>";
+      if ($children) {
+        foreach ($children as $title => $href) {
+          if (!$title) continue;
+          print '<li class="level2"><a href="'.HTML($href).'">'.HTML($title).'</a></li>';
+        }
+      }
     } ?>
-    </ul>
   <?php } ?>
+  </ul>
   </div>
 </div>
     <?php

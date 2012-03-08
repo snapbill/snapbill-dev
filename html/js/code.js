@@ -13,4 +13,7 @@ $(function() {
 
   // Load in google pretty printer
   prettyPrint();
+
+  // Scrollspy
+  $('#menu').scrollspy()
 });

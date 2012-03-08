@@ -7,3 +7,6 @@
 [submodule "ext/php-markdown"]
 	path = ext/php-markdown
 	url = git://github.com/wolfie/php-markdown.git
+[submodule "ext/html/bootstrap"]
+	path = ext/html/bootstrap
+	url = git://github.com/twitter/bootstrap.git

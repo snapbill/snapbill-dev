@@ -1,0 +1,33 @@
+API Reference: Batch
+===========
+
+<section class="api-call" id="batch-get" markdown=1>
+### /v1/batch/*id*/get ###
+
+Fetch a batch and return the details
+
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/batch/BcV:Bu/get.json
+</div><div class="output">
+    {
+      "type": "item",
+      "batch": {
+        "id": 110,
+        "xid": "BcV:Bu",
+        "action_date": "2012-03-15",
+        "submit_date": null,
+        "payment_method": {
+          "code": "other"
+        },
+        "state": "ready",
+        "reseller": {
+          "id": 5909,
+          "xid": "BcV:BcV",
+          "username": "apidemo"
+        }
+      }
+    }
+</div>
+</pre>
+</section>

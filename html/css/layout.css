@@ -1,5 +1,4 @@
 body {
-  padding-top: 60px;
 }
 
 
@@ -10,6 +9,12 @@ body {
 #menu {
   background-color: #fcfcfc;
   border-color: #fafafa;
+  position: fixed;
+}
+#menu .level2 { padding-left: 10px; }
+#menu .active > a,
+#menu .active > a:hover {
+  background-color: #58A;
 }
 
 #menu li span { color: #000; }
@@ -21,6 +26,42 @@ span.extended img.extend {
   cursor: pointer;
 }
 
-a:active {
-  color: #777;
+section {
+  padding: 5px;
 }
+
+section.api-call em:before {
+  content: "<";
+  font-style: normal;
+  color: #BBB;
+}
+section.api-call em {
+  font-style: normal;
+  color: #999;
+}
+section.api-call em:after {
+  content: ">";
+  font-style: normal;
+  color: #BBB;
+}
+/*
+section:target {
+  background-color: #fafae6;
+}
+
+section:target pre {
+  background-color: #f0f0ea;
+}
+*/
+
+pre .input {
+  background-color: #eaeaea;
+}
+pre .output {
+  background-color: #f3f3f3;
+}
+
+/*** Parameter tables ***/
+.label-add { background-color: #468847; }
+.label-get { background-color: #3A87AD; }
+.label-update { background-color: #a95A00; }

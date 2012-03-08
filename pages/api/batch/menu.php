@@ -6,7 +6,10 @@ Layout_Menu::render('API', array(
   ),
   'Reference' => array(
     'Client' => '/api/client',
-    'Batch' => '/api/batch',
+    'Batch' => array(
+      '' => '/api/batch',
+      '/batch/get' => '#batch-get',
+    ),
   ),
 ));
 

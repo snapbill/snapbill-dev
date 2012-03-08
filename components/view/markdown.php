@@ -17,7 +17,7 @@ class View_Markdown extends View {
     } while(TRUE);
 
     $content = file_get_contents($this->path);
-    echo '<div class="page span12">';
+    echo '<div class="page span10">';
     echo Markdown($content);
     echo '</div>';
   }

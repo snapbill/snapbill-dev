@@ -21,16 +21,15 @@ class Layout_Page {
 <head>
 <meta charset="utf-8">
 <title>SnapBill Developers</title>
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/layout.css" rel="stylesheet">
 <link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
-<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
 </head>
-<body>
+<body data-spy="scroll">
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="container-fluid">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
       <a href="/" class="brand">SnapBill &ndash; Developers</a>
       <ul class="nav">
       <?php foreach ($sections as $section => $title) { ?>
@@ -41,7 +40,6 @@ class Layout_Page {
   </div>
 </div>
 <div class="container">
- <div class="content">
   <div class="row">
     <?php
   }
@@ -60,13 +58,14 @@ class Layout_Page {
     if (self::$state == 'content') self::endContent();
     if (self::$state != 'end-page') return;
     ?>
-      </div>
-      <footer>
-        <p>&copy; SnapBill 2011</p>
-      </footer>
-    </div>
   </div>
-<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+  <footer>
+    <p>&copy; SnapBill 2011</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
 <script src="/js/code.js"></script>
 </body>
 </html>
