@@ -80,6 +80,7 @@ class Layout_Page {
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
 <script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
 <script src="/js/code.js"></script>

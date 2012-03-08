@@ -2,9 +2,9 @@
 
 Layout_Menu::update(array(
   '' => '/api/client',
-  '/add' => '#client-add',
-  '/get' => '#client-get',
-  '/update' => '#client-update',
+  '/add' => '#add',
+  '/get' => '#get',
+  '/update' => '#update',
   'states' => '#states',
   'parameters' => '#parameters',
 ));

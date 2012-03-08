@@ -47,7 +47,11 @@ class View_Markdown extends View {
         $md .= '<tr><td>'.$name.'</td>';
         foreach (array('add', 'get', 'update', 'deprecated') as $column) {
           if (in_array($column, $tags, True)) {
-            $md .= '<td><span class="label label-'.$column.'">'.$column.'</span></td>';
+            $label = '<span class="label label-'.$column.'">'.$column.'</span>';
+            if ($column != 'deprecated') {
+              $label = '<a href="#'.$column.'">'.$label.'</a>';
+            }
+            $md .= '<td>'.$label.'</td>';
           }else{
             $md .= '<td></td>';
           }

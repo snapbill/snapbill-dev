@@ -2,7 +2,7 @@
 
 Layout_Menu::update(array(
   '' => '/api/batch',
-  '/get' => '#batch-get',
+  '/get' => '#get',
   'states' => '#states',
   'parameters' => '#parameters',
 ));

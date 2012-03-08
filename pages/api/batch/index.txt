@@ -1,7 +1,7 @@
 API Reference: Batch
 ===========
 
-<section class="api-call" id="batch-get" markdown=1>
+<section class="api-call" id="get" markdown=1>
 ### /v1/batch/*id*/get ###
 
 Fetch a batch and return the details

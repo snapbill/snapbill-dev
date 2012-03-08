@@ -1,7 +1,7 @@
 API Reference: Client
 ===========
 
-<section class="api-call" id="client-add" markdown=1>
+<section class="api-call" id="add" markdown=1>
 ### /v1/client/add ###
 
 Creates a new client and returns the details
@@ -56,7 +56,7 @@ Creates a new client and returns the details
 </pre>
 </section>
 
-<section class="api-call" id="client-get" markdown=1>
+<section class="api-call" id="get" markdown=1>
 ### /v1/client/*id*/get ###
 
 Creates a new client and returns the details
@@ -65,7 +65,7 @@ Creates a new client and returns the details
 </pre>
 </section>
 
-<section class="api-call" id="client-update" markdown=1>
+<section class="api-call" id="update" markdown=1>
 ### /v1/client/*id*/update ###
 
 Updates details about the given client in the database
@@ -111,7 +111,7 @@ state: get,update
     The state of the client in the system. The available states are *new*, *active*, *suspended* and *dead*. For more details see [States](#states).
 
 number: add,get,update
-    A unique number representing the client. *Note* that this can contain any characters instead of just numbers. If not provided to an [add](#client-add) call it will automatically be generated.
+    A unique number representing the client. *Note* that this can contain any characters instead of just numbers. If not provided to an [add](#add) call it will automatically be generated.
 
 name: get
     Automatically generated display name for the client, based on available details (firstname, surname, company)
