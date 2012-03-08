@@ -1,6 +1,7 @@
 API Documentation
 =================
 
+<section markdown=1>
 The SnapBill API will let you connect to your account programatically, and
 perform actions such as [creating invoices](/api/commands/invoice-add),
 [downloading lists of clients](/api/commands/client-list), or even
@@ -77,3 +78,4 @@ Remove the client
     
     [result]
     status=ok
+</section>

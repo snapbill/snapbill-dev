@@ -1,6 +1,8 @@
 Templates
 =========
 
+<section id="reference" markdown=1>
 SnapBill runs on a custom template engine. A brief introduction to it is
 available on our blog post
 [Templating language overview](http://developers.snapbill.com/blog/2011/02/templating-language-overview/).
+</section>

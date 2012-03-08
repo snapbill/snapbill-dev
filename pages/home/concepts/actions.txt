@@ -1,8 +1,10 @@
 Actions
 =======
 
+<section id="actions" markdown=1>
 Every event on SnapBill is automatically audited and stored as an "action" on
 SnapBill. You can use these to check for changes on clients with our
 [/action/list](/api/commands/action-list) api call, or alternatively set up a
 [webhook](/api/webhooks) and we'll send a HTTP request your way every time
 something happens.
+</section>

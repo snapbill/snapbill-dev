@@ -1,6 +1,7 @@
 Permissions
 ===========
 
+<section id="system-design" markdown=1>
 System design
 -------------
 
@@ -42,4 +43,4 @@ statistics area
 <strong>DENY </strong> /setup
 <strong>DENY </strong> /statistics
 </pre>
-
+</section>

@@ -25,7 +25,7 @@ class Layout_Page {
 <link href="/css/layout.css" rel="stylesheet">
 <link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
 </head>
-<body data-spy="scroll">
+<body>
 
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
@@ -59,15 +59,13 @@ class Layout_Page {
     if (self::$state != 'end-page') return;
 
     $messages = array(
-      'Whoa. Déjà vu.',
+      'A déjà vu is usually a glitch in the Matrix. It happens when they change something.',
       'It is not the spoon that bends, it is only yourself.',
       'These are not the droids you\'re looking for',
       'I love it when a plan comes together!',
       'I ain\'t goin\' on no airplane!',
-      new HTML('This is <strong>my</strong> dig site now. Go away.'),
+      'This is my dig site now. Go away.',
       'Zed\'s dead, baby. Zed\'s dead.',
-      'A Royale with cheese.',
-      'Why so serious?',
       'Gentlemen, you can\'t fight in here! This is the War Room.',
       'I\'m sorry, Dave. I\'m afraid I can\'t do that.'
     );
@@ -78,7 +76,7 @@ class Layout_Page {
   </div>
   <footer>
     <hr/>
-    <p><?php echo HTML($message); ?> <span style="color:#888;">&ndash; SnapBill</span></p>
+    <p>&ldquo;<?php echo HTML($message); ?>&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

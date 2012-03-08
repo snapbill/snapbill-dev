@@ -15,5 +15,9 @@ $(function() {
   prettyPrint();
 
   // Scrollspy
-  $('#menu').scrollspy()
+  setTimeout(function() {
+  $('body').scrollspy({
+    'target': '#menu'
+  });
+  }, 1000);
 });

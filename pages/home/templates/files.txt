@@ -1,7 +1,7 @@
 Templates - Files
 =================
 
-
+<section id="files" markdown=1>
 You can attach files to your templates just by using the "**@attachment:<filename\>**" special code at the top of your template wiki.
 
 
@@ -24,3 +24,4 @@ As mentioned before you need to use the **@attachment** tag, and simply list it 
 
     == Hi $client->firstname ==
     Welcome to ......
+</section>

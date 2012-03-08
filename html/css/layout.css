@@ -13,9 +13,18 @@ body {
   position: fixed;
 }
 #menu .level2 { padding-left: 10px; }
+
+#menu .fixed-active > a,
+#menu .fixed-active > a:hover {
+  color: #fff;
+  background-color: #58A;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
 #menu .active > a,
 #menu .active > a:hover {
-  background-color: #58A;
+  color: #004488;
+  background-color: #ddd;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #menu li span { color: #000; }
@@ -74,3 +83,6 @@ pre .output {
 
 .label-deprecated { background-color: #B94A48; }
 .label-deprecated:hover { background-color: #953B39; }
+
+/*** footer styles ***/
+footer { color: #666; }

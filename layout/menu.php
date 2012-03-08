@@ -49,7 +49,7 @@ class Layout_Menu {
       }else $children = null;
 
       if ($uri->get() == $href) {
-        print '<li class="active"><a href="'.HTML($href).'">'.$html.'</a></li>';
+        print '<li class="fixed-active"><a href="'.HTML($href).'">'.$html.'</a></li>';
       }else{
         print '<li><a href="'.HTML($href).'">'.$html.'</a></li>';
       }

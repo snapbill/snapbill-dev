@@ -33,7 +33,7 @@ Fetch a batch and return the details
 </section>
 
 <section class="states" id="states" markdown=1>
-### states ###
+### Available states ###
 
 %state-table
 
@@ -63,7 +63,7 @@ dead
 </section>
 
 <section class="parameters" id="parameters" markdown=1>
-### parameters ###
+### Parameter listing ###
 
 %parameter-table
 depth: get
