@@ -44,6 +44,7 @@ class View_Markdown extends View {
         list($name, $tags) = array_map('trim', explode(':', $row));
         $tags = array_map('trim', explode(',', $tags));
 
+        $name = str_replace('->', '&#8627; ', $name);
         $md .= '<tr><td>'.$name.'</td>';
         foreach (array('add', 'get', 'update', 'deprecated') as $column) {
           if (in_array($column, $tags, True)) {

@@ -161,16 +161,16 @@ reseller: get
 totals: get
     An object with quick details about the finanical totals of a given account
 
-↳ unpaid_invoices: get
+->unpaid_invoices: get
     The total sum of the totals from unpaid invoices on the account
 
-↳ total_paid: get
+->total_paid: get
     The total sum of payments that are marked as paid on the account
 
 urls: get
     An object with permalinks to access the clients details
 
-↳ statement: get
+->statement: get
     A permalink to the clients statement in the client area (includes authorization)
 
 %%%
