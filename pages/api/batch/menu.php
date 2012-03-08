@@ -1,16 +1,8 @@
 <?php
 
-Layout_Menu::render('API', array(
-  'Introduction' => array(
-    'Making Requests' => '/api/introduction/requests',
-  ),
-  'Reference' => array(
-    'Client' => '/api/client',
-    'Batch' => array(
-      '' => '/api/batch',
-      '/batch/get' => '#batch-get',
-    ),
-  ),
+Layout_Menu::update(array(
+  '' => '/api/batch',
+  '/get' => '#batch-get',
+  'states' => '#states',
+  'parameters' => '#parameters',
 ));
-
-Layout_Page::content();

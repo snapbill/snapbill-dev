@@ -27,7 +27,7 @@ class Layout_Page {
 </head>
 <body data-spy="scroll">
 
-<div class="navbar">
+<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <a href="/" class="brand">SnapBill &ndash; Developers</a>
@@ -57,10 +57,28 @@ class Layout_Page {
   static function footer() {
     if (self::$state == 'content') self::endContent();
     if (self::$state != 'end-page') return;
+
+    $messages = array(
+      'Whoa. Déjà vu.',
+      'It is not the spoon that bends, it is only yourself.',
+      'These are not the droids you\'re looking for',
+      'I love it when a plan comes together!',
+      'I ain\'t goin\' on no airplane!',
+      new HTML('This is <strong>my</strong> dig site now. Go away.'),
+      'Zed\'s dead, baby. Zed\'s dead.',
+      'A Royale with cheese.',
+      'Why so serious?',
+      'Gentlemen, you can\'t fight in here! This is the War Room.',
+      'I\'m sorry, Dave. I\'m afraid I can\'t do that.'
+    );
+
+    $message = $messages[rand()%count($messages)];
+
     ?>
   </div>
   <footer>
-    <p>&copy; SnapBill 2011</p>
+    <hr/>
+    <p><?php echo HTML($message); ?> <span style="color:#888;">&ndash; SnapBill</span></p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

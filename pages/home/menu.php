@@ -1,6 +1,6 @@
 <?php
 
-Layout_Menu::render('Home', array(
+Layout_Menu::setup('Home', array(
   'Concepts' => array(
     'Actions' => '/home/concepts/actions',
     'Permissions' => '/home/concepts/permissions',

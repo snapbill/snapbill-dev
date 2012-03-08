@@ -2,9 +2,30 @@
 
 class Layout_Menu {
 
+  private static $section;
+  private static $menu;
 
+  static function setup($section, $menu) {
+    self::$section = $section;
+    self::$menu = $menu;
+  }
 
-  static function render($section, $menu) {
+  private static function updateRef($uri, &$ref, $replace) {
+    foreach ($ref as $key => $menu) {
+      if (is_array($menu)) {
+        self::updateRef($uri, $ref[$key], $replace);
+      }elseif ($menu == $uri) {
+        $ref[$key] = $replace;
+      }
+    }
+  }
+
+  static function update($replace) {
+    $uri = Request::getUri();
+    self::updateRef($uri->get(), self::$menu, $replace);
+  }
+
+  static function render() {
     Layout_Page::header();
     $uri = Request::getUri();
     ?>
@@ -13,10 +34,10 @@ class Layout_Menu {
   <div id="menu">
   <ul class="nav nav-list">
     <?php
-      $heading = HTML($section);
+      $heading = HTML(self::$section);
       print "<h3>$heading</h3>";
   ?>
-  <?php foreach ($menu as $section => $links) { ?>
+  <?php foreach (self::$menu as $section => $links) { ?>
     <li class="nav-header"><?php echo HTML($section); ?></li>
     <?php foreach ($links as $title => $href) {
       $html = HTML($title);

@@ -1,6 +1,6 @@
 <?php
 
-Layout_Menu::render('API', array(
+Layout_Menu::setup('API', array(
   'Introduction' => array(
     'Making Requests' => '/api/introduction/requests',
   ),
@@ -10,4 +10,3 @@ Layout_Menu::render('API', array(
   ),
 ));
 
-Layout_Page::content();

@@ -31,3 +31,67 @@ Fetch a batch and return the details
 </div>
 </pre>
 </section>
+
+<section class="states" id="states" markdown=1>
+### states ###
+
+%state-table
+
+ready
+    The batch has been prepared. From here it can either be moved into *submit*, or will be automatically changed to *build* if any clients are added.
+
+build
+    Batch is busy being built, this is a temporary state and will be automatically changed to *ready* once the build is complete.
+
+submit
+    Batch is queued for submission to the bank. The state will automatically be changed to *submitted* once this is complete.
+
+submitted
+    Batch has been submitted to the bank but we have not yet received a response confirming any payments
+
+error
+    There was a problem and the entire batch was cancelled (all payments inside it will receive an *error* state too)
+
+ok
+    The batch was submitted to the bank, and we have begun receiving recon reports
+
+dead
+    The batch has been deleted and is no longer displayed in the interface
+
+%%%
+
+</section>
+
+<section class="parameters" id="parameters" markdown=1>
+### parameters ###
+
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the batch was provided. depth=0 is the highest level that provides full detail, while lower depths provide less.
+
+id: get
+    The id of the batch in the system. This is guarenteed to be unique only over a single account.
+
+xid: get
+    The xid of the batch in the system. This is guarenteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+
+state: get,update
+    The state of the batch in our system. The available states are *build*, *ready*, *submit* and *submitted*, *error*, *ok*, and *dead*. For more details see [States](#states).
+
+action_date: add, get, update
+    This is the date at which the batch is intended to go through. When adding clients to a batch, only unpaid invoices that are due on this date or before will be included.
+
+submit_date: get
+    This is the date on which the batch was physically submitted to a bank.
+
+payment_method: get
+    An object reperesenting the payment method for the batch. Use payment_method_code when adding.
+
+payment_method_code: add
+    A short code representing one of the payment methods used by SnapBill.
+
+reseller: get
+    An object representing the account that the batch falls under
+
+%%%
+</section>

@@ -75,150 +75,105 @@ Updates details about the given client in the database
 </section>
 
 <section id="states" markdown=1>
-### states ###
-<table class="table">
-<thead><tr>
- <th>Name</th><th>Description</th>
-</tr></thead><tbody>
+### Available states ###
 
-<tr>
-  <td>new</td>
-  <td markdown=1>
-    This is the state that all clients are created in.
-  </td>
-</tr>
+%state-table
 
+new
+  The state that all new clients are created in.
 
-</tbody></table>
+active
+  The state for a normal active client.
+
+suspended
+  This client has been suspended and can no longer access any services
+
+dead
+  The client has been removed and is no longer visible through the interface
+
+%%%
 </section>
 
 <section id="parameters" markdown=1>
-### parameters ###
-<table class="table">
-<thead><tr>
- <th>Name</th><th colspan="3">Availability</th><th>Description</th>
-</tr></thead><tbody>
+### Parameter listing ###
 
-<tr>
-  <td>depth</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
-    The depth parameter signals the amount of data for the client that was provided. depth=0 is the highest level that provides full detail, while depth=2 only provides id, state, number and name
-  </td>
-</tr>
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the client that was provided. depth=0 is the highest level that provides full detail, while depth=2 only provides id, state, number and name
 
-<tr>
-  <td>id</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
+id: get
     The id of the client in the system. This is guarenteed to be unique only over a single account.
-  </td>
-</tr>
 
-<tr>
-  <td>xid</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
+xid: get
     The xid of the client in the system. This is guarenteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
-  </td>
-</tr>
 
-<tr>
-  <td>state</td><td></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
-    The state of the client in the system. The available states are *new*, *active*, *suspended* and *deleted*. For more details see [States](#states).
-  </td>
-</tr>
+state: get,update
+    The state of the client in the system. The available states are *new*, *active*, *suspended* and *dead*. For more details see [States](#states).
 
-<tr>
-  <td>number</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+number: add,get,update
     A unique number representing the client. *Note* that this can contain any characters instead of just numbers. If not provided to an [add](#client-add) call it will automatically be generated.
-  </td>
-</tr>
 
-<tr>
-  <td>name</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
+name: get
     Automatically generated display name for the client, based on available details (firstname, surname, company)
-  </td>
-</tr>
 
-<tr>
-  <td>firstname</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+firstname: add,get,update
     Clients firstname. This field is required unless either **surname**, or **company** are provided.
-  </td>
-</tr>
 
-<tr>
-  <td>surname</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+surname: add,get,update
     Clients surname. This field is required unless either **firstname**, or **company** are provided.
-  </td>
-</tr>
 
-<tr>
-  <td>company</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+company: add,get,update
     Clients company. This field is required unless either **firstname**, or **surname** are provided.
-  </td>
-</tr>
 
-<tr>
-  <td>email</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+email: add,get,update
     Email address for the client. This is used as the default address for all communication and nothing can/will be sent unless it is provided or a relevant contact is added.
-  </td>
-</tr>
 
-<tr>
-  <td>cell</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+cell: add,get,update
     Cellphone number for the client. This is the default number for SMS communication unless a relevant contact is added.
-  </td>
-</tr>
 
-<tr>
-  <td>cell</td><td><span class="label label-add">add</span></td><td><span class="label label-get">get</span></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
-    Cellphone number for the client. This is the default number for SMS communication unless a relevant contact is added.
-  </td>
-</tr>
-
-<tr>
-  <td>country</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
+country: get
     An object reperesenting the country the user is from. Use country_code for add or update operations.
-  </td>
-</tr>
 
-<tr>
-  <td>country_code</td><td><span class="label label-add">add</span></td><td></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+country_code: add,update
     The ISO2 code of the country that the client is from. This is automatically detected based on IP address during a signup.
-  </td>
-</tr>
 
-<tr>
-  <td>currency</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
-    An object reperesenting the currency the user is using. Use currency_code for add or update operations.
-  </td>
-</tr>
+credit: get,update
+    The total amount of credit on a users account. Any manual changes to this will automatically log a credit-typed payment which will appear on the clients statements (**note** this behaviour is likely to change in the future).
 
-<tr>
-  <td>currency_code</td><td><span class="label label-add">add</span></td><td></td><td><span class="label label-update">update</span></td>
-  <td markdown=1>
+currency: get
+    An object reperesenting the currency the client is using. Use currency_code for add or update operations.
+
+currency_code: add,update
     The ISO 4217 code for the currency the client is currently using. This can only be updated if the client has zero unpaid invoices, no recurring services and no charges.
-  </td>
-</tr>
 
-<tr>
-  <td>reseller</td><td></td><td><span class="label label-get">get</span></td><td></td>
-  <td markdown=1>
-    An object reperesenting the account that owns the client
-  </td>
-</tr>
+payment: get, deprecated
+    The payment method code (see below)
 
+payment_method: get
+    An object reperesenting the payment method the client is set to. Use payment_method_code for add or update operations.
 
-</tbody></table>
+payment_method_code: add,update
+    A short code representing one of the payment methods used by SnapBill.
+
+reseller: get
+    An object representing the account that owns the client
+
+totals: get
+    An object with quick details about the finanical totals of a given account
+
+↳ unpaid_invoices: get
+    The total sum of the totals from unpaid invoices on the account
+
+↳ total_paid: get
+    The total sum of payments that are marked as paid on the account
+
+urls: get
+    An object with permalinks to access the clients details
+
+↳ statement: get
+    A permalink to the clients statement in the client area (includes authorization)
+
+%%%
+
 </section>
 

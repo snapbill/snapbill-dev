@@ -3,6 +3,7 @@ body {
 
 
 .page {
+  margin-top: 60px;
   padding-top: 15px;
 }
 
@@ -29,6 +30,11 @@ span.extended img.extend {
 section {
   padding: 5px;
 }
+
+/*** fix for anchor tags with fixed top bar ***/
+section { padding-top: 60px; }
+section, h1 { margin-bottom: -60px; }
+.page { padding-bottom: 120px; }
 
 section.api-call em:before {
   content: "<";
@@ -65,3 +71,6 @@ pre .output {
 .label-add { background-color: #468847; }
 .label-get { background-color: #3A87AD; }
 .label-update { background-color: #a95A00; }
+
+.label-deprecated { background-color: #B94A48; }
+.label-deprecated:hover { background-color: #953B39; }
