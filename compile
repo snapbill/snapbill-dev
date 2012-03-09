@@ -9,7 +9,11 @@ function compile($path) {
   foreach (glob("$path/*") as $filename) {
     if (ends_with($filename, '.txt')) {
       // @hack: to be replaced with python
-      $_SERVER['REQUEST_URI'] = substr($filename, 7, -4);
+      $uri = substr($filename, 7, -4);
+      while (ends_with($uri, '/index')) {
+        $uri = substr($uri, 0, -6);
+      }
+      $_SERVER['REQUEST_URI'] = $uri;
 
       print $_SERVER['REQUEST_URI']."\n";
       $view = new View_Markdown($filename, array());
