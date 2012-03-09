@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>API</h3>      <li class="nav-header">Introduction</li>
+    <li><a href="/api/introduction/requests">Making Requests</a></li>      <li class="nav-header">Reference</li>
+    <li><a href="/api/client">Client</a></li><li class="fixed-active"><a href="/api/batch">Batch</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#states">states</a></li><li class="level2"><a href="#parameters">parameters</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>API Reference: Batch</h1>
+
+<p><section class="api-call" id="get" markdown=1></p>
+
+<h3>/v1/batch/<em>id</em>/get</h3>
+
+<p>Fetch a batch and return the details</p>
+
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/batch/BcV:Bu/get.json
+</div><div class="output">
+    {
+      "type": "item",
+      "batch": {
+        "id": 110,
+        "xid": "BcV:Bu",
+        "action_date": "2012-03-15",
+        "submit_date": null,
+        "payment_method": {
+          "code": "other"
+        },
+        "state": "ready",
+        "reseller": {
+          "id": 5909,
+          "xid": "BcV:BcV",
+          "username": "apidemo"
+        }
+      }
+    }
+</div>
+</pre>
+
+<p></section></p>
+
+<p><section class="states" id="states" markdown=1></p>
+
+<h3>Available states</h3>
+
+<table class='table'><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>ready</td><td>
+The batch has been prepared. From here it can either be moved into <em>submit</em>, or will be automatically changed to <em>build</em> if any clients are added.
+</td></tr>
+<tr><td>build</td><td>
+Batch is busy being built, this is a temporary state and will be automatically changed to <em>ready</em> once the build is complete.
+</td></tr>
+<tr><td>submit</td><td>
+Batch is queued for submission to the bank. The state will automatically be changed to <em>submitted</em> once this is complete.
+</td></tr>
+<tr><td>submitted</td><td>
+Batch has been submitted to the bank but we have not yet received a response confirming any payments
+</td></tr>
+<tr><td>error</td><td>
+There was a problem and the entire batch was cancelled (all payments inside it will receive an <em>error</em> state too)
+</td></tr>
+<tr><td>ok</td><td>
+The batch was submitted to the bank, and we have begun receiving recon reports
+</td></tr>
+<tr><td>dead</td><td>
+The batch has been deleted and is no longer displayed in the interface
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<p><section class="parameters" id="parameters" markdown=1></p>
+
+<h3>Parameter listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td>depth</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td></td><td>
+The depth parameter signals the amount of data for the batch was provided. depth=0 is the highest level that provides full detail, while lower depths provide less.
+</td></tr>
+<tr><td>id</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td></td><td>
+The id of the batch in the system. This is guarenteed to be unique only over a single account.
+</td></tr>
+<tr><td>xid</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td></td><td>
+The xid of the batch in the system. This is guarenteed to be unique over all accounts (see <a href="/home/concepts/xid">Concepts - Xid</a>)
+</td></tr>
+<tr><td>state</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td></td><td>
+The state of the batch in our system. The available states are <em>build</em>, <em>ready</em>, <em>submit</em> and <em>submitted</em>, <em>error</em>, <em>ok</em>, and <em>dead</em>. For more details see <a href="#states">States</a>.
+</td></tr>
+<tr><td>action_date</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td></td><td>
+This is the date at which the batch is intended to go through. When adding clients to a batch, only unpaid invoices that are due on this date or before will be included.
+</td></tr>
+<tr><td>submit_date</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td></td><td>
+This is the date on which the batch was physically submitted to a bank.
+</td></tr>
+<tr><td>payment_method</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td></td><td>
+An object reperesenting the payment method for the batch. Use payment_method_code when adding.
+</td></tr>
+<tr><td>payment_method_code</td><td><a href="#add"><span class="label label-add">add</span></a></td><td></td><td></td><td></td><td>
+A short code representing one of the payment methods used by SnapBill.
+</td></tr>
+<tr><td>reseller</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td></td><td>
+An object representing the account that the batch falls under
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

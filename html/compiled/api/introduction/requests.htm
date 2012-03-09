@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>API</h3>      <li class="nav-header">Introduction</li>
+    <li class="fixed-active"><a href="/api/introduction/requests">Making Requests</a></li>      <li class="nav-header">Reference</li>
+    <li><a href="/api/client">Client</a></li><li><a href="/api/batch">Batch</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Making Requests</h1>
+
+<p><section markdown=1>
+The SnapBill API is based off HTTP requests using only the <strong>GET</strong> and
+<strong>POST</strong> verbs. GET is used for discovery, while POST is used for actual API
+requests.</p>
+
+<ul>
+<li>GET /v1 - Retrieve a listing of possible commands</li>
+<li>GET /v1/client/add - Retrieve the form for adding a new client</li>
+<li>POST /v1/client/add - Add a new client to the system</li>
+<li>POST /v1/client/84/get - Get the full account details of a client</li>
+<li>POST /v1/client/list - Get a list of clients matching an optional search query</li>
+</ul>
+
+<p>You can browse the actual api at <a href="http://api.snapbill.com/" target="_blank" class="external">api.snapbill.com</a>.
+</section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;Gentlemen, you can&#039;t fight in here! This is the War Room.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    
