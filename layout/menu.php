@@ -15,6 +15,9 @@ class Layout_Menu {
       if (is_array($menu)) {
         self::updateRef($uri, $ref[$key], $replace);
       }elseif ($menu == $uri) {
+        if (is_array($replace) && !isset($replace[''])) {
+          $replace[''] = $uri;
+        }
         $ref[$key] = $replace;
       }
     }
