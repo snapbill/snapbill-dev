@@ -2,6 +2,7 @@
 <?php
 require 'init.php';
 
+Config::write('server', 'mode', 'development');
 $_SERVER['SERVER_NAME'] = 'localhost';
 
 function compile($path) {
@@ -12,8 +13,11 @@ function compile($path) {
 
       print $_SERVER['REQUEST_URI']."\n";
       $view = new View_Markdown($filename, array());
+      Layout_Page::reset();
       ob_start();
+      Layout_Page::header();
       $view->render();
+      Layout_Page::footer();
       file_put_contents(substr($filename, 0, -4).'.htm', ob_get_clean());
 
     }elseif (is_dir($filename)) {

@@ -4,6 +4,10 @@ class Layout_Page {
 
   private static $state = NULL;
 
+  static function reset() {
+    self::$state = NULL;
+  }
+
   static function header() {
     if (self::$state !== NULL) return;
     self::$state = 'page';
