@@ -15,14 +15,17 @@ function compile($path) {
       }
       $_SERVER['REQUEST_URI'] = $uri;
 
-      print $_SERVER['REQUEST_URI']."\n";
+      $output = "./html/compiled$uri.htm";
+      system('mkdir -p '.dirname($output));
+
+      print "$filename > $output\n";
       $view = new View_Markdown($filename, array());
       Layout_Page::reset();
       ob_start();
       Layout_Page::header();
       $view->render();
       Layout_Page::footer();
-      file_put_contents(substr($filename, 0, -4).'.htm', ob_get_clean());
+      file_put_contents($output, ob_get_clean());
 
     }elseif (is_dir($filename)) {
       compile($filename);
