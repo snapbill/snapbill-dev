@@ -3,6 +3,14 @@ class View_Markdown extends View {
   function render() {
     $extra = $this->extra;
 
+    // Short-circuit cached htm versions
+    if (Config::get('server', 'mode') == 'production') {
+      if (file_exists(substr($this->path, 0, -4).'.htm')) {
+        echo file_get_contents(substr($this->path, 0, -4).'.htm');
+        return;
+      }
+    }
+
     // Try load the menu
     $menu_dir = dirname($this->path);
     $menus = array();

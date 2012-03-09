@@ -1,8 +1,6 @@
 <?php
 chdir(__DIR__.'/..');
-require 'free/common.php';
-Autoload::addPath('layout', array('_'), True, 'layout');
-Autoload::addPath('components');
+require 'init.php';
 
 $uri = Request::getUri();
 

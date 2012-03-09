@@ -1,0 +1,25 @@
+#!/usr/bin/php
+<?php
+require 'init.php';
+
+$_SERVER['SERVER_NAME'] = 'localhost';
+
+function compile($path) {
+  foreach (glob("$path/*") as $filename) {
+    if (ends_with($filename, '.txt')) {
+      // @hack: to be replaced with python
+      $_SERVER['REQUEST_URI'] = substr($filename, 7, -4);
+
+      print $_SERVER['REQUEST_URI']."\n";
+      $view = new View_Markdown($filename, array());
+      ob_start();
+      $view->render();
+      file_put_contents(substr($filename, 0, -4).'.htm', ob_get_clean());
+
+    }elseif (is_dir($filename)) {
+      compile($filename);
+    }
+  }
+}
+
+compile('./pages');
