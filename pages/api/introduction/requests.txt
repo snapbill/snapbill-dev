@@ -1,16 +1,229 @@
 Making Requests
 ===============
 
-<section markdown=1>
-The SnapBill API is based off HTTP requests using only the **GET** and
-**POST** verbs. GET is used for discovery, while POST is used for actual API
-requests.
+<section id="restish" markdown=1>
+### RESTish Design ###
+The SnapBill API is designed using **REST** principles (some, but not all.) The API runs over HTTP, and is located at [https://api.snapbill.com/v1](https://api.snapbill.com/v1)
 
-* GET /v1 - Retrieve a listing of possible commands
-* GET /v1/client/add - Retrieve the form for adding a new client
-* POST /v1/client/add - Add a new client to the system
-* POST /v1/client/84/get - Get the full account details of a client
-* POST /v1/client/list - Get a list of clients matching an optional search query
-
-You can browse the actual api at [api.snapbill.com](http://api.snapbill.com/).
+You can access the entire API using only **GET** and **POST** requests. The reason for this is to maintain [browsability](#browse-able) but it also serves to simplify certain actions and the design.
 </section>
+
+<section id="get">
+### GET *(Discoverability)* ###
+
+**GET** requests form the discoverable layer of the API. They can be used to retrieve indexes and example forms with controls.
+
+%curl-out
+/v1/client
+%%%
+{
+  "type": "index",
+  "index": {
+    "add": "/v1/client/add",
+    "list": "/v1/client/list",
+    "{id}": "/v1/client/{id}"
+  }
+}
+%%%
+
+%curl-out
+/v1/client/add
+%%%
+{
+  "type": "form",
+  "controls": [%expand%
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "First Name",
+      "render": true,
+      "name": "firstname",
+      "tip": "Used in friendly email templates - \"Hi John,\""
+    },<expanded>
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Surname",
+      "render": true,
+      "name": "surname"
+    },
+    {
+      "short": false,
+      "type": "email",
+      "caption": "Email Address",
+      "render": true,
+      "name": "email",
+      "tip": "Required in order to email invoices"
+    },
+    {
+      "short": false,
+      "type": "tel",
+      "caption": "Cellphone Number",
+      "render": true,
+      "name": "cell",
+      "tip": "Useful for getting hold of client in emergencies"
+    },
+    {
+      "options": [
+        {
+          "caption": "United States Dollar",
+          "key": "USD"
+        },
+        {
+          "caption": "South African Rand",
+          "key": "ZAR"
+        }
+      ],
+      "multiple": false,
+      "case": true,
+      "short": false,
+      "type": "select",
+      "default": "USD",
+      "required": true,
+      "caption": "Currency",
+      "render": true,
+      "name": "currency_code",
+      "tip": "Invoices and payments will be recorded in this currency"
+    },
+    {
+      "options": [
+        {
+          "caption": "Other",
+          "key": "other"
+        }
+      ],
+      "multiple": false,
+      "case": true,
+      "short": false,
+      "type": "select",
+      "required": true,
+      "caption": "Payment method",
+      "render": true,
+      "name": "payment_method_code",
+      "tip": "Setup more payment options in the Setup section"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Company name",
+      "render": true,
+      "name": "company",
+      "tip": "Shown as primary account name"
+    },
+    {
+      "caption": "",
+      "render": true,
+      "value": "US",
+      "name": "country_code",
+      "type": "hidden"
+    },
+    {
+      "caption": "",
+      "render": true,
+      "name": "state",
+      "type": "hidden",
+      "value": "new"
+    },
+    {
+      "caption": "",
+      "render": true,
+      "name": "number",
+      "type": "hidden",
+      "value": null
+    },
+    {
+      "caption": "",
+      "render": true,
+      "name": "coupon",
+      "type": "hidden",
+      "value": null
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "EIN / Tax ID",
+      "render": true,
+      "name": "data-ein__tax_id"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Name",
+      "render": true,
+      "name": "public_name"
+    },
+    {
+      "short": false,
+      "type": "email",
+      "caption": "Email Address",
+      "render": true,
+      "name": "public_email"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Street Address",
+      "render": true,
+      "name": "public_street"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Postal Address",
+      "render": true,
+      "name": "public_postal"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "City",
+      "render": true,
+      "name": "public_city"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Province / State",
+      "render": true,
+      "name": "public_province"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Country",
+      "render": true,
+      "name": "public_country"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Postal Code",
+      "render": true,
+      "name": "public_postcode"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Phone number",
+      "render": true,
+      "name": "public_phone"
+    },
+    {
+      "short": false,
+      "type": "textbox",
+      "caption": "Fax number",
+      "render": true,
+      "name": "public_fax"
+    }</expanded>
+  ]
+}
+%%%
+
+</section>
+
+<section id="post">
+### POST *(Actions)* ###
+
+All standard requests to the API will be **POST** requests. These are used to add new clients (**POST /v1/client/add**), to list existing invoices (**POST /v1/invoice/list**) and to update (**POST /v1/service/{id}/update**) or delete (**POST /v1/charge/{id}/delete**).
+</section>
+

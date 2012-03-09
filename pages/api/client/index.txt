@@ -74,6 +74,15 @@ Updates details about the given client in the database
 </pre>
 </section>
 
+<section class="api-call" id="generate-invoice" markdown=1>
+### /v1/client/*id*/update ###
+
+Generate a single invoice for a given client
+
+<pre class="prettyprint">
+</pre>
+</section>
+
 <section id="states" markdown=1>
 ### Available states ###
 

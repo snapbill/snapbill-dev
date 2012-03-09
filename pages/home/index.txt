@@ -1,6 +1,10 @@
-<div class="hero-unit">
+<section class="jumbotron">
   <h1>Hello, developers!</h1>
-  <p>You can access the SnapBill API documentation from this site, as well as detailed information on concepts used through the system.</p>
-  <p><a class="btn primary large">Learn more &raquo;</a></p>
+  <p markdown=1>
+   If you're looking for **REST**, **JSON**, and **API's** you're in the right place.
+  </p>
+  <p markdown=1>
+   If you want simple automated billing, check out [snapbill.com](http://www.snapbill.com)
+  </p>
 
-</div>
+</section>

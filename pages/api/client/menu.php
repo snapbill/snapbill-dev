@@ -1,10 +1,10 @@
 <?php
 
 Layout_Menu::update(array(
-  '' => '/api/client',
   '/add' => '#add',
   '/get' => '#get',
   '/update' => '#update',
+  '/generate_invoice' => '#generate-invoice',
   'states' => '#states',
   'parameters' => '#parameters',
 ));

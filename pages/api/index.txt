@@ -1,81 +1,156 @@
-API Documentation
-=================
+<section class="jumbotron">
+  <h1>The A.P.I.</h1>
+  <p markdown=1>
+   You can browse it right now. Just click [here](https://api.snapbill.com/v1).
+  </p>
+  <p markdown=1>
+   (you'll need to get your own login details first from [snapbill.com](http://www.snapbill.com))
+  </p>
+</section>
 
-<section markdown=1>
-The SnapBill API will let you connect to your account programatically, and
-perform actions such as [creating invoices](/api/commands/invoice-add),
-[downloading lists of clients](/api/commands/client-list), or even
-[watching for bounced payments](/api/webhooks/payment-update-state).
-
+<section class="columns">
+<div class="row">
+  <div class="span3" markdown=1>
+### RESTish Design ####
 Our API is based on simple RESTful design, however we've taken a whole lot of
 liberties in order to produce an api interface that is fully accessible
 straight from your web browser. For more details you can check the
-[REST introduction](/api/introduction/rest), or try it now at
-[api.snapbill.com](https://api.snapbill.com). If you still need to signup,
-head to [signup.snapbill.com](https://signup.snapbill.com) first.
+[REST introduction](/api/introduction/rest).
+  </div>
+  <div class="span3" markdown=1>
+### Existing libraries ####
+We'll be setting up more later, but for now you can check out our Python 
+API library on Github: [snapbill-pyapi](https://github.com/snapbill/snapbill-pyapi)
+  </div>
+  <div class="span3" markdown=1>
+### Pure awesome ####
+We're still adding content to this site and there is a space here so I'm
+just filling it with some random text (not really a big fan of that lorem 
+ipsum thing really.)
+  </div>
+</div>
+</section>
 
+<section markdown=1>
+## tl;dr<span style="color: #ccc;"> (too long, didn't read)</span> ##
 
-tl;dr examples
---------------
-
-Adding a new client leaving out a number of fields
-
+Add your new client **josh**
+<pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "firstname=josh&email=josh@example.com" \
     >      https://api.snapbill.com/v1/client/add.json
-    {"type":"result","status":"ok","id":81412}
+</div><div class="output">
+    {
+      "type": "item",
+      "client": {<span class="expand"></span>
+        <span class="expanded">"depth": 0,
+        </span>"id": 81457,
+        <span class="expanded">"xid": "BcV:T4x",
+        "state": "new",
+        </span>"number": "002",
+        "name": "josh",
+<span class="expanded">        "firstname": "josh",
+        "surname": "",
+        "company": "",
+        "email": "josh@example.com",
+        "cell": "",
+        "country": {
+          "code": "US",
+          "iso2": "US",
+          "iso3": "USA",
+          "name": "United States"
+        },
+        "credit": 0,
+        "currency": {
+          "code": "USD",
+          "format": "$%.2f",
+          "state": "enabled"
+        },
+        "payment": "other",
+        "reseller": {
+          "id": 5909,
+          "xid": "BcV:BcV",
+          "username": "apidemo"
+        },
+        "totals": {
+          "unpaid_invoices": 0,
+          "paid_payments": 0
+        },
+        "urls": {
+          "statement": "http://apidemo.snap/statement/BcV:T4x/m7BUeD9TB2EN"
+        },
+        "services": []
+</span>      }
+    }
+</div>
+</pre>
 
-
-Search for clients named josh
-
-    $ curl -u user:pass -d "query=josh" https://api.snapbill.com/v1/client/list.json
+Search for clients named **josh**
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "query=josh" \
+    >      https://api.snapbill.com/v1/client/list.json
+</div><div class="output">
+    {
     {"type": "list",
      "list": [
-       {
-         "id":81412,
-         "name": "josh",
-         "email": "josh@example.com",
-         <span class="extended">"depth": 0,
-         "xid": "BYZ:T4E",
-         "state": "new",
-         "number": "001",
-         "firstname": "josh",
-         "surname": "",
-         "company": "",
-         "cell": "",
-         "country":{
-           "code": "US", "iso2": "US", "iso3": "USA", "name": "United States"
-         },
-         "credit": 0,
-         "currency": {
-           "code": "USD", "format": "$%.2f", "state": "enabled"
-         },
-         "payment": "other",
-         "totals": {
-           "unpaid_invoices":0, "paid_payments":0
-         },
-         "urls": {
-           "statement": "https:\/\/user.snapbill.com\/statement\/BYZ:T4E\/BTTeSWf4znpp"
-         },
-         "services": []</span>
-      }
-     ]
+       {<span class="expand"></span>
+          <span class="expanded">"depth": 0,
+          </span>"id": 81457,
+          <span class="expanded">"xid": "BcV:T4x",
+          "state": "new",
+          </span>"number": "002",
+          "name": "josh",
+<span class="expanded">          "firstname": "josh",
+          "surname": "",
+          "company": "",
+          "email": "josh@example.com",
+          "cell": "",
+          "country": {
+            "code": "US",
+            "iso2": "US",
+            "iso3": "USA",
+            "name": "United States"
+          },
+          "credit": 0,
+          "currency": {
+            "code": "USD",
+            "format": "$%.2f",
+            "state": "enabled"
+          },
+          "payment": "other",
+          "reseller": {
+            "id": 5909,
+            "xid": "BcV:BcV",
+            "username": "apidemo"
+          },
+          "totals": {
+            "unpaid_invoices": 0,
+            "paid_payments": 0
+          },
+          "urls": {
+            "statement": "http://apidemo.snap/statement/BcV:T4x/m7BUeD9TB2EN"
+          },
+          "services": []
+</span>       }
+      ]
     }
+</div>
+</pre>
 
-
-Change the clients name to george
-
-    $ curl -u user:pass -d firstname=george https://api.snapbill.com/v1/client/81412/update.xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <response xmlns="https://api.snapbill.com/" status="ok" type="result"/>
-    </pre>
-
+Change the clients name to **george**
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "firstname=george" \
+    >      https://api.snapbill.com/v1/client/81457/update.json
+</div><div class="output">
+    {"type":"result", "status":"ok", "id":81412}
+</div>
+</pre>
 
 Remove the client
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/81457/delete.json
+</div><div class="output">
+    {"type":"result", "status":"ok", "id":81412}
+</div>
+</pre>
 
-    $ curl -u user:pass -d "" https://api.snapbill.com/v1/client/81414/delete.txt
-    [response]
-    type=result
-    
-    [result]
-    status=ok
-</section>

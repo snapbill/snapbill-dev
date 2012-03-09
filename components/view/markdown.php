@@ -32,6 +32,36 @@ class View_Markdown extends View {
     $content = file_get_contents($this->path);
 
     /***
+     * %curl-out
+     *
+     * Transforms into a in-out
+     **/
+    $content = preg_replace_callback("/\n%curl-out\n((.|\n)*?)\n%%%\n((.|\n)*?)\n%%%\n/", function ($m) {
+      $curl = array_map('trim', explode(' ', trim($m[1])));
+      if (count($curl) == 1) {
+        $curl = '$ curl -u apidemo:pass https://api.snapbill.com'.$curl[0];
+      }
+
+      return "\n%in-out\n$curl\n%%%\n{$m[3]}\n%%%\n";
+    }, $content);
+
+    /***
+     * %in-out
+     *
+     * Transforms into a in-out
+     **/
+    $content = preg_replace_callback("/\n%in-out\n((.|\n)*?)\n%%%\n((.|\n)*?)\n%%%\n/", function ($m) {
+
+      $html = '<pre class="prettyprint"><div class="input">';
+      $html .= '    '.str_replace("\n", "\n    ", $m[1]);
+      $html .= '</div><div class="output">';
+      $html .= '    '.str_replace("\n", "\n    ", $m[3]);
+      $html .= '</div></pre>'."\n";
+
+      return $html;
+    }, $content);
+
+    /***
      * %parameter-table
      *
      * depth: add, get
@@ -104,6 +134,15 @@ class View_Markdown extends View {
 
       return $md;
     }, $content);
+
+    /***
+     * %expand%
+     **/
+    $content = str_replace('%expand%', '<span class="expand"></span>', $content);
+    $content = preg_replace_callback("%<expanded>((.|\n)*)</expanded>%", function ($m) {
+      return '<span class="expanded">'.$m[1].'</span>';
+    }, $content);
+
 
     // Run the content through Markdown and print it out
     echo '<div class="page span10">';

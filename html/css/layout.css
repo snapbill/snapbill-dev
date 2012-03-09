@@ -1,6 +1,9 @@
 body {
 }
 
+/*
+ * Main page layout
+ */
 
 .page {
   margin-top: 60px;
@@ -8,9 +11,36 @@ body {
 }
 
 #menu {
+  padding-top: 40px;
+  position: fixed;
+}
+
+section {
+  padding: 5px;
+}
+section.columns {
+  padding-left:0; padding-right: 0;
+}
+
+section { padding-top: 60px; }
+section, h1 { margin-bottom: -60px; }
+.page { padding-bottom: 120px; }
+
+h2 { margin-bottom: 10px; }
+
+footer {
+  padding-top: 40px;
+}
+
+/***
+ * Styling
+ **/
+#menu {
   background-color: #fcfcfc;
   border-color: #fafafa;
-  position: fixed;
+}
+#menu h3 {
+  color: #666;
 }
 #menu .level2 { padding-left: 10px; }
 
@@ -31,20 +61,12 @@ body {
 #menu h2 a { color: #404040; }
 #menu h2 a:hover { color: #0069d6; }
 
-span.extended img.extend {
-  padding: 8px;
+span.expand img {
+  padding-left: 4px;
   cursor: pointer;
 }
 
-section {
-  padding: 5px;
-}
-
 /*** fix for anchor tags with fixed top bar ***/
-section { padding-top: 60px; }
-section, h1 { margin-bottom: -60px; }
-.page { padding-bottom: 120px; }
-
 section.api-call em:before {
   content: "<";
   font-style: normal;
@@ -68,6 +90,11 @@ section:target h3:before {
 section:target h3 {
   margin-left: -20px;
 }
+
+section h3 em {
+  color: #999;
+  font-style: normal;
+}
 /*
 section:target {
   background-color: #fafae6;
@@ -85,6 +112,20 @@ pre .output {
   background-color: #f3f3f3;
 }
 
+/*** Jumbotron ***/
+.jumbotron {
+  padding: 10px;
+}
+.jumbotron h1 {
+  font-size: 70px;
+  margin-bottom: 40px;
+}
+.jumbotron p {
+  color: #888;
+  font-size: 22px;
+  line-height: 26px;
+}
+
 /*** Parameter tables ***/
 .label-add { background-color: #468847; }
 .label-get { background-color: #3A87AD; }
@@ -94,4 +135,6 @@ pre .output {
 .label-deprecated:hover { background-color: #953B39; }
 
 /*** footer styles ***/
-footer { color: #666; }
+footer {
+  color: #666;
+}
