@@ -1,7 +1,7 @@
 API Reference: Client
 ===========
 
-<section class="api-call" id="add" markdown=1>
+<section class="api-call" id="add" data-title="/add" markdown=1>
 ### /v1/client/add ###
 
 Creates a new client and returns the details
@@ -56,7 +56,7 @@ Creates a new client and returns the details
 </pre>
 </section>
 
-<section class="api-call" id="get" markdown=1>
+<section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/client/*id*/get ###
 
 Creates a new client and returns the details
@@ -65,7 +65,7 @@ Creates a new client and returns the details
 </pre>
 </section>
 
-<section class="api-call" id="update" markdown=1>
+<section class="api-call" id="update" data-title="/update" markdown=1>
 ### /v1/client/*id*/update ###
 
 Updates details about the given client in the database
@@ -74,7 +74,7 @@ Updates details about the given client in the database
 </pre>
 </section>
 
-<section class="api-call" id="generate-invoice" markdown=1>
+<section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
 ### /v1/client/*id*/update ###
 
 Generate a single invoice for a given client
@@ -83,7 +83,7 @@ Generate a single invoice for a given client
 </pre>
 </section>
 
-<section id="states" markdown=1>
+<section id="states" data-title="states" markdown=1>
 ### Available states ###
 
 %state-table
@@ -103,7 +103,7 @@ dead
 %%%
 </section>
 
-<section id="parameters" markdown=1>
+<section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
 %parameter-table
@@ -155,8 +155,8 @@ currency: get
 currency_code: add,update
     The ISO 4217 code for the currency the client is currently using. This can only be updated if the client has zero unpaid invoices, no recurring services and no charges.
 
-payment: get, deprecated
-    The payment method code (see below)
+payment: get
+    This is %deprecated%, please use payment_method_code instead
 
 payment_method: get
     An object reperesenting the payment method the client is set to. Use payment_method_code for add or update operations.

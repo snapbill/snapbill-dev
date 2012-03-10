@@ -1,0 +1,19 @@
+API Reference: Package
+=======================
+
+<section id="parameters" data-title="parameters" markdown=1>
+### Parameter listing ###
+
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the package that was provided. depth=0 is the highest level that provides full detail.
+
+name: get
+    The name of the package. This is used as the reference and must be unique over a given account for a specific service type and currency.
+
+setup: get
+    The setup fee of the package as a floating point value in the set currency of the package.
+
+%%%
+
+</section>

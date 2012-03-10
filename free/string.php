@@ -17,6 +17,13 @@ function ends_with($string, $end) {
 }
 
 /**
+ * Converts underscores to spaces
+ **/
+function u2s($string) {
+  return str_replace('_', ' ', $string);
+}
+
+/**
  * Simple english language tools
  **/
 function bytesize($sz) {

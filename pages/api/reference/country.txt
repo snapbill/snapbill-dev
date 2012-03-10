@@ -1,0 +1,21 @@
+API Reference: Country
+=======================
+
+<section id="parameters" data-title="parameters" markdown=1>
+### Parameter listing ###
+
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the country that was provided. depth=0 is the highest level that provides full detail.
+
+code: get
+    The unique ISO 2 code two letter code for the country, which is always specified in upper case.
+
+format: get
+    A printf style format string for rendering amounts in this currencies standard format.
+
+state: get
+    The state of the currency based in the current account (either **enabled**, or **disabled**)
+
+%%%
+</section>

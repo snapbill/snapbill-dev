@@ -1,7 +1,7 @@
 API Reference: Batch
 ===========
 
-<section class="api-call" id="get" markdown=1>
+<section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/batch/*id*/get ###
 
 Fetch a batch and return the details
@@ -32,7 +32,7 @@ Fetch a batch and return the details
 </pre>
 </section>
 
-<section class="states" id="states" markdown=1>
+<section class="states" id="states" data-title="states" markdown=1>
 ### Available states ###
 
 %state-table
@@ -62,7 +62,7 @@ dead
 
 </section>
 
-<section class="parameters" id="parameters" markdown=1>
+<section class="parameters" id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
 %parameter-table

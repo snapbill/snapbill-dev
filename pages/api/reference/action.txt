@@ -1,0 +1,151 @@
+API Reference: Batch
+===========
+
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/action/*id*/get ###
+
+Fetch an action and return the details
+
+%curl-out
+/v1/action//get.json
+%%%
+{%expand%
+  "type": "item",
+  "action": {
+    "depth": 0,
+    "id": 7264725,
+    "xid": "Fb:btnV",
+    "url": "/invoice/update/total",
+    "path": "/invoice/update/total",
+    "link": "/invoice/Fb:BnA9",
+    "item_type": "invoice",
+    "description": "Draft invoice 2958-00090 total changed from 1466.4 to 1213.91",
+    "details": {
+      "from": 1466.4,
+      "to": 1213.91
+    },
+    "date": "2012-03-10 18:38:00",
+    "client": {<%
+      "depth": 2,
+      "id": 79851,
+      "xid": "Fb:Tfr",
+      "state": "new",
+      "number": "2958",
+      "name": "test italian"
+    %>},
+    "invoice": {<%
+      "id": 421949,
+      "xid": "Fb:BnA9",
+      "state": "draft",
+      "date": "2012-03-10",
+      "due_date": "2012-03-10",
+      "name": "Draft invoice 2958-00090",
+      "number": "2958-00090",
+      "currency": {
+        "code": "ZAR",
+        "format": "R%.2f",
+        "state": "enabled"
+      },
+      "subtotal": 1000,
+      "taxes": [
+        {
+          "name": "B",
+          "percent": 4,
+          "operation": "add"
+        },
+        {
+          "name": "C (21%)",
+          "percent": 21.84,
+          "operation": "add"
+        },
+        {
+          "name": "D",
+          "percent": 20.8,
+          "operation": "subtract"
+        }
+      ],
+      "discount": 0,
+      "total": 1213.91,
+      "lines": [
+        {
+          "id": 691960,
+          "item_name": "Five",
+          "description": "test",
+          "unit_cost": "1000.00",
+          "quantity": "1.00",
+          "total": "1000.00",
+          "package": null,
+          "term": null,
+          "service_provider": {
+            "fee": 0,
+            "charged": "0"
+          }
+        }
+      ],
+      "client": {
+        "depth": 2,
+        "id": 79851,
+        "xid": "Fb:Tfr",
+        "state": "new",
+        "number": "2958",
+        "name": "test italian"
+      }
+    %>},
+    "user": {<%
+      "depth": 2,
+      "id": 403,
+      "username": "snapper"
+    %>}
+  }
+}
+%%%
+
+</section>
+
+<section class="parameters" id="parameters" data-title="parameters">
+### Parameter listing ###
+
+%parameter-table
+
+depth: get
+  The depth parameter signals the amount of data for the action that was provided. depth=0 is the highest level that provides full detail.
+
+id: get
+    The id of the action in the system. This is guarenteed to be unique only over a single account.
+
+xid: get
+    The xid of the action in the system. This is guarenteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+
+url: get
+    %Deprecated% parameter, please use **path** instead.
+
+path: get
+    This is the path of the action. It is based on a url structure similar to the api design of snapbill which allows easy grouping of by type. See [action paths](#paths) for more detail.
+
+link: get
+    An %optional% link into SnapBill relating to the given action
+
+item_type: get
+    An %optional% field indicating the class of object this action was associated with if available.
+
+description: get
+    An english description explaining what change was made
+
+details: get
+    An object detailing the actual change that was made
+
+client: get
+    %Optional% object detailing the client that was involved in the action
+    
+user: get
+    %Optional% object detailing the user that performed the action. This field is not included with actions performed by the system without user interaction.
+    
+{item_type}: get
+    %Optional%. If item_type was provided and the action includes sufficient depth, then an object of that type will be included
+    
+
+
+%%%
+
+
+</section>

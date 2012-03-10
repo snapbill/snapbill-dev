@@ -26,10 +26,19 @@ class View_Markdown extends View {
 
     foreach ($menus as $menu) require $menu;
 
+    $content = file_get_contents($this->path);
+
+    if (preg_match_all('/<section[^>]*id="([^"]*)"[^>]data-title="([^"]*)"/', $content, $matches)) {
+      $menu = array();
+      foreach ($matches[1] as $k => $id) {
+        $title = $matches[2][$k];
+        $menu[$title] = "#$id";
+      }
+      Layout_Menu::update($menu);
+    }
+
     Layout_Menu::render();
     Layout_Page::content();
-
-    $content = file_get_contents($this->path);
 
     /***
      * %curl-out
@@ -71,7 +80,7 @@ class View_Markdown extends View {
      **/
     $content = preg_replace_callback("/\n%parameter-table\n((.|\n)*)\n%%%\n/", function ($m) {
       $md = "\n<table class='table'><thead><tr>";
-      $md .= '<th>Name</th><th colspan="4">Availability</th><th>Description</th>';
+      $md .= '<th>Name</th><th colspan="3">Availability</th><th>Description</th>';
       $md .= '</tr></thead><tbody>';
 
       $rows = explode("\n", $m[1]);
@@ -84,7 +93,7 @@ class View_Markdown extends View {
 
         $name = str_replace('->', '&#8627; ', $name);
         $md .= '<tr><td>'.$name.'</td>';
-        foreach (array('add', 'get', 'update', 'deprecated') as $column) {
+        foreach (array('add', 'get', 'update') as $column) {
           if (in_array($column, $tags, True)) {
             $label = '<span class="label label-'.$column.'">'.$column.'</span>';
             if ($column != 'deprecated') {
@@ -139,8 +148,15 @@ class View_Markdown extends View {
      * %expand%
      **/
     $content = str_replace('%expand%', '<span class="expand"></span>', $content);
-    $content = preg_replace_callback("%<expanded>((.|\n)*)</expanded>%", function ($m) {
+    $content = preg_replace_callback("/<%((.|\n)*?)%>/", function ($m) {
       return '<span class="expanded">'.$m[1].'</span>';
+    }, $content);
+
+    /***
+     * labels (%optional%)
+     **/
+    $content = preg_replace_callback("/%([a-z]+)([.?]?)%/i", function ($m) {
+      return '<span class="label label-'.strtolower($m[1]).'">'.$m[1].$m[2].'</span>';
     }, $content);
 
 
