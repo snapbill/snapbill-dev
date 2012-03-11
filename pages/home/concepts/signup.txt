@@ -1,0 +1,69 @@
+Signup
+===========
+
+<section id="signup" markdown=1>
+The standard signup form allows a client to sign up for a single service. We do intend to add other types of signups, perhaps single page and shopping cart versions, at a later stage but for now only the single service version is available and default.
+</section>
+
+<section id="skipping-steps" data-title="Skipping steps" markdown=1>
+### Skipping steps ###
+You can skip the "Are you a new or existing customer?" step simply by including a <code>?**customer=new**</code> value at the end of your signup url. If you want to skip any other steps you can simply provide values for every field on the page. If you leave out any fields whatsoever, the fields provided are simply used as default values during the signup.
+
+As an example, to skip the client form as well you can use ([example](https://franks.snapbill.com/signup?customer=new&client-title=Mr&client-firstname=Website&client-surname=Example&client-email=website@example.com&client-cell=&client-company=&client-data-vat_number=)):
+
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?customer=new
+  &client-title=<strong>Mr</strong>&client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
+  &client-email=<strong>website@example.com</strong>&client-cell=&client-company=
+  &client-data-custom_field=
+</pre>
+
+If you wanted to you could even skip straight to the payment step ([example](https://franks.snapbill.com/signup?customer=new&client-title=Mr&client-firstname=Website&client-surname=Example&client-email=website@example.com&client-cell=&client-company=&client-data-vat_number=&service_type=950&service-package=Small&service-term=1)):
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?customer=new
+  &client-title=<strong>Mr</strong>&client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
+  &client-email=<strong>website@example.com</strong>&client-cell=&client-company=
+  &client-data-custom_field=
+  &service_type=<strong>950</strong>
+  &service-package=<strong>Small</strong>&service-term=<strong>1</strong>
+</pre>
+
+An example with default values for a few client details would look like ([example](https://franks.snapbill.com/signup?customer=new&client-firstname=Website&client-surname=Example&client-email=website@example.com)):
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?customer=new
+  &client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
+  &client-email=<strong>website@example.com</strong>
+</pre>
+
+**Note** that any custom fields you add will need to be included. Custom field added to the client take the form client-data-*field_name*, while custom fields on the service are similarly service-data-*field_name*.
+</section>
+
+
+<section id="redirect" data-title="Redirects" markdown=1>
+### Redirects ###
+
+You can configure your signup page to redirect back to your website once a signup is complete. You'll find the option for this under Setup > Services > Signup Forms.
+
+<table class="table">
+<thead><tr>
+ <th>Parameter</th><th>Description</th>
+</tr></thead><tbody>
+<tr><td>id</td><td>The id of the signup object which was completed</td></tr>
+<tr><td>total</td><td>Total price of the signup to be paid now as a floating point value</td></tr>
+<tr><td>currency</td><td>The three-letter currency code the signup was done in</td></tr>
+<tr><td>client_id</td><td>The id of the client object which had the signup</td></tr>
+<tr><td>service_id</td><td>%Optional% id included if a service was created during the signup</td></tr>
+<tr><td>payment_id</td><td>%Optional% id of the payment if one was created with the signup</td></tr>
+<tr><td>payment_state</td><td>%Optional% state of the payment (either **paid**, or **pending**)</td></tr>
+<tr><td>payment_amount</td><td>%Optional% amount of the payment as measured as a floating point value</td></tr>
+<tr><td>signature</td><td>A signature using a shared secret confirming that the above fields were not tampered with</td></tr>
+</tbody>
+</table>
+
+</section>
+
+<section id="reference" data-title="Reference" markdown=1>
+### Reference ###
+
+For more details and an entire reference on the Signup object within the system, please check the [API Reference for Signup](/api/reference/signup).
+
