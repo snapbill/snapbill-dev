@@ -9,10 +9,10 @@ depth: get
 The depth parameter signals the amount of data for the invoice line that was provided. depth=0 is the highest level that provides full detail.
 
 id: get
-    The id of the invoice line in the system. This is guarenteed to be unique only over a single account.
+    The id of the invoice line in the system. This is guaranteed to be unique only over a single account.
 
 xid: get
-    The xid of the invoice line in the system. This is guarenteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+    The xid of the invoice line in the system. This is guaranteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
 
 %%%
 
