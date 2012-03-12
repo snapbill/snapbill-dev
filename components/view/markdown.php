@@ -114,7 +114,7 @@ class View_Markdown extends View {
      *   This is the state all new accounts are created in
      * %%%
      **/
-    $content = preg_replace_callback("/\n%state-table\n((.|\n)*)\n%%%\n/", function ($m) {
+    $content = preg_replace_callback("/\n%state-table\n((.|\n)*?)\n%%%\n/", function ($m) {
       $md = "\n<table class='table'><thead><tr>";
       $md .= '<th>Name</th><th>Description</th>';
       $md .= '</tr></thead><tbody>';
