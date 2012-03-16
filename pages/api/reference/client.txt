@@ -47,7 +47,8 @@ Creates a new client and returns the details
           "paid_payments": 0
         },
         "urls": {
-          "statement": "http://apidemo.snap/statement/BcV:T4x/m7BUeD9TB2EN"
+          "statement": "https://demo.snapbill.com/statement/BcV:T4x/m7BUeD9TB2EN"
+          "payments": "https://demo.snapbill.com/payment/client/FoE:A/GIQ56fGwX05z"
         },
         "services": []
       }
