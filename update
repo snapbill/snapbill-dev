@@ -1,3 +1,4 @@
+#!/bin/bash
 git pull origin live &&
   git submodule init && git submodule update &&
   echo Update complete

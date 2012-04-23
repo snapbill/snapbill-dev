@@ -1,36 +1,38 @@
-#!/usr/bin/php
-<?php
-require 'init.php';
+#!/usr/bin/env python
 
-Config::write('server', 'mode', 'development');
-$_SERVER['SERVER_NAME'] = 'localhost';
+import os
+import os.path
+import subprocess
+import sys
 
-function compile($path) {
-  foreach (glob("$path/*") as $filename) {
-    if (ends_with($filename, '.txt')) {
-      // @hack: to be replaced with python
-      $uri = substr($filename, 7, -4);
-      while (ends_with($uri, '/index')) {
-        $uri = substr($uri, 0, -6);
-      }
-      $_SERVER['REQUEST_URI'] = $uri;
+DIR = os.path.abspath(os.path.dirname(sys.argv[0]))
 
-      $output = "./html/compiled$uri.htm";
-      system('mkdir -p '.dirname($output));
 
-      print "$filename > $output\n";
-      $view = new View_Markdown($filename, array());
-      Layout_Page::reset();
-      ob_start();
-      Layout_Page::header();
-      $view->render();
-      Layout_Page::footer();
-      file_put_contents($output, ob_get_clean());
+def _compile_markdown(top_level_path, path):
+  uri_parts = os.path.splitext(path)[0].split('/')
+  while uri_parts[-1] == 'index':
+    uri_parts.pop()
+  uri = '/'.join(uri_parts)[len(top_level_path):]
 
-    }elseif (is_dir($filename)) {
-      compile($filename);
-    }
-  }
-}
+  print '%s -> html/compiled%s.htm' % (path[len(top_level_path):], uri)
+  html = subprocess.check_output([DIR + '/components/output_markdown.php',
+                                  path, uri])
 
-compile('./pages');
+  output = '%s/html/compiled%s.htm' % (os.path.dirname(top_level_path), uri)
+  if not os.path.isdir(os.path.dirname(output)):
+    os.makedirs(os.path.dirname(output))
+  with file(output, 'w') as fd:
+    fd.write(html)
+
+
+def compile_markdown(path):
+
+  def visit(arg, dirname, names):
+    for name in names:
+      if name.endswith('.txt'):
+        _compile_markdown(path, '%s/%s' % (dirname, name))
+
+  os.path.walk(path, visit, None)
+
+if __name__ == '__main__':
+  compile_markdown(DIR + '/pages')
