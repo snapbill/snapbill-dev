@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
+import json
 import os.path
 import re
+import subprocess
 
 
 class CurlChunkUpdater(object):
@@ -9,7 +11,27 @@ class CurlChunkUpdater(object):
   def __init__(self, username, password, api_endpoint):
     self.username = username
     self.password = password
-    self.api_endpoint = api_endpoint
+    self.api_endpoint = api_endpoint.strip('/')
+    self.domain = re.match(r'https?://[^.]+\.(.*)', self.api_endpoint).group(1)
+    assert self.domain
+
+  def update_response(self, obj):
+    if isinstance(obj, dict):
+      new_dict = {}
+      for key, val in obj.iteritems():
+        new_dict[key] = self.update_response(val)
+      return new_dict
+    elif not isinstance(obj, basestring):
+      return obj
+    elif self.domain in obj:
+      return obj \
+          .replace('http:', 'https:') \
+          .replace('%s.%s' % (self.username, self.domain), 'demo.snapbill.com') \
+          .replace(self.domain, 'snapbill.com')
+    elif obj == self.username:
+      return 'demo'
+    else:
+      return obj
 
   def update_chunk(self, matchobj):
     curl_cmd = []
@@ -27,9 +49,27 @@ class CurlChunkUpdater(object):
       curl_cmd.append(line.strip())
     curl_cmd = ' '.join(curl_cmd)
 
-    # TODO replace bits of the cmd with new parameters and run the request
-    print curl_cmd
-    print
+    # check if the curl_cmd has everything we need in it
+    assert 'user:pass' in curl_cmd
+    assert 'https://api.snapbill.com/v1/' in curl_cmd
+
+    # update the command
+    curl_cmd = curl_cmd.replace('user:pass',
+                                '%s:%s' % (self.username, self.password))
+    if 'http' in self.api_endpoint:
+      curl_cmd = curl_cmd.replace('https://api.snapbill.com', self.api_endpoint)
+    else:
+      curl_cmd = curl_cmd.replace('api.snapbill.com', self.api_endpoint)
+
+    # Hit the api and update URLS in the response
+    response = subprocess.check_output(curl_cmd, shell=True)
+    response = json.loads(response)
+    response = self.update_response(response)
+    response = json.dumps(response, indent=2)
+    response = '\n'.join('    ' + line for line in response.splitlines())
+
+    return ('<div class="input">%s</div><div class="output">\n%s\n</div>'
+            % (matchobj.group(1), response))
 
   def update_curl_example(self, path):
     with file(path) as fd:
@@ -39,8 +79,9 @@ class CurlChunkUpdater(object):
     new_content = re.sub(regex, self.update_chunk, content, flags=re.DOTALL)
 
     if content != new_content:
-      # TODO update content
-      pass
+      print "Updating", path
+      with file(path, 'w') as fd:
+        fd.write(new_content)
 
 
 def main(path, username, password, api_endpoint):
