@@ -65,7 +65,14 @@ class CurlChunkUpdater(object):
 
     # Hit the api and update URLS in the response
     response = subprocess.check_output(curl_cmd, shell=True)
-    response = json.loads(response, object_pairs_hook=OrderedDict)
+    try:
+      response = json.loads(response, object_pairs_hook=OrderedDict)
+    except json.decoder.JSONDecodeError:
+      print "ERROR JSON decoding response:"
+      print response
+      print "\nFor request:"
+      print curl_cmd
+      exit(1)
     response = self.update_response(response)
     response = json.dumps(response, indent=2)
     response = '\n'.join('    ' + line for line in response.splitlines())
