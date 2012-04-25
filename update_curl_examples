@@ -4,49 +4,72 @@ import os.path
 import re
 
 
-def update_chunk(matchobj):
-  curl_cmd = []
-  for line in matchobj.group(1).splitlines():
-    line = line.strip()
-    if not line:
-      continue
+class CurlChunkUpdater(object):
 
-    assert line[0] in '$>'
-    line = line[1:]
+  def __init__(self, username, password, api_endpoint):
+    self.username = username
+    self.password = password
+    self.api_endpoint = api_endpoint
 
-    if line.endswith('\\'):
-      line = line[:-2]
+  def update_chunk(self, matchobj):
+    curl_cmd = []
+    for line in matchobj.group(1).splitlines():
+      line = line.strip()
+      if not line:
+        continue
 
-    curl_cmd.append(line.strip())
-  curl_cmd = ' '.join(curl_cmd)
+      assert line[0] in '$>'
+      line = line[1:]
 
-  # TODO replace bits of the cmd with new parameters and run the request
-  print curl_cmd
-  print
+      if line.endswith('\\'):
+        line = line[:-2]
+
+      curl_cmd.append(line.strip())
+    curl_cmd = ' '.join(curl_cmd)
+
+    # TODO replace bits of the cmd with new parameters and run the request
+    print curl_cmd
+    print
+
+  def update_curl_example(self, path):
+    with file(path) as fd:
+      content = fd.read()
+
+    regex = r'<div class="input">(.*?)</div>\w*(<div class="output">.*?</div>)?'
+    new_content = re.sub(regex, self.update_chunk, content, flags=re.DOTALL)
+
+    if content != new_content:
+      # TODO update content
+      pass
 
 
-def update_curl_example(path):
-  with file(path) as fd:
-    content = fd.read()
-
-  regex = r'<div class="input">(.*?)</div>\w*(<div class="output">.*?</div>)?'
-  new_content = re.sub(regex, update_chunk, content, flags=re.DOTALL)
-
-  if content != new_content:
-    # TODO update content
-    pass
-
-
-def main(path):
+def main(path, username, password, api_endpoint):
+  updater = CurlChunkUpdater(username, password, api_endpoint)
 
   def visit(arg, dirname, names):
     for name in names:
       if name.endswith('.txt'):
-        update_curl_example('%s/%s' % (dirname, name))
+        updater.update_curl_example('%s/%s' % (dirname, name))
 
   os.path.walk(path, visit, None)
 
 
 if __name__ == '__main__':
+  import argparse
   import sys
-  main(os.path.abspath(os.path.dirname(sys.argv[0])) + '/pages')
+
+  pages_dir = os.path.abspath(os.path.dirname(sys.argv[0])) + '/pages'
+
+  parser = argparse.ArgumentParser(description='Updates CURL API examples in '
+                                   'the markdown files under the pages directory')
+  parser.add_argument('--pagesdir', default=pages_dir,
+                      help='The directory to process. Default %s' % pages_dir)
+  parser.add_argument('--username', required=True,
+                      help='Username to use against the API endpoint')
+  parser.add_argument('--password', required=True,
+                      help='Password to use against the API endpoint')
+  parser.add_argument('--apiendpoint', required=True,
+                      help='The API endpoint to hit')
+  args = parser.parse_args()
+
+  main(args.pagesdir, args.username, args.password, args.apiendpoint)
