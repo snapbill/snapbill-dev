@@ -26,8 +26,8 @@ class CurlChunkUpdater(object):
     elif self.domain in obj:
       return obj \
           .replace('http:', 'https:') \
-          .replace('%s.%s' % (self.username, self.domain), 'demo.snapbill.com') \
-          .replace(self.domain, 'snapbill.com')
+          .replace(self.domain, 'snapbill.com') \
+          .replace('://%s.' % self.username, '://demo.')
     elif obj == self.username:
       return 'demo'
     else:
