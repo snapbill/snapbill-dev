@@ -14,10 +14,14 @@ class CurlChunkUpdater(object):
     self.username = username
     self.password = password
     self.api_endpoint = api_endpoint.strip('/')
+    if 'http' not in self.api_endpoint:
+      self.api_endpoint = 'https://' + self.api_endpoint
     self.domain = re.match(r'https?://[^.]+\.(.*)', self.api_endpoint).group(1)
     assert self.domain
 
   def update_response(self, obj):
+    """Update values in a response to refer to a demo account and the
+    snapbill.com website."""
     if isinstance(obj, OrderedDict):
       new_dict = OrderedDict()
       for key, val in obj.iteritems():
@@ -36,8 +40,11 @@ class CurlChunkUpdater(object):
       return obj
 
   def update_chunk(self, matchobj):
+    # Parse the curl command part into something we can pass to the command
+    # line
+    original_curl_cmd = matchobj.group(1)
     curl_cmd = []
-    for line in matchobj.group(1).splitlines():
+    for line in original_curl_cmd.splitlines():
       line = line.strip()
       if not line:
         continue
@@ -58,10 +65,13 @@ class CurlChunkUpdater(object):
     # update the command
     curl_cmd = curl_cmd.replace('user:pass',
                                 '%s:%s' % (self.username, self.password))
-    if 'http' in self.api_endpoint:
-      curl_cmd = curl_cmd.replace('https://api.snapbill.com', self.api_endpoint)
-    else:
-      curl_cmd = curl_cmd.replace('api.snapbill.com', self.api_endpoint)
+    curl_cmd = curl_cmd.replace('https://api.snapbill.com', self.api_endpoint)
+
+    # Possibly update any xids in the command
+    if 'xid' in self.data:
+      rep = '/%s/' % self.data['xid']
+      curl_cmd = re.sub(r'/\w+:\w+/', rep, curl_cmd)
+      original_curl_cmd = re.sub(r'/\w+:\w+/', rep, original_curl_cmd)
 
     # Hit the api and update URLS in the response
     response = subprocess.check_output(curl_cmd, shell=True)
@@ -78,13 +88,30 @@ class CurlChunkUpdater(object):
     response = '\n'.join('    ' + line for line in response.splitlines())
 
     return ('<div class="input">%s</div><div class="output">\n%s\n</div>'
-            % (matchobj.group(1), response))
+            % (original_curl_cmd, response))
+
+  def fetch_single(self, resource_type):
+    curl_cmd = 'curl -u %s:%s -d "" %s/v1/%s/list.json?perpage=1' \
+        % (self.username, self.password, self.api_endpoint, resource_type)
+    response = subprocess.check_output(curl_cmd, shell=True)
+    response = json.loads(response)
+    if not response.get('list', []):
+      print "ERROR there are no %s" % resource_type
+      exit(1)
+    return response['list'][0]['xid']
 
   def update_curl_example(self, path):
     with file(path) as fd:
       content = fd.read()
 
-    regex = r'<div class="input">(.*?)</div>\w*(<div class="output">.*?</div>)?'
+    # First look for some evals
+    self.data = {}
+    regex = r'<!--\s+eval:\s+(\w+)\s*=\s*(.*)\s+-->\s*$'
+    for match in re.finditer(regex, content, flags=re.MULTILINE):
+      self.data[match.group(1)] = eval(match.group(2), globals(), locals())
+
+    # Then actually run the examples
+    regex = r'<div class="input">(.*?)</div>\s*(<div class="output">.*?</div>)?'
     new_content = re.sub(regex, self.update_chunk, content, flags=re.DOTALL)
 
     if content != new_content:
