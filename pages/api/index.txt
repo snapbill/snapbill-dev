@@ -19,13 +19,13 @@ straight from your web browser. For more details you can check the
   </div>
   <div class="span3" markdown=1>
 ### Existing libraries ####
-We'll be setting up more later, but for now you can check out our Python 
+We'll be setting up more later, but for now you can check out our Python
 API library on Github: [snapbill-pyapi](https://github.com/snapbill/snapbill-pyapi)
   </div>
   <div class="span3" markdown=1>
 ### Pure awesome ####
 We're still adding content to this site and there is a space here so I'm
-just filling it with some random text (not really a big fan of that lorem 
+just filling it with some random text (not really a big fan of that lorem
 ipsum thing really.)
   </div>
 </div>
@@ -40,97 +40,117 @@ Add your new client **josh**
     >      https://api.snapbill.com/v1/client/add.json
 </div><div class="output">
     {
+      "code": 200,
       "type": "item",
-      "client": {<span class="expand"></span>
-        <span class="expanded">"depth": 0,
-        </span>"id": 81457,
-        <span class="expanded">"xid": "BcV:T4x",
+      "class": "client",
+      "client": {
+        "depth": 0,
+        "id": 80,
+        "xid": "Bad:BQ",
         "state": "new",
-        </span>"number": "002",
+        "number": "045",
         "name": "josh",
-<span class="expanded">        "firstname": "josh",
+        "firstname": "josh",
         "surname": "",
         "company": "",
         "email": "josh@example.com",
         "cell": "",
         "country": {
-          "code": "US",
-          "iso2": "US",
-          "iso3": "USA",
-          "name": "United States"
+          "code": "ZA",
+          "iso2": "ZA",
+          "iso3": "ZAF",
+          "name": "South Africa"
         },
         "credit": 0,
         "currency": {
-          "code": "USD",
-          "format": "$%.2f",
+          "code": "ZAR",
+          "format": "R%.2f",
           "state": "enabled"
         },
-        "payment": "other",
-        "reseller": {
-          "id": 5909,
-          "xid": "BcV:BcV",
-          "username": "apidemo"
+        "payment": "bdb",
+        "payment_method": {
+          "depth": 1,
+          "code": "bdb",
+          "name": "BDB Data"
+        },
+        "account": {
+          "id": 5789,
+          "xid": "Bad:Bad",
+          "username": "demo"
         },
         "totals": {
           "unpaid_invoices": 0,
           "paid_payments": 0
         },
         "urls": {
-          "statement": "http://apidemo.snap/statement/BcV:T4x/m7BUeD9TB2EN"
+          "statement": "https://demo.snapbill.com/statement/Bad:BQ/Y2FWDjtlqZRd",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:BQ/5hPeDdwuf9IP"
         },
         "services": []
-</span>      }
+      }
     }
 </div>
 </pre>
 
 Search for clients named **josh**
-<pre class="prettyprint"><div class="input">
+<pre class="prettyprint">
+<!-- eval: id = self.fetch_single('client', 'id', 'query=josh') -->
+<div class="input">
     $ curl -u user:pass -d "query=josh" \
     >      https://api.snapbill.com/v1/client/list.json
 </div><div class="output">
     {
-    {"type": "list",
-     "list": [
-       {<span class="expand"></span>
-          <span class="expanded">"depth": 0,
-          </span>"id": 81457,
-          <span class="expanded">"xid": "BcV:T4x",
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "client",
+      "list": [
+        {
+          "depth": 0,
+          "id": 80,
+          "xid": "Bad:BQ",
           "state": "new",
-          </span>"number": "002",
+          "number": "045",
           "name": "josh",
-<span class="expanded">          "firstname": "josh",
+          "firstname": "josh",
           "surname": "",
           "company": "",
           "email": "josh@example.com",
           "cell": "",
           "country": {
-            "code": "US",
-            "iso2": "US",
-            "iso3": "USA",
-            "name": "United States"
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
           },
           "credit": 0,
           "currency": {
-            "code": "USD",
-            "format": "$%.2f",
+            "code": "ZAR",
+            "format": "R%.2f",
             "state": "enabled"
           },
-          "payment": "other",
-          "reseller": {
-            "id": 5909,
-            "xid": "BcV:BcV",
-            "username": "apidemo"
+          "payment": "bdb",
+          "payment_method": {
+            "depth": 1,
+            "code": "bdb",
+            "name": "BDB Data"
+          },
+          "account": {
+            "id": 5789,
+            "xid": "Bad:Bad",
+            "username": "debitor"
           },
           "totals": {
             "unpaid_invoices": 0,
             "paid_payments": 0
           },
           "urls": {
-            "statement": "http://apidemo.snap/statement/BcV:T4x/m7BUeD9TB2EN"
+            "statement": "http://debitor.snap/statement/Bad:BQ/Y2FWDjtlqZRd",
+            "payment": "http://debitor.snap/payment/client/Bad:BQ/5hPeDdwuf9IP"
           },
           "services": []
-</span>       }
+        }
       ]
     }
 </div>
@@ -139,18 +159,25 @@ Search for clients named **josh**
 Change the clients name to **george**
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "firstname=george" \
-    >      https://api.snapbill.com/v1/client/81457/update.json
+    >      https://api.snapbill.com/v1/client/80/update.json
 </div><div class="output">
-    {"type":"result", "status":"ok", "id":81412}
+    {
+      "code": 200,
+      "type": "result",
+      "status": "ok"
+    }
 </div>
 </pre>
 
 Remove the client
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/81457/delete.json
+    >      https://api.snapbill.com/v1/client/80/delete.json
 </div><div class="output">
-    {"type":"result", "status":"ok", "id":81412}
+    {
+      "code": 200,
+      "type": "result",
+      "status": "ok"
+    }
 </div>
 </pre>
-

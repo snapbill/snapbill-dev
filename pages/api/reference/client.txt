@@ -11,13 +11,15 @@ Creates a new client and returns the details
     >      https://api.snapbill.com/v1/client/add.json
 </div><div class="output">
     {
+      "code": 200,
       "type": "item",
+      "class": "client",
       "client": {
         "depth": 0,
-        "id": 81457,
-        "xid": "BcV:T4x",
+        "id": 81,
+        "xid": "Bad:BR",
         "state": "new",
-        "number": "002",
+        "number": "046",
         "name": "josh",
         "firstname": "josh",
         "surname": "",
@@ -25,30 +27,35 @@ Creates a new client and returns the details
         "email": "josh@example.com",
         "cell": "",
         "country": {
-          "code": "US",
-          "iso2": "US",
-          "iso3": "USA",
-          "name": "United States"
+          "code": "ZA",
+          "iso2": "ZA",
+          "iso3": "ZAF",
+          "name": "South Africa"
         },
         "credit": 0,
         "currency": {
-          "code": "USD",
-          "format": "$%.2f",
+          "code": "ZAR",
+          "format": "R%.2f",
           "state": "enabled"
         },
-        "payment": "other",
-        "reseller": {
-          "id": 5909,
-          "xid": "BcV:BcV",
-          "username": "apidemo"
+        "payment": "bdb",
+        "payment_method": {
+          "depth": 1,
+          "code": "bdb",
+          "name": "BDB Data"
+        },
+        "account": {
+          "id": 5789,
+          "xid": "Bad:Bad",
+          "username": "demo"
         },
         "totals": {
           "unpaid_invoices": 0,
           "paid_payments": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/BcV:T4x/m7BUeD9TB2EN"
-          "payments": "https://demo.snapbill.com/payment/client/FoE:A/GIQ56fGwX05z"
+          "statement": "https://demo.snapbill.com/statement/Bad:BR/FOKGM9cs7jiO",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:BR/S7SYFN9RKIAd"
         },
         "services": []
       }
@@ -186,4 +193,3 @@ urls: get
 %%%
 
 </section>
-
