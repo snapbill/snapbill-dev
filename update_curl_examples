@@ -45,9 +45,17 @@ class CurlChunkUpdater(object):
       return obj
 
   def update_chunk(self, matchobj):
+    eval_part = matchobj.group(1) if matchobj.group(1) else ''
+    eval_var = matchobj.group(2)
+    eval_str = matchobj.group(3)
+    original_curl_cmd = matchobj.group(4)
+
+    # Possibly run a command first
+    if eval_var:
+      self.data[eval_var] = eval(eval_str, globals(), locals())
+
     # Parse the curl command part into something we can pass to the command
     # line
-    original_curl_cmd = matchobj.group(1)
     curl_cmd = []
     for line in original_curl_cmd.splitlines():
       line = line.strip()
@@ -96,8 +104,8 @@ class CurlChunkUpdater(object):
     response = json.dumps(response, indent=2)
     response = '\n'.join('    ' + line for line in response.splitlines())
 
-    return ('<div class="input">%s</div><div class="output">\n%s\n</div>'
-            % (original_curl_cmd, response))
+    return ('%s<div class="input">%s</div><div class="output">\n%s\n</div>'
+            % (eval_part, original_curl_cmd, response))
 
   def fetch_single(self, resource_type, field, post_vars=''):
     curl_cmd = 'curl -s -S -u %s:%s -d "%s" %s/v1/%s/list.json?perpage=1' \
@@ -115,14 +123,10 @@ class CurlChunkUpdater(object):
     with file(path) as fd:
       content = fd.read()
 
-    # First look for some evals
     self.data = {}
-    regex = r'<!--\s+eval:\s+(\w+)\s*=\s*(.*)\s+-->\s*$'
-    for match in re.finditer(regex, content, flags=re.MULTILINE):
-      self.data[match.group(1)] = eval(match.group(2), globals(), locals())
-
-    # Then actually run the examples
-    regex = r'<div class="input">(.*?)</div>\s*(<div class="output">.*?</div>)?'
+    regex = (r'(<!--\s+eval:\s+(\w+)\s*=\s*(.*)\s+-->\s*)?'
+             r'<div class="input">(.*?)</div>\s*'
+             r'(<div class="output">.*?</div>)?')
     new_content = re.sub(regex, self.update_chunk, content, flags=re.DOTALL)
 
     if content != new_content:
@@ -138,7 +142,7 @@ def main(path, username, password, api_endpoint, dryrun=False):
   def visit(arg, dirname, names):
     for name in names:
       if name.endswith('.txt'):
-        updater.update_curl_example('%s/%s' % (dirname, name), dryrun=False)
+        updater.update_curl_example('%s/%s' % (dirname, name), dryrun)
 
   os.path.walk(path, visit, None)
 
