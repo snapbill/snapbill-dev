@@ -58,7 +58,7 @@ class CurlChunkUpdater(object):
       if line.endswith('\\'):
         line = line[:-2]
 
-      curl_cmd.append(line.strip())
+      curl_cmd.extend(line.strip().split())
     # Make curl less noisy
     curl_cmd.insert(1, '-s')
     curl_cmd.insert(1, '-S')
