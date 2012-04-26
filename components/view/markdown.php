@@ -70,7 +70,7 @@ class View_Markdown extends View {
      *
      * %%%
      **/
-    $content = preg_replace_callback("/\n%parameter-table\n((.|\n)*)\n%%%\n/", function ($m) {
+    $content = preg_replace_callback("/\n%parameter-table\n((.|\n)*?)\n%%%\n/", function ($m) {
       $md = "\n<table class='table'><thead><tr>";
       $md .= '<th>Name</th><th colspan="3">Availability</th><th>Description</th>';
       $md .= '</tr></thead><tbody>';
