@@ -56,6 +56,9 @@ class CurlChunkUpdater(object):
         line = line[:-2]
 
       curl_cmd.append(line.strip())
+    # Make curl less noisy
+    curl_cmd.insert(1, '-s')
+    curl_cmd.insert(1, '-S')
     curl_cmd = ' '.join(curl_cmd)
 
     # check if the curl_cmd has everything we need in it
@@ -91,16 +94,17 @@ class CurlChunkUpdater(object):
             % (original_curl_cmd, response))
 
   def fetch_single(self, resource_type):
-    curl_cmd = 'curl -u %s:%s -d "" %s/v1/%s/list.json?perpage=1' \
+    curl_cmd = 'curl -s -S -u %s:%s -d "" %s/v1/%s/list.json?perpage=1' \
         % (self.username, self.password, self.api_endpoint, resource_type)
     response = subprocess.check_output(curl_cmd, shell=True)
     response = json.loads(response)
     if not response.get('list', []):
-      print "ERROR there are no %s" % resource_type
+      print "ERROR there are no objects found for the resource type %s" \
+          % resource_type
       exit(1)
     return response['list'][0]['xid']
 
-  def update_curl_example(self, path):
+  def update_curl_example(self, path, dryrun=False):
     with file(path) as fd:
       content = fd.read()
 
@@ -116,17 +120,18 @@ class CurlChunkUpdater(object):
 
     if content != new_content:
       print "Updating", path
-      with file(path, 'w') as fd:
-        fd.write(new_content)
+      if not dryrun:
+        with file(path, 'w') as fd:
+          fd.write(new_content)
 
 
-def main(path, username, password, api_endpoint):
+def main(path, username, password, api_endpoint, dryrun=False):
   updater = CurlChunkUpdater(username, password, api_endpoint)
 
   def visit(arg, dirname, names):
     for name in names:
       if name.endswith('.txt'):
-        updater.update_curl_example('%s/%s' % (dirname, name))
+        updater.update_curl_example('%s/%s' % (dirname, name), dryrun=False)
 
   os.path.walk(path, visit, None)
 
@@ -147,6 +152,8 @@ if __name__ == '__main__':
                       help='Password to use against the API endpoint')
   parser.add_argument('--apiendpoint', required=True,
                       help='The API endpoint to hit')
+  parser.add_argument('--dryrun', default=False, action='store_true',
+                      help="Don't update any files")
   args = parser.parse_args()
 
-  main(args.pagesdir, args.username, args.password, args.apiendpoint)
+  main(args.pagesdir, args.username, args.password, args.apiendpoint, args.dryrun)
