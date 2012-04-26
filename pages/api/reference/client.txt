@@ -16,10 +16,10 @@ Creates a new client and returns the details
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 81,
-        "xid": "Bad:BR",
+        "id": 93,
+        "xid": "Bad:Bd",
         "state": "new",
-        "number": "046",
+        "number": "058",
         "name": "josh",
         "firstname": "josh",
         "surname": "",
@@ -54,8 +54,8 @@ Creates a new client and returns the details
           "paid_payments": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:BR/FOKGM9cs7jiO",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:BR/S7SYFN9RKIAd"
+          "statement": "https://demo.snapbill.com/statement/Bad:Bd/0vAKFF1EoYuV",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:Bd/kfoqXLgQoNQz"
         },
         "services": []
       }
@@ -67,9 +67,65 @@ Creates a new client and returns the details
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/client/*id*/get ###
 
-Creates a new client and returns the details
+Returns the details of a client.
 
 <pre class="prettyprint">
+<!-- eval: id = self.fetch_single('client', 'id') -->
+<div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/18/get.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "item",
+      "class": "client",
+      "client": {
+        "depth": 0,
+        "id": 18,
+        "xid": "Bad:S",
+        "state": "active",
+        "number": "004",
+        "name": "test test",
+        "firstname": "test",
+        "surname": "test",
+        "company": "",
+        "email": "",
+        "cell": "",
+        "country": {
+          "code": "ZA",
+          "iso2": "ZA",
+          "iso3": "ZAF",
+          "name": "South Africa"
+        },
+        "credit": 0,
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "state": "enabled"
+        },
+        "payment": "hyphen",
+        "payment_method": {
+          "depth": 1,
+          "code": "hyphen",
+          "name": "Hyphen"
+        },
+        "account": {
+          "id": 5789,
+          "xid": "Bad:Bad",
+          "username": "demo"
+        },
+        "totals": {
+          "unpaid_invoices": 100,
+          "paid_payments": "-48.00"
+        },
+        "urls": {
+          "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+        },
+        "services": []
+      }
+    }
+</div>
 </pre>
 </section>
 
@@ -79,15 +135,35 @@ Creates a new client and returns the details
 Updates details about the given client in the database
 
 <pre class="prettyprint">
+<!-- eval: id = self.fetch_single('client', 'id', 'query=josh') -->
+<div class="input">
+    $ curl -u user:pass -d "company=helkom&state=suspended" \
+    >      https://api.snapbill.com/v1/client/90/update.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "result",
+      "status": "ok"
+    }
+</div>
 </pre>
 </section>
 
 <section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
-### /v1/client/*id*/update ###
+### /v1/client/*id*/generate_invoice ###
 
 Generate a single invoice for a given client
 
-<pre class="prettyprint">
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/90/generate_invoice.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "result",
+      "status": "ok"
+    }
+</div>
 </pre>
 </section>
 
@@ -97,10 +173,10 @@ Generate a single invoice for a given client
 %state-table
 
 new
-  The state that all new clients are created in.
+  The state that all new clients are created in
 
 active
-  The state for a normal active client.
+  The state for a normal active client
 
 suspended
   This client has been suspended and can no longer access any services
