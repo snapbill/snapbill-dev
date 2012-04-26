@@ -10,6 +10,11 @@ import subprocess
 
 class CurlChunkUpdater(object):
 
+  DATA_UPDATES = (
+    ('xid', r'/\w+:\w+/', '/%s/'),
+    ('id', r'/\d+/', '/%s/'),
+  )
+
   def __init__(self, username, password, api_endpoint):
     self.username = username
     self.password = password
@@ -70,11 +75,12 @@ class CurlChunkUpdater(object):
                                 '%s:%s' % (self.username, self.password))
     curl_cmd = curl_cmd.replace('https://api.snapbill.com', self.api_endpoint)
 
-    # Possibly update any xids in the command
-    if 'xid' in self.data:
-      rep = '/%s/' % self.data['xid']
-      curl_cmd = re.sub(r'/\w+:\w+/', rep, curl_cmd)
-      original_curl_cmd = re.sub(r'/\w+:\w+/', rep, original_curl_cmd)
+    # Possibly update any valus in the curl command
+    for key, regex, fmt in self.DATA_UPDATES:
+      if key in self.data:
+        rep = fmt % self.data[key]
+        curl_cmd = re.sub(regex, rep, curl_cmd)
+        original_curl_cmd = re.sub(regex, rep, original_curl_cmd)
 
     # Hit the api and update URLS in the response
     response = subprocess.check_output(curl_cmd, shell=True)
@@ -93,16 +99,17 @@ class CurlChunkUpdater(object):
     return ('<div class="input">%s</div><div class="output">\n%s\n</div>'
             % (original_curl_cmd, response))
 
-  def fetch_single(self, resource_type):
-    curl_cmd = 'curl -s -S -u %s:%s -d "" %s/v1/%s/list.json?perpage=1' \
-        % (self.username, self.password, self.api_endpoint, resource_type)
+  def fetch_single(self, resource_type, field, post_vars=''):
+    curl_cmd = 'curl -s -S -u %s:%s -d "%s" %s/v1/%s/list.json?perpage=1' \
+        % (self.username, self.password, post_vars,
+           self.api_endpoint, resource_type)
     response = subprocess.check_output(curl_cmd, shell=True)
     response = json.loads(response)
     if not response.get('list', []):
       print "ERROR there are no objects found for the resource type %s" \
           % resource_type
       exit(1)
-    return response['list'][0]['xid']
+    return response['list'][0][field]
 
   def update_curl_example(self, path, dryrun=False):
     with file(path) as fd:
