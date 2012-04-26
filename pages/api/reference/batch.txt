@@ -6,6 +6,8 @@ API Reference: Batch
 
 Fetch a batch and return the details
 
+<!-- eval: xid = self.fetch_single('batch') -->
+
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
     >      https://api.snapbill.com/v1/batch/BcV:Bu/get.json
