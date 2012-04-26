@@ -45,10 +45,10 @@ Add your new client **josh**
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 92,
-        "xid": "Bad:Bc",
+        "id": 94,
+        "xid": "Bad:Be",
         "state": "new",
-        "number": "057",
+        "number": "059",
         "name": "josh",
         "firstname": "josh",
         "surname": "",
@@ -83,8 +83,8 @@ Add your new client **josh**
           "paid_payments": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:Bc/FXVZFoQWahne",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:Bc/r3QZcB8j2Cum"
+          "statement": "https://demo.snapbill.com/statement/Bad:Be/HmjPUIYMCuHK",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:Be/ZS1xL7HQQLtQ"
         },
         "services": []
       }
@@ -108,55 +108,10 @@ Search for clients named **josh**
       "list": [
         {
           "depth": 0,
-          "id": 89,
-          "xid": "Bad:BZ",
+          "id": 94,
+          "xid": "Bad:Be",
           "state": "new",
-          "number": "054",
-          "name": "helkom (josh)",
-          "firstname": "josh",
-          "surname": "",
-          "company": "helkom",
-          "email": "josh@example.com",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "bdb",
-          "payment_method": {
-            "depth": 1,
-            "code": "bdb",
-            "name": "BDB Data"
-          },
-          "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
-            "username": "debitor"
-          },
-          "totals": {
-            "unpaid_invoices": 0,
-            "paid_payments": 0
-          },
-          "urls": {
-            "statement": "http://debitor.snap/statement/Bad:BZ/RUheqKpYvypS",
-            "payment": "http://debitor.snap/payment/client/Bad:BZ/eKQzg2d8G02T"
-          },
-          "services": []
-        },
-        {
-          "depth": 0,
-          "id": 90,
-          "xid": "Bad:Ba",
-          "state": "new",
-          "number": "055",
+          "number": "059",
           "name": "josh",
           "firstname": "josh",
           "surname": "",
@@ -191,98 +146,8 @@ Search for clients named **josh**
             "paid_payments": 0
           },
           "urls": {
-            "statement": "http://debitor.snap/statement/Bad:Ba/Za9XXpGJW0P9",
-            "payment": "http://debitor.snap/payment/client/Bad:Ba/bkWltFWq5Sjd"
-          },
-          "services": []
-        },
-        {
-          "depth": 0,
-          "id": 91,
-          "xid": "Bad:Bb",
-          "state": "new",
-          "number": "056",
-          "name": "josh",
-          "firstname": "josh",
-          "surname": "",
-          "company": "",
-          "email": "josh@example.com",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "bdb",
-          "payment_method": {
-            "depth": 1,
-            "code": "bdb",
-            "name": "BDB Data"
-          },
-          "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
-            "username": "debitor"
-          },
-          "totals": {
-            "unpaid_invoices": 0,
-            "paid_payments": 0
-          },
-          "urls": {
-            "statement": "http://debitor.snap/statement/Bad:Bb/LJPy9O48TRZq",
-            "payment": "http://debitor.snap/payment/client/Bad:Bb/Wro6GgbQezK3"
-          },
-          "services": []
-        },
-        {
-          "depth": 0,
-          "id": 92,
-          "xid": "Bad:Bc",
-          "state": "new",
-          "number": "057",
-          "name": "josh",
-          "firstname": "josh",
-          "surname": "",
-          "company": "",
-          "email": "josh@example.com",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "bdb",
-          "payment_method": {
-            "depth": 1,
-            "code": "bdb",
-            "name": "BDB Data"
-          },
-          "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
-            "username": "debitor"
-          },
-          "totals": {
-            "unpaid_invoices": 0,
-            "paid_payments": 0
-          },
-          "urls": {
-            "statement": "http://debitor.snap/statement/Bad:Bc/FXVZFoQWahne",
-            "payment": "http://debitor.snap/payment/client/Bad:Bc/r3QZcB8j2Cum"
+            "statement": "http://debitor.snap/statement/Bad:Be/HmjPUIYMCuHK",
+            "payment": "http://debitor.snap/payment/client/Bad:Be/ZS1xL7HQQLtQ"
           },
           "services": []
         }
@@ -294,7 +159,7 @@ Search for clients named **josh**
 Change the clients name to **george**
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "firstname=george" \
-    >      https://api.snapbill.com/v1/client/89/update.json
+    >      https://api.snapbill.com/v1/client/94/update.json
 </div><div class="output">
     {
       "code": 200,
@@ -307,7 +172,7 @@ Change the clients name to **george**
 Remove the client
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/89/delete.json
+    >      https://api.snapbill.com/v1/client/94/delete.json
 </div><div class="output">
     {
       "code": 200,

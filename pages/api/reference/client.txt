@@ -7,7 +7,7 @@ API Reference: Client
 Creates a new client and returns the details
 
 <pre class="prettyprint"><div class="input">
-    $ curl -u user:pass -d "firstname=josh&email=josh@example.com" \
+    $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
     >      https://api.snapbill.com/v1/client/add.json
 </div><div class="output">
     {
@@ -16,15 +16,15 @@ Creates a new client and returns the details
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 93,
-        "xid": "Bad:Bd",
+        "id": 95,
+        "xid": "Bad:Bf",
         "state": "new",
-        "number": "058",
-        "name": "josh",
-        "firstname": "josh",
+        "number": "060",
+        "name": "jane",
+        "firstname": "jane",
         "surname": "",
         "company": "",
-        "email": "josh@example.com",
+        "email": "jane@example.com",
         "cell": "",
         "country": {
           "code": "ZA",
@@ -54,8 +54,8 @@ Creates a new client and returns the details
           "paid_payments": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:Bd/0vAKFF1EoYuV",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:Bd/kfoqXLgQoNQz"
+          "statement": "https://demo.snapbill.com/statement/Bad:Bf/Sru3pcJfiOZl",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:Bf/UgDtdZqGrgmX"
         },
         "services": []
       }
@@ -135,10 +135,10 @@ Returns the details of a client.
 Updates details about the given client in the database
 
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('client', 'id', 'query=josh') -->
+<!-- eval: id = self.fetch_single('client', 'id', 'query=jane') -->
 <div class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/90/update.json
+    >      https://api.snapbill.com/v1/client/95/update.json
 </div><div class="output">
     {
       "code": 200,
@@ -156,7 +156,7 @@ Generate a single invoice for a given client
 
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/90/generate_invoice.json
+    >      https://api.snapbill.com/v1/client/95/generate_invoice.json
 </div><div class="output">
     {
       "code": 200,
