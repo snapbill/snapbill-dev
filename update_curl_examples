@@ -136,7 +136,7 @@ class CurlChunkUpdater(object):
           fd.write(new_content)
 
 
-def main(path, username, password, api_endpoint, dryrun=False):
+def main(path, username, password, api_endpoint, src=[], dryrun=False):
   updater = CurlChunkUpdater(username, password, api_endpoint)
 
   def visit(arg, dirname, names):
@@ -144,7 +144,11 @@ def main(path, username, password, api_endpoint, dryrun=False):
       if name.endswith('.txt'):
         updater.update_curl_example('%s/%s' % (dirname, name), dryrun)
 
-  os.path.walk(path, visit, None)
+  if src:
+    for path in src:
+      updater.update_curl_example(os.path.abspath(path), dryrun)
+  else:
+    os.path.walk(path, visit, None)
 
 
 if __name__ == '__main__':
@@ -155,16 +159,19 @@ if __name__ == '__main__':
 
   parser = argparse.ArgumentParser(description='Updates CURL API examples in '
                                    'the markdown files under the pages directory')
+  parser.add_argument('src', nargs='*',
+                      help='Specify specific files to process')
   parser.add_argument('--pagesdir', default=pages_dir,
                       help='The directory to process. Default %s' % pages_dir)
   parser.add_argument('--username', required=True,
                       help='Username to use against the API endpoint')
-  parser.add_argument('--password', required=True,
+  parser.add_argument('--password', default='pass',
                       help='Password to use against the API endpoint')
-  parser.add_argument('--apiendpoint', required=True,
+  parser.add_argument('--apiendpoint', default='http://api.snap',
                       help='The API endpoint to hit')
   parser.add_argument('--dryrun', default=False, action='store_true',
                       help="Don't update any files")
   args = parser.parse_args()
 
-  main(args.pagesdir, args.username, args.password, args.apiendpoint, args.dryrun)
+  main(args.pagesdir, args.username, args.password, args.apiendpoint,
+       args.src, args.dryrun)
