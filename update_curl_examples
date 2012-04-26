@@ -44,18 +44,8 @@ class CurlChunkUpdater(object):
     else:
       return obj
 
-  def update_chunk(self, matchobj):
-    eval_part = matchobj.group(1) if matchobj.group(1) else ''
-    eval_var = matchobj.group(2)
-    eval_str = matchobj.group(3)
-    original_curl_cmd = matchobj.group(4)
-
-    # Possibly run a command first
-    if eval_var:
-      self.data[eval_var] = eval(eval_str, globals(), locals())
-
-    # Parse the curl command part into something we can pass to the command
-    # line
+  def _parse_curl_chunk(self, original_curl_cmd):
+    'Parses the pretty formatted curl chunk into a single line command'
     curl_cmd = []
     for line in original_curl_cmd.splitlines():
       line = line.strip()
@@ -72,8 +62,10 @@ class CurlChunkUpdater(object):
     # Make curl less noisy
     curl_cmd.insert(1, '-s')
     curl_cmd.insert(1, '-S')
-    curl_cmd = ' '.join(curl_cmd)
+    return ' '.join(curl_cmd)
 
+  def _update_curl_cmd(self, original_curl_cmd, curl_cmd):
+    'Update variables like username and password in the curl command'
     # check if the curl_cmd has everything we need in it
     assert 'user:pass' in curl_cmd
     assert 'https://api.snapbill.com/v1/' in curl_cmd
@@ -90,7 +82,10 @@ class CurlChunkUpdater(object):
         curl_cmd = re.sub(regex, rep, curl_cmd)
         original_curl_cmd = re.sub(regex, rep, original_curl_cmd)
 
-    # Hit the api and update URLS in the response
+    return (original_curl_cmd, curl_cmd)
+
+  def _get_api_response(self, curl_cmd):
+    'Hit the api and update URLS in the response'
     response = subprocess.check_output(curl_cmd, shell=True)
     try:
       response = json.loads(response, object_pairs_hook=OrderedDict)
@@ -103,6 +98,23 @@ class CurlChunkUpdater(object):
     response = self.update_response(response)
     response = json.dumps(response, indent=2)
     response = '\n'.join('    ' + line for line in response.splitlines())
+    return response
+
+  def update_chunk(self, matchobj):
+    eval_part = matchobj.group(1) if matchobj.group(1) else ''
+    eval_var = matchobj.group(2)
+    eval_str = matchobj.group(3)
+    original_curl_cmd = matchobj.group(4)
+
+    # Possibly run a command first
+    if eval_var:
+      self.data[eval_var] = eval(eval_str, globals(), locals())
+
+    # Parse the curl cmd and get a response from the API
+    curl_cmd = self._parse_curl_chunk(original_curl_cmd)
+    original_curl_cmd, curl_cmd = self._update_curl_cmd(original_curl_cmd,
+                                                        curl_cmd)
+    response = self._get_api_response(curl_cmd)
 
     return ('%s<div class="input">%s</div><div class="output">\n%s\n</div>'
             % (eval_part, original_curl_cmd, response))
@@ -124,7 +136,7 @@ class CurlChunkUpdater(object):
       content = fd.read()
 
     self.data = {}
-    regex = (r'(<!--\s+eval:\s+(\w+)\s*=\s*(.*)\s+-->\s*)?'
+    regex = (r'(<!--\s+eval:\s+(\w+)\s*=\s*(.+?)\s+-->\s*)?'
              r'<div class="input">(.*?)</div>\s*'
              r'(<div class="output">.*?</div>)?')
     new_content = re.sub(regex, self.update_chunk, content, flags=re.DOTALL)
