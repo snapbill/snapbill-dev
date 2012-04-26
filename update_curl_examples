@@ -11,7 +11,7 @@ import subprocess
 class CurlChunkUpdater(object):
 
   DATA_UPDATES = (
-    ('xid', r'/\w+:\w+/', '/%s/'),
+    ('xid', r'/[A-Za-z0-9_-]+:[A-Za-z0-9_-]+/', '/%s/'),
     ('id', r'/\d+/', '/%s/'),
   )
 
