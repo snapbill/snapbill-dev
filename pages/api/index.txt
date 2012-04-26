@@ -45,10 +45,10 @@ Add your new client **josh**
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 94,
-        "xid": "Bad:Be",
+        "id": 126,
+        "xid": "Bad:B-",
         "state": "new",
-        "number": "059",
+        "number": "091",
         "name": "josh",
         "firstname": "josh",
         "surname": "",
@@ -83,8 +83,8 @@ Add your new client **josh**
           "paid_payments": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:Be/HmjPUIYMCuHK",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:Be/ZS1xL7HQQLtQ"
+          "statement": "https://demo.snapbill.com/statement/Bad:B-/u9J3mYUSmc1c",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:B-/LwqRg4oMOpvj"
         },
         "services": []
       }
@@ -108,10 +108,10 @@ Search for clients named **josh**
       "list": [
         {
           "depth": 0,
-          "id": 94,
-          "xid": "Bad:Be",
+          "id": 126,
+          "xid": "Bad:B-",
           "state": "new",
-          "number": "059",
+          "number": "091",
           "name": "josh",
           "firstname": "josh",
           "surname": "",
@@ -146,8 +146,8 @@ Search for clients named **josh**
             "paid_payments": 0
           },
           "urls": {
-            "statement": "http://debitor.snap/statement/Bad:Be/HmjPUIYMCuHK",
-            "payment": "http://debitor.snap/payment/client/Bad:Be/ZS1xL7HQQLtQ"
+            "statement": "http://debitor.snap/statement/Bad:B-/u9J3mYUSmc1c",
+            "payment": "http://debitor.snap/payment/client/Bad:B-/LwqRg4oMOpvj"
           },
           "services": []
         }
@@ -159,7 +159,7 @@ Search for clients named **josh**
 Change the clients name to **george**
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "firstname=george" \
-    >      https://api.snapbill.com/v1/client/94/update.json
+    >      https://api.snapbill.com/v1/client/126/update.json
 </div><div class="output">
     {
       "code": 200,
@@ -172,7 +172,7 @@ Change the clients name to **george**
 Remove the client
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/94/delete.json
+    >      https://api.snapbill.com/v1/client/126/delete.json
 </div><div class="output">
     {
       "code": 200,

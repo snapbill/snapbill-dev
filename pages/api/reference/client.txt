@@ -16,10 +16,10 @@ Creates a new client and returns the details
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 95,
-        "xid": "Bad:Bf",
+        "id": 127,
+        "xid": "Bad:B_",
         "state": "new",
-        "number": "060",
+        "number": "092",
         "name": "jane",
         "firstname": "jane",
         "surname": "",
@@ -54,8 +54,8 @@ Creates a new client and returns the details
           "paid_payments": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:Bf/Sru3pcJfiOZl",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:Bf/UgDtdZqGrgmX"
+          "statement": "https://demo.snapbill.com/statement/Bad:B_/fHyo7QvCbIbq",
+          "payment": "https://demo.snapbill.com/payment/client/Bad:B_/vqSnzm2Nk85N"
         },
         "services": []
       }
@@ -103,11 +103,11 @@ Returns the details of a client.
           "format": "R%.2f",
           "state": "enabled"
         },
-        "payment": "hyphen",
+        "payment": "other",
         "payment_method": {
           "depth": 1,
-          "code": "hyphen",
-          "name": "Hyphen"
+          "code": "other",
+          "name": "Other"
         },
         "account": {
           "id": 5789,
@@ -115,14 +115,73 @@ Returns the details of a client.
           "username": "demo"
         },
         "totals": {
-          "unpaid_invoices": 100,
+          "unpaid_invoices": 422.8,
           "paid_payments": "-48.00"
         },
         "urls": {
           "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
           "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
         },
-        "services": []
+        "services": {
+          "2001": {
+            "id": 2001,
+            "xid": "Bad:fR",
+            "state": "active",
+            "name": "Pancake Delivery",
+            "created": "2012-04-26 16:46:30",
+            "renewal": "2012-06-01 00:00:00",
+            "package": "Delicious Pancakes",
+            "term": "1",
+            "data": {
+              "created": "2012-04-26 16:46:30",
+              "name": "Pancake Delivery",
+              "package": "Delicious Pancakes",
+              "renewal": "2012-06-01 00:00:00",
+              "term": "1"
+            },
+            "service_type": {
+              "id": 158,
+              "name": "Pancake Delivery"
+            },
+            "client": {
+              "depth": 2,
+              "id": 18,
+              "xid": "Bad:S",
+              "state": "active",
+              "number": "004",
+              "name": "test test"
+            }
+          },
+          "2002": {
+            "id": 2002,
+            "xid": "Bad:fS",
+            "state": "active",
+            "name": "Pancake Delivery",
+            "created": "2012-04-26 17:00:42",
+            "renewal": "2012-04-26 00:00:00",
+            "package": "Delicious Pancakes",
+            "term": "1",
+            "data": {
+              "created": "2012-04-26 17:00:42",
+              "name": "Pancake Delivery",
+              "package": "Delicious Pancakes",
+              "renewal": "2012-04-26 00:00:00",
+              "term": "1"
+            },
+            "service_type": {
+              "id": 158,
+              "name": "Pancake Delivery"
+            },
+            "client": {
+              "depth": 2,
+              "id": 18,
+              "xid": "Bad:S",
+              "state": "active",
+              "number": "004",
+              "name": "test test"
+            }
+          }
+        }
       }
     }
 </div>
@@ -138,7 +197,7 @@ Updates details about the given client in the database
 <!-- eval: id = self.fetch_single('client', 'id', 'query=jane') -->
 <div class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/95/update.json
+    >      https://api.snapbill.com/v1/client/127/update.json
 </div><div class="output">
     {
       "code": 200,
@@ -149,6 +208,153 @@ Updates details about the given client in the database
 </pre>
 </section>
 
+<section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
+### /v1/client/*id*/add_invoice ###
+
+Add an invoice for a client. The example adds an invoice with two items.
+
+<pre class="prettyprint">
+<!-- eval: id = self.fetch_single('client', 'id') -->
+<div class="input">
+    $ curl -u user:pass -d \
+    >   "date=2013-01-07&description[]=rolls&unit_cost[]=1.12&quantity[]=13&description[]=chips&unit_cost[]=20&quantity[]=1" \
+    >   https://api.snapbill.com/v1/client/18/add_invoice.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "item",
+      "class": "invoice",
+      "invoice": {
+        "id": 47,
+        "xid": "Bad:v",
+        "state": "unpaid",
+        "date": "2012-04-26",
+        "due_date": "2012-04-26",
+        "name": "Invoice 004/0038",
+        "number": "004/0038",
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "state": "enabled"
+        },
+        "subtotal": 34.56,
+        "taxes": [],
+        "discount": 0,
+        "total": 34.56,
+        "lines": [
+          {
+            "id": 52,
+            "item_name": "",
+            "description": "rolls",
+            "unit_cost": "1.12",
+            "quantity": "13",
+            "total": 14.56,
+            "package": null,
+            "term": null,
+            "service_provider": {
+              "fee": 0,
+              "charged": "0"
+            }
+          },
+          {
+            "id": 53,
+            "item_name": "",
+            "description": "chips",
+            "unit_cost": "20",
+            "quantity": "1",
+            "total": 20,
+            "package": null,
+            "term": null,
+            "service_provider": {
+              "fee": 0,
+              "charged": "0"
+            }
+          }
+        ],
+        "client": {
+          "depth": 1,
+          "id": 18,
+          "xid": "Bad:S",
+          "state": "active",
+          "number": "004",
+          "name": "test test",
+          "firstname": "test",
+          "surname": "test",
+          "company": "",
+          "email": "",
+          "cell": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "state": "enabled"
+          },
+          "payment": "other",
+          "payment_method": {
+            "depth": 2,
+            "code": "other",
+            "name": "Other"
+          },
+          "account": {
+            "id": 5789,
+            "xid": "Bad:Bad",
+            "username": "demo"
+          },
+          "totals": {
+            "unpaid_invoices": 457.36,
+            "paid_payments": "-48.00"
+          },
+          "urls": {
+            "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
+            "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+          }
+        }
+      }
+    }
+</div>
+</pre>
+
+#### Add Invoice Parameters ####
+
+%parameter-table
+type: add
+    The type of invoice to generate. The default is invoice. You can specify either quote, invoice or credit.
+
+state: add
+    The state of the invoice. The default is unpaid. You can specify either draft, unpaid, quote or credit.
+
+date: add
+    The due date shown on the invoice. This field is required.
+
+discount: add
+    A percentage discount to apply to the invoice. This field is not required.
+
+po_number: add
+    An optional purchase number to show for the invoice. This field is not required.
+
+description[]: add
+    A description for an invoice item
+
+unit_cost[]: add
+    The cost for a unit of an invoice item
+
+quantity[]: add
+    The amount of units of an invoice item
+    
+%%%
+
+The invoice items can be repeated (description, unit_cost, quantity). The
+first description matches up with the first unit_cost and quantity. Similarly
+for the 2nd description, etc.
+
+</section>
+
 <section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
 ### /v1/client/*id*/generate_invoice ###
 
@@ -156,7 +362,300 @@ Generate a single invoice for a given client
 
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/95/generate_invoice.json
+    >      https://api.snapbill.com/v1/client/18/generate_invoice.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "item",
+      "class": "invoice",
+      "invoice": {
+        "id": 48,
+        "xid": "Bad:w",
+        "state": "unpaid",
+        "date": "2012-04-26",
+        "due_date": "2012-04-26",
+        "name": "Invoice 004/0039",
+        "number": "004/0039",
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "state": "enabled"
+        },
+        "subtotal": 150,
+        "taxes": [],
+        "discount": 0,
+        "total": 150,
+        "lines": [
+          {
+            "id": 54,
+            "item_name": "",
+            "description": "Pancake Delivery: Delicious Pancakes Setup Fee",
+            "unit_cost": 50,
+            "quantity": 1,
+            "total": 50,
+            "package": "Delicious Pancakes",
+            "term": null,
+            "service_provider": {
+              "fee": 0,
+              "charged": "0"
+            },
+            "service": {
+              "id": 2002,
+              "xid": "Bad:fS",
+              "state": "active",
+              "name": "Pancake Delivery",
+              "created": "2012-04-26 17:00:42",
+              "renewal": "2012-06-01 00:00:00",
+              "package": "Delicious Pancakes",
+              "term": "1",
+              "data": {
+                "created": "2012-04-26 17:00:42",
+                "name": "Pancake Delivery",
+                "package": "Delicious Pancakes",
+                "renewal": "2012-06-01 00:00:00",
+                "term": "1"
+              },
+              "service_type": {
+                "id": 158,
+                "name": "Pancake Delivery"
+              },
+              "client": {
+                "depth": 2,
+                "id": 18,
+                "xid": "Bad:S",
+                "state": "active",
+                "number": "004",
+                "name": "test test"
+              }
+            }
+          },
+          {
+            "id": 55,
+            "item_name": "",
+            "description": "Pancake Delivery: Delicious Pancakes Monthly Fee (May 2012)",
+            "unit_cost": 100,
+            "quantity": 1,
+            "total": 100,
+            "package": "Delicious Pancakes",
+            "term": "1",
+            "service_provider": {
+              "fee": 0,
+              "charged": "0"
+            },
+            "service": {
+              "id": 2002,
+              "xid": "Bad:fS",
+              "state": "active",
+              "name": "Pancake Delivery",
+              "created": "2012-04-26 17:00:42",
+              "renewal": "2012-06-01 00:00:00",
+              "package": "Delicious Pancakes",
+              "term": "1",
+              "data": {
+                "created": "2012-04-26 17:00:42",
+                "name": "Pancake Delivery",
+                "package": "Delicious Pancakes",
+                "renewal": "2012-06-01 00:00:00",
+                "term": "1"
+              },
+              "service_type": {
+                "id": 158,
+                "name": "Pancake Delivery"
+              },
+              "client": {
+                "depth": 2,
+                "id": 18,
+                "xid": "Bad:S",
+                "state": "active",
+                "number": "004",
+                "name": "test test"
+              }
+            }
+          }
+        ],
+        "client": {
+          "depth": 1,
+          "id": 18,
+          "xid": "Bad:S",
+          "state": "active",
+          "number": "004",
+          "name": "test test",
+          "firstname": "test",
+          "surname": "test",
+          "company": "",
+          "email": "",
+          "cell": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "state": "enabled"
+          },
+          "payment": "other",
+          "payment_method": {
+            "depth": 2,
+            "code": "other",
+            "name": "Other"
+          },
+          "account": {
+            "id": 5789,
+            "xid": "Bad:Bad",
+            "username": "demo"
+          },
+          "totals": {
+            "unpaid_invoices": 607.36,
+            "paid_payments": "-48.00"
+          },
+          "urls": {
+            "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
+            "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+          }
+        }
+      }
+    }
+</div>
+</pre>
+</section>
+
+<section class="api-call" id="add-service" data-title="/add_service" markdown=1>
+### /v1/client/*id*/add_service ###
+
+Adds a service to a client
+
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "service_type_id=158&package=Delicious%20Pancakes&term=1" \
+    >      https://api.snapbill.com/v1/client/18/add_service.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "item",
+      "class": "service",
+      "service": {
+        "id": 2003,
+        "xid": "Bad:fT",
+        "state": "active",
+        "name": "Pancake Delivery",
+        "created": "2012-04-26 17:12:03",
+        "renewal": "2012-04-26 17:12:03",
+        "package": "Delicious Pancakes",
+        "term": "1",
+        "data": {
+          "created": "2012-04-26 17:12:03",
+          "name": "Pancake Delivery",
+          "package": "Delicious Pancakes",
+          "renewal": "2012-04-26 17:12:03",
+          "term": "1"
+        },
+        "service_type": {
+          "id": 158,
+          "name": "Pancake Delivery"
+        },
+        "client": {
+          "depth": 1,
+          "id": 18,
+          "xid": "Bad:S",
+          "state": "active",
+          "number": "004",
+          "name": "test test",
+          "firstname": "test",
+          "surname": "test",
+          "company": "",
+          "email": "",
+          "cell": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "state": "enabled"
+          },
+          "payment": "other",
+          "payment_method": {
+            "depth": 2,
+            "code": "other",
+            "name": "Other"
+          },
+          "account": {
+            "id": 5789,
+            "xid": "Bad:Bad",
+            "username": "demo"
+          },
+          "totals": {
+            "unpaid_invoices": 607.36,
+            "paid_payments": "-48.00"
+          },
+          "urls": {
+            "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
+            "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+          }
+        }
+      }
+    }
+</div>
+</pre>
+
+#### Add Service Parameters ####
+%parameter-table
+service_type_id: add
+    The id of the service to add. This field is required
+
+package: add
+    The name of the package to use in the service. This field is required
+
+term: add
+    The renewal term. This field is required
+
+data-*customfieldname*: add
+    Optionally specify custom fields for a package.
+    
+%%%
+
+</section>
+
+<section class="api-call" id="set-payment" data-title="/set_payment" markdown=1>
+### /v1/client/*id*/set_payment ###
+
+Sets the payment method and details for a client. The parameters passed in
+depend on the payment method. To find out the parameters visit
+https://api.snapbill.com/v1/client/*id*/set_payment.json?post or
+https://api.snapbill.com/v1/client/*id*/set_payment
+
+The example below updates the payment type to other which requires no extra parameters.
+
+<pre class="prettyprint"><div class="input">
+    $ curl -u user:pass -d "payment_method_code=other" \
+    >      https://api.snapbill.com/v1/client/18/set_payment.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "result",
+      "status": "ok"
+    }
+</div>
+</pre>
+</section>
+
+<section class="api-call" id="delete" data-title="/delete" markdown=1>
+### /v1/client/*id*/delete ###
+
+Deletes a client from the database
+
+<pre class="prettyprint">
+<!-- eval: id = self.fetch_single('client', 'id', 'query=jane') -->
+<div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/127/delete.json
 </div><div class="output">
     {
       "code": 200,
