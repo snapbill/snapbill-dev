@@ -1,6 +1,114 @@
 API Reference: Invoice
 =======================
 
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/invoice/*id*/get ###
+
+<pre class="prettyprint">
+<!-- eval: id = self.fetch_single('invoice', 'id') -->
+<div class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/invoice/1/get.json
+</div><div class="output">
+    {
+      "code": 200,
+      "type": "item",
+      "class": "invoice",
+      "invoice": {
+        "id": 1,
+        "xid": "Bad:B",
+        "state": "pending",
+        "date": "2012-02-23",
+        "due_date": "2012-02-23",
+        "name": "Pending invoice 001/0001",
+        "number": "001/0001",
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "state": "enabled"
+        },
+        "subtotal": 150,
+        "taxes": [],
+        "discount": 0,
+        "total": 150,
+        "lines": [
+          {
+            "id": 1,
+            "item_name": "",
+            "description": "one fifty",
+            "unit_cost": "150.00",
+            "quantity": "1.00",
+            "total": "150.00",
+            "package": null,
+            "term": null,
+            "service_provider": {
+              "fee": 0,
+              "charged": "0"
+            }
+          }
+        ],
+        "client": {
+          "depth": 1,
+          "id": 10,
+          "xid": "Bad:K",
+          "state": "dead",
+          "number": "001",
+          "name": "John",
+          "firstname": "John",
+          "surname": "",
+          "company": "",
+          "email": "a@b.c",
+          "cell": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "state": "enabled"
+          },
+          "payment": "bdb",
+          "payment_method": {
+            "depth": 2,
+            "code": "bdb",
+            "name": "BDB Data"
+          },
+          "account": {
+            "id": 5789,
+            "xid": "Bad:Bad",
+            "username": "demo"
+          },
+          "totals": {
+            "unpaid_invoices": 0,
+            "paid_payments": 0
+          },
+          "urls": {
+            "statement": "https://demo.snapbill.com/statement/Bad:K/dukAZDsLj2Xo",
+            "payment": "https://demo.snapbill.com/payment/client/Bad:K/HuluZDzxkHia"
+          }
+        }
+      }
+    }
+</div>
+</pre>
+</section>
+
+<section class="api-call" id="pdf" data-title="/pdf" markdown=1>
+### /v1/invoice/*id*/pdf ###
+
+Retrieve the invoice rendered as a PDF.
+</section>
+
+<section class="api-call" id="html" data-title="/html" markdown=1>
+### /v1/invoice/*id*/html ###
+
+Retrieve the invoice rendered in HTML.
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
