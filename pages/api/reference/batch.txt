@@ -8,40 +8,13 @@ Fetch a batch and return the details
 
 <!-- eval: batch_id = self.fetch_single('batch', 'id') -->
 
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->362/get.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "batch",
-      "batch": {
-        "depth": 0,
-        "id": 362,
-        "xid": "CHh:Fq",
-        "state": "ready",
-        "action_date": "2012-08-15",
-        "submit_date": null,
-        "payment_method": {
-          "depth": 1,
-          "code": "netcash",
-          "name": "Netcash Collect"
-        },
-        "options": {
-          "type": "two-day",
-          "account": ""
-        },
-        "account": {
-          "depth": 1,
-          "id": 8673,
-          "xid": "CHh:CHh",
-          "username": "demo"
-        }
-      }
-    }
-</div>
+    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->366/get.json
+</pre><pre class="output">
+%%json:examples/batch.txt-1.json%
+</pre>
 </pre>
 </section>
 

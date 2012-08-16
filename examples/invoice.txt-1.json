@@ -1,0 +1,215 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 10,
+      "class": "invoice",
+      "list": [
+        {
+          "id": 283298,
+          "xid": "CHl:BFKi",
+          "created": "2012-08-16 16:03:40",
+          "state": "unpaid",
+          "date": "2012-08-16",
+          "due_date": "2012-08-16",
+          "name": "Invoice 001/0001",
+          "number": "001/0001",
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "subtotal": "50.00",
+          "subtotal_cents": 5000,
+          "taxes": [],
+          "discount": "50.00",
+          "total": "50.00",
+          "total_cents": 5000,
+          "lines": [
+            {
+              "id": 368659,
+              "item_name": "",
+              "description": "Sample",
+              "unit_cost": "50.00",
+              "unit_cost_cents": 5000,
+              "quantity": "1.00",
+              "total": "50.00",
+              "total_cents": 5000,
+              "package": null,
+              "term": null,
+              "service_provider": {
+                "fee": 0,
+                "charged": "0"
+              },
+              "charge": {
+                "id": 4105,
+                "xid": "CHl:BAJ",
+                "amount": 50,
+                "currency": {
+                  "code": "ZAR",
+                  "format": "R%.2f",
+                  "enabled": true
+                },
+                "recurrence": {
+                  "4840": {
+                    "description": "Once-off"
+                  }
+                }
+              }
+            }
+          ],
+          "client": {
+            "depth": 1,
+            "id": 118684,
+            "xid": "CHl:c-c",
+            "state": "new",
+            "number": "001",
+            "name": "test2551",
+            "firstname": "test2551",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 8677,
+              "xid": "CHl:CHl",
+              "username": "szwuzpio"
+            },
+            "totals": {
+              "unpaid_invoices": "50.00",
+              "unpaid_invoices_cents": 5000,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "http://szwuzpio.snap/statement/CHl:c-c/eBVvJyfqTyeR",
+              "payment": "http://szwuzpio.snap/payment/client/CHl:c-c/A9IEB2fF9jso"
+            }
+          }
+        },
+        {
+          "id": 283299,
+          "xid": "CHl:BFKj",
+          "created": "2012-08-16 16:03:40",
+          "state": "unpaid",
+          "date": "2012-08-16",
+          "due_date": "2012-08-16",
+          "name": "Invoice 002/0002",
+          "number": "002/0002",
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "subtotal": "50.00",
+          "subtotal_cents": 5000,
+          "taxes": [],
+          "discount": "50.00",
+          "total": "50.00",
+          "total_cents": 5000,
+          "lines": [
+            {
+              "id": 368660,
+              "item_name": "",
+              "description": "Sample",
+              "unit_cost": "50.00",
+              "unit_cost_cents": 5000,
+              "quantity": "1.00",
+              "total": "50.00",
+              "total_cents": 5000,
+              "package": null,
+              "term": null,
+              "service_provider": {
+                "fee": 0,
+                "charged": "0"
+              },
+              "charge": {
+                "id": 4106,
+                "xid": "CHl:BAK",
+                "amount": 50,
+                "currency": {
+                  "code": "ZAR",
+                  "format": "R%.2f",
+                  "enabled": true
+                },
+                "recurrence": {
+                  "4841": {
+                    "description": "Once-off"
+                  }
+                }
+              }
+            }
+          ],
+          "client": {
+            "depth": 1,
+            "id": 118685,
+            "xid": "CHl:c-d",
+            "state": "new",
+            "number": "002",
+            "name": "test0534",
+            "firstname": "test0534",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 8677,
+              "xid": "CHl:CHl",
+              "username": "szwuzpio"
+            },
+            "totals": {
+              "unpaid_invoices": "50.00",
+              "unpaid_invoices_cents": 5000,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "http://szwuzpio.snap/statement/CHl:c-d/mi8Fa7pA2YVv",
+              "payment": "http://szwuzpio.snap/payment/client/CHl:c-d/NWIZ2XzNCXpj"
+            }
+          }
+        }
+      ]
+    }

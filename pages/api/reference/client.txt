@@ -6,65 +6,12 @@ API Reference: Client
 
 Creates a new client and returns the details
 
-<pre class="prettyprint"><div class="input">
+<pre><pre class="input">
     $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
     >      https://api.snapbill.com/v1/client/add.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "client",
-      "client": {
-        "depth": 0,
-        "id": 118641,
-        "xid": "CHh:c9x",
-        "state": "new",
-        "number": "012",
-        "name": "jane",
-        "firstname": "jane",
-        "surname": "",
-        "company": "",
-        "email": "jane@example.com",
-        "cell": "",
-        "country": {
-          "code": "ZA",
-          "iso2": "ZA",
-          "iso3": "ZAF",
-          "name": "South Africa"
-        },
-        "credit": "0.00",
-        "credit_cents": 0,
-        "currency": {
-          "code": "ZAR",
-          "format": "R%.2f",
-          "state": "enabled"
-        },
-        "payment": "netcash",
-        "payment_method": {
-          "depth": 1,
-          "code": "netcash",
-          "name": "Netcash Collect"
-        },
-        "account": {
-          "depth": 1,
-          "id": 8673,
-          "xid": "CHh:CHh",
-          "username": "demo"
-        },
-        "totals": {
-          "unpaid_invoices": "0.00",
-          "unpaid_invoices_cents": 0,
-          "paid_payments": "0.00",
-          "paid_payments_cents": 0
-        },
-        "urls": {
-          "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
-          "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
-        },
-        "services": []
-      }
-    }
-</div>
+</pre><pre class="output">
+%%json:examples/client.txt-1.json%
+</pre>
 </pre>
 </section>
 
@@ -74,66 +21,13 @@ Creates a new client and returns the details
 Returns the details of a client.
 
 <!-- eval: client_id = self.previous['client']['id'] -->
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/get.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "client",
-      "client": {
-        "depth": 0,
-        "id": 118641,
-        "xid": "CHh:c9x",
-        "state": "new",
-        "number": "012",
-        "name": "jane",
-        "firstname": "jane",
-        "surname": "",
-        "company": "",
-        "email": "jane@example.com",
-        "cell": "",
-        "country": {
-          "code": "ZA",
-          "iso2": "ZA",
-          "iso3": "ZAF",
-          "name": "South Africa"
-        },
-        "credit": "0.00",
-        "credit_cents": 0,
-        "currency": {
-          "code": "ZAR",
-          "format": "R%.2f",
-          "state": "enabled"
-        },
-        "payment": "netcash",
-        "payment_method": {
-          "depth": 1,
-          "code": "netcash",
-          "name": "Netcash Collect"
-        },
-        "account": {
-          "depth": 1,
-          "id": 8673,
-          "xid": "CHh:CHh",
-          "username": "demo"
-        },
-        "totals": {
-          "unpaid_invoices": "0.00",
-          "unpaid_invoices_cents": 0,
-          "paid_payments": "0.00",
-          "paid_payments_cents": 0
-        },
-        "urls": {
-          "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
-          "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
-        },
-        "services": []
-      }
-    }
-</div>
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/get.json
+</pre><pre class="output">
+%%json:examples/client.txt-2.json%
+</pre>
 </pre>
 </section>
 
@@ -142,299 +36,33 @@ Returns the details of a client.
 
 Updates details about the given client in the database
 
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/update.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "result",
-      "status": "ok"
-    }
-</div>
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/update.json
+</pre><pre class="output">
+%%json:examples/client.txt-3.json%
+</pre>
 </pre>
 </section>
 
 <section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
 ### /v1/client/*id*/add_invoice ###
 
-Add an invoice for a client. The example adds an invoice with two items.
-
-<pre class="prettyprint">
-<div class="input">
-    $ curl -u user:pass -d "date=2013-01-07" \
-    >   -d "description[]=rolls&unit_cost[]=1.12&quantity[]=13" \
-    >   -d "description[]=chips&unit_cost[]=20&quantity[]=1" \
-    >   https://api.snapbill.com/v1/client/<!-- client_id -->118641/add_invoice.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "invoice",
-      "invoice": {
-        "id": 283261,
-        "xid": "CHh:BFJ9",
-        "created": "2012-08-16 14:54:28",
-        "state": "unpaid",
-        "date": "2012-08-16",
-        "due_date": "2012-08-16",
-        "name": "Invoice 012/0011",
-        "number": "012/0011",
-        "currency": {
-          "code": "ZAR",
-          "format": "R%.2f",
-          "state": "enabled"
-        },
-        "subtotal": "34.56",
-        "subtotal_cents": 3456,
-        "taxes": [],
-        "discount": "34.56",
-        "total": "34.56",
-        "total_cents": 3456,
-        "lines": [
-          {
-            "id": 368615,
-            "item_name": "",
-            "description": "rolls",
-            "unit_cost": "1.12",
-            "unit_cost_cents": 112,
-            "quantity": "13.00",
-            "total": "14.56",
-            "total_cents": 1456,
-            "package": null,
-            "term": null,
-            "service_provider": {
-              "fee": 0,
-              "charged": "0"
-            }
-          },
-          {
-            "id": 368616,
-            "item_name": "",
-            "description": "chips",
-            "unit_cost": "20.00",
-            "unit_cost_cents": 2000,
-            "quantity": "1.00",
-            "total": "20.00",
-            "total_cents": 2000,
-            "package": null,
-            "term": null,
-            "service_provider": {
-              "fee": 0,
-              "charged": "0"
-            }
-          }
-        ],
-        "client": {
-          "depth": 1,
-          "id": 118641,
-          "xid": "CHh:c9x",
-          "state": "new",
-          "number": "012",
-          "name": "helkom (jane)",
-          "firstname": "jane",
-          "surname": "",
-          "company": "helkom",
-          "email": "jane@example.com",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": "0.00",
-          "credit_cents": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "netcash",
-          "payment_method": {
-            "depth": 2,
-            "code": "netcash",
-            "name": "Netcash Collect"
-          },
-          "account": {
-            "depth": 1,
-            "id": 8673,
-            "xid": "CHh:CHh",
-            "username": "demo"
-          },
-          "totals": {
-            "unpaid_invoices": "34.56",
-            "unpaid_invoices_cents": 3456,
-            "paid_payments": "0.00",
-            "paid_payments_cents": 0
-          },
-          "urls": {
-            "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
-            "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
-          }
-        }
-      }
-    }
-</div>
-</pre>
-
-#### Add Invoice Parameters ####
-
-%parameter-table
-type: add
-    The type of invoice to generate. The default is invoice. You can specify either quote, invoice or credit.
-
-state: add
-    The state of the invoice. The default is unpaid. You can specify either draft, unpaid, quote or credit.
-
-date: add
-    The due date shown on the invoice. This field is required.
-
-discount: add
-    A percentage discount to apply to the invoice. This field is not required.
-
-po_number: add
-    An optional purchase number to show for the invoice. This field is not required.
-
-description[]: add
-    A description for an invoice item
-
-unit_cost[]: add
-    The cost for a unit of an invoice item
-
-quantity[]: add
-    The amount of units of an invoice item
-    
-%%%
-
-The invoice items can be repeated (description, unit_cost, quantity). The
-first description matches up with the first unit_cost and quantity. Similarly
-for the 2nd description, etc.
+Adds an invoice for the client. [Full documentation is in the Invoice section.](/api/reference/invoice#add-invoice)
 
 </section>
 
 <section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
+
 ### /v1/client/*id*/generate_invoice ###
-
-Generate a single invoice for a given client
-
-<pre class="prettyprint"><div class="input">
-    $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/generate_invoice.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "result",
-      "status": "ok"
-    }
-</div>
-</pre>
+Generate an invoice for the client with due services and charges. [Full documentation is in the Invoice section.](/api/reference/invoice#generate-invoice)
 </section>
 
 <section class="api-call" id="add-service" data-title="/add_service" markdown=1>
 ### /v1/client/*id*/add_service ###
 
-Adds a service to a client
-
-<!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
-
-<pre class="prettyprint"><div class="input">
-    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1337&package=Delicious%20Pancakes&term=1" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/add_service.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "service",
-      "service": {
-        "id": 115971,
-        "xid": "CHh:cUD",
-        "state": "new",
-        "name": "Pancake Delivery",
-        "created": "2012-08-16 14:54:29",
-        "renewal": "2012-08-16 14:54:29",
-        "package": "Delicious Pancakes",
-        "term": "1",
-        "data": {
-          "created": "2012-08-16 14:54:29",
-          "name": "Pancake Delivery",
-          "package": "Delicious Pancakes",
-          "renewal": "2012-08-16 14:54:29",
-          "term": "1"
-        },
-        "service_type": {
-          "id": 1337,
-          "name": "Pancake Delivery"
-        },
-        "client": {
-          "depth": 1,
-          "id": 118641,
-          "xid": "CHh:c9x",
-          "state": "new",
-          "number": "012",
-          "name": "helkom (jane)",
-          "firstname": "jane",
-          "surname": "",
-          "company": "helkom",
-          "email": "jane@example.com",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": "0.00",
-          "credit_cents": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "netcash",
-          "payment_method": {
-            "depth": 2,
-            "code": "netcash",
-            "name": "Netcash Collect"
-          },
-          "account": {
-            "depth": 1,
-            "id": 8673,
-            "xid": "CHh:CHh",
-            "username": "demo"
-          },
-          "totals": {
-            "unpaid_invoices": "34.56",
-            "unpaid_invoices_cents": 3456,
-            "paid_payments": "0.00",
-            "paid_payments_cents": 0
-          },
-          "urls": {
-            "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
-            "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
-          }
-        }
-      }
-    }
-</div>
-</pre>
-
-#### Add Service Parameters ####
-%parameter-table
-service_type_id: add
-    The id of the service to add. This field is required
-
-package: add
-    The name of the package to use in the service. This field is required
-
-term: add
-    The renewal term. This field is required
-
-data-*customfieldname*: add
-    Optionally specify custom fields for a package.
-    
-%%%
+Adds a service to a client. [Full documentation is in the service section.](/api/reerence/service#add-service)
 
 </section>
 
@@ -448,16 +76,12 @@ https://api.snapbill.com/v1/client/*id*/set_payment
 
 The example below updates the payment type to other which requires no extra parameters.
 
-<pre class="prettyprint"><div class="input">
+<pre><pre class="input">
     $ curl -u user:pass -d "payment_method_code=other" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/set_payment.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "result",
-      "status": "ok"
-    }
-</div>
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/set_payment.json
+</pre><pre class="output">
+%%json:examples/client.txt-7.json%
+</pre>
 </pre>
 </section>
 
@@ -466,17 +90,13 @@ The example below updates the payment type to other which requires no extra para
 
 Deletes a client from the database
 
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/delete.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "result",
-      "status": "ok"
-    }
-</div>
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/delete.json
+</pre><pre class="output">
+%%json:examples/client.txt-8.json%
+</pre>
 </pre>
 </section>
 

@@ -1,0 +1,29 @@
+    {
+      "code": 200,
+      "type": "item",
+      "class": "batch",
+      "batch": {
+        "depth": 0,
+        "id": 366,
+        "xid": "CHl:Fu",
+        "state": "ready",
+        "action_date": "2012-08-15",
+        "submit_date": null,
+        "payment_method": {
+          "depth": 1,
+          "code": "netcash",
+          "name": "Netcash Collect",
+          "enabled": true
+        },
+        "options": {
+          "type": "two-day",
+          "account": ""
+        },
+        "account": {
+          "depth": 1,
+          "id": 8677,
+          "xid": "CHl:CHl",
+          "username": "demo"
+        }
+      }
+    }

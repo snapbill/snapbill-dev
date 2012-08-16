@@ -1,0 +1,33 @@
+    {
+      "code": 200,
+      "type": "item",
+      "class": "action",
+      "action": {
+        "depth": 0,
+        "id": 2829979,
+        "xid": "CHl:Ky6b",
+        "url": "/client/update/state",
+        "path": "/client/update/state",
+        "link": "/client/CHl:c-3",
+        "item_type": "client",
+        "description": "george was removed",
+        "details": {
+          "from": "new",
+          "to": "dead"
+        },
+        "date": "2012-08-16 16:58:53",
+        "client": {
+          "depth": 2,
+          "id": 118711,
+          "xid": "CHl:c-3",
+          "state": "dead",
+          "number": "028",
+          "name": "george"
+        },
+        "user": {
+          "depth": 2,
+          "id": 6144,
+          "username": "demo"
+        }
+      }
+    }

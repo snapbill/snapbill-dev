@@ -1,0 +1,140 @@
+    {
+      "code": 200,
+      "type": "form",
+      "controls": [
+        {
+          "type": "textbox",
+          "name": "number",
+          "caption": "Client Number"
+        },
+        {
+          "type": "textbox",
+          "name": "firstname",
+          "caption": "First Name",
+          "tip": "Used in friendly email templates - \"Hi John,\""
+        },
+        {
+          "type": "textbox",
+          "name": "surname",
+          "caption": "Surname"
+        },
+        {
+          "type": "email",
+          "name": "email",
+          "caption": "Email Address",
+          "tip": "Required in order to email invoices"
+        },
+        {
+          "type": "tel",
+          "name": "cell",
+          "caption": "Cellphone Number",
+          "tip": "Useful for getting hold of client in emergencies"
+        },
+        {
+          "options": [
+            {
+              "caption": "South African Rand",
+              "key": "ZAR"
+            }
+          ],
+          "multiple": false,
+          "case": true,
+          "type": "select",
+          "name": "currency_code",
+          "caption": "Currency",
+          "tip": "Invoices and payments will be recorded in this currency",
+          "default": "ZAR",
+          "required": true
+        },
+        {
+          "options": [
+            {
+              "caption": "Netcash Collect",
+              "key": "netcash"
+            },
+            {
+              "caption": "Other",
+              "key": "other"
+            }
+          ],
+          "multiple": false,
+          "case": true,
+          "type": "select",
+          "name": "payment_method_code",
+          "caption": "Payment method",
+          "tip": "Setup more payment options in the Setup section",
+          "required": true
+        },
+        {
+          "type": "textbox",
+          "name": "company",
+          "caption": "Company name",
+          "tip": "Shown as primary account name"
+        },
+        {
+          "type": "hidden",
+          "name": "country_code",
+          "value": "ZA"
+        },
+        {
+          "type": "hidden",
+          "name": "state",
+          "value": "new"
+        },
+        {
+          "type": "hidden",
+          "name": "coupon",
+          "value": ""
+        },
+        {
+          "type": "textbox",
+          "name": "public_name",
+          "caption": "Name"
+        },
+        {
+          "type": "email",
+          "name": "public_email",
+          "caption": "Email Address"
+        },
+        {
+          "type": "textbox",
+          "name": "public_street",
+          "caption": "Street Address"
+        },
+        {
+          "type": "textbox",
+          "name": "public_postal",
+          "caption": "Postal Address"
+        },
+        {
+          "type": "textbox",
+          "name": "public_city",
+          "caption": "City"
+        },
+        {
+          "type": "textbox",
+          "name": "public_province",
+          "caption": "Province / State"
+        },
+        {
+          "type": "textbox",
+          "name": "public_country",
+          "caption": "Country"
+        },
+        {
+          "type": "textbox",
+          "name": "public_postcode",
+          "caption": "Postal Code"
+        },
+        {
+          "type": "textbox",
+          "name": "public_phone",
+          "caption": "Phone number"
+        },
+        {
+          "type": "textbox",
+          "name": "public_fax",
+          "caption": "Fax number"
+        }
+      ]
+    }

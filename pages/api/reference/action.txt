@@ -7,45 +7,13 @@ API Reference: Batch
 Fetch an action and return the details
 
 <!-- eval: action_id = self.fetch_single('action', 'id') -->
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/action/<!-- action_id -->2829530/get.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "action",
-      "action": {
-        "depth": 0,
-        "id": 2829530,
-        "xid": "CHh:Kyza",
-        "url": "/client/update/state",
-        "path": "/client/update/state",
-        "link": "/client/CHh:c9w",
-        "item_type": "client",
-        "description": "george was removed",
-        "details": {
-          "from": "new",
-          "to": "dead"
-        },
-        "date": "2012-08-16 14:54:26",
-        "client": {
-          "depth": 2,
-          "id": 118640,
-          "xid": "CHh:c9w",
-          "state": "dead",
-          "number": "011",
-          "name": "george"
-        },
-        "user": {
-          "depth": 2,
-          "id": 6140,
-          "username": "demo"
-        }
-      }
-    }
-</div>
+    >      https://api.snapbill.com/v1/action/<!-- action_id -->2829979/get.json
+</pre><pre class="output">
+%%json:examples/action.txt-1.json%
+</pre>
 </pre>
 </section>
 

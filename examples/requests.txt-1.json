@@ -1,0 +1,9 @@
+    {
+      "code": 200,
+      "type": "index",
+      "index": {
+        "add": "/v1/client/add",
+        "list": "/v1/client/list",
+        "{id}": "/v1/client/{id}"
+      }
+    }

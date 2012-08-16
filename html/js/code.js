@@ -2,33 +2,20 @@
 $(function() {
 
   // Load in google pretty printer
+  $('pre.input').addClass('prettyprint');
   prettyPrint();
 
-  $('pre .expanded').each(function() {
+  $('pre .closeable .closeable .closeable .closeable').each(function() {
     var self = this;
-    var html = $(this).html();
-    $(this).empty();
+    var html = $(this).css('display', 'none');
+    var button = $('<span class="expand-button">');
 
-    var div = $(this).closest('div');
-    var fn = div.data('expand');
-    if (fn) {
-      div.data('expand', function() {
-        $(self).html(html);
-        fn();
-      });
-      return;
-    }
-
-    var button = div.find('.expand');
-
-    div.data('expand', function() {
-      $(self).html(html);
-      button.remove();
-    });
+    $(self).before(button);
 
     button.append(
       $('<img src="/img/ellipsis.gif">').click(function() {
-        div.data('expand')();
+        $(self).css('display', 'block');
+        $(this).remove();
       })
     );
   });

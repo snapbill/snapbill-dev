@@ -1,0 +1,14 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "service_type",
+      "list": [
+        {
+          "id": 1341,
+          "xid": "CHl:U9",
+          "name": "Pancake Delivery"
+        }
+      ]
+    }

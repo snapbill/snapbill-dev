@@ -1,0 +1,11 @@
+    {
+      "code": 200,
+      "type": "item",
+      "class": "payment_method",
+      "payment_method": {
+        "depth": 0,
+        "code": "other",
+        "name": "Other",
+        "enabled": true
+      }
+    }

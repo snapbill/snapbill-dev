@@ -33,35 +33,16 @@ class View_Markdown extends View {
     Layout_Page::content();
 
     /***
-     * %curl-out
-     *
-     * Transforms into a in-out
+     * %%json:<filename>%
      **/
-    $content = preg_replace_callback("/\n%curl-out\n((.|\n)*?)\n%%%\n((.|\n)*?)\n%%%\n/", function ($m) {
-      $curl = array_map('trim', explode(' ', trim($m[1])));
-      if (count($curl) == 1) {
-        $curl = '$ curl -u apidemo:pass https://api.snapbill.com'.$curl[0];
-      }
 
-      return "\n%in-out\n$curl\n%%%\n{$m[3]}\n%%%\n";
+    $content = preg_replace_callback("/%%json:([^%]+)%/", function ($filename) {
+      $json = trim(file_get_contents($filename[1]));
+
+      $json = json_decode($json, True);
+      return '<div class="json">'.JSONPretty::val($json).'</div>';
+
     }, $content);
-
-    /***
-     * %in-out
-     *
-     * Transforms into a in-out
-     **/
-    $content = preg_replace_callback("/\n%in-out\n((.|\n)*?)\n%%%\n((.|\n)*?)\n%%%\n/", function ($m) {
-
-      $html = '<pre class="prettyprint"><div class="input">';
-      $html .= '    '.str_replace("\n", "\n    ", $m[1]);
-      $html .= '</div><div class="output">';
-      $html .= '    '.str_replace("\n", "\n    ", $m[3]);
-      $html .= '</div></pre>'."\n";
-
-      return $html;
-    }, $content);
-
     /***
      * %parameter-table
      *
@@ -84,7 +65,7 @@ class View_Markdown extends View {
         $tags = array_map('trim', explode(',', $tags));
 
         $name = str_replace('->', '&#8627; ', $name);
-        $md .= '<tr><td>'.$name.'</td>';
+        $md .= '<tr><td nowrap="nowrap">'.$name.'</td>';
         foreach (array('add', 'get', 'update') as $column) {
           if (in_array($column, $tags, True)) {
             $label = '<span class="label label-'.$column.'">'.$column.'</span>';
@@ -139,9 +120,8 @@ class View_Markdown extends View {
     /***
      * %expand%
      **/
-    $content = str_replace('%expand%', '<span class="expand"></span>', $content);
     $content = preg_replace_callback("/<%((.|\n)*?)%>/", function ($m) {
-      return '<span class="expanded">'.$m[1].'</span>';
+      return '<span class="expand">'.$m[1].'</span>';
     }, $content);
 
     /***

@@ -61,7 +61,7 @@ footer {
 #menu h2 a { color: #404040; }
 #menu h2 a:hover { color: #0069d6; }
 
-span.expand img {
+span.expand-button img {
   padding-left: 4px;
   cursor: pointer;
 }
@@ -105,11 +105,17 @@ section:target pre {
 }
 */
 
-pre .input {
+pre pre.input {
   background-color: #eaeaea;
+  border: none;
+  font-size: 1.1em;
+  padding: 8px 0;
 }
-pre .output {
+pre pre.output {
   background-color: #f3f3f3;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*** Jumbotron ***/
@@ -138,3 +144,29 @@ pre .output {
 footer {
   color: #666;
 }
+
+/*** JSON ***/
+.json {
+  font-family: monospace;
+  font-size: 1.1em;
+}
+.json ul {
+  margin: 0 0 0 25px;
+  padding: 0;
+}
+.json li {
+  list-style-type: none;
+}
+.json .key {
+  font-weight: bold;
+}
+.json .string {
+  color: green;
+}
+.json .number, .json .bool {
+  color: navy;
+}
+.json .null {
+  color: red;
+}
+

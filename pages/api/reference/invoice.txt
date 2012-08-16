@@ -1,124 +1,93 @@
 API Reference: Invoice
 =======================
 
+<section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
+### /v1/client/*id*/add_invoice ###
+
+Add an invoice for a client. The example adds an invoice with two items.
+
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "date=2013-01-07" \
+    >   -d "description[]=rolls&unit_cost[]=1.12&quantity[]=13" \
+    >   -d "description[]=chips&unit_cost[]=20&quantity[]=1" \
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->118712/add_invoice.json
+</pre><pre class="output">
+%%json:examples/client.txt-4.json%
+</pre>
+</pre>
+
+#### Add Invoice Parameters ####
+
+%parameter-table
+type: add
+    The type of invoice to generate. The default is invoice. You can specify either quote, invoice or credit.
+
+state: add
+    The state of the invoice. The default is unpaid. You can specify either draft, unpaid, quote or credit.
+
+date: add
+    The due date shown on the invoice. This field is required.
+
+discount: add
+    A percentage discount to apply to the invoice. This field is not required.
+
+po_number: add
+    An optional purchase number to show for the invoice. This field is not required.
+
+description[]: add
+    A description for an invoice item
+
+unit_cost[]: add
+    The cost for a unit of an invoice item
+
+quantity[]: add
+    The amount of units of an invoice item
+    
+%%%
+
+The invoice items can be repeated (description, unit_cost, quantity). The
+first description matches up with the first unit_cost and quantity. Similarly
+for the 2nd description, etc.
+
+</section>
+
+<section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
+### /v1/client/*id*/generate_invoice ###
+
+Generate a single invoice for a given client
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/generate_invoice.json
+</pre><pre class="output">
+%%json:examples/client.txt-5.json%
+</pre>
+</pre>
+</section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/invoice/list ###
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/invoice/list.json
+</pre><pre class="output">
+%%json:examples/invoice.txt-1.json%
+</pre></pre>
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/invoice/*id*/get ###
 
 <!-- eval: invoice_id = self.fetch_single('invoice', 'id') -->
 
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->283251/get.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "invoice",
-      "invoice": {
-        "id": 283251,
-        "xid": "CHh:BFJz",
-        "created": "2012-08-16 14:54:24",
-        "state": "unpaid",
-        "date": "2012-08-16",
-        "due_date": "2012-08-16",
-        "name": "Invoice 001/0001",
-        "number": "001/0001",
-        "currency": {
-          "code": "ZAR",
-          "format": "R%.2f",
-          "state": "enabled"
-        },
-        "subtotal": "50.00",
-        "subtotal_cents": 5000,
-        "taxes": [],
-        "discount": "50.00",
-        "total": "50.00",
-        "total_cents": 5000,
-        "lines": [
-          {
-            "id": 368605,
-            "item_name": "",
-            "description": "Sample",
-            "unit_cost": "50.00",
-            "unit_cost_cents": 5000,
-            "quantity": "1.00",
-            "total": "50.00",
-            "total_cents": 5000,
-            "package": null,
-            "term": null,
-            "service_provider": {
-              "fee": 0,
-              "charged": "0"
-            },
-            "charge": {
-              "id": 4065,
-              "xid": "CHh:_h",
-              "amount": 50,
-              "currency": {
-                "code": "ZAR",
-                "format": "R%.2f",
-                "state": "enabled"
-              },
-              "recurrence": {
-                "4800": {
-                  "description": "Once-off"
-                }
-              }
-            }
-          }
-        ],
-        "client": {
-          "depth": 1,
-          "id": 118630,
-          "xid": "CHh:c9m",
-          "state": "new",
-          "number": "001",
-          "name": "test8942",
-          "firstname": "test8942",
-          "surname": "",
-          "company": "",
-          "email": "",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": "0.00",
-          "credit_cents": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "netcash",
-          "payment_method": {
-            "depth": 2,
-            "code": "netcash",
-            "name": "Netcash Collect"
-          },
-          "account": {
-            "depth": 1,
-            "id": 8673,
-            "xid": "CHh:CHh",
-            "username": "demo"
-          },
-          "totals": {
-            "unpaid_invoices": "50.00",
-            "unpaid_invoices_cents": 5000,
-            "paid_payments": "0.00",
-            "paid_payments_cents": 0
-          },
-          "urls": {
-            "statement": "https://demo.snapbill.com/statement/CHh:c9m/wbvJ1b6V2I5Q",
-            "payment": "https://demo.snapbill.com/payment/client/CHh:c9m/PkkGXN0j1lpY"
-          }
-        }
-      }
-    }
-</div>
+    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->283298/get.json
+</pre><pre class="output">
+%%json:examples/invoice.txt-2.json%
+</pre>
 </pre>
 </section>
 
@@ -145,7 +114,94 @@ id: get
     The id of the invoice in the system. This is guaranteed to be unique only over a single account.
 
 xid: get
-    The xid of the invoice in the system. This is guaranteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+    The [xid](/home/concepts/xid) of the invoice in the system. This is guaranteed to be unique over all accounts.
+
+created: get
+  The date at which the invoice was created. In the format YYYY-MM-DD HH:MM:SS.
+
+state: get
+  The current state of the invoice
+
+date: get
+  The date listed on the invoice. This is usually the same as the created date, however it is different when invoices are generated ahead of time. e.g. Created:February 23rd, Date: March 1st, Due Date: March 15th.
+
+due_date: get
+  The date at which the invoice is due.
+
+name: get
+  A neatly formatted name for the invoice, including both its state and number.
+
+number: get
+  The unique (per account) number of the invoice. This is not strictly digits only, for example "INV002/15" is valid.
+
+currency: get
+    A [currency](/api/reference/currency) object the invoice was charged in.
+
+subtotal: get
+    The subtotal listed on the invoice (pre-tax+discount) as a string.
+
+subtotal_cents: get
+    The subtotal given as an integer number of cents.
+
+taxes: get
+    An array of different taxes applied to the invoice
+
+->name: get
+    A short name for the given tax
+
+->percent: get
+    The percentage applied for this tax
+
+->operation: get
+    Either "add" or "subtract" indicating whether how the tax affects the total.
+
+discount: get
+  A string indicating the discount that was applied on the invoice
+
+total: get
+  The total value of the invoice after discounts/tax as a string.
+
+total_cents: get
+  The total value as an integer number of cents.
+
+lines: get
+  An array of all the invoice lines
+
+->id: get
+  The id of the invoice line (unique per account)
+
+->xid: get
+    The [xid](/home/concepts/xid) of the line in the system. This is guaranteed to be unique over all accounts.
+
+->item_name: get
+    The item name for the line.
+
+->description: get
+    The description displayed on the invoice
+
+->unit_cost: get
+    The cost per unit of the line as a string
+
+->unit_cost_cents: get
+    The cost per unit of the line as an integer number of cents.
+
+->quantity: get
+    The quantity for the invoice line
+
+->total: get
+    The total of the given line (tax included) as a string
+
+->total_cents: get
+    The total as an integer number of cents
+
+->package: get
+    If the line is linked to a service, the package of that service at the time of generating the invoice.
+
+->term: get
+    If the line is linked to a service, the term of that service at the time of generating the invoice (or null for setup charges).
+
+client: get
+    A [client](/api/reference/client) object that the invoice was generated for.
 
 %%%
 

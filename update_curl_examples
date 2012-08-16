@@ -11,6 +11,8 @@ import subprocess
 
 class CurlChunkUpdater(object):
   previous = None
+  filename = None
+  count = 0
 
   def __init__(self, username, password, api_endpoint):
     self.log = logging.getLogger(__name__ + '.CurlChunkUpdater')
@@ -119,14 +121,20 @@ class CurlChunkUpdater(object):
     if eval_var:
       self.data[eval_var] = eval(eval_str, globals(), locals())
 
-    # Parse the curl cmd and get a response from the API
-    curl_cmd = self._parse_curl_chunk(original_curl_cmd)
-    original_curl_cmd, curl_cmd = self._update_curl_cmd(original_curl_cmd,
-                                                        curl_cmd)
-    response = self._get_api_response(curl_cmd)
+      return eval_part
+    else:
+      # Parse the curl cmd and get a response from the API
+      curl_cmd = self._parse_curl_chunk(original_curl_cmd)
+      original_curl_cmd, curl_cmd = self._update_curl_cmd(original_curl_cmd,
+                                                          curl_cmd)
+      response = self._get_api_response(curl_cmd)
+    
+      self.count += 1
+      filename = 'examples/%s-%d.json' % (self.filename, self.count)
+      file(filename, 'w').write(response)
 
-    return ('%s<div class="input">%s</div><div class="output">\n%s\n</div>'
-            % (eval_part, original_curl_cmd, response))
+      return ('<pre class="input">%s</pre><pre class="output">\n%s\n</pre>'
+          % (original_curl_cmd, '%%json:'+filename+'%'))
 
   def fetch_single(self, resource_type, field, post_vars=''):
     curl_cmd = 'curl -s -S -u %s:%s -d "%s" %s/v1/%s/list.json?perpage=1' \
@@ -142,13 +150,16 @@ class CurlChunkUpdater(object):
 
   def update_curl_example(self, path, dryrun=False):
     self.log.debug('update_curl_example %s', path)
+    self.filename = os.path.basename(path)
+    self.count = 0
+
     with file(path) as fd:
       content = fd.read()
 
     self.data = {}
-    regex = (r'(<!--\s+eval:\s+(\w+)\s*=\s*(.+?)\s+-->(.*?))?'
-             r'<div class="input">(.*?)</div>\s*'
-             r'(<div class="output">.*?</div>)?')
+    regex = (r'(<!--\s+eval:\s+(\w+)\s*=\s*(.+?)\s+-->(.*?))|'
+             r'<pre class="input">(.*?)</pre>\s*'
+             r'(<pre class="output">.*?</pre>)?')
     new_content = re.sub(regex, self.update_chunk, content, flags=re.DOTALL)
 
     if content != new_content:

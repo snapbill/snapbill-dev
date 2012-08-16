@@ -1,0 +1,28 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "payment_method",
+      "list": [
+        {
+          "depth": 0,
+          "code": "netcash",
+          "name": "Netcash Collect",
+          "enabled": true,
+          "currencies": [
+            {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "depth": 0,
+          "code": "other",
+          "name": "Other",
+          "enabled": true
+        }
+      ]
+    }

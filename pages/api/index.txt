@@ -23,10 +23,8 @@ We'll be setting up more later, but for now you can check out our Python
 API library on Github: [snapbill-pyapi](https://github.com/snapbill/snapbill-pyapi)
   </div>
   <div class="span3" markdown=1>
-### Pure awesome ####
-We're still adding content to this site and there is a space here so I'm
-just filling it with some random text (not really a big fan of that lorem
-ipsum thing really.)
+### Documentation on github ####
+This full website is available on github at [https://github.com/snapbill/snapbill-dev](https://github.com/snapbill/snapbill-dev). Feel free to issue a pull request, or simply send us an email if you notice any issues on this site.
   </div>
 </div>
 </section>
@@ -35,157 +33,39 @@ ipsum thing really.)
 ## tl;dr<span style="color: #ccc;"> (too long, didn't read)</span> ##
 
 Add your new client **josh**
-<pre class="prettyprint"><div class="input">
+<pre><pre class="input">
     $ curl -u user:pass -d "firstname=josh&email=josh@example.com" \
     >      https://api.snapbill.com/v1/client/add.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "item",
-      "class": "client",
-      "client": {
-        "depth": 0,
-        "id": 118640,
-        "xid": "CHh:c9w",
-        "state": "new",
-        "number": "011",
-        "name": "josh",
-        "firstname": "josh",
-        "surname": "",
-        "company": "",
-        "email": "josh@example.com",
-        "cell": "",
-        "country": {
-          "code": "ZA",
-          "iso2": "ZA",
-          "iso3": "ZAF",
-          "name": "South Africa"
-        },
-        "credit": "0.00",
-        "credit_cents": 0,
-        "currency": {
-          "code": "ZAR",
-          "format": "R%.2f",
-          "state": "enabled"
-        },
-        "payment": "netcash",
-        "payment_method": {
-          "depth": 1,
-          "code": "netcash",
-          "name": "Netcash Collect"
-        },
-        "account": {
-          "depth": 1,
-          "id": 8673,
-          "xid": "CHh:CHh",
-          "username": "demo"
-        },
-        "totals": {
-          "unpaid_invoices": "0.00",
-          "unpaid_invoices_cents": 0,
-          "paid_payments": "0.00",
-          "paid_payments_cents": 0
-        },
-        "urls": {
-          "statement": "https://demo.snapbill.com/statement/CHh:c9w/Sbx4tXd8Eo4l",
-          "payment": "https://demo.snapbill.com/payment/client/CHh:c9w/lIVdnfdJjT2E"
-        },
-        "services": []
-      }
-    }
-</div>
+</pre><pre class="output">
+%%json:examples/index.txt-1.json%
+</pre>
 </pre>
 
 Search for clients named **josh**
 <!-- eval: client_id = self.previous['client']['id'] -->
-<pre class="prettyprint">
-<div class="input">
+<pre>
+<pre class="input">
     $ curl -u user:pass -d "query=josh" \
     >      https://api.snapbill.com/v1/client/list.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "list",
-      "page": 1,
-      "numpages": 1,
-      "class": "client",
-      "list": [
-        {
-          "depth": 0,
-          "id": 118640,
-          "xid": "CHh:c9w",
-          "state": "new",
-          "number": "011",
-          "name": "josh",
-          "firstname": "josh",
-          "surname": "",
-          "company": "",
-          "email": "josh@example.com",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": "0.00",
-          "credit_cents": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "netcash",
-          "payment_method": {
-            "depth": 1,
-            "code": "netcash",
-            "name": "Netcash Collect"
-          },
-          "account": {
-            "depth": 1,
-            "id": 8673,
-            "xid": "CHh:CHh",
-            "username": "szdlqqcb"
-          },
-          "totals": {
-            "unpaid_invoices": "0.00",
-            "unpaid_invoices_cents": 0,
-            "paid_payments": "0.00",
-            "paid_payments_cents": 0
-          },
-          "urls": {
-            "statement": "http://szdlqqcb.snap/statement/CHh:c9w/Sbx4tXd8Eo4l",
-            "payment": "http://szdlqqcb.snap/payment/client/CHh:c9w/lIVdnfdJjT2E"
-          },
-          "services": []
-        }
-      ]
-    }
-</div>
+</pre><pre class="output">
+%%json:examples/index.txt-2.json%
+</pre>
 </pre>
 
 Change the clients name to **george**
-<pre class="prettyprint"><div class="input">
+<pre><pre class="input">
     $ curl -u user:pass -d "firstname=george" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118640/update.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "result",
-      "status": "ok"
-    }
-</div>
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118715/update.json
+</pre><pre class="output">
+%%json:examples/index.txt-3.json%
+</pre>
 </pre>
 
 Remove the client
-<pre class="prettyprint"><div class="input">
+<pre><pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118640/delete.json
-</div><div class="output">
-    {
-      "code": 200,
-      "type": "result",
-      "status": "ok"
-    }
-</div>
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118715/delete.json
+</pre><pre class="output">
+%%json:examples/index.txt-4.json%
+</pre>
 </pre>

@@ -1,6 +1,40 @@
 API Reference: Service
 =======================
 
+<section class="api-call" id="add-service" data-title="/add_service" markdown=1>
+### /v1/client/*id*/add_service ###
+
+Adds a service to a client.
+
+<!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1341&package=Delicious%20Pancakes&term=1" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/add_service.json
+</pre><pre class="output">
+%%json:examples/client.txt-6.json%
+</pre>
+</pre>
+
+#### Add Service Parameters ####
+%parameter-table
+service_type_id: add
+    The id of the service to add. This field is required
+
+package: add
+    The name of the package to use in the service. This field is required
+
+term: add
+    The renewal term. This field is required
+
+data-*customfieldname*: add
+    Optionally specify custom fields for a package.
+    
+%%%
+
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 

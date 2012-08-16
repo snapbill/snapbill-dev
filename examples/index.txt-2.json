@@ -1,0 +1,59 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "client",
+      "list": [
+        {
+          "depth": 0,
+          "id": 118715,
+          "xid": "CHl:c-7",
+          "state": "new",
+          "number": "032",
+          "name": "josh",
+          "firstname": "josh",
+          "surname": "",
+          "company": "",
+          "email": "josh@example.com",
+          "cell": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": "0.00",
+          "credit_cents": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "payment": "netcash",
+          "payment_method": {
+            "depth": 1,
+            "code": "netcash",
+            "name": "Netcash Collect",
+            "enabled": true
+          },
+          "account": {
+            "depth": 1,
+            "id": 8677,
+            "xid": "CHl:CHl",
+            "username": "szwuzpio"
+          },
+          "totals": {
+            "unpaid_invoices": "0.00",
+            "unpaid_invoices_cents": 0,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
+          },
+          "urls": {
+            "statement": "http://szwuzpio.snap/statement/CHl:c-7/C3WZJeHVdMC7",
+            "payment": "http://szwuzpio.snap/payment/client/CHl:c-7/GnfuE2GMOpSf"
+          },
+          "services": []
+        }
+      ]
+    }

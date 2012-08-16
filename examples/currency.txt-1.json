@@ -1,0 +1,14 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "currency",
+      "list": [
+        {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "enabled": true
+        }
+      ]
+    }

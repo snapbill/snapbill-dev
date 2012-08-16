@@ -1,0 +1,76 @@
+    {
+      "code": 200,
+      "type": "item",
+      "class": "service",
+      "service": {
+        "id": 115986,
+        "xid": "CHl:cUS",
+        "state": "new",
+        "name": "Pancake Delivery",
+        "created": "2012-08-16 16:58:56",
+        "renewal": "2012-08-16 16:58:56",
+        "package": "Delicious Pancakes",
+        "term": "1",
+        "data": {
+          "created": "2012-08-16 16:58:56",
+          "name": "Pancake Delivery",
+          "package": "Delicious Pancakes",
+          "renewal": "2012-08-16 16:58:56",
+          "term": "1"
+        },
+        "service_type": {
+          "id": 1341,
+          "xid": "CHl:U9",
+          "name": "Pancake Delivery"
+        },
+        "client": {
+          "depth": 1,
+          "id": 118712,
+          "xid": "CHl:c-4",
+          "state": "new",
+          "number": "029",
+          "name": "helkom (jane)",
+          "firstname": "jane",
+          "surname": "",
+          "company": "helkom",
+          "email": "jane@example.com",
+          "cell": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": "0.00",
+          "credit_cents": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "payment": "netcash",
+          "payment_method": {
+            "depth": 2,
+            "code": "netcash",
+            "name": "Netcash Collect",
+            "enabled": true
+          },
+          "account": {
+            "depth": 1,
+            "id": 8677,
+            "xid": "CHl:CHl",
+            "username": "demo"
+          },
+          "totals": {
+            "unpaid_invoices": "34.56",
+            "unpaid_invoices_cents": 3456,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
+          },
+          "urls": {
+            "statement": "https://demo.snapbill.com/statement/CHl:c-4/lUcKpv1S67Rj",
+            "payment": "https://demo.snapbill.com/payment/client/CHl:c-4/A3HTNdz3dakN"
+          }
+        }
+      }
+    }

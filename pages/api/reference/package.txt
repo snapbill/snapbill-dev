@@ -1,6 +1,20 @@
 API Reference: Package
 =======================
 
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/packages/list ###
+
+List all the packages that match the given options. Optionally 'service_type_id' and 'name' may be provided
+
+<!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
+<pre><pre class="input">
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1341" \
+    >      https://api.snapbill.com/v1/package/list.json
+</pre><pre class="output">
+%%json:examples/package.txt-1.json%
+</pre></pre>
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -12,7 +26,44 @@ name: get
     The name of the package. This is used as the reference and must be unique over a given account for a specific service type and currency.
 
 setup: get
-    The setup fee of the package as a floating point value in the set currency of the package.
+    The setup fee of the package as a string in the currency of the package.
+
+setup_cents: get
+    An integer value of the setup fee in cents.
+
+terms: get
+    An array of the different available terms for the package
+
+->type: get
+    The type of term. Only option at the moment is "daymonth".
+
+->day: get
+    The day at which the package is due. Always '1' at the moment.
+
+->interval: get
+    The number of months between renewals of the package. Monthly renewals will be set to 1, quarterly is 3, annually 12, ...
+
+->description: get
+    A neat description explaining the terms recurrence (Monthly / Two months / Annual / ...)
+
+->fee: get
+    The recurring fee for the package as a string.
+
+->fee_cents: get
+    An integer value of the fee measured in cents.
+
+currency: get
+    A [currency](/api/reference/currency) object for the package.
+
+service_type: get
+    A [service type](/api/reference/service_type) that the package belongs to.
+
+available: get
+    A boolean value indicating if the package is available on the signup form or not.
+
+state: get
+    The state the package is in. Usually "active" but will be set to "dead" if it is removed.
+
 
 %%%
 

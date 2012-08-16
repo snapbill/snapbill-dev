@@ -1,6 +1,19 @@
 API Reference: Currency
 =======================
 
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/currency/list ###
+
+List all the currencies that are enabled on the account.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/currency/list.json
+</pre><pre class="output">
+%%json:examples/currency.txt-1.json%
+</pre></pre>
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -14,8 +27,8 @@ code: get
 format: get
     A printf style format string for rendering amounts in this currencies standard format.
 
-state: get
-    The state of the currency based in the current account (either **enabled**, or **disabled**)
+enabled: get
+    Boolean value indicating whether the currency is enabled on the current account or not.
 
 %%%
 </section>

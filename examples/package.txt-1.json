@@ -1,0 +1,37 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "package",
+      "list": [
+        {
+          "depth": 0,
+          "name": "Delicious Pancakes",
+          "setup": "50.00",
+          "setup_cents": 5000,
+          "terms": [
+            {
+              "type": "daymonth",
+              "day": 1,
+              "interval": 1,
+              "description": "Monthly",
+              "fee": "240.00",
+              "fee_cents": 24000
+            }
+          ],
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "service_type": {
+            "id": 1341,
+            "xid": "CHl:U9",
+            "name": "Pancake Delivery"
+          },
+          "available": true,
+          "state": "active"
+        }
+      ]
+    }

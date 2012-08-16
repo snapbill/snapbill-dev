@@ -1,0 +1,33 @@
+API Reference: Service Type
+=======================
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/service_type/list ###
+
+<!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/service_type/list.json
+</pre><pre class="output">
+%%json:examples/service_type.txt-1.json%
+</pre></pre>
+
+<section id="parameters" data-title="parameters" markdown=1>
+### Parameter listing ###
+
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the payment method that was provided. depth=0 is the highest level that provides full detail.
+
+id: get
+The id of this service type. Unique over a single accounts.
+
+
+xid: get
+The [xid](/home/concepts/xid) of the service type. This is guaranteed to be unique over all accounts.
+
+name: get
+The name of the service type as chosen by the user.
+
+%%%
+</section>
