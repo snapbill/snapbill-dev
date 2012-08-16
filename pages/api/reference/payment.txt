@@ -1,6 +1,18 @@
 API Reference: Payment
 =======================
 
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/payment/list ###
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/payment/list.json
+</pre><pre class="output">
+%%json:examples/payment.txt-1.json%
+</pre></pre>
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -12,8 +24,31 @@ id: get
     The id of the payment in the system. This is guaranteed to be unique only over a single account.
 
 xid: get
-    The xid of the payment in the system. This is guaranteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+    The [xid](/home/concepts/xid) of the payment in the system. This is guaranteed to be unique over all accounts.
 
+client: get
+    The [client](/api/reference/client) the payment was for.
+
+currency: get
+    A [currency](/api/reference/currency) object the payment was made in.
+
+batch: get
+    A [batch](/api/reference/batch) object if the payment was on a batch.
+
+payment_method: get
+    A [payment_method](/api/reference/payment_method) object through which the payment was made.
+
+amount: get
+    The payment amount as a string.
+
+amount_cents: get
+    The payment amount as an integer number of cents.
+
+reference: get
+    The reference code that was submitted with the payment.
+
+state: get
+    The current state of the payment.
 %%%
 
 </section>

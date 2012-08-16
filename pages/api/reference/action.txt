@@ -10,7 +10,7 @@ Fetch an action and return the details
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/action/<!-- action_id -->2829979/get.json
+    >      https://api.snapbill.com/v1/action/<!-- action_id -->2830745/get.json
 </pre><pre class="output">
 %%json:examples/action.txt-1.json%
 </pre>

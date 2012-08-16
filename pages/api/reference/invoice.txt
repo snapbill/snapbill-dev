@@ -1,6 +1,13 @@
 API Reference: Invoice
 =======================
 
+<section id="quotations" data-title="quotations" markdown=1>
+### Quotations and Credit Notes ###
+
+Internally Quotations and Credit Notes are all stored as Invoice objects, however they will have the "type" field set accordingly.
+
+</section>
+
 <section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
 ### /v1/client/*id*/add_invoice ###
 
@@ -12,9 +19,9 @@ Add an invoice for a client. The example adds an invoice with two items.
     $ curl -u user:pass -d "date=2013-01-07" \
     >   -d "description[]=rolls&unit_cost[]=1.12&quantity[]=13" \
     >   -d "description[]=chips&unit_cost[]=20&quantity[]=1" \
-    >   https://api.snapbill.com/v1/client/<!-- client_id -->118712/add_invoice.json
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->118818/add_invoice.json
 </pre><pre class="output">
-%%json:examples/client.txt-4.json%
+%%json:examples/invoice.txt-1.json%
 </pre>
 </pre>
 
@@ -60,9 +67,9 @@ Generate a single invoice for a given client
 
 <pre><pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/generate_invoice.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118818/generate_invoice.json
 </pre><pre class="output">
-%%json:examples/client.txt-5.json%
+%%json:examples/invoice.txt-2.json%
 </pre>
 </pre>
 </section>
@@ -74,7 +81,7 @@ Generate a single invoice for a given client
     $ curl -u user:pass -d "perpage=2" \
     >      https://api.snapbill.com/v1/invoice/list.json
 </pre><pre class="output">
-%%json:examples/invoice.txt-1.json%
+%%json:examples/invoice.txt-3.json%
 </pre></pre>
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/invoice/*id*/get ###
@@ -84,9 +91,9 @@ Generate a single invoice for a given client
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->283298/get.json
+    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->283419/get.json
 </pre><pre class="output">
-%%json:examples/invoice.txt-2.json%
+%%json:examples/invoice.txt-4.json%
 </pre>
 </pre>
 </section>
@@ -119,6 +126,9 @@ xid: get
 created: get
   The date at which the invoice was created. In the format YYYY-MM-DD HH:MM:SS.
 
+type: add, get
+  The type of invoice object. Either "invoice", "quote", "credit" (Credit Note) or "debit" (Debit Note).
+
 state: get
   The current state of the invoice
 
@@ -133,6 +143,9 @@ name: get
 
 number: get
   The unique (per account) number of the invoice. This is not strictly digits only, for example "INV002/15" is valid.
+
+po_number: add, get
+    An optional purchase number to show for the invoice.
 
 currency: get
     A [currency](/api/reference/currency) object the invoice was charged in.
@@ -155,7 +168,7 @@ taxes: get
 ->operation: get
     Either "add" or "subtract" indicating whether how the tax affects the total.
 
-discount: get
+discount: add, get
   A string indicating the discount that was applied on the invoice
 
 total: get
@@ -176,16 +189,16 @@ lines: get
 ->item_name: get
     The item name for the line.
 
-->description: get
+->description: add, get
     The description displayed on the invoice
 
-->unit_cost: get
+->unit_cost: add, get
     The cost per unit of the line as a string
 
 ->unit_cost_cents: get
     The cost per unit of the line as an integer number of cents.
 
-->quantity: get
+->quantity: add, get
     The quantity for the invoice line
 
 ->total: get

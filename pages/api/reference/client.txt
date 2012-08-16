@@ -24,7 +24,7 @@ Returns the details of a client.
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/get.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/get.json
 </pre><pre class="output">
 %%json:examples/client.txt-2.json%
 </pre>
@@ -39,7 +39,7 @@ Updates details about the given client in the database
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/update.json
 </pre><pre class="output">
 %%json:examples/client.txt-3.json%
 </pre>
@@ -78,9 +78,9 @@ The example below updates the payment type to other which requires no extra para
 
 <pre><pre class="input">
     $ curl -u user:pass -d "payment_method_code=other" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/set_payment.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/set_payment.json
 </pre><pre class="output">
-%%json:examples/client.txt-7.json%
+%%json:examples/client.txt-4.json%
 </pre>
 </pre>
 </section>
@@ -93,9 +93,9 @@ Deletes a client from the database
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->118712/delete.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/delete.json
 </pre><pre class="output">
-%%json:examples/client.txt-8.json%
+%%json:examples/client.txt-5.json%
 </pre>
 </pre>
 </section>

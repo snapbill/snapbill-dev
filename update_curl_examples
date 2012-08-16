@@ -137,7 +137,8 @@ class CurlChunkUpdater(object):
           % (original_curl_cmd, '%%json:'+filename+'%'))
 
   def fetch_single(self, resource_type, field, post_vars=''):
-    curl_cmd = 'curl -s -S -u %s:%s -d "%s" %s/v1/%s/list.json?perpage=1' \
+    'Fetch the last item of the given type'
+    curl_cmd = 'curl -s -S -u %s:%s -d "%s" %s/v1/%s/list.json?page=1&perpage=50' \
         % (self.username, self.password, post_vars,
            self.api_endpoint, resource_type)
     response = subprocess.check_output(curl_cmd, shell=True)

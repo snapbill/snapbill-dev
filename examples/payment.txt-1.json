@@ -1,0 +1,226 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 5,
+      "class": "payment",
+      "list": [
+        {
+          "id": 259882,
+          "xid": "CHu:_cq",
+          "client": {
+            "depth": 0,
+            "id": 118818,
+            "xid": "CHu:dAi",
+            "state": "new",
+            "number": "001",
+            "name": "test4308",
+            "firstname": "test4308",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 1,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 8686,
+              "xid": "CHu:CHu",
+              "username": "szdmidnz"
+            },
+            "totals": {
+              "unpaid_invoices": "0.00",
+              "unpaid_invoices_cents": 0,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "http://szdmidnz.snap/statement/CHu:dAi/Bu3q0GgJkwpC",
+              "payment": "http://szdmidnz.snap/payment/client/CHu:dAi/3uFQr82hrmkI"
+            },
+            "services": {
+              "115998": {
+                "id": 115998,
+                "xid": "CHu:cUe",
+                "state": "new",
+                "name": "Pancake Delivery",
+                "created": "2012-08-16 18:10:29",
+                "renewal": "2012-08-16 00:00:00",
+                "package": "Delicious Pancakes",
+                "term": "1",
+                "data": {
+                  "created": "2012-08-16 18:10:29",
+                  "name": "Pancake Delivery",
+                  "package": "Delicious Pancakes",
+                  "renewal": "2012-08-16 00:00:00",
+                  "term": "1"
+                },
+                "service_type": {
+                  "id": 1349,
+                  "xid": "CHu:VF",
+                  "name": "Pancake Delivery"
+                },
+                "client": {
+                  "depth": 2,
+                  "id": 118818,
+                  "xid": "CHu:dAi",
+                  "state": "new",
+                  "number": "001",
+                  "name": "test4308"
+                }
+              }
+            }
+          },
+          "batch": {
+            "depth": 1,
+            "id": 375,
+            "xid": "CHu:F3",
+            "state": "ready",
+            "action_date": "2012-08-16",
+            "submit_date": null,
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "options": {
+              "type": "two-day",
+              "account": ""
+            },
+            "account": {
+              "depth": 1,
+              "id": 8686,
+              "xid": "CHu:CHu",
+              "username": "szdmidnz"
+            }
+          },
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "amount": "50.00",
+          "amount_cents": 5000,
+          "reference": "Debit order payment (Batch #001)",
+          "payment_method": {
+            "depth": 1,
+            "code": "netcash",
+            "name": "Netcash Collect",
+            "enabled": true
+          },
+          "state": "pending"
+        },
+        {
+          "id": 259883,
+          "xid": "CHu:_cr",
+          "client": {
+            "depth": 0,
+            "id": 118819,
+            "xid": "CHu:dAj",
+            "state": "new",
+            "number": "002",
+            "name": "test9091",
+            "firstname": "test9091",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 1,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 8686,
+              "xid": "CHu:CHu",
+              "username": "szdmidnz"
+            },
+            "totals": {
+              "unpaid_invoices": "0.00",
+              "unpaid_invoices_cents": 0,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "http://szdmidnz.snap/statement/CHu:dAj/5Z185blMLqyL",
+              "payment": "http://szdmidnz.snap/payment/client/CHu:dAj/aoDY9S0ypGtt"
+            },
+            "services": []
+          },
+          "batch": {
+            "depth": 1,
+            "id": 375,
+            "xid": "CHu:F3",
+            "state": "ready",
+            "action_date": "2012-08-16",
+            "submit_date": null,
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "options": {
+              "type": "two-day",
+              "account": ""
+            },
+            "account": {
+              "depth": 1,
+              "id": 8686,
+              "xid": "CHu:CHu",
+              "username": "szdmidnz"
+            }
+          },
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "amount": "50.00",
+          "amount_cents": 5000,
+          "reference": "Debit order payment (Batch #001)",
+          "payment_method": {
+            "depth": 1,
+            "code": "netcash",
+            "name": "Netcash Collect",
+            "enabled": true
+          },
+          "state": "pending"
+        }
+      ]
+    }

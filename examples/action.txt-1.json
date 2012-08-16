@@ -4,29 +4,56 @@
       "class": "action",
       "action": {
         "depth": 0,
-        "id": 2829979,
-        "xid": "CHl:Ky6b",
-        "url": "/client/update/state",
-        "path": "/client/update/state",
-        "link": "/client/CHl:c-3",
-        "item_type": "client",
-        "description": "george was removed",
-        "details": {
-          "from": "new",
-          "to": "dead"
-        },
-        "date": "2012-08-16 16:58:53",
+        "id": 2830745,
+        "xid": "CHu:KzGZ",
+        "url": "/service/add",
+        "path": "/service/add",
+        "link": "/service/CHu:cUe",
+        "item_type": "service",
+        "description": "Added pancake delivery service to test4308",
+        "details": [],
+        "date": "2012-08-16 18:10:29",
         "client": {
           "depth": 2,
-          "id": 118711,
-          "xid": "CHl:c-3",
-          "state": "dead",
-          "number": "028",
-          "name": "george"
+          "id": 118818,
+          "xid": "CHu:dAi",
+          "state": "new",
+          "number": "001",
+          "name": "test4308"
+        },
+        "service": {
+          "id": 115998,
+          "xid": "CHu:cUe",
+          "state": "new",
+          "name": "Pancake Delivery",
+          "created": "2012-08-16 18:10:29",
+          "renewal": "2012-08-16 00:00:00",
+          "package": "Delicious Pancakes",
+          "term": "1",
+          "data": {
+            "created": "2012-08-16 18:10:29",
+            "name": "Pancake Delivery",
+            "package": "Delicious Pancakes",
+            "renewal": "2012-08-16 00:00:00",
+            "term": "1"
+          },
+          "service_type": {
+            "id": 1349,
+            "xid": "CHu:VF",
+            "name": "Pancake Delivery"
+          },
+          "client": {
+            "depth": 2,
+            "id": 118818,
+            "xid": "CHu:dAi",
+            "state": "new",
+            "number": "001",
+            "name": "test4308"
+          }
         },
         "user": {
           "depth": 2,
-          "id": 6144,
+          "id": 6153,
           "username": "demo"
         }
       }

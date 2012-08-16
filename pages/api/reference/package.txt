@@ -8,7 +8,7 @@ List all the packages that match the given options. Optionally 'service_type_id'
 
 <!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
 <pre><pre class="input">
-    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1341" \
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1349" \
     >      https://api.snapbill.com/v1/package/list.json
 </pre><pre class="output">
 %%json:examples/package.txt-1.json%

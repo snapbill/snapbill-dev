@@ -1,0 +1,211 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 6,
+      "class": "invoice",
+      "list": [
+        {
+          "id": 283419,
+          "xid": "CHu:BFMb",
+          "created": "2012-08-16 18:10:26",
+          "type": "invoice",
+          "state": "pending",
+          "po_number": "",
+          "date": "2012-08-16",
+          "due_date": "2012-08-16",
+          "name": "Pending invoice 001/0001",
+          "number": "001/0001",
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "subtotal": "50.00",
+          "subtotal_cents": 5000,
+          "taxes": [],
+          "discount": "50.00",
+          "total": "50.00",
+          "total_cents": 5000,
+          "lines": [
+            {
+              "id": 368822,
+              "xid": 368822,
+              "item_name": "",
+              "description": "Sample",
+              "unit_cost": "50.00",
+              "unit_cost_cents": 5000,
+              "quantity": "1.00",
+              "total": "50.00",
+              "total_cents": 5000,
+              "package": null,
+              "term": null,
+              "charge": {
+                "id": 4195,
+                "xid": "CHu:BBj",
+                "amount": 50,
+                "currency": {
+                  "code": "ZAR",
+                  "format": "R%.2f",
+                  "enabled": true
+                },
+                "recurrence": {
+                  "4930": {
+                    "description": "Once-off"
+                  }
+                }
+              }
+            }
+          ],
+          "client": {
+            "depth": 1,
+            "id": 118818,
+            "xid": "CHu:dAi",
+            "state": "new",
+            "number": "001",
+            "name": "test4308",
+            "firstname": "test4308",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 8686,
+              "xid": "CHu:CHu",
+              "username": "szdmidnz"
+            },
+            "totals": {
+              "unpaid_invoices": "440.69",
+              "unpaid_invoices_cents": 44069,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "http://szdmidnz.snap/statement/CHu:dAi/Bu3q0GgJkwpC",
+              "payment": "http://szdmidnz.snap/payment/client/CHu:dAi/3uFQr82hrmkI"
+            }
+          }
+        },
+        {
+          "id": 283429,
+          "xid": "CHu:BFMl",
+          "created": "2012-08-16 18:10:31",
+          "type": "invoice",
+          "state": "unpaid",
+          "po_number": "",
+          "date": "2012-08-16",
+          "due_date": "2012-08-16",
+          "name": "Invoice 001/0011",
+          "number": "001/0011",
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "subtotal": "34.56",
+          "subtotal_cents": 3456,
+          "taxes": [],
+          "discount": "34.56",
+          "total": "34.56",
+          "total_cents": 3456,
+          "lines": [
+            {
+              "id": 368832,
+              "xid": 368832,
+              "item_name": "",
+              "description": "rolls",
+              "unit_cost": "1.12",
+              "unit_cost_cents": 112,
+              "quantity": "13.00",
+              "total": "14.56",
+              "total_cents": 1456,
+              "package": null,
+              "term": null
+            },
+            {
+              "id": 368833,
+              "xid": 368833,
+              "item_name": "",
+              "description": "chips",
+              "unit_cost": "20.00",
+              "unit_cost_cents": 2000,
+              "quantity": "1.00",
+              "total": "20.00",
+              "total_cents": 2000,
+              "package": null,
+              "term": null
+            }
+          ],
+          "client": {
+            "depth": 1,
+            "id": 118818,
+            "xid": "CHu:dAi",
+            "state": "new",
+            "number": "001",
+            "name": "test4308",
+            "firstname": "test4308",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 8686,
+              "xid": "CHu:CHu",
+              "username": "szdmidnz"
+            },
+            "totals": {
+              "unpaid_invoices": "440.69",
+              "unpaid_invoices_cents": 44069,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "http://szdmidnz.snap/statement/CHu:dAi/Bu3q0GgJkwpC",
+              "payment": "http://szdmidnz.snap/payment/client/CHu:dAi/3uFQr82hrmkI"
+            }
+          }
+        }
+      ]
+    }
