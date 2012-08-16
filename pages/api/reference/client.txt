@@ -16,10 +16,10 @@ Creates a new client and returns the details
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 127,
-        "xid": "Bad:B_",
+        "id": 118641,
+        "xid": "CHh:c9x",
         "state": "new",
-        "number": "092",
+        "number": "012",
         "name": "jane",
         "firstname": "jane",
         "surname": "",
@@ -32,30 +32,34 @@ Creates a new client and returns the details
           "iso3": "ZAF",
           "name": "South Africa"
         },
-        "credit": 0,
+        "credit": "0.00",
+        "credit_cents": 0,
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
           "state": "enabled"
         },
-        "payment": "bdb",
+        "payment": "netcash",
         "payment_method": {
           "depth": 1,
-          "code": "bdb",
-          "name": "BDB Data"
+          "code": "netcash",
+          "name": "Netcash Collect"
         },
         "account": {
-          "id": 5789,
-          "xid": "Bad:Bad",
+          "depth": 1,
+          "id": 8673,
+          "xid": "CHh:CHh",
           "username": "demo"
         },
         "totals": {
-          "unpaid_invoices": 0,
-          "paid_payments": 0
+          "unpaid_invoices": "0.00",
+          "unpaid_invoices_cents": 0,
+          "paid_payments": "0.00",
+          "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:B_/fHyo7QvCbIbq",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:B_/vqSnzm2Nk85N"
+          "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
+          "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
         },
         "services": []
       }
@@ -69,11 +73,11 @@ Creates a new client and returns the details
 
 Returns the details of a client.
 
+<!-- eval: client_id = self.previous['client']['id'] -->
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('client', 'id') -->
 <div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/18/get.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/get.json
 </div><div class="output">
     {
       "code": 200,
@@ -81,15 +85,15 @@ Returns the details of a client.
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 18,
-        "xid": "Bad:S",
-        "state": "active",
-        "number": "004",
-        "name": "test test",
-        "firstname": "test",
-        "surname": "test",
+        "id": 118641,
+        "xid": "CHh:c9x",
+        "state": "new",
+        "number": "012",
+        "name": "jane",
+        "firstname": "jane",
+        "surname": "",
         "company": "",
-        "email": "",
+        "email": "jane@example.com",
         "cell": "",
         "country": {
           "code": "ZA",
@@ -97,91 +101,36 @@ Returns the details of a client.
           "iso3": "ZAF",
           "name": "South Africa"
         },
-        "credit": 0,
+        "credit": "0.00",
+        "credit_cents": 0,
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
           "state": "enabled"
         },
-        "payment": "other",
+        "payment": "netcash",
         "payment_method": {
           "depth": 1,
-          "code": "other",
-          "name": "Other"
+          "code": "netcash",
+          "name": "Netcash Collect"
         },
         "account": {
-          "id": 5789,
-          "xid": "Bad:Bad",
+          "depth": 1,
+          "id": 8673,
+          "xid": "CHh:CHh",
           "username": "demo"
         },
         "totals": {
-          "unpaid_invoices": 422.8,
-          "paid_payments": "-48.00"
+          "unpaid_invoices": "0.00",
+          "unpaid_invoices_cents": 0,
+          "paid_payments": "0.00",
+          "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+          "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
+          "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
         },
-        "services": {
-          "2001": {
-            "id": 2001,
-            "xid": "Bad:fR",
-            "state": "active",
-            "name": "Pancake Delivery",
-            "created": "2012-04-26 16:46:30",
-            "renewal": "2012-06-01 00:00:00",
-            "package": "Delicious Pancakes",
-            "term": "1",
-            "data": {
-              "created": "2012-04-26 16:46:30",
-              "name": "Pancake Delivery",
-              "package": "Delicious Pancakes",
-              "renewal": "2012-06-01 00:00:00",
-              "term": "1"
-            },
-            "service_type": {
-              "id": 158,
-              "name": "Pancake Delivery"
-            },
-            "client": {
-              "depth": 2,
-              "id": 18,
-              "xid": "Bad:S",
-              "state": "active",
-              "number": "004",
-              "name": "test test"
-            }
-          },
-          "2002": {
-            "id": 2002,
-            "xid": "Bad:fS",
-            "state": "active",
-            "name": "Pancake Delivery",
-            "created": "2012-04-26 17:00:42",
-            "renewal": "2012-04-26 00:00:00",
-            "package": "Delicious Pancakes",
-            "term": "1",
-            "data": {
-              "created": "2012-04-26 17:00:42",
-              "name": "Pancake Delivery",
-              "package": "Delicious Pancakes",
-              "renewal": "2012-04-26 00:00:00",
-              "term": "1"
-            },
-            "service_type": {
-              "id": 158,
-              "name": "Pancake Delivery"
-            },
-            "client": {
-              "depth": 2,
-              "id": 18,
-              "xid": "Bad:S",
-              "state": "active",
-              "number": "004",
-              "name": "test test"
-            }
-          }
-        }
+        "services": []
       }
     }
 </div>
@@ -194,10 +143,9 @@ Returns the details of a client.
 Updates details about the given client in the database
 
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('client', 'id', 'query=jane') -->
 <div class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/127/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/update.json
 </div><div class="output">
     {
       "code": 200,
@@ -214,41 +162,46 @@ Updates details about the given client in the database
 Add an invoice for a client. The example adds an invoice with two items.
 
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('client', 'id') -->
 <div class="input">
-    $ curl -u user:pass -d \
-    >   "date=2013-01-07&description[]=rolls&unit_cost[]=1.12&quantity[]=13&description[]=chips&unit_cost[]=20&quantity[]=1" \
-    >   https://api.snapbill.com/v1/client/18/add_invoice.json
+    $ curl -u user:pass -d "date=2013-01-07" \
+    >   -d "description[]=rolls&unit_cost[]=1.12&quantity[]=13" \
+    >   -d "description[]=chips&unit_cost[]=20&quantity[]=1" \
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->118641/add_invoice.json
 </div><div class="output">
     {
       "code": 200,
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 47,
-        "xid": "Bad:v",
+        "id": 283261,
+        "xid": "CHh:BFJ9",
+        "created": "2012-08-16 14:54:28",
         "state": "unpaid",
-        "date": "2012-04-26",
-        "due_date": "2012-04-26",
-        "name": "Invoice 004/0038",
-        "number": "004/0038",
+        "date": "2012-08-16",
+        "due_date": "2012-08-16",
+        "name": "Invoice 012/0011",
+        "number": "012/0011",
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
           "state": "enabled"
         },
-        "subtotal": 34.56,
+        "subtotal": "34.56",
+        "subtotal_cents": 3456,
         "taxes": [],
-        "discount": 0,
-        "total": 34.56,
+        "discount": "34.56",
+        "total": "34.56",
+        "total_cents": 3456,
         "lines": [
           {
-            "id": 52,
+            "id": 368615,
             "item_name": "",
             "description": "rolls",
             "unit_cost": "1.12",
-            "quantity": "13",
-            "total": 14.56,
+            "unit_cost_cents": 112,
+            "quantity": "13.00",
+            "total": "14.56",
+            "total_cents": 1456,
             "package": null,
             "term": null,
             "service_provider": {
@@ -257,12 +210,14 @@ Add an invoice for a client. The example adds an invoice with two items.
             }
           },
           {
-            "id": 53,
+            "id": 368616,
             "item_name": "",
             "description": "chips",
-            "unit_cost": "20",
-            "quantity": "1",
-            "total": 20,
+            "unit_cost": "20.00",
+            "unit_cost_cents": 2000,
+            "quantity": "1.00",
+            "total": "20.00",
+            "total_cents": 2000,
             "package": null,
             "term": null,
             "service_provider": {
@@ -273,15 +228,15 @@ Add an invoice for a client. The example adds an invoice with two items.
         ],
         "client": {
           "depth": 1,
-          "id": 18,
-          "xid": "Bad:S",
-          "state": "active",
-          "number": "004",
-          "name": "test test",
-          "firstname": "test",
-          "surname": "test",
-          "company": "",
-          "email": "",
+          "id": 118641,
+          "xid": "CHh:c9x",
+          "state": "new",
+          "number": "012",
+          "name": "helkom (jane)",
+          "firstname": "jane",
+          "surname": "",
+          "company": "helkom",
+          "email": "jane@example.com",
           "cell": "",
           "country": {
             "code": "ZA",
@@ -289,30 +244,34 @@ Add an invoice for a client. The example adds an invoice with two items.
             "iso3": "ZAF",
             "name": "South Africa"
           },
-          "credit": 0,
+          "credit": "0.00",
+          "credit_cents": 0,
           "currency": {
             "code": "ZAR",
             "format": "R%.2f",
             "state": "enabled"
           },
-          "payment": "other",
+          "payment": "netcash",
           "payment_method": {
             "depth": 2,
-            "code": "other",
-            "name": "Other"
+            "code": "netcash",
+            "name": "Netcash Collect"
           },
           "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
+            "depth": 1,
+            "id": 8673,
+            "xid": "CHh:CHh",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": 457.36,
-            "paid_payments": "-48.00"
+            "unpaid_invoices": "34.56",
+            "unpaid_invoices_cents": 3456,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
-            "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+            "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
+            "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
           }
         }
       }
@@ -362,162 +321,12 @@ Generate a single invoice for a given client
 
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/18/generate_invoice.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/generate_invoice.json
 </div><div class="output">
     {
       "code": 200,
-      "type": "item",
-      "class": "invoice",
-      "invoice": {
-        "id": 48,
-        "xid": "Bad:w",
-        "state": "unpaid",
-        "date": "2012-04-26",
-        "due_date": "2012-04-26",
-        "name": "Invoice 004/0039",
-        "number": "004/0039",
-        "currency": {
-          "code": "ZAR",
-          "format": "R%.2f",
-          "state": "enabled"
-        },
-        "subtotal": 150,
-        "taxes": [],
-        "discount": 0,
-        "total": 150,
-        "lines": [
-          {
-            "id": 54,
-            "item_name": "",
-            "description": "Pancake Delivery: Delicious Pancakes Setup Fee",
-            "unit_cost": 50,
-            "quantity": 1,
-            "total": 50,
-            "package": "Delicious Pancakes",
-            "term": null,
-            "service_provider": {
-              "fee": 0,
-              "charged": "0"
-            },
-            "service": {
-              "id": 2002,
-              "xid": "Bad:fS",
-              "state": "active",
-              "name": "Pancake Delivery",
-              "created": "2012-04-26 17:00:42",
-              "renewal": "2012-06-01 00:00:00",
-              "package": "Delicious Pancakes",
-              "term": "1",
-              "data": {
-                "created": "2012-04-26 17:00:42",
-                "name": "Pancake Delivery",
-                "package": "Delicious Pancakes",
-                "renewal": "2012-06-01 00:00:00",
-                "term": "1"
-              },
-              "service_type": {
-                "id": 158,
-                "name": "Pancake Delivery"
-              },
-              "client": {
-                "depth": 2,
-                "id": 18,
-                "xid": "Bad:S",
-                "state": "active",
-                "number": "004",
-                "name": "test test"
-              }
-            }
-          },
-          {
-            "id": 55,
-            "item_name": "",
-            "description": "Pancake Delivery: Delicious Pancakes Monthly Fee (May 2012)",
-            "unit_cost": 100,
-            "quantity": 1,
-            "total": 100,
-            "package": "Delicious Pancakes",
-            "term": "1",
-            "service_provider": {
-              "fee": 0,
-              "charged": "0"
-            },
-            "service": {
-              "id": 2002,
-              "xid": "Bad:fS",
-              "state": "active",
-              "name": "Pancake Delivery",
-              "created": "2012-04-26 17:00:42",
-              "renewal": "2012-06-01 00:00:00",
-              "package": "Delicious Pancakes",
-              "term": "1",
-              "data": {
-                "created": "2012-04-26 17:00:42",
-                "name": "Pancake Delivery",
-                "package": "Delicious Pancakes",
-                "renewal": "2012-06-01 00:00:00",
-                "term": "1"
-              },
-              "service_type": {
-                "id": 158,
-                "name": "Pancake Delivery"
-              },
-              "client": {
-                "depth": 2,
-                "id": 18,
-                "xid": "Bad:S",
-                "state": "active",
-                "number": "004",
-                "name": "test test"
-              }
-            }
-          }
-        ],
-        "client": {
-          "depth": 1,
-          "id": 18,
-          "xid": "Bad:S",
-          "state": "active",
-          "number": "004",
-          "name": "test test",
-          "firstname": "test",
-          "surname": "test",
-          "company": "",
-          "email": "",
-          "cell": "",
-          "country": {
-            "code": "ZA",
-            "iso2": "ZA",
-            "iso3": "ZAF",
-            "name": "South Africa"
-          },
-          "credit": 0,
-          "currency": {
-            "code": "ZAR",
-            "format": "R%.2f",
-            "state": "enabled"
-          },
-          "payment": "other",
-          "payment_method": {
-            "depth": 2,
-            "code": "other",
-            "name": "Other"
-          },
-          "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
-            "username": "demo"
-          },
-          "totals": {
-            "unpaid_invoices": 607.36,
-            "paid_payments": "-48.00"
-          },
-          "urls": {
-            "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
-            "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
-          }
-        }
-      }
+      "type": "result",
+      "status": "ok"
     }
 </div>
 </pre>
@@ -528,45 +337,47 @@ Generate a single invoice for a given client
 
 Adds a service to a client
 
+<!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
+
 <pre class="prettyprint"><div class="input">
-    $ curl -u user:pass -d "service_type_id=158&package=Delicious%20Pancakes&term=1" \
-    >      https://api.snapbill.com/v1/client/18/add_service.json
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1337&package=Delicious%20Pancakes&term=1" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/add_service.json
 </div><div class="output">
     {
       "code": 200,
       "type": "item",
       "class": "service",
       "service": {
-        "id": 2003,
-        "xid": "Bad:fT",
-        "state": "active",
+        "id": 115971,
+        "xid": "CHh:cUD",
+        "state": "new",
         "name": "Pancake Delivery",
-        "created": "2012-04-26 17:12:03",
-        "renewal": "2012-04-26 17:12:03",
+        "created": "2012-08-16 14:54:29",
+        "renewal": "2012-08-16 14:54:29",
         "package": "Delicious Pancakes",
         "term": "1",
         "data": {
-          "created": "2012-04-26 17:12:03",
+          "created": "2012-08-16 14:54:29",
           "name": "Pancake Delivery",
           "package": "Delicious Pancakes",
-          "renewal": "2012-04-26 17:12:03",
+          "renewal": "2012-08-16 14:54:29",
           "term": "1"
         },
         "service_type": {
-          "id": 158,
+          "id": 1337,
           "name": "Pancake Delivery"
         },
         "client": {
           "depth": 1,
-          "id": 18,
-          "xid": "Bad:S",
-          "state": "active",
-          "number": "004",
-          "name": "test test",
-          "firstname": "test",
-          "surname": "test",
-          "company": "",
-          "email": "",
+          "id": 118641,
+          "xid": "CHh:c9x",
+          "state": "new",
+          "number": "012",
+          "name": "helkom (jane)",
+          "firstname": "jane",
+          "surname": "",
+          "company": "helkom",
+          "email": "jane@example.com",
           "cell": "",
           "country": {
             "code": "ZA",
@@ -574,30 +385,34 @@ Adds a service to a client
             "iso3": "ZAF",
             "name": "South Africa"
           },
-          "credit": 0,
+          "credit": "0.00",
+          "credit_cents": 0,
           "currency": {
             "code": "ZAR",
             "format": "R%.2f",
             "state": "enabled"
           },
-          "payment": "other",
+          "payment": "netcash",
           "payment_method": {
             "depth": 2,
-            "code": "other",
-            "name": "Other"
+            "code": "netcash",
+            "name": "Netcash Collect"
           },
           "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
+            "depth": 1,
+            "id": 8673,
+            "xid": "CHh:CHh",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": 607.36,
-            "paid_payments": "-48.00"
+            "unpaid_invoices": "34.56",
+            "unpaid_invoices_cents": 3456,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/Bad:S/ygiWEVPgF8a5",
-            "payment": "https://demo.snapbill.com/payment/client/Bad:S/GIQ56fGwX05z"
+            "statement": "https://demo.snapbill.com/statement/CHh:c9x/oyEaDKvsD49J",
+            "payment": "https://demo.snapbill.com/payment/client/CHh:c9x/ycJE2zPAhUGP"
           }
         }
       }
@@ -635,7 +450,7 @@ The example below updates the payment type to other which requires no extra para
 
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "payment_method_code=other" \
-    >      https://api.snapbill.com/v1/client/18/set_payment.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/set_payment.json
 </div><div class="output">
     {
       "code": 200,
@@ -652,10 +467,9 @@ The example below updates the payment type to other which requires no extra para
 Deletes a client from the database
 
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('client', 'id', 'query=jane') -->
 <div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/127/delete.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118641/delete.json
 </div><div class="output">
     {
       "code": 200,

@@ -6,11 +6,12 @@ API Reference: Batch
 
 Fetch a batch and return the details
 
+<!-- eval: batch_id = self.fetch_single('batch', 'id') -->
+
 <pre class="prettyprint">
-<!-- eval: xid = self.fetch_single('batch', 'xid') -->
 <div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/batch/Bad:D/get.json
+    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->362/get.json
 </div><div class="output">
     {
       "code": 200,
@@ -18,20 +19,24 @@ Fetch a batch and return the details
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 3,
-        "xid": "Bad:D",
-        "state": "submitted",
-        "action_date": "2012-02-27",
-        "submit_date": "2012-03-19",
+        "id": 362,
+        "xid": "CHh:Fq",
+        "state": "ready",
+        "action_date": "2012-08-15",
+        "submit_date": null,
         "payment_method": {
           "depth": 1,
-          "code": "hyphen",
-          "name": "Hyphen"
+          "code": "netcash",
+          "name": "Netcash Collect"
         },
-        "options": [],
+        "options": {
+          "type": "two-day",
+          "account": ""
+        },
         "account": {
-          "id": 5789,
-          "xid": "Bad:Bad",
+          "depth": 1,
+          "id": 8673,
+          "xid": "CHh:CHh",
           "username": "demo"
         }
       }

@@ -45,10 +45,10 @@ Add your new client **josh**
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 126,
-        "xid": "Bad:B-",
+        "id": 118640,
+        "xid": "CHh:c9w",
         "state": "new",
-        "number": "091",
+        "number": "011",
         "name": "josh",
         "firstname": "josh",
         "surname": "",
@@ -61,30 +61,34 @@ Add your new client **josh**
           "iso3": "ZAF",
           "name": "South Africa"
         },
-        "credit": 0,
+        "credit": "0.00",
+        "credit_cents": 0,
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
           "state": "enabled"
         },
-        "payment": "bdb",
+        "payment": "netcash",
         "payment_method": {
           "depth": 1,
-          "code": "bdb",
-          "name": "BDB Data"
+          "code": "netcash",
+          "name": "Netcash Collect"
         },
         "account": {
-          "id": 5789,
-          "xid": "Bad:Bad",
+          "depth": 1,
+          "id": 8673,
+          "xid": "CHh:CHh",
           "username": "demo"
         },
         "totals": {
-          "unpaid_invoices": 0,
-          "paid_payments": 0
+          "unpaid_invoices": "0.00",
+          "unpaid_invoices_cents": 0,
+          "paid_payments": "0.00",
+          "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Bad:B-/u9J3mYUSmc1c",
-          "payment": "https://demo.snapbill.com/payment/client/Bad:B-/LwqRg4oMOpvj"
+          "statement": "https://demo.snapbill.com/statement/CHh:c9w/Sbx4tXd8Eo4l",
+          "payment": "https://demo.snapbill.com/payment/client/CHh:c9w/lIVdnfdJjT2E"
         },
         "services": []
       }
@@ -93,8 +97,8 @@ Add your new client **josh**
 </pre>
 
 Search for clients named **josh**
+<!-- eval: client_id = self.previous['client']['id'] -->
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('client', 'id', 'query=josh') -->
 <div class="input">
     $ curl -u user:pass -d "query=josh" \
     >      https://api.snapbill.com/v1/client/list.json
@@ -108,10 +112,10 @@ Search for clients named **josh**
       "list": [
         {
           "depth": 0,
-          "id": 126,
-          "xid": "Bad:B-",
+          "id": 118640,
+          "xid": "CHh:c9w",
           "state": "new",
-          "number": "091",
+          "number": "011",
           "name": "josh",
           "firstname": "josh",
           "surname": "",
@@ -124,30 +128,34 @@ Search for clients named **josh**
             "iso3": "ZAF",
             "name": "South Africa"
           },
-          "credit": 0,
+          "credit": "0.00",
+          "credit_cents": 0,
           "currency": {
             "code": "ZAR",
             "format": "R%.2f",
             "state": "enabled"
           },
-          "payment": "bdb",
+          "payment": "netcash",
           "payment_method": {
             "depth": 1,
-            "code": "bdb",
-            "name": "BDB Data"
+            "code": "netcash",
+            "name": "Netcash Collect"
           },
           "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
-            "username": "debitor"
+            "depth": 1,
+            "id": 8673,
+            "xid": "CHh:CHh",
+            "username": "szdlqqcb"
           },
           "totals": {
-            "unpaid_invoices": 0,
-            "paid_payments": 0
+            "unpaid_invoices": "0.00",
+            "unpaid_invoices_cents": 0,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "http://debitor.snap/statement/Bad:B-/u9J3mYUSmc1c",
-            "payment": "http://debitor.snap/payment/client/Bad:B-/LwqRg4oMOpvj"
+            "statement": "http://szdlqqcb.snap/statement/CHh:c9w/Sbx4tXd8Eo4l",
+            "payment": "http://szdlqqcb.snap/payment/client/CHh:c9w/lIVdnfdJjT2E"
           },
           "services": []
         }
@@ -159,7 +167,7 @@ Search for clients named **josh**
 Change the clients name to **george**
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "firstname=george" \
-    >      https://api.snapbill.com/v1/client/126/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118640/update.json
 </div><div class="output">
     {
       "code": 200,
@@ -172,7 +180,7 @@ Change the clients name to **george**
 Remove the client
 <pre class="prettyprint"><div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/126/delete.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118640/delete.json
 </div><div class="output">
     {
       "code": 200,

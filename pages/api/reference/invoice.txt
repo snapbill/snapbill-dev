@@ -4,60 +4,81 @@ API Reference: Invoice
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/invoice/*id*/get ###
 
+<!-- eval: invoice_id = self.fetch_single('invoice', 'id') -->
+
 <pre class="prettyprint">
-<!-- eval: id = self.fetch_single('invoice', 'id') -->
 <div class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/invoice/1/get.json
+    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->283251/get.json
 </div><div class="output">
     {
       "code": 200,
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 1,
-        "xid": "Bad:B",
-        "state": "pending",
-        "date": "2012-02-23",
-        "due_date": "2012-02-23",
-        "name": "Pending invoice 001/0001",
+        "id": 283251,
+        "xid": "CHh:BFJz",
+        "created": "2012-08-16 14:54:24",
+        "state": "unpaid",
+        "date": "2012-08-16",
+        "due_date": "2012-08-16",
+        "name": "Invoice 001/0001",
         "number": "001/0001",
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
           "state": "enabled"
         },
-        "subtotal": 150,
+        "subtotal": "50.00",
+        "subtotal_cents": 5000,
         "taxes": [],
-        "discount": 0,
-        "total": 150,
+        "discount": "50.00",
+        "total": "50.00",
+        "total_cents": 5000,
         "lines": [
           {
-            "id": 1,
+            "id": 368605,
             "item_name": "",
-            "description": "one fifty",
-            "unit_cost": "150.00",
+            "description": "Sample",
+            "unit_cost": "50.00",
+            "unit_cost_cents": 5000,
             "quantity": "1.00",
-            "total": "150.00",
+            "total": "50.00",
+            "total_cents": 5000,
             "package": null,
             "term": null,
             "service_provider": {
               "fee": 0,
               "charged": "0"
+            },
+            "charge": {
+              "id": 4065,
+              "xid": "CHh:_h",
+              "amount": 50,
+              "currency": {
+                "code": "ZAR",
+                "format": "R%.2f",
+                "state": "enabled"
+              },
+              "recurrence": {
+                "4800": {
+                  "description": "Once-off"
+                }
+              }
             }
           }
         ],
         "client": {
           "depth": 1,
-          "id": 10,
-          "xid": "Bad:K",
-          "state": "dead",
+          "id": 118630,
+          "xid": "CHh:c9m",
+          "state": "new",
           "number": "001",
-          "name": "John",
-          "firstname": "John",
+          "name": "test8942",
+          "firstname": "test8942",
           "surname": "",
           "company": "",
-          "email": "a@b.c",
+          "email": "",
           "cell": "",
           "country": {
             "code": "ZA",
@@ -65,30 +86,34 @@ API Reference: Invoice
             "iso3": "ZAF",
             "name": "South Africa"
           },
-          "credit": 0,
+          "credit": "0.00",
+          "credit_cents": 0,
           "currency": {
             "code": "ZAR",
             "format": "R%.2f",
             "state": "enabled"
           },
-          "payment": "bdb",
+          "payment": "netcash",
           "payment_method": {
             "depth": 2,
-            "code": "bdb",
-            "name": "BDB Data"
+            "code": "netcash",
+            "name": "Netcash Collect"
           },
           "account": {
-            "id": 5789,
-            "xid": "Bad:Bad",
+            "depth": 1,
+            "id": 8673,
+            "xid": "CHh:CHh",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": 0,
-            "paid_payments": 0
+            "unpaid_invoices": "50.00",
+            "unpaid_invoices_cents": 5000,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/Bad:K/dukAZDsLj2Xo",
-            "payment": "https://demo.snapbill.com/payment/client/Bad:K/HuluZDzxkHia"
+            "statement": "https://demo.snapbill.com/statement/CHh:c9m/wbvJ1b6V2I5Q",
+            "payment": "https://demo.snapbill.com/payment/client/CHh:c9m/PkkGXN0j1lpY"
           }
         }
       }

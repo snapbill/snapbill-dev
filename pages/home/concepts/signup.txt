@@ -18,13 +18,13 @@ https://&lt;your-username&gt;.snapbill.com/signup?customer=new
   &client-data-custom_field=
 </pre>
 
-If you wanted to you could even skip straight to the payment step ([example](https://franks.snapbill.com/signup?customer=new&client-title=Mr&client-firstname=Website&client-surname=Example&client-email=website@example.com&client-cell=&client-company=&client-data-vat_number=&service_type=950&service-package=Small&service-term=1)):
+If you wanted to you could even skip straight to the payment step ([example](https://franks.snapbill.com/signup?customer=new&client-title=Mr&client-firstname=Website&client-surname=Example&client-email=website@example.com&client-cell=&client-company=&client-data-vat_number=&service_type=Sample+Service&service-package=Small&service-term=1)):
 <pre>
 https://&lt;your-username&gt;.snapbill.com/signup?customer=new
   &client-title=<strong>Mr</strong>&client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
   &client-email=<strong>website@example.com</strong>&client-cell=&client-company=
   &client-data-custom_field=
-  &service_type=<strong>950</strong>
+  &service_type=<strong>Sample+Service</strong>
   &service-package=<strong>Small</strong>&service-term=<strong>1</strong>
 </pre>
 
