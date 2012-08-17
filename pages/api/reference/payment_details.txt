@@ -1,0 +1,48 @@
+API Reference: Payment Details
+==============================
+
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/payment_details/list ###
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/payment_details/list.json
+</pre><pre class="output">
+%%json:examples/payment.txt-1.json%
+</pre></pre>
+</section>
+
+<section id="parameters" data-title="parameters" markdown=1>
+### Parameter listing ###
+
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the payment details provided. depth=0 is the highest level that provides full detail.
+
+id: get
+    The id of the payment details in the system. This is guaranteed to be unique only over a single account.
+
+xid: get
+    The [xid](/home/concepts/xid) of the payment details in the system. This is guaranteed to be unique over all accounts.
+
+client: get
+    The [client](/api/reference/client) the payment was for.
+
+type: get
+    The type of payment details (usually bank_account or credit_card).
+
+bank: get
+    The bank the payment details are with. Will also list visa/mastercard/etc in the case of credit cards.
+
+number: get
+    The credit card or bank account number. Hidden digits are replaced with *'s.
+
+last4: get
+    The last four unencrypted digits of the bank account number or credit card.
+
+state: get
+    The current state of the payment details (active, disabled, expired or dead).
+%%%
+
+</section>
