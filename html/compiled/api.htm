@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>API</h3>      <li class="nav-header">Introduction</li>
+    <li><a href="/api/introduction/requests">Requests</a></li>      <li class="nav-header">Reference</li>
+    <li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><p><section class="jumbotron"></p>
+
+<h1>The A.P.I.</h1>
+
+<p>
+   You can browse it right now. Just click <a href="https://api.snapbill.com/v1" target="_blank" class="external">here</a>.
+  </p>
+
+<p>
+   (you'll need to get your own login details first from <a href="http://www.snapbill.com" target="_blank" class="external">snapbill.com</a>)
+  </p>
+
+<p></section></p>
+
+<p><section class="columns"></p>
+
+<div class="row">
+  <div class="span3">
+
+<h3>RESTish Design</h3>
+
+<p>Our API is based on simple RESTful design, however we've taken a whole lot of
+liberties in order to produce an api interface that is fully accessible
+straight from your web browser. For more details you can check the
+<a href="/api/introduction/rest">REST introduction</a>.</p>
+
+</div>
+  <div class="span3">
+
+<h3>Existing libraries</h3>
+
+<p>We'll be setting up more later, but for now you can check out our Python
+API library on Github: <a href="https://github.com/snapbill/snapbill-pyapi" target="_blank" class="external">snapbill-pyapi</a></p>
+
+</div>
+  <div class="span3">
+
+<h3>Documentation on github</h3>
+
+<p>This full website is available on github at <a href="https://github.com/snapbill/snapbill-dev" target="_blank" class="external">https://github.com/snapbill/snapbill-dev</a>. Feel free to issue a pull request, or simply send us an email if you notice any issues on this site.</p>
+
+</div>
+</div>
+
+<p></section></p>
+
+<p><section markdown=1></p>
+
+<h2>tl;dr<span style="color: #ccc;"> (too long, didn't read)</span></h2>
+
+<p>Add your new client <strong>josh</strong></p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "firstname=josh&email=josh@example.com" \
+    >      https://api.snapbill.com/v1/client/add.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">118828</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:dAs&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;new&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;011&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;josh&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;josh&quot;</span>,</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;josh@example.com&quot;</span>,</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">8686</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:CHu&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/CHu:dAs\/6mH6mtEm0zSX&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/CHu:dAs\/RYenUEq9EJKY&quot;</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p>Search for clients named <strong>josh</strong>
+<!-- eval: client_id = self.previous['client']['id'] --></p>
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "query=josh" \
+    >      https://api.snapbill.com/v1/client/list.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;list&quot;</span>,</li><li><span class="key">page</span>: <span class="number">1</span>,</li><li><span class="key">numpages</span>: <span class="number">1</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">list</span>: [<ul class="obj closeable"><li>{<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">118828</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:dAs&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;new&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;011&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;josh&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;josh&quot;</span>,</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;josh@example.com&quot;</span>,</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">8686</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:CHu&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;szdmidnz&quot;</span></li></ul>},</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;http:\/\/szdmidnz.snap\/statement\/CHu:dAs\/6mH6mtEm0zSX&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;http:\/\/szdmidnz.snap\/payment\/client\/CHu:dAs\/RYenUEq9EJKY&quot;</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>]</li></ul>}</div>
+</pre>
+</pre>
+
+<p>Change the clients name to <strong>george</strong></p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "firstname=george" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118828/update.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+
+<p>Remove the client</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118828/delete.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

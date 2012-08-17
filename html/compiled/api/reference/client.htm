@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>API</h3>      <li class="nav-header">Introduction</li>
+    <li><a href="/api/introduction/requests">Requests</a></li>      <li class="nav-header">Reference</li>
+    <li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li class="fixed-active"><a href="/api/reference/client">Client</a></li><li class="level2"><a href="#add">/add</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#update">/update</a></li><li class="level2"><a href="#add-invoice">/add_invoice</a></li><li class="level2"><a href="#generate-invoice">/generate_invoice</a></li><li class="level2"><a href="#add-service">/add_service</a></li><li class="level2"><a href="#set-payment">/set_payment</a></li><li class="level2"><a href="#delete">/delete</a></li><li class="level2"><a href="#states">states</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>API Reference: Client</h1>
+
+<p><section class="api-call" id="add" data-title="/add" markdown=1></p>
+
+<h3>/v1/client/add</h3>
+
+<p>Creates a new client and returns the details</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
+    >      https://api.snapbill.com/v1/client/add.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">118829</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:dAt&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;new&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;012&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">8686</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:CHu&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/CHu:dAt\/E9TIdsjplWsC&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/CHu:dAt\/uaY4N2zgMLGe&quot;</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="get" data-title="/get" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/get</h3>
+
+<p>Returns the details of a client.</p>
+
+<!-- eval: client_id = self.previous['client']['id'] -->
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/get.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">118829</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:dAt&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;new&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;012&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">8686</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:CHu&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/CHu:dAt\/E9TIdsjplWsC&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/CHu:dAt\/uaY4N2zgMLGe&quot;</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="update" data-title="/update" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/update</h3>
+
+<p>Updates details about the given client in the database</p>
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "company=helkom&state=suspended" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/update.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_invoice</h3>
+
+<p>Adds an invoice for the client. <a href="/api/reference/invoice#add-invoice">Full documentation is in the Invoice section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/generate_invoice</h3>
+
+<p>Generate an invoice for the client with due services and charges. <a href="/api/reference/invoice#generate-invoice">Full documentation is in the Invoice section.</a>
+</section></p>
+
+<p><section class="api-call" id="add-service" data-title="/add_service" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_service</h3>
+
+<p>Adds a service to a client. <a href="/api/reerence/service#add-service">Full documentation is in the service section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="set-payment" data-title="/set_payment" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/set_payment</h3>
+
+<p>Sets the payment method and details for a client. The parameters passed in
+depend on the payment method. To find out the parameters visit
+https://api.snapbill.com/v1/client/<em>id</em>/set_payment.json?post or
+https://api.snapbill.com/v1/client/<em>id</em>/set_payment</p>
+
+<p>The example below updates the payment type to other which requires no extra parameters.</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "payment_method_code=other" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/set_payment.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="delete" data-title="/delete" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/delete</h3>
+
+<p>Deletes a client from the database</p>
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->118829/delete.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section id="states" data-title="states" markdown=1></p>
+
+<h3>Available states</h3>
+
+<table class='table'><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>new</td><td>
+The state that all new clients are created in
+</td></tr>
+<tr><td>active</td><td>
+The state for a normal active client
+</td></tr>
+<tr><td>suspended</td><td>
+This client has been suspended and can no longer access any services
+</td></tr>
+<tr><td>dead</td><td>
+The client has been removed and is no longer visible through the interface
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<p><section id="parameters" data-title="parameters" markdown=1></p>
+
+<h3>Parameter listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="3">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">depth</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The depth parameter signals the amount of data for the client that was provided. depth=0 is the highest level that provides full detail, while depth=2 only provides id, state, number and name
+</td></tr>
+<tr><td nowrap="nowrap">id</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The id of the client in the system. This is guaranteed to be unique only over a single account.
+</td></tr>
+<tr><td nowrap="nowrap">xid</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The xid of the client in the system. This is guaranteed to be unique over all accounts (see <a href="/home/concepts/xid">Concepts - Xid</a>)
+</td></tr>
+<tr><td nowrap="nowrap">state</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+The state of the client in the system. The available states are <em>new</em>, <em>active</em>, <em>suspended</em> and <em>dead</em>. For more details see <a href="#states">States</a>.
+</td></tr>
+<tr><td nowrap="nowrap">number</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+A unique number representing the client. <em>Note</em> that this can contain any characters instead of just numbers. If not provided to an <a href="#add">add</a> call it will automatically be generated.
+</td></tr>
+<tr><td nowrap="nowrap">name</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+Automatically generated display name for the client, based on available details (firstname, surname, company)
+</td></tr>
+<tr><td nowrap="nowrap">firstname</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+Clients firstname. This field is required unless either <strong>surname</strong>, or <strong>company</strong> are provided.
+</td></tr>
+<tr><td nowrap="nowrap">surname</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+Clients surname. This field is required unless either <strong>firstname</strong>, or <strong>company</strong> are provided.
+</td></tr>
+<tr><td nowrap="nowrap">company</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+Clients company. This field is required unless either <strong>firstname</strong>, or <strong>surname</strong> are provided.
+</td></tr>
+<tr><td nowrap="nowrap">email</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+Email address for the client. This is used as the default address for all communication and nothing can/will be sent unless it is provided or a relevant contact is added.
+</td></tr>
+<tr><td nowrap="nowrap">cell</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+Cellphone number for the client. This is the default number for SMS communication unless a relevant contact is added.
+</td></tr>
+<tr><td nowrap="nowrap">country</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object reperesenting the country the user is from. Use country_code for add or update operations.
+</td></tr>
+<tr><td nowrap="nowrap">country_code</td><td><a href="#add"><span class="label label-add">add</span></a></td><td></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+The ISO2 code of the country that the client is from. This is automatically detected based on IP address during a signup.
+</td></tr>
+<tr><td nowrap="nowrap">credit</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+The total amount of credit on a users account. Any manual changes to this will automatically log a credit-typed payment which will appear on the clients statements (<strong>note</strong> this behaviour is likely to change in the future).
+</td></tr>
+<tr><td nowrap="nowrap">currency</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object reperesenting the currency the client is using. Use currency_code for add or update operations.
+</td></tr>
+<tr><td nowrap="nowrap">currency_code</td><td><a href="#add"><span class="label label-add">add</span></a></td><td></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+The ISO 4217 code for the currency the client is currently using. This can only be updated if the client has zero unpaid invoices, no recurring services and no charges.
+</td></tr>
+<tr><td nowrap="nowrap">payment</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+This is <span class="label label-deprecated">deprecated</span>, please use payment_method_code instead
+</td></tr>
+<tr><td nowrap="nowrap">payment_method</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object reperesenting the payment method the client is set to. Use payment_method_code for add or update operations.
+</td></tr>
+<tr><td nowrap="nowrap">payment_method_code</td><td><a href="#add"><span class="label label-add">add</span></a></td><td></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+A short code representing one of the payment methods used by SnapBill.
+</td></tr>
+<tr><td nowrap="nowrap">reseller</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object representing the account that owns the client
+</td></tr>
+<tr><td nowrap="nowrap">totals</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object with quick details about the finanical totals of a given account
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; unpaid_invoices</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The total sum of the totals from unpaid invoices on the account
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; total_paid</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The total sum of payments that are marked as paid on the account
+</td></tr>
+<tr><td nowrap="nowrap">urls</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object with permalinks to access the clients details
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; statement</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+A permalink to the clients statement in the client area (includes authorization)
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

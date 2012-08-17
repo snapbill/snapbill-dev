@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>API</h3>      <li class="nav-header">Introduction</li>
+    <li><a href="/api/introduction/requests">Requests</a></li>      <li class="nav-header">Reference</li>
+    <li><a href="/api/reference/action">Action</a></li><li class="fixed-active"><a href="/api/reference/batch">Batch</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#states">states</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>API Reference: Batch</h1>
+
+<p><section class="api-call" id="get" data-title="/get" markdown=1></p>
+
+<h3>/v1/batch/<em>id</em>/get</h3>
+
+<p>Fetch a batch and return the details</p>
+
+<!-- eval: batch_id = self.fetch_single('batch', 'id') -->
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->375/get.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;batch&quot;</span>,</li><li><span class="key">batch</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">375</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:F3&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;ready&quot;</span>,</li><li><span class="key">action_date</span>: <span class="string">&quot;2012-08-16&quot;</span>,</li><li><span class="key">submit_date</span>: <span class="null">null</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">options</span>: {<ul class="obj closeable"><li><span class="key">type</span>: <span class="string">&quot;two-day&quot;</span>,</li><li><span class="key">account</span>: <span class="string">&quot;&quot;</span></li></ul>},</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">8686</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:CHu&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="states" id="states" data-title="states" markdown=1></p>
+
+<h3>Available states</h3>
+
+<table class='table'><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>ready</td><td>
+The batch has been prepared. From here it can either be moved into <em>submit</em>, or will be automatically changed to <em>build</em> if any clients are added.
+</td></tr>
+<tr><td>build</td><td>
+Batch is busy being built, this is a temporary state and will be automatically changed to <em>ready</em> once the build is complete.
+</td></tr>
+<tr><td>submit</td><td>
+Batch is queued for submission to the bank. The state will automatically be changed to <em>submitted</em> once this is complete.
+</td></tr>
+<tr><td>submitted</td><td>
+Batch has been submitted to the bank but we have not yet received a response confirming any payments
+</td></tr>
+<tr><td>error</td><td>
+There was a problem and the entire batch was cancelled (all payments inside it will receive an <em>error</em> state too)
+</td></tr>
+<tr><td>ok</td><td>
+The batch was submitted to the bank, and we have begun receiving recon reports
+</td></tr>
+<tr><td>dead</td><td>
+The batch has been deleted and is no longer displayed in the interface
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<p><section class="parameters" id="parameters" data-title="parameters" markdown=1></p>
+
+<h3>Parameter listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="3">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">depth</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The depth parameter signals the amount of data for the batch was provided. depth=0 is the highest level that provides full detail, while lower depths provide less.
+</td></tr>
+<tr><td nowrap="nowrap">id</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The id of the batch in the system. This is guaranteed to be unique only over a single account.
+</td></tr>
+<tr><td nowrap="nowrap">xid</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The xid of the batch in the system. This is guaranteed to be unique over all accounts (see <a href="/home/concepts/xid">Concepts - Xid</a>)
+</td></tr>
+<tr><td nowrap="nowrap">state</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+The state of the batch in our system. The available states are <em>build</em>, <em>ready</em>, <em>submit</em> and <em>submitted</em>, <em>error</em>, <em>ok</em>, and <em>dead</em>. For more details see <a href="#states">States</a>.
+</td></tr>
+<tr><td nowrap="nowrap">action_date</td><td><a href="#add"><span class="label label-add">add</span></a></td><td><a href="#get"><span class="label label-get">get</span></a></td><td><a href="#update"><span class="label label-update">update</span></a></td><td>
+This is the date at which the batch is intended to go through. When adding clients to a batch, only unpaid invoices that are due on this date or before will be included.
+</td></tr>
+<tr><td nowrap="nowrap">submit_date</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+This is the date on which the batch was physically submitted to a bank.
+</td></tr>
+<tr><td nowrap="nowrap">payment_method</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object reperesenting the payment method for the batch. Use payment_method_code when adding.
+</td></tr>
+<tr><td nowrap="nowrap">payment_method_code</td><td><a href="#add"><span class="label label-add">add</span></a></td><td></td><td></td><td>
+A short code representing one of the payment methods used by SnapBill.
+</td></tr>
+<tr><td nowrap="nowrap">reseller</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An object representing the account that the batch falls under
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;Zed&#039;s dead, baby. Zed&#039;s dead.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

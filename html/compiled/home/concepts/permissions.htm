@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>      <li class="nav-header">Concepts</li>
+    <li><a href="/home/concepts/actions">Actions</a></li><li class="fixed-active"><a href="/home/concepts/permissions">Permissions</a></li><li><a href="/home/concepts/payment">Payment</a></li><li><a href="/home/concepts/signatures">Signatures</a></li><li><a href="/home/concepts/signup">Signup</a></li><li><a href="/home/concepts/xid">Xid</a></li>      <li class="nav-header">Templates</li>
+    <li><a href="/home/templates/reference">Reference</a></li><li><a href="/home/templates/files">Files</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Permissions</h1>
+
+<p><section id="system-design" markdown=1></p>
+
+<h2>System design</h2>
+
+<p>The SnapBill permission system runs according to a
+<a href="#longest-prefix">longest prefix match</a> based URL system that matches the
+structure within SnapBill. By default all users simply have the <strong>/</strong>
+permission enabled. You can enable or disable <strong>/client</strong> (access to a single
+client) or <strong>/contact/update</strong> (ability to update a contact)</p>
+
+<h2 id="longest-prefix">Longest prefix match<a href="#longest-prefix" class="hidden-selflink">&larr;</a></h2>
+
+<p>The system works by looking for the <strong>ALLOW</strong>/<strong>DENY</strong> code on the longest matching prefix of the current URL or required permission. For example if you wanted to disallow access to everything by default, allow access to single clients (but not to update them) - you could use the following rules:</p>
+
+<pre>
+<strong>DENY</strong> /
+<strong>ALLOW</strong> /client
+<strong>DENY </strong> /client/update
+</pre>
+
+<h2>Simple examples</h2>
+
+<p>Allow access to search and view clients, but not to do anything else with them</p>
+
+<pre>
+<strong>DENY </strong> /
+<strong>ALLOW</strong> /clients
+<strong>ALLOW</strong> /client
+<strong>DENY </strong> /client/*
+</pre>
+
+<p>Allow access to the system as usual, but don't allow anything in the setup or
+statistics area</p>
+
+<pre>
+<strong>ALLOW</strong> /
+<strong>DENY </strong> /setup
+<strong>DENY </strong> /statistics
+</pre>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I ain&#039;t goin&#039; on no airplane!&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

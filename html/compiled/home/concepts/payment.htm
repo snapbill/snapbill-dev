@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>      <li class="nav-header">Concepts</li>
+    <li><a href="/home/concepts/actions">Actions</a></li><li><a href="/home/concepts/permissions">Permissions</a></li><li class="fixed-active"><a href="/home/concepts/payment">Payment</a></li><li class="level2"><a href="#redirect">Redirects</a></li><li class="level2"><a href="#examples">Example</a></li><li><a href="/home/concepts/signatures">Signatures</a></li><li><a href="/home/concepts/signup">Signup</a></li><li><a href="/home/concepts/xid">Xid</a></li>      <li class="nav-header">Templates</li>
+    <li><a href="/home/templates/reference">Reference</a></li><li><a href="/home/templates/files">Files</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Payments</h1>
+
+<p><section id="payments" markdown=1>
+The client object contains a field under <code><strong>urls</strong></code> called
+<code><strong>payment</strong></code>. If the relevant client where to visit this URL they
+can make a payment without logging in first.</p>
+
+<p></section></p>
+
+<p><section id="redirect" data-title="Redirects" markdown=1></p>
+
+<h3>Redirects</h3>
+
+<p>When redirecting a client to this URL one can optionally specify the URL
+parameter <code><strong>redirect</strong></code>. The client is then redirected back to the
+redirect URL when the client has made a payment or updated there payment
+method to something which requires you to process there payment.</p>
+
+<table class="table">
+<thead><tr>
+ <th>Parameter</th><th>Description</th>
+</tr></thead><tbody>
+<tr><td>transaction_uuid</td><td>A uuid for the transaction. A new UUID is
+created each time the client visits the payment URL.</td></tr>
+<tr><td>redirect</td><td>The URL specified to redirect to.</td></tr>
+<tr><td>success-heading</td><td>A heading for the success message</td></tr>
+<tr><td>success-message</td><td>A message indicating the state of the
+payment</td></tr>
+<tr><td>payment_method_code</td><td>The code for the payment method used by
+the client</td></tr>
+<tr><td>redirect</td><td>The URL specified to redirect to.</td></tr>
+<tr><td>payment_id</td><td><span class="label label-optional">Optional</span> id of the payment if one was created with the signup</td></tr>
+<tr><td>payment_state</td><td><span class="label label-optional">Optional</span> state of the payment (either **paid**, or **pending**)</td></tr>
+<tr><td>payment_amount</td><td><span class="label label-optional">Optional</span> amount of the payment as measured as a floating point value</td></tr>
+<tr><td>signature</td><td>A signature using a shared secret confirming that the above fields were not tampered with</td></tr>
+</tbody>
+</table>
+
+<p></section></p>
+
+<p><section id="examples" data-title="Example" markdown=1></p>
+
+<h3>Example</h3>
+
+<p>Say the payment URL for a client is
+<code><strong>https://demo.snapbill.com/payment/client/FoE:A/GIQ56fGwX05z</strong></code>. After
+adding an invoice for the client through the API, you can redirect them to
+https://demo.com/success/FoE:A by sending the client to
+<code><strong>https://demo.snapbill.com/payment/client/FoE:A/GIQ56fGwX05z?redirect=https%3A%2F%2Fdemo.com%2Fsuccess%2FFoE%3AA</strong></code>.</p>
+
+<p>An example of the variables POSTed to the redirect URL is below:</p>
+
+<pre>
+    [payment_amount] => 476
+    [payment_id] => 30
+    [payment_method_code] => payfast
+    [payment_state] => pending
+    [redirect] => https://demo.com/success/FoE:A
+    [success-heading] => Your payment has been processed
+    [success-message] => Your payment is marked as pending. We are still awaiting confirmation from PayFast, but as soon as that is received your invoices will be marked as paid.
+    [transaction_uuid] => OWI0ZWU3ZTktYTNkYi00NGYyLWEzZWEtZWZhOWVmMzRlZGQx
+    [signature] => yynYkjNvYyrMnS1wmItMa5pZhyEjtirgRM1UZ6fN6a0=
+</pre>
+
+<p>In the case of a payment method which requires you to process the payment, the
+variables passed back won't include the payment:</p>
+
+<pre>
+    [payment_method_code] => other
+    [redirect] => https://demo.com/success/FoE:A
+    [success-heading] => Your payment details have been updated
+    [success-message] => Thank you for updating your payment details
+    [transaction_uuid] => MTA1OGRhNTItMTZlYi00YWI1LWFiMjgtNjJlMTU0N2Y3Yjc1
+    [signature] => dUOawxjoHyzg9xq9t2ZCcaspIbkEVpqPKKJnqkkdTWY=
+</pre>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;It is not the spoon that bends, it is only yourself.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

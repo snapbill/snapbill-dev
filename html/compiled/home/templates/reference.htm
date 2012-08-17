@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>      <li class="nav-header">Concepts</li>
+    <li><a href="/home/concepts/actions">Actions</a></li><li><a href="/home/concepts/permissions">Permissions</a></li><li><a href="/home/concepts/payment">Payment</a></li><li><a href="/home/concepts/signatures">Signatures</a></li><li><a href="/home/concepts/signup">Signup</a></li><li><a href="/home/concepts/xid">Xid</a></li>      <li class="nav-header">Templates</li>
+    <li class="fixed-active"><a href="/home/templates/reference">Reference</a></li><li><a href="/home/templates/files">Files</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Templates</h1>
+
+<p><section id="reference" markdown=1></p>
+
+<p>The syntax draws inspiration from <a href="http://daringfireball.net/projects/markdown/">Markdown</a>, a little from the <a href="http://www.php.net/">PHP</a> programming language as well as a few ideas from the template system in my pre-Ubuntu favourite music player <a href="http://www.foobar2000.org/">foobar2000</a>. I’ve tried to keep it as easy to read as possible, but in quite a few places I have chosen to put power and flexibility first.</p>
+
+<p><span id="more-7"></span></p>
+
+<p><strong>The Basics</strong></p>
+
+<p>The basics are very similar to other languages, put a single ‘*’ on either side of text to make it bold, or a double ‘**’ for italic.</p>
+
+<p>There is also support for basic footnotes, with any number of starts inside a square brackets ‘[*]‘ or ‘[**]‘. This will display the stars in red in order to attract attention.</p>
+
+<p>Headings are also according to the normal standard. Place a ‘=’ sign on either side for a first level heading, and put two for a sub-heading. You can place up to six equal signs for the smallest heading.</p>
+
+<p>Heres an initial example with all of these:</p>
+
+<pre>*Hi there*, how **are** you?
+
+=&gt; <strong>Hi there</strong>, how <em>are</em> you?
+
+== Login Details ==
+*Username:*[*] josh
+[*] This is the username you chose at signup
+
+=&gt; <span style="text-decoration: underline;"><strong style="font-size: 1.2em;">Login Details</strong></span>
+=&gt; <strong>Username:</strong><span style="color: #ff0000;">*</span> josh
+=&gt; <span style="color: #ff0000;">*</span> This is the username you chose at signup.</pre>
+
+<h3><strong>Once step up with variables</strong></h3>
+
+<p>In the example above we hard-coded the name ‘josh’ into the template where the username was meant to go. While this produced the results as expected, its not really useful to have a template with fixed values.</p>
+
+<p>Inserting variables into the template is used by placing a dollar ‘$’ sign before the variable name. In the example above instead of writing “josh”, we could have written “<span style="color: #008000;">$username</span>” for the same effect.</p>
+
+<p>Some variables hold values that we might want to be formatted according to a set of rules. For instance if we had <span style="color: #008000;">$date</span> with todays date in it, putting it in the template would write “2011-01-14 14:03:35″. While sometimes thats what we want, sometimes you would want to write it as “January 14th”, and sometimes as “14 Jan, 2:03pm”. In order to allow for all of these options we have a formatting option for variables.</p>
+
+<p>In order to format a variable, simply put parenthesis straight after the variable without any spaces. Each variable is formatted differently, according to its type. A date variable is formatted according to the <a href="http://php.net/manual/en/function.date.php">PHP date function</a> so “<span style="color: #008000;">$date</span><span style="color: #666699;">(F jS)</span>” would write out “January 14th”. Most other variables are formatted according to <a href="http://en.wikipedia.org/wiki/Printf#Format_placeholders">printf formatting</a>.</p>
+
+<p>Some variables can even be formatted according to other variables. This is the case you would generally use with formatting according to currency. If you have the client credit of 14.65 in <span style="color: #008000;">$credit</span> you would simply call “<span style="color: #008000;">$credit</span><span style="color: #666699;">($client-&gt;currency)</span>” which would then print out R14.65 if your client is using South African Rands <img class="wp-smiley" alt=":)" src="http://developers.snapbill.com/blog/wp-includes/images/smilies/icon_smile.gif"> .</p>
+
+<p>Lastly, if you notice in the paragraph above I used the variable “<span style="color: #008000;">$client-&gt;currency</span>“. This is present in most of the templates, in which it gets the <span style="color: #008000;">$currency</span> variable for the current <span style="color: #008000;">$client</span> following PHP style.</p>
+
+<pre>Hi $firstname $surname,
+
+Your account was created at *$client-&gt;created(ga)*.
+You currently have $client-&gt;credit($client-&gt;currency) credit.
+
+=&gt; Hi John Smith,
+=&gt;
+=&gt; Your account was created at <strong>5pm</strong>.
+=&gt; You currently have $13.65 credit.</pre>
+
+<h3>Dealing with missing variables</h3>
+
+<p>Unfortunately just as everything doesn’t always go as planned, not all variables are always available for your use. While us allowing you to create clients without filling in their surname is useful, it would create a problem in the template listed above.</p>
+
+<p>The first line would read “Hi John ,” &ndash; notice the space before the comma. While this isn’t really a train-smash, there are a couple places where the functionality is quite important. To deal with these instances we introduce curly brackets (a.k.a. stache’s).</p>
+
+<p>Any content inside curly brackets will not be displayed if any of the variables were not available. In the example above if we had written “Hi <span style="color: #008000;">$firstname</span>{ <span style="color: #008000;">$surname</span>},” as the first line &ndash; it would have displayed neat text whether or not the surname was available. In this simple example if <span style="color: #008000;">$surname</span> is not set, the space before it is hidden.</p>
+
+<p>There is also the case where you would like to display something instead of the missing variables. For example in one particular email we might like to say “You can login with the username <span style="color: #008000;">$username</span> at our site.”, but if the client does not have a username yet we would rather say “You can signup for a username at our site.”.</p>
+
+<p>This nifty trick is performed by simply typing |or| inside the curly brackets. If the system picks this up it will display whichever one matches. Performing the operation in the paragraph above becomes simple as demonstrated.</p>
+
+<pre>You can {login with username '<span style="color: #008000;">$username</span>'|or|signup} at our site.
+=&gt; You can login with username 'josh' at our site.
+<span style="color: #999999;">(and sometimes)
+</span>=&gt; You can signup at our site.</pre>
+
+<h3>Final Details</h3>
+
+<p>There are a few more features that have not been covered yet. The first important one is including links in your template. This is achieved by wrapping an address in double square brackets such as “[[www.google.com]]”. We also allow link captions that are different from the address, by including a vertical bar: “[[www.google.com|Google Website]]”</p>
+
+<p>Variables can also be formatted according to a bunch of specific rules. In order to pass the variable to be formatted the code looks like <span style="color: #008000;">$username</span><span style="color: #666699;">(&gt;upper)</span> which will pass the username to the ‘upper’ function (will look something like “JOSH”). The complete list of current functions available is: <span style="color: #666699;">upper</span> (upper-case), <span style="color: #666699;">lower</span> (lower-case), <span style="color: #666699;">u2s</span> (underscores to spaces), <span style="color: #666699;">ucwords</span> (upper-case first letter of each word), <span style="color: #666699;">ucfirst</span> (upper-case only first letter), and <span style="color: #666699;">empty</span> (coverts to nothing &ndash; which is sometimes useful when combined with the missing variable syntax).</p>
+
+<p>The <a href="http://en.wikipedia.org/wiki/Ternary_operation">ternary operator</a> is also available as a formatting function. We use the C syntax with &lt;test&gt; ? &lt;if true&gt; : &lt;if false&gt;. If the &lt;if true&gt; section is not specified it defaults to being the same as the &lt;test&gt;. This is all most easily demonstrated with sample code.</p>
+
+<pre>Please visit [[http://www.google.com]], or [[http://www.yahoo.com|yahoo]]
+=&gt; Please visit <a href="http://www.google.com">http://www.google.com</a> or <a href="http://www.yahoo.com">yahoo</a>
+
+HOW IS <span style="color: #008000;">$username</span><span style="color: #666699;">(&gt;upper)</span> TODAY?
+=&gt; HOW IS JOSH TODAY?
+
+<span style="color: #008000;">$category</span><span style="color: #666699;">(&gt;ucfirst)</span> was chosen as the category.
+=&gt; Books was chosen as the category.
+
+Did <span style="color: #008000;">$staff</span><span style="color: #666699;">(?:the staff member)</span> mention the issue to you?
+=&gt; Did Josh mention the issue to you?
+<span style="color: #999999;">(and sometimes)
+</span>=&gt; Did the staff member mention the issue to you?</pre>
+
+<h3>Putting it all together</h3>
+
+<p>Heres a piece of sample template used for the user welcome email mentioned right at the start.</p>
+
+<pre>= Hi $user-&gt;name, =
+Welcome to Lusion Technologies,
+
+Firstly thank you for choosing Lusion Technologies. We strive to
+ensure you are completely satisfied with the services you will
+be receiving from us.
+
+== General Account Information ==
+
+*Username:* $username
+*Password:*{ $password|or|[*] **not stored**
+
+[*] We do not store your passwords for security reasons. If you
+do not remember it, you can reset it through our client system at
+[[http://lusion.snapbill.com/lost_password]].}
+
+== Accessing Billing Manager ==
+
+To access your billing manager you can go directly to:
+[[https://lusion.snapbill.com/login]]
+
+If you require any additional information or we can be of any
+further assistance please do not hesitate to contact us.
+
+Kind Regards,
+
+Lusion Technologies
+[[http://www.lusion.co.za]]</pre>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

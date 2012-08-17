@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>API</h3>      <li class="nav-header">Introduction</li>
+    <li><a href="/api/introduction/requests">Requests</a></li>      <li class="nav-header">Reference</li>
+    <li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li class="fixed-active"><a href="/api/reference/package">Package</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>API Reference: Package</h1>
+
+<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/packages/list</h3>
+
+<p>List all the packages that match the given options. Optionally 'service_type_id' and 'name' may be provided</p>
+
+<!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1349" \
+    >      https://api.snapbill.com/v1/package/list.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;list&quot;</span>,</li><li><span class="key">page</span>: <span class="number">1</span>,</li><li><span class="key">numpages</span>: <span class="number">1</span>,</li><li><span class="key">class</span>: <span class="string">&quot;package&quot;</span>,</li><li><span class="key">list</span>: [<ul class="obj closeable"><li>{<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Delicious Pancakes&quot;</span>,</li><li><span class="key">setup</span>: <span class="string">&quot;50.00&quot;</span>,</li><li><span class="key">setup_cents</span>: <span class="number">5000</span>,</li><li><span class="key">terms</span>: [<ul class="obj closeable"><li>{<ul class="obj closeable"><li><span class="key">type</span>: <span class="string">&quot;daymonth&quot;</span>,</li><li><span class="key">day</span>: <span class="number">1</span>,</li><li><span class="key">interval</span>: <span class="number">1</span>,</li><li><span class="key">description</span>: <span class="string">&quot;Monthly&quot;</span>,</li><li><span class="key">fee</span>: <span class="string">&quot;240.00&quot;</span>,</li><li><span class="key">fee_cents</span>: <span class="number">24000</span></li></ul>}</li></ul>],</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">service_type</span>: {<ul class="obj closeable"><li><span class="key">id</span>: <span class="number">1349</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CHu:VF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Pancake Delivery&quot;</span></li></ul>},</li><li><span class="key">available</span>: <span class="bool">true</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span></li></ul>}</li></ul>]</li></ul>}</div>
+</pre></pre>
+
+<p></section></p>
+
+<p><section id="parameters" data-title="parameters" markdown=1></p>
+
+<h3>Parameter listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="3">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">depth</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The depth parameter signals the amount of data for the package that was provided. depth=0 is the highest level that provides full detail.
+</td></tr>
+<tr><td nowrap="nowrap">name</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The name of the package. This is used as the reference and must be unique over a given account for a specific service type and currency.
+</td></tr>
+<tr><td nowrap="nowrap">setup</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The setup fee of the package as a string in the currency of the package.
+</td></tr>
+<tr><td nowrap="nowrap">setup_cents</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An integer value of the setup fee in cents.
+</td></tr>
+<tr><td nowrap="nowrap">terms</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An array of the different available terms for the package
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; type</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The type of term. Only option at the moment is "daymonth".
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; day</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The day at which the package is due. Always '1' at the moment.
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; interval</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The number of months between renewals of the package. Monthly renewals will be set to 1, quarterly is 3, annually 12, ...
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; description</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+A neat description explaining the terms recurrence (Monthly / Two months / Annual / ...)
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; fee</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The recurring fee for the package as a string.
+</td></tr>
+<tr><td nowrap="nowrap">&#8627; fee_cents</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+An integer value of the fee measured in cents.
+</td></tr>
+<tr><td nowrap="nowrap">currency</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+A <a href="/api/reference/currency">currency</a> object for the package.
+</td></tr>
+<tr><td nowrap="nowrap">service_type</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+A <a href="/api/reference/service_type">service type</a> that the package belongs to.
+</td></tr>
+<tr><td nowrap="nowrap">available</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+A boolean value indicating if the package is available on the signup form or not.
+</td></tr>
+<tr><td nowrap="nowrap">state</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
+The state the package is in. Usually "active" but will be set to "dead" if it is removed.
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I ain&#039;t goin&#039; on no airplane!&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

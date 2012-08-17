@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>      <li class="nav-header">Concepts</li>
+    <li><a href="/home/concepts/actions">Actions</a></li><li><a href="/home/concepts/permissions">Permissions</a></li><li><a href="/home/concepts/payment">Payment</a></li><li><a href="/home/concepts/signatures">Signatures</a></li><li><a href="/home/concepts/signup">Signup</a></li><li><a href="/home/concepts/xid">Xid</a></li>      <li class="nav-header">Templates</li>
+    <li><a href="/home/templates/reference">Reference</a></li><li class="fixed-active"><a href="/home/templates/files">Files</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Templates - Files</h1>
+
+<p><section id="files" markdown=1>
+You can attach files to your templates just by using the "<strong>@attachment:&lt;filename&#62;</strong>" special code at the top of your template wiki.</p>
+
+<h2>Uploading your files</h2>
+
+<p>Uploading the files is easy. Simply go to
+<a href="https://billing.snapbill.com/files" target="_blank" class="external">billing.snapbill.com/files</a> and make sure
+to use the filename that you want to appear in the email. Be sure to set it to
+not encrypt, and if you ever want to update the file just choose Replace in
+the "what to do if file exists" dropdown.</p>
+
+<h2>Linking to the file from templates</h2>
+
+<p>As mentioned before you need to use the <strong>@attachment</strong> tag, and simply list it at the top. For instance if you want to attach policy.pdf, your file should look like:</p>
+
+<pre><code>@subject:Welcome to SnapBill
+@attachment:policy.pdf
+
+== Hi $client-&gt;firstname ==
+Welcome to ......
+</code></pre>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I ain&#039;t goin&#039; on no airplane!&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

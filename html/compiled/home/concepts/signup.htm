@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>      <li class="nav-header">Concepts</li>
+    <li><a href="/home/concepts/actions">Actions</a></li><li><a href="/home/concepts/permissions">Permissions</a></li><li><a href="/home/concepts/payment">Payment</a></li><li><a href="/home/concepts/signatures">Signatures</a></li><li class="fixed-active"><a href="/home/concepts/signup">Signup</a></li><li class="level2"><a href="#skipping-steps">Skipping steps</a></li><li class="level2"><a href="#redirect">Redirects</a></li><li class="level2"><a href="#reference">Reference</a></li><li><a href="/home/concepts/xid">Xid</a></li>      <li class="nav-header">Templates</li>
+    <li><a href="/home/templates/reference">Reference</a></li><li><a href="/home/templates/files">Files</a></li>    </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Signup</h1>
+
+<p><section id="signup" markdown=1>
+The standard signup form allows a client to sign up for a single service. We do intend to add other types of signups, perhaps single page and shopping cart versions, at a later stage but for now only the single service version is available and default.
+</section></p>
+
+<p><section id="skipping-steps" data-title="Skipping steps" markdown=1></p>
+
+<h3>Skipping steps</h3>
+
+<p>You can skip the "Are you a new or existing customer?" step simply by including a <code>?<strong>customer=new</strong></code> value at the end of your signup url. If you want to skip any other steps you can simply provide values for every field on the page. If you leave out any fields whatsoever, the fields provided are simply used as default values during the signup.</p>
+
+<p>As an example, to skip the client form as well you can use (<a href="https://franks.snapbill.com/signup?customer=new&amp;client-title=Mr&amp;client-firstname=Website&amp;client-surname=Example&amp;client-email=website@example.com&amp;client-cell=&amp;client-company=&amp;client-data-vat_number=" target="_blank" class="external">example</a>):</p>
+
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?customer=new
+  &client-title=<strong>Mr</strong>&client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
+  &client-email=<strong>website@example.com</strong>&client-cell=&client-company=
+  &client-data-custom_field=
+</pre>
+
+<p>If you wanted to you could even skip straight to the payment step (<a href="https://franks.snapbill.com/signup?customer=new&amp;client-title=Mr&amp;client-firstname=Website&amp;client-surname=Example&amp;client-email=website@example.com&amp;client-cell=&amp;client-company=&amp;client-data-vat_number=&amp;service_type=Sample+Service&amp;service-package=Small&amp;service-term=1" target="_blank" class="external">example</a>):</p>
+
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?customer=new
+  &client-title=<strong>Mr</strong>&client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
+  &client-email=<strong>website@example.com</strong>&client-cell=&client-company=
+  &client-data-custom_field=
+  &service_type=<strong>Sample+Service</strong>
+  &service-package=<strong>Small</strong>&service-term=<strong>1</strong>
+</pre>
+
+<p>An example with default values for a few client details would look like (<a href="https://franks.snapbill.com/signup?customer=new&amp;client-firstname=Website&amp;client-surname=Example&amp;client-email=website@example.com" target="_blank" class="external">example</a>):</p>
+
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?customer=new
+  &client-firstname=<strong>Website</strong>&client-surname=<strong>Example</strong>
+  &client-email=<strong>website@example.com</strong>
+</pre>
+
+<p><strong>Note</strong> that any custom fields you add will need to be included. Custom field added to the client take the form client-data-<em>field_name</em>, while custom fields on the service are similarly service-data-<em>field_name</em>.
+</section></p>
+
+<p><section id="redirect" data-title="Redirects" markdown=1></p>
+
+<h3>Redirects</h3>
+
+<p>You can configure your signup page to redirect back to your website once a signup is complete. You'll find the option for this under Setup > Services > Signup Forms.</p>
+
+<table class="table">
+<thead><tr>
+ <th>Parameter</th><th>Description</th>
+</tr></thead><tbody>
+<tr><td>id</td><td>The id of the signup object which was completed</td></tr>
+<tr><td>total</td><td>Total price of the signup to be paid now as a floating point value</td></tr>
+<tr><td>currency</td><td>The three-letter currency code the signup was done in</td></tr>
+<tr><td>client_id</td><td>The id of the client object which had the signup</td></tr>
+<tr><td>service_id</td><td><span class="label label-optional">Optional</span> id included if a service was created during the signup</td></tr>
+<tr><td>payment_id</td><td><span class="label label-optional">Optional</span> id of the payment if one was created with the signup</td></tr>
+<tr><td>payment_state</td><td><span class="label label-optional">Optional</span> state of the payment (either **paid**, or **pending**)</td></tr>
+<tr><td>payment_amount</td><td><span class="label label-optional">Optional</span> amount of the payment as measured as a floating point value</td></tr>
+<tr><td>signature</td><td>A signature using a shared secret confirming that the above fields were not tampered with</td></tr>
+</tbody>
+</table>
+
+<p></section></p>
+
+<p><section id="reference" data-title="Reference" markdown=1></p>
+
+<h3>Reference</h3>
+
+<p>For more details and an entire reference on the Signup object within the system, please check the <a href="/api/reference/signup">API Reference for Signup</a>.</p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I ain&#039;t goin&#039; on no airplane!&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    
