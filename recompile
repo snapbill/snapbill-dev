@@ -4,5 +4,5 @@ git merge master
 ./compile
 git add -f html/compiled
 git commit -m "Re-generated page html content"
-git push origin live
+git push --force origin live
 git checkout master
