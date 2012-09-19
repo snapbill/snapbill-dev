@@ -9,7 +9,7 @@ API Reference: Payment Details
     $ curl -u user:pass -d "perpage=2" \
     >      https://api.snapbill.com/v1/payment_details/list.json
 </pre><pre class="output">
-%%json:examples/payment.txt-1.json%
+%%json:examples/payment_details.txt-1.json%
 </pre></pre>
 </section>
 

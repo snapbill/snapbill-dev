@@ -4,56 +4,83 @@
       "class": "action",
       "action": {
         "depth": 0,
-        "id": 2830745,
-        "xid": "CHu:KzGZ",
+        "id": 3244,
+        "xid": "CMq:ys",
         "url": "/service/add",
         "path": "/service/add",
-        "link": "/service/CHu:cUe",
+        "link": "/service/CMq:dKc",
         "item_type": "service",
-        "description": "Added pancake delivery service to test4308",
+        "description": "Added pancake delivery service to test8659",
         "details": [],
-        "date": "2012-08-16 18:10:29",
+        "date": "2012-09-19 04:13:21",
         "client": {
           "depth": 2,
-          "id": 118818,
-          "xid": "CHu:dAi",
+          "id": 134022,
+          "xid": "CMq:guG",
           "state": "new",
           "number": "001",
-          "name": "test4308"
+          "name": "test8659"
         },
         "service": {
-          "id": 115998,
-          "xid": "CHu:cUe",
+          "id": 119452,
+          "xid": "CMq:dKc",
           "state": "new",
           "name": "Pancake Delivery",
-          "created": "2012-08-16 18:10:29",
-          "renewal": "2012-08-16 00:00:00",
-          "package": "Delicious Pancakes",
+          "created": "2012-09-19 04:13:21",
+          "renewal": "2012-09-19 00:00:00",
+          "package": {
+            "depth": 3,
+            "name": "Delicious Pancakes",
+            "setup": "50.00",
+            "setup_cents": 5000,
+            "terms": [
+              {
+                "type": "daymonth",
+                "day": 1,
+                "interval": 1,
+                "description": "Monthly",
+                "fee": "240.00",
+                "fee_cents": 24000
+              }
+            ],
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "service_type": {
+              "id": 1408,
+              "xid": "CMq:WA",
+              "name": "Pancake Delivery"
+            },
+            "available": true,
+            "state": "active"
+          },
           "term": "1",
           "data": {
-            "created": "2012-08-16 18:10:29",
+            "created": "2012-09-19 04:13:21",
             "name": "Pancake Delivery",
-            "package": "Delicious Pancakes",
-            "renewal": "2012-08-16 00:00:00",
+            "package_name": "Delicious Pancakes",
+            "renewal": "2012-09-19 00:00:00",
             "term": "1"
           },
           "service_type": {
-            "id": 1349,
-            "xid": "CHu:VF",
+            "id": 1408,
+            "xid": "CMq:WA",
             "name": "Pancake Delivery"
           },
           "client": {
             "depth": 2,
-            "id": 118818,
-            "xid": "CHu:dAi",
+            "id": 134022,
+            "xid": "CMq:guG",
             "state": "new",
             "number": "001",
-            "name": "test4308"
+            "name": "test8659"
           }
         },
         "user": {
           "depth": 2,
-          "id": 6153,
+          "id": 6794,
           "username": "demo"
         }
       }

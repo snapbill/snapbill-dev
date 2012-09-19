@@ -3,34 +3,61 @@
       "type": "item",
       "class": "service",
       "service": {
-        "id": 115998,
-        "xid": "CHu:cUe",
+        "id": 119453,
+        "xid": "CMq:dKd",
         "state": "new",
         "name": "Pancake Delivery",
-        "created": "2012-08-16 18:10:29",
-        "renewal": "2012-08-16 18:10:29",
-        "package": "Delicious Pancakes",
-        "term": "1",
+        "created": "2012-09-19 04:16:44",
+        "renewal": "2012-09-19 04:16:44",
+        "package": {
+          "depth": 1,
+          "name": "Delicious Pancakes",
+          "setup": "50.00",
+          "setup_cents": 5000,
+          "terms": [
+            {
+              "type": "daymonth",
+              "day": 1,
+              "interval": 1,
+              "description": "Monthly",
+              "fee": "240.00",
+              "fee_cents": 24000
+            }
+          ],
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "service_type": {
+            "id": 1408,
+            "xid": "CMq:WA",
+            "name": "Pancake Delivery"
+          },
+          "available": true,
+          "state": "active"
+        },
+        "term": 1,
         "data": {
-          "created": "2012-08-16 18:10:29",
+          "created": "2012-09-19 04:16:44",
           "name": "Pancake Delivery",
-          "package": "Delicious Pancakes",
-          "renewal": "2012-08-16 18:10:29",
-          "term": "1"
+          "package_name": "Delicious Pancakes",
+          "renewal": "2012-09-19 04:16:44",
+          "term": 1
         },
         "service_type": {
-          "id": 1349,
-          "xid": "CHu:VF",
+          "id": 1408,
+          "xid": "CMq:WA",
           "name": "Pancake Delivery"
         },
         "client": {
           "depth": 1,
-          "id": 118818,
-          "xid": "CHu:dAi",
+          "id": 134022,
+          "xid": "CMq:guG",
           "state": "new",
           "number": "001",
-          "name": "test4308",
-          "firstname": "test4308",
+          "name": "test8659",
+          "firstname": "test8659",
           "surname": "",
           "company": "",
           "email": "",
@@ -57,19 +84,19 @@
           },
           "account": {
             "depth": 1,
-            "id": 8686,
-            "xid": "CHu:CHu",
+            "id": 9002,
+            "xid": "CMq:CMq",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "0.00",
-            "unpaid_invoices_cents": 0,
+            "unpaid_invoices": "412.56",
+            "unpaid_invoices_cents": 41256,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CHu:dAi/Bu3q0GgJkwpC",
-            "payment": "https://demo.snapbill.com/payment/client/CHu:dAi/3uFQr82hrmkI"
+            "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
+            "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
           }
         }
       }

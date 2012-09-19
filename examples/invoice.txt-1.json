@@ -3,14 +3,14 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 283429,
-        "xid": "CHu:BFMl",
-        "created": "2012-08-16 18:10:31",
+        "id": 318482,
+        "xid": "CMq:BNwS",
+        "created": "2012-09-19 04:13:25",
         "type": "invoice",
         "state": "unpaid",
         "po_number": "",
-        "date": "2012-08-16",
-        "due_date": "2012-08-16",
+        "date": "2012-09-19",
+        "due_date": "2012-09-19",
         "name": "Invoice 001/0011",
         "number": "001/0011",
         "currency": {
@@ -26,8 +26,8 @@
         "total_cents": 3456,
         "lines": [
           {
-            "id": 368832,
-            "xid": 368832,
+            "id": 432614,
+            "xid": 432614,
             "item_name": "",
             "description": "rolls",
             "unit_cost": "1.12",
@@ -39,8 +39,8 @@
             "term": null
           },
           {
-            "id": 368833,
-            "xid": 368833,
+            "id": 432615,
+            "xid": 432615,
             "item_name": "",
             "description": "chips",
             "unit_cost": "20.00",
@@ -54,12 +54,12 @@
         ],
         "client": {
           "depth": 1,
-          "id": 118818,
-          "xid": "CHu:dAi",
+          "id": 134022,
+          "xid": "CMq:guG",
           "state": "new",
           "number": "001",
-          "name": "test4308",
-          "firstname": "test4308",
+          "name": "test8659",
+          "firstname": "test8659",
           "surname": "",
           "company": "",
           "email": "",
@@ -86,8 +86,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 8686,
-            "xid": "CHu:CHu",
+            "id": 9002,
+            "xid": "CMq:CMq",
             "username": "demo"
           },
           "totals": {
@@ -97,8 +97,8 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CHu:dAi/Bu3q0GgJkwpC",
-            "payment": "https://demo.snapbill.com/payment/client/CHu:dAi/3uFQr82hrmkI"
+            "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
+            "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
           }
         }
       }
