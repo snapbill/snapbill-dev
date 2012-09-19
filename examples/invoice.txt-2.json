@@ -3,9 +3,9 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 318483,
-        "xid": "CMq:BNwT",
-        "created": "2012-09-19 04:13:25",
+        "id": 318495,
+        "xid": "CMr:BNwf",
+        "created": "2012-09-19 04:32:19",
         "type": "invoice",
         "state": "unpaid",
         "po_number": "",
@@ -26,8 +26,8 @@
         "total_cents": 37800,
         "lines": [
           {
-            "id": 432616,
-            "xid": 432616,
+            "id": 432631,
+            "xid": 432631,
             "item_name": "",
             "description": "Pancake Delivery: Delicious Pancakes Setup Fee",
             "unit_cost": "50.00",
@@ -38,11 +38,11 @@
             "package": "Delicious Pancakes",
             "term": null,
             "service": {
-              "id": 119452,
-              "xid": "CMq:dKc",
+              "id": 119454,
+              "xid": "CMr:dKe",
               "state": "new",
               "name": "Pancake Delivery",
-              "created": "2012-09-19 04:13:21",
+              "created": "2012-09-19 04:32:15",
               "renewal": "2012-11-01 00:00:00",
               "package": {
                 "depth": 2,
@@ -65,8 +65,8 @@
                   "enabled": true
                 },
                 "service_type": {
-                  "id": 1408,
-                  "xid": "CMq:WA",
+                  "id": 1409,
+                  "xid": "CMr:WB",
                   "name": "Pancake Delivery"
                 },
                 "available": true,
@@ -74,30 +74,30 @@
               },
               "term": "1",
               "data": {
-                "created": "2012-09-19 04:13:21",
+                "created": "2012-09-19 04:32:15",
                 "name": "Pancake Delivery",
                 "package_name": "Delicious Pancakes",
                 "renewal": "2012-11-01 00:00:00",
                 "term": "1"
               },
               "service_type": {
-                "id": 1408,
-                "xid": "CMq:WA",
+                "id": 1409,
+                "xid": "CMr:WB",
                 "name": "Pancake Delivery"
               },
               "client": {
                 "depth": 2,
-                "id": 134022,
-                "xid": "CMq:guG",
+                "id": 134036,
+                "xid": "CMr:guU",
                 "state": "new",
                 "number": "001",
-                "name": "test8659"
+                "name": "test2962"
               }
             }
           },
           {
-            "id": 432617,
-            "xid": 432617,
+            "id": 432632,
+            "xid": 432632,
             "item_name": "",
             "description": "Pancake Delivery: Delicious Pancakes Prorated Fee (Rest of September)",
             "unit_cost": "88.00",
@@ -108,11 +108,11 @@
             "package": "Delicious Pancakes",
             "term": null,
             "service": {
-              "id": 119452,
-              "xid": "CMq:dKc",
+              "id": 119454,
+              "xid": "CMr:dKe",
               "state": "new",
               "name": "Pancake Delivery",
-              "created": "2012-09-19 04:13:21",
+              "created": "2012-09-19 04:32:15",
               "renewal": "2012-11-01 00:00:00",
               "package": {
                 "depth": 2,
@@ -135,8 +135,8 @@
                   "enabled": true
                 },
                 "service_type": {
-                  "id": 1408,
-                  "xid": "CMq:WA",
+                  "id": 1409,
+                  "xid": "CMr:WB",
                   "name": "Pancake Delivery"
                 },
                 "available": true,
@@ -144,30 +144,30 @@
               },
               "term": "1",
               "data": {
-                "created": "2012-09-19 04:13:21",
+                "created": "2012-09-19 04:32:15",
                 "name": "Pancake Delivery",
                 "package_name": "Delicious Pancakes",
                 "renewal": "2012-11-01 00:00:00",
                 "term": "1"
               },
               "service_type": {
-                "id": 1408,
-                "xid": "CMq:WA",
+                "id": 1409,
+                "xid": "CMr:WB",
                 "name": "Pancake Delivery"
               },
               "client": {
                 "depth": 2,
-                "id": 134022,
-                "xid": "CMq:guG",
+                "id": 134036,
+                "xid": "CMr:guU",
                 "state": "new",
                 "number": "001",
-                "name": "test8659"
+                "name": "test2962"
               }
             }
           },
           {
-            "id": 432618,
-            "xid": 432618,
+            "id": 432633,
+            "xid": 432633,
             "item_name": "",
             "description": "Pancake Delivery: Delicious Pancakes Monthly Fee (October 2012)",
             "unit_cost": "240.00",
@@ -178,11 +178,11 @@
             "package": "Delicious Pancakes",
             "term": "1",
             "service": {
-              "id": 119452,
-              "xid": "CMq:dKc",
+              "id": 119454,
+              "xid": "CMr:dKe",
               "state": "new",
               "name": "Pancake Delivery",
-              "created": "2012-09-19 04:13:21",
+              "created": "2012-09-19 04:32:15",
               "renewal": "2012-11-01 00:00:00",
               "package": {
                 "depth": 2,
@@ -205,8 +205,8 @@
                   "enabled": true
                 },
                 "service_type": {
-                  "id": 1408,
-                  "xid": "CMq:WA",
+                  "id": 1409,
+                  "xid": "CMr:WB",
                   "name": "Pancake Delivery"
                 },
                 "available": true,
@@ -214,36 +214,36 @@
               },
               "term": "1",
               "data": {
-                "created": "2012-09-19 04:13:21",
+                "created": "2012-09-19 04:32:15",
                 "name": "Pancake Delivery",
                 "package_name": "Delicious Pancakes",
                 "renewal": "2012-11-01 00:00:00",
                 "term": "1"
               },
               "service_type": {
-                "id": 1408,
-                "xid": "CMq:WA",
+                "id": 1409,
+                "xid": "CMr:WB",
                 "name": "Pancake Delivery"
               },
               "client": {
                 "depth": 2,
-                "id": 134022,
-                "xid": "CMq:guG",
+                "id": 134036,
+                "xid": "CMr:guU",
                 "state": "new",
                 "number": "001",
-                "name": "test8659"
+                "name": "test2962"
               }
             }
           }
         ],
         "client": {
           "depth": 1,
-          "id": 134022,
-          "xid": "CMq:guG",
+          "id": 134036,
+          "xid": "CMr:guU",
           "state": "new",
           "number": "001",
-          "name": "test8659",
-          "firstname": "test8659",
+          "name": "test2962",
+          "firstname": "test2962",
           "surname": "",
           "company": "",
           "email": "",
@@ -270,8 +270,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9002,
-            "xid": "CMq:CMq",
+            "id": 9003,
+            "xid": "CMr:CMr",
             "username": "demo"
           },
           "totals": {
@@ -281,8 +281,8 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
-            "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
+            "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+            "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
           }
         }
       }

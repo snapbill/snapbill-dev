@@ -10,8 +10,8 @@ Adds a service to a client.
 <!-- eval: client_id = self.fetch_single('client', 'id') -->
 
 <pre><pre class="input">
-    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1408&package=Delicious%20Pancakes&term=1" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->134022/add_service.json
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->1409&package=Delicious%20Pancakes&term=1" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->134036/add_service.json
 </pre><pre class="output">
 %%json:examples/service.txt-1.json%
 </pre>

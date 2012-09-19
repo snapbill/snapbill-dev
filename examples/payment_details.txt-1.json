@@ -6,21 +6,21 @@
       "class": "payment_details",
       "list": [
         {
-          "id": 100322,
-          "xid": "CMq:Yfi",
+          "id": 100325,
+          "xid": "CMr:Yfl",
           "type": "bank_account",
           "bank": "ABSA BANK",
-          "number": "************0532",
-          "last4": "0532",
+          "number": "************9565",
+          "last4": "9565",
           "expiry": null,
           "client": {
             "depth": 1,
-            "id": 134030,
-            "xid": "CMq:guO",
+            "id": 134036,
+            "xid": "CMr:guU",
             "state": "new",
-            "number": "009",
-            "name": "test2280",
-            "firstname": "test2280",
+            "number": "001",
+            "name": "test2962",
+            "firstname": "test2962",
             "surname": "",
             "company": "",
             "email": "",
@@ -47,9 +47,9 @@
             },
             "account": {
               "depth": 1,
-              "id": 9002,
-              "xid": "CMq:CMq",
-              "username": "sznyjnnt"
+              "id": 9003,
+              "xid": "CMr:CMr",
+              "username": "demo"
             },
             "totals": {
               "unpaid_invoices": "0.00",
@@ -58,27 +58,27 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "http://sznyjnnt.snap/statement/CMq:guO/vrf9tTNXLf0m",
-              "payment": "http://sznyjnnt.snap/payment/client/CMq:guO/wCI87n0FxWOZ"
+              "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+              "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
             }
           }
         },
         {
-          "id": 100318,
-          "xid": "CMq:Yfe",
-          "type": "bank_account",
-          "bank": "ABSA BANK",
-          "number": "************3176",
-          "last4": "3176",
-          "expiry": null,
+          "id": 100326,
+          "xid": "CMr:Yfm",
+          "type": "credit_card",
+          "bank": "visa",
+          "number": "****-****-****-6616",
+          "last4": "6616",
+          "expiry": "2013-05",
           "client": {
             "depth": 1,
-            "id": 134026,
-            "xid": "CMq:guK",
+            "id": 134037,
+            "xid": "CMr:guV",
             "state": "new",
-            "number": "005",
-            "name": "test3952",
-            "firstname": "test3952",
+            "number": "002",
+            "name": "test9438",
+            "firstname": "test9438",
             "surname": "",
             "company": "",
             "email": "",
@@ -105,9 +105,9 @@
             },
             "account": {
               "depth": 1,
-              "id": 9002,
-              "xid": "CMq:CMq",
-              "username": "sznyjnnt"
+              "id": 9003,
+              "xid": "CMr:CMr",
+              "username": "demo"
             },
             "totals": {
               "unpaid_invoices": "0.00",
@@ -116,8 +116,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "http://sznyjnnt.snap/statement/CMq:guK/GMn05gmjLYmQ",
-              "payment": "http://sznyjnnt.snap/payment/client/CMq:guK/QVttEOU1Q0LX"
+              "statement": "https://demo.snapbill.com/statement/CMr:guV/Je8v6cwKRtYQ",
+              "payment": "https://demo.snapbill.com/payment/client/CMr:guV/makWNppxkqjD"
             }
           }
         }

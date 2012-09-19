@@ -3,16 +3,16 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 318474,
-        "xid": "CMq:BNwK",
-        "created": "2012-09-19 04:13:13",
+        "id": 318488,
+        "xid": "CMr:BNwY",
+        "created": "2012-09-19 04:32:06",
         "type": "invoice",
         "state": "pending",
         "po_number": "",
         "date": "2012-09-19",
         "due_date": "2012-09-19",
-        "name": "Pending invoice 001/0003",
-        "number": "001/0003",
+        "name": "Pending invoice 001/0002",
+        "number": "001/0002",
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
@@ -26,8 +26,8 @@
         "total_cents": 5000,
         "lines": [
           {
-            "id": 432606,
-            "xid": 432606,
+            "id": 432621,
+            "xid": 432621,
             "item_name": "",
             "description": "Sample",
             "unit_cost": "50.00",
@@ -38,8 +38,8 @@
             "package": null,
             "term": null,
             "charge": {
-              "id": 3999,
-              "xid": "CMq:-f",
+              "id": 4009,
+              "xid": "CMr:-p",
               "amount": 50,
               "currency": {
                 "code": "ZAR",
@@ -47,7 +47,7 @@
                 "enabled": true
               },
               "recurrence": {
-                "4752": {
+                "4762": {
                   "description": "Once-off"
                 }
               }
@@ -56,12 +56,12 @@
         ],
         "client": {
           "depth": 1,
-          "id": 134022,
-          "xid": "CMq:guG",
+          "id": 134036,
+          "xid": "CMr:guU",
           "state": "new",
           "number": "001",
-          "name": "test8659",
-          "firstname": "test8659",
+          "name": "test2962",
+          "firstname": "test2962",
           "surname": "",
           "company": "",
           "email": "",
@@ -88,8 +88,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9002,
-            "xid": "CMq:CMq",
+            "id": 9003,
+            "xid": "CMr:CMr",
             "username": "demo"
           },
           "totals": {
@@ -99,8 +99,8 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
-            "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
+            "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+            "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
           }
         }
       }

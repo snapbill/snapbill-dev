@@ -4,29 +4,29 @@
       "class": "action",
       "action": {
         "depth": 0,
-        "id": 3244,
-        "xid": "CMq:ys",
+        "id": 3346,
+        "xid": "CMr:0S",
         "url": "/service/add",
         "path": "/service/add",
-        "link": "/service/CMq:dKc",
+        "link": "/service/CMr:dKe",
         "item_type": "service",
-        "description": "Added pancake delivery service to test8659",
+        "description": "Added pancake delivery service to test2962",
         "details": [],
-        "date": "2012-09-19 04:13:21",
+        "date": "2012-09-19 04:32:15",
         "client": {
           "depth": 2,
-          "id": 134022,
-          "xid": "CMq:guG",
+          "id": 134036,
+          "xid": "CMr:guU",
           "state": "new",
           "number": "001",
-          "name": "test8659"
+          "name": "test2962"
         },
         "service": {
-          "id": 119452,
-          "xid": "CMq:dKc",
+          "id": 119454,
+          "xid": "CMr:dKe",
           "state": "new",
           "name": "Pancake Delivery",
-          "created": "2012-09-19 04:13:21",
+          "created": "2012-09-19 04:32:15",
           "renewal": "2012-09-19 00:00:00",
           "package": {
             "depth": 3,
@@ -49,8 +49,8 @@
               "enabled": true
             },
             "service_type": {
-              "id": 1408,
-              "xid": "CMq:WA",
+              "id": 1409,
+              "xid": "CMr:WB",
               "name": "Pancake Delivery"
             },
             "available": true,
@@ -58,29 +58,29 @@
           },
           "term": "1",
           "data": {
-            "created": "2012-09-19 04:13:21",
+            "created": "2012-09-19 04:32:15",
             "name": "Pancake Delivery",
             "package_name": "Delicious Pancakes",
             "renewal": "2012-09-19 00:00:00",
             "term": "1"
           },
           "service_type": {
-            "id": 1408,
-            "xid": "CMq:WA",
+            "id": 1409,
+            "xid": "CMr:WB",
             "name": "Pancake Delivery"
           },
           "client": {
             "depth": 2,
-            "id": 134022,
-            "xid": "CMq:guG",
+            "id": 134036,
+            "xid": "CMr:guU",
             "state": "new",
             "number": "001",
-            "name": "test8659"
+            "name": "test2962"
           }
         },
         "user": {
           "depth": 2,
-          "id": 6794,
+          "id": 6795,
           "username": "demo"
         }
       }

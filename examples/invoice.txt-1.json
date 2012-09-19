@@ -3,9 +3,9 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 318482,
-        "xid": "CMq:BNwS",
-        "created": "2012-09-19 04:13:25",
+        "id": 318494,
+        "xid": "CMr:BNwe",
+        "created": "2012-09-19 04:32:19",
         "type": "invoice",
         "state": "unpaid",
         "po_number": "",
@@ -26,8 +26,8 @@
         "total_cents": 3456,
         "lines": [
           {
-            "id": 432614,
-            "xid": 432614,
+            "id": 432629,
+            "xid": 432629,
             "item_name": "",
             "description": "rolls",
             "unit_cost": "1.12",
@@ -39,8 +39,8 @@
             "term": null
           },
           {
-            "id": 432615,
-            "xid": 432615,
+            "id": 432630,
+            "xid": 432630,
             "item_name": "",
             "description": "chips",
             "unit_cost": "20.00",
@@ -54,12 +54,12 @@
         ],
         "client": {
           "depth": 1,
-          "id": 134022,
-          "xid": "CMq:guG",
+          "id": 134036,
+          "xid": "CMr:guU",
           "state": "new",
           "number": "001",
-          "name": "test8659",
-          "firstname": "test8659",
+          "name": "test2962",
+          "firstname": "test2962",
           "surname": "",
           "company": "",
           "email": "",
@@ -86,8 +86,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9002,
-            "xid": "CMq:CMq",
+            "id": 9003,
+            "xid": "CMr:CMr",
             "username": "demo"
           },
           "totals": {
@@ -97,8 +97,8 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
-            "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
+            "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+            "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
           }
         }
       }

@@ -6,16 +6,16 @@
       "class": "payment",
       "list": [
         {
-          "id": 288830,
-          "xid": "CMq:BGg-",
+          "id": 288835,
+          "xid": "CMr:BGhD",
           "client": {
             "depth": 0,
-            "id": 134022,
-            "xid": "CMq:guG",
+            "id": 134036,
+            "xid": "CMr:guU",
             "state": "new",
             "number": "001",
-            "name": "test8659",
-            "firstname": "test8659",
+            "name": "test2962",
+            "firstname": "test2962",
             "surname": "",
             "company": "",
             "email": "",
@@ -42,84 +42,27 @@
             },
             "account": {
               "depth": 1,
-              "id": 9002,
-              "xid": "CMq:CMq",
+              "id": 9003,
+              "xid": "CMr:CMr",
               "username": "demo"
             },
             "totals": {
-              "unpaid_invoices": "412.56",
-              "unpaid_invoices_cents": 41256,
+              "unpaid_invoices": "0.00",
+              "unpaid_invoices_cents": 0,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
-              "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
+              "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+              "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
             },
             "services": {
-              "119452": {
-                "id": 119452,
-                "xid": "CMq:dKc",
+              "119454": {
+                "id": 119454,
+                "xid": "CMr:dKe",
                 "state": "new",
                 "name": "Pancake Delivery",
-                "created": "2012-09-19 04:13:21",
-                "renewal": "2012-11-01 00:00:00",
-                "package": {
-                  "depth": 2,
-                  "name": "Delicious Pancakes",
-                  "setup": "50.00",
-                  "setup_cents": 5000,
-                  "terms": [
-                    {
-                      "type": "daymonth",
-                      "day": 1,
-                      "interval": 1,
-                      "description": "Monthly",
-                      "fee": "240.00",
-                      "fee_cents": 24000
-                    }
-                  ],
-                  "currency": {
-                    "code": "ZAR",
-                    "format": "R%.2f",
-                    "enabled": true
-                  },
-                  "service_type": {
-                    "id": 1408,
-                    "xid": "CMq:WA",
-                    "name": "Pancake Delivery"
-                  },
-                  "available": true,
-                  "state": "active"
-                },
-                "term": "1",
-                "data": {
-                  "created": "2012-09-19 04:13:21",
-                  "name": "Pancake Delivery",
-                  "package_name": "Delicious Pancakes",
-                  "renewal": "2012-11-01 00:00:00",
-                  "term": "1"
-                },
-                "service_type": {
-                  "id": 1408,
-                  "xid": "CMq:WA",
-                  "name": "Pancake Delivery"
-                },
-                "client": {
-                  "depth": 2,
-                  "id": 134022,
-                  "xid": "CMq:guG",
-                  "state": "new",
-                  "number": "001",
-                  "name": "test8659"
-                }
-              },
-              "119453": {
-                "id": 119453,
-                "xid": "CMq:dKd",
-                "state": "new",
-                "name": "Pancake Delivery",
-                "created": "2012-09-19 04:16:44",
+                "created": "2012-09-19 04:32:15",
                 "renewal": "2012-09-19 00:00:00",
                 "package": {
                   "depth": 2,
@@ -142,8 +85,8 @@
                     "enabled": true
                   },
                   "service_type": {
-                    "id": 1408,
-                    "xid": "CMq:WA",
+                    "id": 1409,
+                    "xid": "CMr:WB",
                     "name": "Pancake Delivery"
                   },
                   "available": true,
@@ -151,32 +94,32 @@
                 },
                 "term": "1",
                 "data": {
-                  "created": "2012-09-19 04:16:44",
+                  "created": "2012-09-19 04:32:15",
                   "name": "Pancake Delivery",
                   "package_name": "Delicious Pancakes",
                   "renewal": "2012-09-19 00:00:00",
                   "term": "1"
                 },
                 "service_type": {
-                  "id": 1408,
-                  "xid": "CMq:WA",
+                  "id": 1409,
+                  "xid": "CMr:WB",
                   "name": "Pancake Delivery"
                 },
                 "client": {
                   "depth": 2,
-                  "id": 134022,
-                  "xid": "CMq:guG",
+                  "id": 134036,
+                  "xid": "CMr:guU",
                   "state": "new",
                   "number": "001",
-                  "name": "test8659"
+                  "name": "test2962"
                 }
               }
             }
           },
           "batch": {
             "depth": 1,
-            "id": 403,
-            "xid": "CMq:GT",
+            "id": 404,
+            "xid": "CMr:GU",
             "state": "ready",
             "action_date": "2012-09-19",
             "submit_date": null,
@@ -192,8 +135,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9002,
-              "xid": "CMq:CMq",
+              "id": 9003,
+              "xid": "CMr:CMr",
               "username": "demo"
             }
           },
@@ -214,16 +157,16 @@
           "state": "pending"
         },
         {
-          "id": 288820,
-          "xid": "CMq:BGg0",
+          "id": 288833,
+          "xid": "CMr:BGhB",
           "client": {
             "depth": 0,
-            "id": 134023,
-            "xid": "CMq:guH",
+            "id": 134037,
+            "xid": "CMr:guV",
             "state": "new",
             "number": "002",
-            "name": "test0559",
-            "firstname": "test0559",
+            "name": "test9438",
+            "firstname": "test9438",
             "surname": "",
             "company": "",
             "email": "",
@@ -250,8 +193,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9002,
-              "xid": "CMq:CMq",
+              "id": 9003,
+              "xid": "CMr:CMr",
               "username": "demo"
             },
             "totals": {
@@ -261,15 +204,15 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CMq:guH/YqYF8NmMMs8M",
-              "payment": "https://demo.snapbill.com/payment/client/CMq:guH/wJ1bUcNrVC6b"
+              "statement": "https://demo.snapbill.com/statement/CMr:guV/Je8v6cwKRtYQ",
+              "payment": "https://demo.snapbill.com/payment/client/CMr:guV/makWNppxkqjD"
             },
             "services": []
           },
           "batch": {
             "depth": 1,
-            "id": 403,
-            "xid": "CMq:GT",
+            "id": 404,
+            "xid": "CMr:GU",
             "state": "ready",
             "action_date": "2012-09-19",
             "submit_date": null,
@@ -285,8 +228,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9002,
-              "xid": "CMq:CMq",
+              "id": 9003,
+              "xid": "CMr:CMr",
               "username": "demo"
             }
           },

@@ -3,12 +3,12 @@
       "type": "item",
       "class": "service",
       "service": {
-        "id": 119453,
-        "xid": "CMq:dKd",
+        "id": 119454,
+        "xid": "CMr:dKe",
         "state": "new",
         "name": "Pancake Delivery",
-        "created": "2012-09-19 04:16:44",
-        "renewal": "2012-09-19 04:16:44",
+        "created": "2012-09-19 04:32:15",
+        "renewal": "2012-09-19 04:32:15",
         "package": {
           "depth": 1,
           "name": "Delicious Pancakes",
@@ -30,8 +30,8 @@
             "enabled": true
           },
           "service_type": {
-            "id": 1408,
-            "xid": "CMq:WA",
+            "id": 1409,
+            "xid": "CMr:WB",
             "name": "Pancake Delivery"
           },
           "available": true,
@@ -39,25 +39,25 @@
         },
         "term": 1,
         "data": {
-          "created": "2012-09-19 04:16:44",
+          "created": "2012-09-19 04:32:15",
           "name": "Pancake Delivery",
           "package_name": "Delicious Pancakes",
-          "renewal": "2012-09-19 04:16:44",
+          "renewal": "2012-09-19 04:32:15",
           "term": 1
         },
         "service_type": {
-          "id": 1408,
-          "xid": "CMq:WA",
+          "id": 1409,
+          "xid": "CMr:WB",
           "name": "Pancake Delivery"
         },
         "client": {
           "depth": 1,
-          "id": 134022,
-          "xid": "CMq:guG",
+          "id": 134036,
+          "xid": "CMr:guU",
           "state": "new",
           "number": "001",
-          "name": "test8659",
-          "firstname": "test8659",
+          "name": "test2962",
+          "firstname": "test2962",
           "surname": "",
           "company": "",
           "email": "",
@@ -84,19 +84,19 @@
           },
           "account": {
             "depth": 1,
-            "id": 9002,
-            "xid": "CMq:CMq",
+            "id": 9003,
+            "xid": "CMr:CMr",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "412.56",
-            "unpaid_invoices_cents": 41256,
+            "unpaid_invoices": "0.00",
+            "unpaid_invoices_cents": 0,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMq:guG/f1vQrxbCQmYd",
-            "payment": "https://demo.snapbill.com/payment/client/CMq:guG/LHrWVvR16pL2"
+            "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+            "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
           }
         }
       }

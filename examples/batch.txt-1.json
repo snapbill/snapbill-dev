@@ -4,8 +4,8 @@
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 403,
-        "xid": "CMq:GT",
+        "id": 404,
+        "xid": "CMr:GU",
         "state": "ready",
         "action_date": "2012-09-19",
         "submit_date": null,
@@ -21,8 +21,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 9002,
-          "xid": "CMq:CMq",
+          "id": 9003,
+          "xid": "CMr:CMr",
           "username": "demo"
         }
       }
