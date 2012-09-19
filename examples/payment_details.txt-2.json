@@ -1,21 +1,26 @@
     {
       "code": 200,
-      "type": "list",
-      "page": 1,
-      "numpages": 1,
-      "class": "client",
-      "list": [
-        {
-          "depth": 0,
-          "id": 134046,
-          "xid": "CMr:gue",
+      "type": "item",
+      "class": "payment_details",
+      "payment_details": {
+        "id": 100326,
+        "xid": "CMr:Yfm",
+        "type": "credit_card",
+        "bank": "visa",
+        "number": "****-****-****-6616",
+        "last4": "6616",
+        "expiry": "2025-06",
+        "client": {
+          "depth": 1,
+          "id": 134037,
+          "xid": "CMr:guV",
           "state": "new",
-          "number": "011",
-          "name": "josh",
-          "firstname": "josh",
+          "number": "002",
+          "name": "test9438",
+          "firstname": "test9438",
           "surname": "",
           "company": "",
-          "email": "josh@example.com",
+          "email": "",
           "cell": "",
           "country": {
             "code": "ZA",
@@ -32,7 +37,7 @@
           },
           "payment": "netcash",
           "payment_method": {
-            "depth": 1,
+            "depth": 2,
             "code": "netcash",
             "name": "Netcash Collect",
             "enabled": true
@@ -50,10 +55,9 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMr:gue/pX9MIdowGora",
-            "payment": "https://demo.snapbill.com/payment/client/CMr:gue/D7bHa5R0cxUu"
-          },
-          "services": []
+            "statement": "https://demo.snapbill.com/statement/CMr:guV/Je8v6cwKRtYQ",
+            "payment": "https://demo.snapbill.com/payment/client/CMr:guV/makWNppxkqjD"
+          }
         }
-      ]
+      }
     }

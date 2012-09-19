@@ -32,6 +32,8 @@ class CurlChunkUpdater(object):
       for key, val in obj.iteritems():
         new_dict[key] = self.update_response(val)
       return new_dict
+    elif type(obj) is list:
+      return [self.update_response(x) for x in obj]
     elif not isinstance(obj, basestring):
       return obj
     elif self.domain in obj:

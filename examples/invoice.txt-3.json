@@ -6,16 +6,16 @@
       "class": "invoice",
       "list": [
         {
-          "id": 283419,
-          "xid": "CHu:BFMb",
-          "created": "2012-08-16 18:10:26",
+          "id": 318488,
+          "xid": "CMr:BNwY",
+          "created": "2012-09-19 04:32:06",
           "type": "invoice",
           "state": "pending",
           "po_number": "",
-          "date": "2012-08-16",
-          "due_date": "2012-08-16",
-          "name": "Pending invoice 001/0001",
-          "number": "001/0001",
+          "date": "2012-09-19",
+          "due_date": "2012-09-19",
+          "name": "Pending invoice 001/0002",
+          "number": "001/0002",
           "currency": {
             "code": "ZAR",
             "format": "R%.2f",
@@ -29,8 +29,8 @@
           "total_cents": 5000,
           "lines": [
             {
-              "id": 368822,
-              "xid": 368822,
+              "id": 432621,
+              "xid": 432621,
               "item_name": "",
               "description": "Sample",
               "unit_cost": "50.00",
@@ -41,8 +41,8 @@
               "package": null,
               "term": null,
               "charge": {
-                "id": 4195,
-                "xid": "CHu:BBj",
+                "id": 4009,
+                "xid": "CMr:-p",
                 "amount": 50,
                 "currency": {
                   "code": "ZAR",
@@ -50,7 +50,7 @@
                   "enabled": true
                 },
                 "recurrence": {
-                  "4930": {
+                  "4762": {
                     "description": "Once-off"
                   }
                 }
@@ -59,12 +59,12 @@
           ],
           "client": {
             "depth": 1,
-            "id": 118818,
-            "xid": "CHu:dAi",
+            "id": 134036,
+            "xid": "CMr:guU",
             "state": "new",
             "number": "001",
-            "name": "test4308",
-            "firstname": "test4308",
+            "name": "test2962",
+            "firstname": "test2962",
             "surname": "",
             "company": "",
             "email": "",
@@ -91,31 +91,31 @@
             },
             "account": {
               "depth": 1,
-              "id": 8686,
-              "xid": "CHu:CHu",
-              "username": "szdmidnz"
+              "id": 9003,
+              "xid": "CMr:CMr",
+              "username": "demo"
             },
             "totals": {
-              "unpaid_invoices": "440.69",
-              "unpaid_invoices_cents": 44069,
+              "unpaid_invoices": "412.56",
+              "unpaid_invoices_cents": 41256,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "http://szdmidnz.snap/statement/CHu:dAi/Bu3q0GgJkwpC",
-              "payment": "http://szdmidnz.snap/payment/client/CHu:dAi/3uFQr82hrmkI"
+              "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+              "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
             }
           }
         },
         {
-          "id": 283429,
-          "xid": "CHu:BFMl",
-          "created": "2012-08-16 18:10:31",
+          "id": 318494,
+          "xid": "CMr:BNwe",
+          "created": "2012-09-19 04:32:19",
           "type": "invoice",
           "state": "unpaid",
           "po_number": "",
-          "date": "2012-08-16",
-          "due_date": "2012-08-16",
+          "date": "2012-09-19",
+          "due_date": "2012-09-19",
           "name": "Invoice 001/0011",
           "number": "001/0011",
           "currency": {
@@ -131,8 +131,8 @@
           "total_cents": 3456,
           "lines": [
             {
-              "id": 368832,
-              "xid": 368832,
+              "id": 432629,
+              "xid": 432629,
               "item_name": "",
               "description": "rolls",
               "unit_cost": "1.12",
@@ -144,8 +144,8 @@
               "term": null
             },
             {
-              "id": 368833,
-              "xid": 368833,
+              "id": 432630,
+              "xid": 432630,
               "item_name": "",
               "description": "chips",
               "unit_cost": "20.00",
@@ -159,12 +159,12 @@
           ],
           "client": {
             "depth": 1,
-            "id": 118818,
-            "xid": "CHu:dAi",
+            "id": 134036,
+            "xid": "CMr:guU",
             "state": "new",
             "number": "001",
-            "name": "test4308",
-            "firstname": "test4308",
+            "name": "test2962",
+            "firstname": "test2962",
             "surname": "",
             "company": "",
             "email": "",
@@ -191,19 +191,19 @@
             },
             "account": {
               "depth": 1,
-              "id": 8686,
-              "xid": "CHu:CHu",
-              "username": "szdmidnz"
+              "id": 9003,
+              "xid": "CMr:CMr",
+              "username": "demo"
             },
             "totals": {
-              "unpaid_invoices": "440.69",
-              "unpaid_invoices_cents": 44069,
+              "unpaid_invoices": "412.56",
+              "unpaid_invoices_cents": 41256,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "http://szdmidnz.snap/statement/CHu:dAi/Bu3q0GgJkwpC",
-              "payment": "http://szdmidnz.snap/payment/client/CHu:dAi/3uFQr82hrmkI"
+              "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
+              "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
             }
           }
         }

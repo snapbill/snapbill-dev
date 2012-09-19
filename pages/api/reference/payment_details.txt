@@ -9,7 +9,19 @@ API Reference: Payment Details
     $ curl -u user:pass -d "perpage=2" \
     >      https://api.snapbill.com/v1/payment_details/list.json
 </pre><pre class="output">
-%%json:examples/payment.txt-1.json%
+%%json:examples/payment_details.txt-1.json%
+</pre></pre>
+</section>
+
+<!-- eval: id = self.previous['list'][1]['id'] -->
+<section class="api-call" id="update" data-title="/update" markdown=1>
+### /v1/payment_details/update ###
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "expiry=2025-06" \
+    >      https://api.snapbill.com/v1/payment_details/<!-- id -->100326/update.json
+</pre><pre class="output">
+%%json:examples/payment_details.txt-2.json%
 </pre></pre>
 </section>
 
@@ -37,6 +49,9 @@ bank: get
 
 number: get
     The credit card or bank account number. Hidden digits are replaced with *'s.
+
+expiry: get, update
+    The expiry date for credit cards (null on bank accounts)
 
 last4: get
     The last four unencrypted digits of the bank account number or credit card.
