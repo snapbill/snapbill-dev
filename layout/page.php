@@ -28,6 +28,7 @@ class Layout_Page {
 <link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/layout.css" rel="stylesheet">
 <link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
 </head>
 <body>
 
