@@ -3,16 +3,16 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 318488,
-        "xid": "CMr:BNwY",
-        "created": "2012-09-19 04:32:06",
+        "id": 775825,
+        "xid": "CSu:C9aR",
+        "created": "2012-12-03 12:15:38",
         "type": "invoice",
         "state": "pending",
         "po_number": "",
-        "date": "2012-09-19",
-        "due_date": "2012-09-19",
-        "name": "Pending invoice 001/0002",
-        "number": "001/0002",
+        "date": "2012-12-03",
+        "due_date": "2012-12-03",
+        "name": "Pending invoice 001/0001",
+        "number": "001/0001",
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
@@ -26,8 +26,8 @@
         "total_cents": 5000,
         "lines": [
           {
-            "id": 432621,
-            "xid": 432621,
+            "id": 1352738,
+            "xid": 1352738,
             "item_name": "",
             "description": "Sample",
             "unit_cost": "50.00",
@@ -38,16 +38,17 @@
             "package": null,
             "term": null,
             "charge": {
-              "id": 4009,
-              "xid": "CMr:-p",
-              "amount": 50,
+              "id": 22299,
+              "xid": "CSu:Fcb",
+              "amount": "50.00",
+              "amount_cents": "5000",
               "currency": {
                 "code": "ZAR",
                 "format": "R%.2f",
                 "enabled": true
               },
               "recurrence": {
-                "4762": {
+                "23136": {
                   "description": "Once-off"
                 }
               }
@@ -56,12 +57,12 @@
         ],
         "client": {
           "depth": 1,
-          "id": 134036,
-          "xid": "CMr:guU",
+          "id": 104377,
+          "xid": "CSu:Ze5",
           "state": "new",
           "number": "001",
-          "name": "test2962",
-          "firstname": "test2962",
+          "name": "test1550",
+          "firstname": "test1550",
           "surname": "",
           "company": "",
           "email": "",
@@ -88,20 +89,35 @@
           },
           "account": {
             "depth": 1,
-            "id": 9003,
-            "xid": "CMr:CMr",
+            "id": 9390,
+            "xid": "CSu:CSu",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "412.56",
-            "unpaid_invoices_cents": 41256,
+            "unpaid_invoices": "34.56",
+            "unpaid_invoices_cents": 3456,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
-            "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
+            "statement": "https://demo.snapbill.com/statement/CSu:Ze5/fioKC4AG7Nob",
+            "payment": "https://demo.snapbill.com/payment/client/CSu:Ze5/jdI0HB01EEZh"
+          },
+          "data": {
+            "public_city": false,
+            "public_country": false,
+            "public_fax": false,
+            "public_phone": false,
+            "public_postal": false,
+            "public_postcode": false,
+            "public_province": false,
+            "public_street": false,
+            "vat_number": false
           }
+        },
+        "urls": {
+          "view": "https://demo.snapbill.com/invoice/CSu:C9aR/eSoAzyPmO3w0",
+          "payment": "https://demo.snapbill.com/payment/invoice/CSu:C9aR/FVz7Cve4XISr"
         }
       }
     }

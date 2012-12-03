@@ -1,5 +1,67 @@
     {
       "code": 200,
       "type": "result",
-      "status": "ok"
+      "status": "ok",
+      "class": "client",
+      "client": {
+        "depth": 0,
+        "id": 104387,
+        "xid": "CSu:ZfD",
+        "state": "new",
+        "number": "011",
+        "name": "george",
+        "firstname": "george",
+        "surname": "",
+        "company": "",
+        "email": "josh@example.com",
+        "cell": "",
+        "country": {
+          "code": "ZA",
+          "iso2": "ZA",
+          "iso3": "ZAF",
+          "name": "South Africa"
+        },
+        "credit": "0.00",
+        "credit_cents": 0,
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "enabled": true
+        },
+        "payment": "netcash",
+        "payment_method": {
+          "depth": 1,
+          "code": "netcash",
+          "name": "Netcash Collect",
+          "enabled": true
+        },
+        "account": {
+          "depth": 1,
+          "id": 9390,
+          "xid": "CSu:CSu",
+          "username": "demo"
+        },
+        "totals": {
+          "unpaid_invoices": "0.00",
+          "unpaid_invoices_cents": 0,
+          "paid_payments": "0.00",
+          "paid_payments_cents": 0
+        },
+        "urls": {
+          "statement": "https://demo.snapbill.com/statement/CSu:ZfD/EcoBFq00AiKa",
+          "payment": "https://demo.snapbill.com/payment/client/CSu:ZfD/TObBzG1TVLyD"
+        },
+        "data": {
+          "public_city": false,
+          "public_country": false,
+          "public_fax": false,
+          "public_phone": false,
+          "public_postal": false,
+          "public_postcode": false,
+          "public_province": false,
+          "public_street": false,
+          "vat_number": false
+        },
+        "services": []
+      }
     }

@@ -6,16 +6,16 @@
       "class": "payment",
       "list": [
         {
-          "id": 288835,
-          "xid": "CMr:BGhD",
+          "id": 604591,
+          "xid": "CSu:CTmv",
           "client": {
             "depth": 0,
-            "id": 134036,
-            "xid": "CMr:guU",
+            "id": 104377,
+            "xid": "CSu:Ze5",
             "state": "new",
             "number": "001",
-            "name": "test2962",
-            "firstname": "test2962",
+            "name": "test1550",
+            "firstname": "test1550",
             "surname": "",
             "company": "",
             "email": "",
@@ -42,86 +42,39 @@
             },
             "account": {
               "depth": 1,
-              "id": 9003,
-              "xid": "CMr:CMr",
+              "id": 9390,
+              "xid": "CSu:CSu",
               "username": "demo"
             },
             "totals": {
-              "unpaid_invoices": "0.00",
-              "unpaid_invoices_cents": 0,
+              "unpaid_invoices": "34.56",
+              "unpaid_invoices_cents": 3456,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
-              "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
+              "statement": "https://demo.snapbill.com/statement/CSu:Ze5/fioKC4AG7Nob",
+              "payment": "https://demo.snapbill.com/payment/client/CSu:Ze5/jdI0HB01EEZh"
             },
-            "services": {
-              "119454": {
-                "id": 119454,
-                "xid": "CMr:dKe",
-                "state": "new",
-                "name": "Pancake Delivery",
-                "created": "2012-09-19 04:32:15",
-                "renewal": "2012-09-19 00:00:00",
-                "package": {
-                  "depth": 2,
-                  "name": "Delicious Pancakes",
-                  "setup": "50.00",
-                  "setup_cents": 5000,
-                  "terms": [
-                    {
-                      "type": "daymonth",
-                      "day": 1,
-                      "interval": 1,
-                      "description": "Monthly",
-                      "fee": "240.00",
-                      "fee_cents": 24000
-                    }
-                  ],
-                  "currency": {
-                    "code": "ZAR",
-                    "format": "R%.2f",
-                    "enabled": true
-                  },
-                  "service_type": {
-                    "id": 1409,
-                    "xid": "CMr:WB",
-                    "name": "Pancake Delivery"
-                  },
-                  "available": true,
-                  "state": "active"
-                },
-                "term": "1",
-                "data": {
-                  "created": "2012-09-19 04:32:15",
-                  "name": "Pancake Delivery",
-                  "package_name": "Delicious Pancakes",
-                  "renewal": "2012-09-19 00:00:00",
-                  "term": "1"
-                },
-                "service_type": {
-                  "id": 1409,
-                  "xid": "CMr:WB",
-                  "name": "Pancake Delivery"
-                },
-                "client": {
-                  "depth": 2,
-                  "id": 134036,
-                  "xid": "CMr:guU",
-                  "state": "new",
-                  "number": "001",
-                  "name": "test2962"
-                }
-              }
-            }
+            "data": {
+              "public_city": false,
+              "public_country": false,
+              "public_fax": false,
+              "public_phone": false,
+              "public_postal": false,
+              "public_postcode": false,
+              "public_province": false,
+              "public_street": false,
+              "vat_number": false
+            },
+            "services": []
           },
           "batch": {
             "depth": 1,
-            "id": 404,
-            "xid": "CMr:GU",
+            "id": 1108,
+            "xid": "CSu:RU",
             "state": "ready",
-            "action_date": "2012-09-19",
+            "action_date": "2012-12-03",
             "submit_date": null,
             "payment_method": {
               "depth": 2,
@@ -135,8 +88,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9003,
-              "xid": "CMr:CMr",
+              "id": 9390,
+              "xid": "CSu:CSu",
               "username": "demo"
             }
           },
@@ -157,16 +110,16 @@
           "state": "pending"
         },
         {
-          "id": 288833,
-          "xid": "CMr:BGhB",
+          "id": 604592,
+          "xid": "CSu:CTmw",
           "client": {
             "depth": 0,
-            "id": 134037,
-            "xid": "CMr:guV",
+            "id": 104378,
+            "xid": "CSu:Ze6",
             "state": "new",
             "number": "002",
-            "name": "test9438",
-            "firstname": "test9438",
+            "name": "test3810",
+            "firstname": "test3810",
             "surname": "",
             "company": "",
             "email": "",
@@ -193,8 +146,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9003,
-              "xid": "CMr:CMr",
+              "id": 9390,
+              "xid": "CSu:CSu",
               "username": "demo"
             },
             "totals": {
@@ -204,17 +157,28 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CMr:guV/Je8v6cwKRtYQ",
-              "payment": "https://demo.snapbill.com/payment/client/CMr:guV/makWNppxkqjD"
+              "statement": "https://demo.snapbill.com/statement/CSu:Ze6/AVnN4rkWfu2h",
+              "payment": "https://demo.snapbill.com/payment/client/CSu:Ze6/aW24F0aQwsg0"
+            },
+            "data": {
+              "public_city": false,
+              "public_country": false,
+              "public_fax": false,
+              "public_phone": false,
+              "public_postal": false,
+              "public_postcode": false,
+              "public_province": false,
+              "public_street": false,
+              "vat_number": false
             },
             "services": []
           },
           "batch": {
             "depth": 1,
-            "id": 404,
-            "xid": "CMr:GU",
+            "id": 1108,
+            "xid": "CSu:RU",
             "state": "ready",
-            "action_date": "2012-09-19",
+            "action_date": "2012-12-03",
             "submit_date": null,
             "payment_method": {
               "depth": 2,
@@ -228,8 +192,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9003,
-              "xid": "CMr:CMr",
+              "id": 9390,
+              "xid": "CSu:CSu",
               "username": "demo"
             }
           },

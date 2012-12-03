@@ -4,8 +4,8 @@
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 134046,
-        "xid": "CMr:gue",
+        "id": 104387,
+        "xid": "CSu:ZfD",
         "state": "new",
         "number": "011",
         "name": "josh",
@@ -36,8 +36,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 9003,
-          "xid": "CMr:CMr",
+          "id": 9390,
+          "xid": "CSu:CSu",
           "username": "demo"
         },
         "totals": {
@@ -47,8 +47,19 @@
           "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/CMr:gue/pX9MIdowGora",
-          "payment": "https://demo.snapbill.com/payment/client/CMr:gue/D7bHa5R0cxUu"
+          "statement": "https://demo.snapbill.com/statement/CSu:ZfD/EcoBFq00AiKa",
+          "payment": "https://demo.snapbill.com/payment/client/CSu:ZfD/TObBzG1TVLyD"
+        },
+        "data": {
+          "public_city": false,
+          "public_country": false,
+          "public_fax": false,
+          "public_phone": false,
+          "public_postal": false,
+          "public_postcode": false,
+          "public_province": false,
+          "public_street": false,
+          "vat_number": false
         },
         "services": []
       }

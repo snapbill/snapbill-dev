@@ -7,6 +7,7 @@
       "list": [
         {
           "depth": 0,
+          "id": 25620,
           "name": "Delicious Pancakes",
           "setup": "50.00",
           "setup_cents": 5000,
@@ -26,12 +27,16 @@
             "enabled": true
           },
           "service_type": {
-            "id": 1409,
-            "xid": "CMr:WB",
+            "id": 581,
+            "xid": "CSu:JF",
             "name": "Pancake Delivery"
           },
-          "available": true,
-          "state": "active"
+          "flags": {
+            "hide-signup": false,
+            "hide-all": false
+          },
+          "state": "active",
+          "available": false
         }
       ]
     }
