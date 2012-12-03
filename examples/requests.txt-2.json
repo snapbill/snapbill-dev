@@ -88,62 +88,47 @@
         },
         {
           "type": "textbox",
-          "maxlength": 64,
-          "name": "public_name",
-          "caption": "Name"
-        },
-        {
-          "type": "email",
-          "maxlength": 255,
-          "name": "public_email",
-          "caption": "Email Address"
+          "name": "data-vat_number",
+          "caption": "VAT Number"
         },
         {
           "type": "textbox",
-          "maxlength": 255,
-          "name": "public_street",
+          "name": "data-public_street",
           "caption": "Street Address"
         },
         {
           "type": "textbox",
-          "maxlength": 255,
-          "name": "public_postal",
+          "name": "data-public_postal",
           "caption": "Postal Address"
         },
         {
           "type": "textbox",
-          "maxlength": 64,
-          "name": "public_city",
+          "name": "data-public_city",
           "caption": "City"
         },
         {
           "type": "textbox",
-          "maxlength": 64,
-          "name": "public_province",
+          "name": "data-public_province",
           "caption": "Province / State"
         },
         {
           "type": "textbox",
-          "maxlength": 64,
-          "name": "public_country",
+          "name": "data-public_country",
           "caption": "Country"
         },
         {
           "type": "textbox",
-          "maxlength": 12,
-          "name": "public_postcode",
+          "name": "data-public_postcode",
           "caption": "Postal Code"
         },
         {
           "type": "textbox",
-          "maxlength": 32,
-          "name": "public_phone",
+          "name": "data-public_phone",
           "caption": "Phone number"
         },
         {
           "type": "textbox",
-          "maxlength": 32,
-          "name": "public_fax",
+          "name": "data-public_fax",
           "caption": "Fax number"
         }
       ]

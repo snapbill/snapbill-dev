@@ -3,14 +3,14 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 318494,
-        "xid": "CMr:BNwe",
-        "created": "2012-09-19 04:32:19",
+        "id": 775835,
+        "xid": "CSu:C9ab",
+        "created": "2012-12-03 12:15:48",
         "type": "invoice",
         "state": "unpaid",
         "po_number": "",
-        "date": "2012-09-19",
-        "due_date": "2012-09-19",
+        "date": "2012-12-03",
+        "due_date": "2012-12-03",
         "name": "Invoice 001/0011",
         "number": "001/0011",
         "currency": {
@@ -26,8 +26,8 @@
         "total_cents": 3456,
         "lines": [
           {
-            "id": 432629,
-            "xid": 432629,
+            "id": 1352748,
+            "xid": 1352748,
             "item_name": "",
             "description": "rolls",
             "unit_cost": "1.12",
@@ -39,8 +39,8 @@
             "term": null
           },
           {
-            "id": 432630,
-            "xid": 432630,
+            "id": 1352749,
+            "xid": 1352749,
             "item_name": "",
             "description": "chips",
             "unit_cost": "20.00",
@@ -54,12 +54,12 @@
         ],
         "client": {
           "depth": 1,
-          "id": 134036,
-          "xid": "CMr:guU",
+          "id": 104377,
+          "xid": "CSu:Ze5",
           "state": "new",
           "number": "001",
-          "name": "test2962",
-          "firstname": "test2962",
+          "name": "test1550",
+          "firstname": "test1550",
           "surname": "",
           "company": "",
           "email": "",
@@ -86,8 +86,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9003,
-            "xid": "CMr:CMr",
+            "id": 9390,
+            "xid": "CSu:CSu",
             "username": "demo"
           },
           "totals": {
@@ -97,9 +97,24 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CMr:guU/0fBIUyqMvKU7",
-            "payment": "https://demo.snapbill.com/payment/client/CMr:guU/hDiE9awZQh8i"
+            "statement": "https://demo.snapbill.com/statement/CSu:Ze5/fioKC4AG7Nob",
+            "payment": "https://demo.snapbill.com/payment/client/CSu:Ze5/jdI0HB01EEZh"
+          },
+          "data": {
+            "public_city": false,
+            "public_country": false,
+            "public_fax": false,
+            "public_phone": false,
+            "public_postal": false,
+            "public_postcode": false,
+            "public_province": false,
+            "public_street": false,
+            "vat_number": false
           }
+        },
+        "urls": {
+          "view": "https://demo.snapbill.com/invoice/CSu:C9ab/L1cbFV7OxaXj",
+          "payment": "https://demo.snapbill.com/payment/invoice/CSu:C9ab/i9revZqreh9E"
         }
       }
     }

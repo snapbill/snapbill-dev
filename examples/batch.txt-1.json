@@ -4,10 +4,10 @@
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 404,
-        "xid": "CMr:GU",
+        "id": 1108,
+        "xid": "CSu:RU",
         "state": "ready",
-        "action_date": "2012-09-19",
+        "action_date": "2012-12-03",
         "submit_date": null,
         "payment_method": {
           "depth": 1,
@@ -21,8 +21,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 9003,
-          "xid": "CMr:CMr",
+          "id": 9390,
+          "xid": "CSu:CSu",
           "username": "demo"
         }
       }
