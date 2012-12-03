@@ -36,15 +36,22 @@
     <div class="page span10"><h1>XID</h1>
 
 <p><section id="xid" markdown=1>
-When dealing with single accounts you can simply reference objects by their
-'id', however SnapBill does not promise that id's will be unique between
-different accounts. In order to reference objects uniquely we use an Xid,
-which is comprised of the account and object id's.
+SnapBill always maintains two references to every object on your account. The 
+objects id field will always be unique for an account.</p>
+
+<p>Due to our systems design we do not guarentee that the <strong>id</strong> field will be
+unique <strong>across</strong> accounts. For example if you signup to SnapBill twice, and add
+clients to each account - occasionally a client on the one account will land 
+up with the same <em>id</em> as a client on the other.</p>
+
+<p>If you are storing data on multiple accounts we recommend either grouping your
+data by account, or simply using the <strong>xid</strong> parameter which is guarenteed to
+be unique across every single SnapBill account.
 </section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;Zed&#039;s dead, baby. Zed&#039;s dead.&rdquo;</p>
+    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
