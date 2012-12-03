@@ -2,8 +2,15 @@ XID
 ===
 
 <section id="xid" markdown=1>
-When dealing with single accounts you can simply reference objects by their
-'id', however SnapBill does not promise that id's will be unique between
-different accounts. In order to reference objects uniquely we use an Xid,
-which is comprised of the account and object id's.
+SnapBill always maintains two references to every object on your account. The 
+objects id field will always be unique for an account.
+
+Due to our systems design we do not guarentee that the **id** field will be
+unique **across** accounts. For example if you signup to SnapBill twice, and add
+clients to each account - occasionally a client on the one account will land 
+up with the same *id* as a client on the other.
+
+If you are storing data on multiple accounts we recommend either grouping your
+data by account, or simply using the **xid** parameter which is guarenteed to
+be unique across every single SnapBill account.
 </section>

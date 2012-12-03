@@ -2,7 +2,9 @@ Signatures
 ===========
 
 <section id="signatures" markdown=1>
-Signatures allow SnapBill to redirect the user to your page while prevent them from manually tampering with the data sent.
+When sending data to your website that the user has control of, we'll sign 
+the data to prevent any tampering. Sample code for generating the signatures 
+in Python and PHP are available below.
 </section>
 
 <section id="demo-py" data-title="Python example" markdown=1>
