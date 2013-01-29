@@ -52,7 +52,7 @@ You can configure your signup page to redirect back to your website once a signu
 <tr><td>total</td><td>Total price of the signup to be paid now as a floating point value</td></tr>
 <tr><td>currency</td><td>The three-letter currency code the signup was done in</td></tr>
 <tr><td>client_id</td><td>The id of the client object which had the signup</td></tr>
-<tr><td>service_id</td><td>%Optional% id included if a service was created during the signup</td></tr>
+<tr><td>service_id[X]</td><td>%Optional% id of each service created during the signup (X is indexed from 0)</td></tr>
 <tr><td>payment_id</td><td>%Optional% id of the payment if one was created with the signup</td></tr>
 <tr><td>payment_state</td><td>%Optional% state of the payment (either **paid**, or **pending**)</td></tr>
 <tr><td>payment_amount</td><td>%Optional% amount of the payment as measured as a floating point value</td></tr>
