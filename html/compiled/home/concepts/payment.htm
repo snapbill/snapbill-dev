@@ -47,7 +47,7 @@ can make a payment without logging in first.</p>
 <h3>Redirects</h3>
 
 <p>When redirecting a client to this URL one can optionally specify the URL
-parameter <code><strong>redirect</strong></code>. The client is then redirected back to the
+parameter <code><strong>redirect_url</strong></code>. The client is then redirected back to the
 redirect URL when the client has made a payment or updated there payment
 method to something which requires you to process there payment.</p>
 
@@ -57,7 +57,8 @@ method to something which requires you to process there payment.</p>
 </tr></thead><tbody>
 <tr><td>transaction_uuid</td><td>A uuid for the transaction. A new UUID is
 created each time the client visits the payment URL.</td></tr>
-<tr><td>redirect</td><td>The URL specified to redirect to.</td></tr>
+<tr><td>cancel_url</td><td><span class="label label-optional">Optional</span> The URL specified to redirect to if payment is cancelled.</td></tr>
+<tr><td>redirect_url</td><td><span class="label label-optional">Optional</span> The URL specified to redirect to after payment is completed.</td></tr>
 <tr><td>success-heading</td><td>A heading for the success message</td></tr>
 <tr><td>success-message</td><td>A message indicating the state of the
 payment</td></tr>
@@ -111,7 +112,7 @@ variables passed back won't include the payment:</p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;It is not the spoon that bends, it is only yourself.&rdquo;</p>
+    <p>&ldquo;I love it when a plan comes together!&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
