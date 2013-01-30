@@ -12,7 +12,7 @@ can make a payment without logging in first.
 ### Redirects ###
 
 When redirecting a client to this URL one can optionally specify the URL
-parameter <code>**redirect**</code>. The client is then redirected back to the
+parameter <code>**redirect_url**</code>. The client is then redirected back to the
 redirect URL when the client has made a payment or updated there payment
 method to something which requires you to process there payment.
 
@@ -22,7 +22,8 @@ method to something which requires you to process there payment.
 </tr></thead><tbody>
 <tr><td>transaction_uuid</td><td>A uuid for the transaction. A new UUID is
 created each time the client visits the payment URL.</td></tr>
-<tr><td>redirect</td><td>The URL specified to redirect to.</td></tr>
+<tr><td>cancel_url</td><td>%Optional% The URL specified to redirect to if payment is cancelled.</td></tr>
+<tr><td>redirect_url</td><td>%Optional% The URL specified to redirect to after payment is completed.</td></tr>
 <tr><td>success-heading</td><td>A heading for the success message</td></tr>
 <tr><td>success-message</td><td>A message indicating the state of the
 payment</td></tr>
