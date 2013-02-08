@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>  <li class="nav-header closed"><a href="/home/general/actions">General</a></li><li class="nav-header">Signup &amp; payments</li><li><a href="/home/signup/signup">Signup</a></li><li><a href="/home/signup/payment">Payment</a></li><li class="fixed-active"><a href="/home/signup/signatures">Signatures</a></li><li class="level2"><a href="#demo-py">Python example</a></li><li class="level2"><a href="#demo-php">PHP example</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/introduction/requests">API</a></li><li class="nav-header closed"><a href="/api/reference/action">Reference</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Signatures</h1>
+
+<p><section id="signatures" markdown=1>
+When sending data to your website that the user has control of, we'll sign 
+the data to prevent any tampering. Sample code for generating the signatures 
+in Python and PHP are available below.
+</section></p>
+
+<p><section id="demo-py" data-title="Python example" markdown=1></p>
+
+<h3>Example code written in Python</h3>
+
+<pre class="prettyprint">
+# Example script showing how to verify url parameters using the shared secret.
+import base64
+import hashlib
+import hmac
+import urllib
+
+shared_secret = 'e30171d41baad4372c73f72335789915'
+url_params = {
+    "client_id": "..",
+    "id": "..",
+    "service_id": "..",
+    "total": "..",
+    "signature": "..",
+}
+
+# Create canonicalized string, which excludes the signature
+canonicalized = urllib.urlencode(sorted((k, v) for (k, v) in url_params.items()
+                                        if k != 'signature'))
+
+# Get out the signature using the secret key
+sig_hash = hmac.new(shared_secret, canonicalized, hashlib.sha256)
+signature = base64.b64encode(sig_hash.digest())
+
+# Success! (hopefully)
+assert signature == url_params['signature']
+</pre>
+
+<p></section></p>
+
+<p><section id="demo-php" data-title="PHP example" markdown=1></p>
+
+<h3>Example code written in PHP</h3>
+
+<pre class="prettyprint">
+&lt;?php
+$secret = 'e30171d41baad4372c73f72335789915';
+
+$check = $_POST;
+unset($check['signature']);
+ksort($check);
+$request = http_build_query($check);
+$signature = base64_encode(hash_hmac('sha256', $request, $secret, true));
+
+if ($signature === $_POST['signature']) {
+  print "Transaction confirmed\n";
+}else{
+  print "Signature was not correct\n";
+}
+</pre>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;These are not the droids you&#039;re looking for&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

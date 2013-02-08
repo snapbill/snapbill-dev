@@ -28,12 +28,59 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-    <h3>API</h3>      <li class="nav-header">Introduction</li>
-    <li><a href="/api/introduction/requests">Requests</a></li>      <li class="nav-header">Reference</li>
-    <li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li class="fixed-active"><a href="/api/reference/signup">Signup</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/user">User</a></li>    </ul>
+    <h3>Home</h3>  <li class="nav-header closed"><a href="/home/general/actions">General</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/introduction/requests">API</a></li><li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li class="fixed-active"><a href="/api/reference/signup">Signup</a></li><li class="level2"><a href="#creating">creating signups</a></li><li class="level2"><a href="#add-client-signup">/add_signup</a></li><li class="level2"><a href="#add-signup">/signup/add</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
   </div>
 </div>
     <div class="page span10"><h1>API Reference: Signup</h1>
+
+<p><section id="description" markdown=1>
+The signup object gives you a level of control over signups that are completed, as well as ones in progress.
+</section></p>
+
+<p><section id="creating" data-title="creating signups" markdown=1></p>
+
+<h3>Creating signups</h3>
+
+<p>The ability to create signups that at a certain step of the process is a very powerful tool of the api. We do allow you 
+to jump straight to certain points which is fully described by our <a href="/home/signup/signup">Signup forms</a> article.</p>
+
+<p>Instead of passing all the information through on a GET request, or if you want to link to a signup for a client logged in we do have API requests that will create the signup.</p>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-client-signup" data-title="/add_signup" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_signup</h3>
+
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+
+<p>This api call will create a signup. Once created just redirect the client to url.signup that is returned by the call. This example automatically selects a service type, package and term for the client.</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d 'options={"service_type":"Sample Service","service-package":"Small","service-term":1}'
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109242/add_signup.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;signup&quot;</span>,</li><li><span class="key">signup</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">35153</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CVL:IlR&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-02-08 15:41:25&quot;</span>,</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">signup</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/signup\/CVL:IlR\/=YTg3OTk2NGMz&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-signup" data-title="/signup/add" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_signup</h3>
+
+<p>This api creates a signup for an invoice. Full details about invoice signups are available in our <a href="/home/signup/signup">Signup forms</a> article.</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d 'options={"signup_type":"Invoice","description[0]":"Cheese","price[0]":500}'
+    >      https://api.snapbill.com/v1/signup/add.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;signup&quot;</span>,</li><li><span class="key">signup</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">35154</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CVL:IlS&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-02-08 15:41:25&quot;</span>,</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">signup</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/signup\/CVL:IlS\/=NzZiZjFlNWEx&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
 
 <p><section id="parameters" data-title="parameters" markdown=1></p>
 
@@ -46,7 +93,7 @@ The depth parameter signals the amount of data for the signup that was provided.
 The id of the signup in the system. This is guaranteed to be unique only over a single account.
 </td></tr>
 <tr><td nowrap="nowrap">xid</td><td></td><td><a href="#get"><span class="label label-get">get</span></a></td><td></td><td>
-The xid of the signup in the system. This is guaranteed to be unique over all accounts (see <a href="/home/concepts/xid">Concepts - Xid</a>)
+The xid of the signup in the system. This is guaranteed to be unique over all accounts (see <a href="/home/concepts/xid">General - Xid</a>)
 </td></tr>
 </tbody></table>
 
@@ -54,7 +101,7 @@ The xid of the signup in the system. This is guaranteed to be unique over all ac
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;I ain&#039;t goin&#039; on no airplane!&rdquo;</p>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

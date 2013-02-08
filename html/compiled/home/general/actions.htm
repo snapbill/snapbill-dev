@@ -15,7 +15,7 @@
     <div class="container">
       <a href="/" class="brand">SnapBill &ndash; Developers</a>
       <ul class="nav">
-              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/home">Home</a></li>
               <li ><a href="/api">API</a></li>
               <li ><a href="/blog">Blog</a></li>
             </ul>
@@ -28,12 +28,19 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-    <h3>Home</h3>  <li class="nav-header closed"><a href="/home/general/actions">General</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/introduction/requests">API</a></li><li class="nav-header closed"><a href="/api/reference/action">Reference</a></li>  </ul>
+    <h3>Home</h3>  <li class="nav-header">General</li><li class="fixed-active"><a href="/home/general/actions">Actions</a></li><li><a href="/home/general/permissions">Permissions</a></li><li><a href="/home/general/xid">Xid</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/introduction/requests">API</a></li><li class="nav-header closed"><a href="/api/reference/action">Reference</a></li>  </ul>
   </div>
 </div>
-    <div class="page span10"><h3>404 - File not found</h3>
+    <div class="page span10"><h1>Actions</h1>
 
-<p>Sorry, we could not find the file you were looking for.</p>
+<p><section id="actions" markdown=1>
+Every change to your account on SnapBill is automatically recorded and stored as
+an <strong>action</strong> on your account. The actions contain a full audit log and will allow
+you to see exactly when each change was made, and who made the change.</p>
+
+<p>For a listing of all the parameters included with actions, please check out the
+<a href="/api/reference/action">action object</a> under our API reference.
+</section></p>
 </div>  </div>
   <footer>
     <hr/>
