@@ -46,7 +46,7 @@ You can configure your signup page to redirect back to your website once a signu
 
 <table class="table">
 <thead><tr>
- <th>Parameter</th><th>Description</th>
+<th>Parameter</th><th>Description</th>
 </tr></thead><tbody>
 <tr><td>id</td><td>The id of the signup object which was completed</td></tr>
 <tr><td>total</td><td>Total price of the signup to be paid now as a floating point value</td></tr>
@@ -59,6 +59,47 @@ You can configure your signup page to redirect back to your website once a signu
 <tr><td>signature</td><td>A signature using a shared secret confirming that the above fields were not tampered with</td></tr>
 </tbody>
 </table>
+
+</section>
+
+<section id="invoice" data-title="Invoices" markdown=1>
+### Invoice signups ###
+
+This signup type allows you to include a prepared invoice for the signup. It is useful for the cases where you want a client
+to pay a fee, but do not want them invoiced unless they actually make payment.
+
+Setting up an invoice signup is quite trival. Simply include <code>?signup_type=Invoice</code> on the signup url to get started. You can then append each of the invoice lines with the following parameters:
+
+%parameter-table
+description[X]: get
+    Description for invoice line X
+
+price[X]: get
+    Price for the invoice line. This field is required, or alternatively you can provide unit_cost and quantity
+
+unit_cost[X]: get
+    Cost per unit
+
+quantity[X]: get
+    Quantity for the line. This field allows two decimal places
+
+item_name[X]: get
+    If the 'Invoice Items' app is enabled you can use this field to select the item
+
+%%%
+
+An example for a signup for six bags of rice, and one chocolate follows ([example](https://franks.snapbill.com/signup?signup_type=Invoice&description[0]=Bag+of+rice&unit_cost[0]=25&quantity[0]=6&description[1]=Chocolate+bar&price[1]=6.50&customer=new&client-title=Mr&client-firstname=Website&client-surname=Example&client-email=website@example.com&client-cell=&client-company=&client-data-vat_number=)):
+<pre>
+https://&lt;your-username&gt;.snapbill.com/signup?signup_type=<strong>Invoice</strong>
+  &description[0]=<strong>Bag+of+rice</strong>&unit_cost[0]=<strong>25</strong>&quantity[0]=<strong>6</strong>
+  &description[1]=<strong>Chocolate+bar</strong>&price[1]=<strong>6.50</strong>
+  &customer=new
+  &client-title=Mr&client-firstname=Website&client-surname=Example
+  &client-email=website@example.com&client-cell=&client-company=
+  &client-data-custom_field=
+</pre>
+
+**Note:** That for clarity this example also skips everything except the payment step (using the technique described above)
 
 </section>
 

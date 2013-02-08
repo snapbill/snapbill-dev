@@ -1,0 +1,9 @@
+
+Error 404 &mdash; Lost.
+================
+
+<section id="error-description" markdown=1>
+<img src="/img/snapbill-dragon.jpg">
+You seem to have happened upon a page that doesn't exist, which really begs the question: how are you viewing it?
+
+

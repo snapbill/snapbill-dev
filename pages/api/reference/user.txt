@@ -1,6 +1,27 @@
 API Reference: User
 =======================
 
+<section id="description" markdown=1>
+User objects allow clients to login to the client area (https://*&lt;your username&gt;*.snapbill.com).
+</section>
+
+<section class="api-call" id="add-user" data-title="/add_user" markdown=1>
+### /v1/client/*id*/add_user ###
+
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+
+This api call will create a user. Since we have not specified the username and password they will be automatically generated.
+
+**Note** The password is returned here, but will not be available in future requests.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "name=George&email=george@example.com" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109242/add_user.json
+</pre><pre class="output">
+%%json:examples/user.txt-1.json%
+</pre>
+</pre>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -13,6 +34,18 @@ id: get
 
 xid: get
     The xid of the user in the system. This is guaranteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+
+name: get,add
+    The users name which is displayed while logged in
+
+email: get,add
+    Contact email address. Lost password recovery will accept this address to reset just the single users password.
+
+username: get,add
+    Username for login in the client area
+
+password: add
+    Password for the client area. Once added this is hashed using bcrypt and not recoverable, although you can easily check if you have the correct password with a search.
 
 %%%
 

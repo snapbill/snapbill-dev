@@ -3,16 +3,16 @@
       "type": "item",
       "class": "service",
       "service": {
-        "id": 101388,
-        "xid": "CSu:YwM",
+        "id": 106178,
+        "xid": "CVL:Z7C",
         "state": "new",
         "name": "Pancake Delivery",
         "username": null,
-        "created": "2012-12-03 12:15:52",
-        "renewal": "2012-12-03 12:15:52",
+        "created": "2013-02-08 15:41:29",
+        "renewal": "2013-02-08 15:41:29",
         "package": {
           "depth": 1,
-          "id": 25620,
+          "id": 25657,
           "name": "Delicious Pancakes",
           "setup": "50.00",
           "setup_cents": 5000,
@@ -32,8 +32,8 @@
             "enabled": true
           },
           "service_type": {
-            "id": 581,
-            "xid": "CSu:JF",
+            "id": 572,
+            "xid": "CVL:I8",
             "name": "Pancake Delivery"
           },
           "flags": {
@@ -45,18 +45,18 @@
         },
         "term": 1,
         "service_type": {
-          "id": 581,
-          "xid": "CSu:JF",
+          "id": 572,
+          "xid": "CVL:I8",
           "name": "Pancake Delivery"
         },
         "client": {
           "depth": 1,
-          "id": 104377,
-          "xid": "CSu:Ze5",
+          "id": 109242,
+          "xid": "CVL:aq6",
           "state": "new",
           "number": "001",
-          "name": "test1550",
-          "firstname": "test1550",
+          "name": "test0012",
+          "firstname": "test0012",
           "surname": "",
           "company": "",
           "email": "",
@@ -83,19 +83,19 @@
           },
           "account": {
             "depth": 1,
-            "id": 9390,
-            "xid": "CSu:CSu",
+            "id": 9547,
+            "xid": "CVL:CVL",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "34.56",
-            "unpaid_invoices_cents": 3456,
+            "unpaid_invoices": "1058.52",
+            "unpaid_invoices_cents": 105852,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CSu:Ze5/fioKC4AG7Nob",
-            "payment": "https://demo.snapbill.com/payment/client/CSu:Ze5/jdI0HB01EEZh"
+            "statement": "https://demo.snapbill.com/statement/CVL:aq6/=YjZjZjJjMGEw",
+            "payment": "https://demo.snapbill.com/payment/client/CVL:aq6/=MWRhYmE4YTc4"
           },
           "data": {
             "public_city": false,
@@ -111,10 +111,10 @@
         },
         "variables": [],
         "data": {
-          "created": "2012-12-03 12:15:52",
+          "created": "2013-02-08 15:41:29",
           "name": "Pancake Delivery",
           "package_name": "Delicious Pancakes",
-          "renewal": "2012-12-03 12:15:52",
+          "renewal": "2013-02-08 15:41:29",
           "term": 1
         }
       }

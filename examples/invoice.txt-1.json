@@ -3,16 +3,16 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 775835,
-        "xid": "CSu:C9ab",
-        "created": "2012-12-03 12:15:48",
+        "id": 817216,
+        "xid": "CVL:DHhA",
+        "created": "2013-02-08 15:41:26",
         "type": "invoice",
         "state": "unpaid",
         "po_number": "",
-        "date": "2012-12-03",
-        "due_date": "2012-12-03",
-        "name": "Invoice 001/0011",
-        "number": "001/0011",
+        "date": "2013-02-08",
+        "due_date": "2013-02-08",
+        "name": "Invoice 001/0018",
+        "number": "001/0018",
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
@@ -26,8 +26,8 @@
         "total_cents": 3456,
         "lines": [
           {
-            "id": 1352748,
-            "xid": 1352748,
+            "id": 1422466,
+            "xid": 1422466,
             "item_name": "",
             "description": "rolls",
             "unit_cost": "1.12",
@@ -39,8 +39,8 @@
             "term": null
           },
           {
-            "id": 1352749,
-            "xid": 1352749,
+            "id": 1422467,
+            "xid": 1422467,
             "item_name": "",
             "description": "chips",
             "unit_cost": "20.00",
@@ -54,12 +54,12 @@
         ],
         "client": {
           "depth": 1,
-          "id": 104377,
-          "xid": "CSu:Ze5",
+          "id": 109242,
+          "xid": "CVL:aq6",
           "state": "new",
           "number": "001",
-          "name": "test1550",
-          "firstname": "test1550",
+          "name": "test0012",
+          "firstname": "test0012",
           "surname": "",
           "company": "",
           "email": "",
@@ -86,19 +86,19 @@
           },
           "account": {
             "depth": 1,
-            "id": 9390,
-            "xid": "CSu:CSu",
+            "id": 9547,
+            "xid": "CVL:CVL",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "34.56",
-            "unpaid_invoices_cents": 3456,
+            "unpaid_invoices": "837.09",
+            "unpaid_invoices_cents": 83709,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CSu:Ze5/fioKC4AG7Nob",
-            "payment": "https://demo.snapbill.com/payment/client/CSu:Ze5/jdI0HB01EEZh"
+            "statement": "https://demo.snapbill.com/statement/CVL:aq6/=YjZjZjJjMGEw",
+            "payment": "https://demo.snapbill.com/payment/client/CVL:aq6/=MWRhYmE4YTc4"
           },
           "data": {
             "public_city": false,
@@ -113,8 +113,8 @@
           }
         },
         "urls": {
-          "view": "https://demo.snapbill.com/invoice/CSu:C9ab/L1cbFV7OxaXj",
-          "payment": "https://demo.snapbill.com/payment/invoice/CSu:C9ab/i9revZqreh9E"
+          "view": "https://demo.snapbill.com/invoice/CVL:DHhA/=NTNjNDI1YTgw",
+          "payment": "https://demo.snapbill.com/payment/invoice/CVL:DHhA/=NWNjZDIzODlm"
         }
       }
     }

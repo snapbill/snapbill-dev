@@ -40,31 +40,59 @@ class Layout_Menu {
       $heading = HTML(self::$section);
       print "<h3>$heading</h3>";
   ?>
-  <?php foreach (self::$menu as $section => $links) { ?>
-    <li class="nav-header"><?php echo HTML($section); ?></li>
-    <?php foreach ($links as $title => $href) {
-      $html = HTML($title);
+  <?php foreach (self::$menu as $section => $links) {
 
-      // If we have array of children
+    // See if the page is active
+    $active = False;
+    $first = null;
+    foreach ($links as $title => $href) {
       if (is_array($href)) {
-        $children = $href;
         $href = $href[''];
-      }else $children = null;
-
-      if ($uri->get() == $href) {
-        print '<li class="fixed-active"><a href="'.HTML($href).'">'.$html.'</a></li>';
-      }else{
-        print '<li><a href="'.HTML($href).'">'.$html.'</a></li>';
       }
 
-      if ($children) {
-        foreach ($children as $title => $href) {
-          if (!$title) continue;
-          print '<li class="level2"><a href="'.HTML($href).'">'.HTML($title).'</a></li>';
+      // Check if its active, and keep track of first href
+      if ($first === null) $first = $href;
+      $active = $active || ($uri->get() == $href);
+    }
+
+    if ($uri->get() == '/home' && strtoupper($section) == 'GENERAL') {
+      $active = True;
+    }elseif ($uri->get() == '/api' && strtoupper($section) == 'REFERENCE') {
+      $active = True;
+    }
+
+    if ($active) {
+      print '<li class="nav-header">'.HTML($section).'</li>';
+    }else{
+      print '<li class="nav-header closed"><a href="'.HTML($first).'">'.HTML($section).'</a></li>';
+    }
+
+    if ($active) {
+      foreach ($links as $title => $href) {
+        $html = HTML($title);
+
+        // If we have array of children
+        if (is_array($href)) {
+          $children = $href;
+          $href = $href[''];
+        }else $children = null;
+
+        if ($uri->get() == $href) {
+          print '<li class="fixed-active"><a href="'.HTML($href).'">'.$html.'</a></li>';
+        }else{
+          print '<li><a href="'.HTML($href).'">'.$html.'</a></li>';
+        }
+
+        if ($children) {
+          foreach ($children as $title => $href) {
+            if (!$title) continue;
+            print '<li class="level2"><a href="'.HTML($href).'">'.HTML($title).'</a></li>';
+          }
         }
       }
-    } ?>
-  <?php } ?>
+    }
+  }
+  ?>
   </ul>
   </div>
 </div>

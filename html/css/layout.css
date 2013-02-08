@@ -8,6 +8,7 @@ body {
 .page {
   margin-top: 60px;
   padding-top: 15px;
+  padding-bottom: 150px;
 }
 
 #menu {
@@ -24,7 +25,6 @@ section.columns {
 
 section { padding-top: 60px; }
 section, h1 { margin-bottom: -60px; }
-.page { padding-bottom: 120px; }
 
 h2 { margin-bottom: 10px; }
 
@@ -32,6 +32,10 @@ footer {
   padding-top: 40px;
 }
 
+
+h3 + p {
+  margin-top: 12px;
+}
 /***
  * Styling
  **/
@@ -42,7 +46,13 @@ footer {
 #menu h3 {
   color: #666;
 }
-#menu .level2 { padding-left: 10px; }
+#menu .level2 {
+  padding-left: 10px;
+}
+
+.nav-list > li.level2 > a {
+  color: #888;
+}
 
 #menu .fixed-active > a,
 #menu .fixed-active > a:hover {
@@ -133,6 +143,8 @@ pre pre.output {
 }
 
 /*** Parameter tables ***/
+.table td small { color: #AAA; }
+.table td small span { color: #666; }
 .label-add { background-color: #468847; }
 .label-get { background-color: #3A87AD; }
 .label-update { background-color: #a95A00; }

@@ -1,21 +1,27 @@
     {
       "code": 200,
-      "type": "list",
-      "page": 1,
-      "numpages": 1,
-      "class": "client",
-      "list": [
-        {
-          "depth": 0,
-          "id": 109260,
-          "xid": "CVL:arM",
+      "type": "item",
+      "class": "user",
+      "user": {
+        "depth": 0,
+        "id": 2369,
+        "xid": "CVL:lB",
+        "username": "george4",
+        "password": "qQpED9$X",
+        "name": "George",
+        "email": "george@example.com",
+        "type": "user",
+        "client": {
+          "depth": 1,
+          "id": 109242,
+          "xid": "CVL:aq6",
           "state": "new",
-          "number": "019",
-          "name": "josh",
-          "firstname": "josh",
+          "number": "001",
+          "name": "test0012",
+          "firstname": "test0012",
           "surname": "",
           "company": "",
-          "email": "josh@example.com",
+          "email": "",
           "cell": "",
           "country": {
             "code": "ZA",
@@ -32,7 +38,7 @@
           },
           "payment": "netcash",
           "payment_method": {
-            "depth": 1,
+            "depth": 2,
             "code": "netcash",
             "name": "Netcash Collect",
             "enabled": true
@@ -44,14 +50,14 @@
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "0.00",
-            "unpaid_invoices_cents": 0,
+            "unpaid_invoices": "802.53",
+            "unpaid_invoices_cents": 80253,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CVL:arM/=Y2M5NmU0ZjA1",
-            "payment": "https://demo.snapbill.com/payment/client/CVL:arM/=MmQ0M2VhYzI3"
+            "statement": "https://demo.snapbill.com/statement/CVL:aq6/=YjZjZjJjMGEw",
+            "payment": "https://demo.snapbill.com/payment/client/CVL:aq6/=MWRhYmE4YTc4"
           },
           "data": {
             "public_city": false,
@@ -63,8 +69,7 @@
             "public_province": false,
             "public_street": false,
             "vat_number": false
-          },
-          "services": []
+          }
         }
-      ]
+      }
     }

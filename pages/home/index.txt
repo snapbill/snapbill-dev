@@ -8,3 +8,30 @@
   </p>
 
 </section>
+
+<section class="columns">
+<div class="row">
+  <div class="span3" markdown=1>
+### Signups and Payments ####
+We have a flexible signup system that lets you jumpstart a
+signup for one of your clients by providing the required details
+when redirecting. We also can redirect back to your site once your
+client has paid.
+
+The [Signup page](/home/signup/signup) has details.
+  </div>
+  <div class="span3" markdown=1>
+### API reference ####
+It is possible to simply open our API in your browser... once you've signed up
+just go to [https://api.snapbill.com](https://api.snapbill.com). We're also
+working on a detailed reference for the entire api. Check our 
+
+[Client documentation](/api/reference/client) for an example.
+  </div>
+  <div class="span3" markdown=1>
+### Documentation on github ####
+This full website is available on github at [https://github.com/snapbill/snapbill-dev](https://github.com/snapbill/snapbill-dev). Feel free to issue a pull request, or simply send us an email if you notice any issues on this site.
+  </div>
+</div>
+</section>
+
