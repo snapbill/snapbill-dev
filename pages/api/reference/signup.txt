@@ -1,6 +1,52 @@
 API Reference: Signup
 =======================
 
+<section id="description" markdown=1>
+The signup object gives you a level of control over signups that are completed, as well as ones in progress.
+</section>
+
+<section id="creating" data-title="creating signups" markdown=1>
+### Creating signups ###
+
+The ability to create signups that at a certain step of the process is a very powerful tool of the api. We do allow you 
+to jump straight to certain points which is fully described by our [Signup forms](/home/signup/signup) article.
+
+Instead of passing all the information through on a GET request, or if you want to link to a signup for a client logged in we do have API requests that will create the signup.
+
+</section>
+
+<section class="api-call" id="add-client-signup" data-title="/add_signup" markdown=1>
+### /v1/client/*id*/add_signup ###
+
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+
+This api call will create a signup. Once created just redirect the client to url.signup that is returned by the call. This example automatically selects a service type, package and term for the client.
+
+
+<pre><pre class="input">
+    $ curl -u user:pass -d 'options={"service_type":"Sample Service","service-package":"Small","service-term":1}'
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109242/add_signup.json
+</pre><pre class="output">
+%%json:examples/signup.txt-1.json%
+</pre>
+</pre>
+</section>
+
+
+<section class="api-call" id="add-signup" data-title="/signup/add" markdown=1>
+### /v1/client/*id*/add_signup ###
+
+This api creates a signup for an invoice. Full details about invoice signups are available in our [Signup forms](/home/signup/signup) article.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d 'options={"signup_type":"Invoice","description[0]":"Cheese","price[0]":500}'
+    >      https://api.snapbill.com/v1/signup/add.json
+</pre><pre class="output">
+%%json:examples/signup.txt-2.json%
+</pre>
+</pre>
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -12,7 +58,7 @@ id: get
     The id of the signup in the system. This is guaranteed to be unique only over a single account.
 
 xid: get
-    The xid of the signup in the system. This is guaranteed to be unique over all accounts (see [Concepts - Xid](/home/concepts/xid))
+    The xid of the signup in the system. This is guaranteed to be unique over all accounts (see [General - Xid](/home/concepts/xid))
 
 %%%
 

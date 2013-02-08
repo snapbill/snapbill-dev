@@ -19,7 +19,7 @@ API Reference: Payment Details
 
 <pre><pre class="input">
     $ curl -u user:pass -d "expiry=2025-06" \
-    >      https://api.snapbill.com/v1/payment_details/<!-- id -->90367/update.json
+    >      https://api.snapbill.com/v1/payment_details/<!-- id -->95032/update.json
 </pre><pre class="output">
 %%json:examples/payment_details.txt-2.json%
 </pre></pre>

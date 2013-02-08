@@ -65,6 +65,11 @@ class View_Markdown extends View {
         $tags = array_map('trim', explode(',', $tags));
 
         $name = str_replace('->', '&#8627; ', $name);
+
+        if (ends_with($name, '[X]')) {
+          $name = substr($name, 0, -3).'<small>[<span>X</span>]</small>';
+        }
+
         $md .= '<tr><td nowrap="nowrap">'.$name.'</td>';
         foreach (array('add', 'get', 'update') as $column) {
           if (in_array($column, $tags, True)) {
