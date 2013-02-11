@@ -1,0 +1,17 @@
+API Clients
+===============
+
+<section id="php" data-title="PHP" markdown=1>
+### PHP ###
+
+We are currently working on a PHP client for our API. Please contact our support for a timeline.
+
+</section>
+
+<section id="python" data-title="Python" markdown=1>
+### Python ###
+
+The python client library is available at [https://github.com/snapbill/snapbill-pyapi](https://github.com/snapbill/snapbill-pyapi)
+</section>
+
+

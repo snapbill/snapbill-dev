@@ -1,0 +1,88 @@
+Objects
+=======
+
+<section id="description" markdown=1>
+Our API uses a very standardised interface to access each object within the SnapBill system.
+</section>
+
+<section id="objects" data-title="Objects" markdown=1>
+
+### Object listing ###
+%state-table
+
+action
+  Actions are single events that happen on an account
+
+batch
+  A batch is a group of payments that are usually submitted to the bank together
+
+charge
+  A charge is a once-off or recurring amount that automatically generates invoices on the account.
+
+client
+  A client is a single debtor to which payments, invoices, charges, etc. are linked
+
+contact
+  A different contact representative for a client
+
+country
+  A representation of one of the available countries in forms
+
+currency
+  A representation of a monetary currency
+
+email
+  An email that has been sent out
+
+export
+  An available export that can be generated and downloaded
+
+field
+  A custom field that is linked to either all clients, or a specific service_type
+
+file
+  An uploaded or generated file
+
+import
+  A single run of an import with associated data to be imported
+
+import_type
+  A type of available imports, for example a 'Client' or 'Service' import.
+
+invoice
+  An invoice is an object for the major invoice types. **This includes** quotes, credit notes, debit notes, and the rest.
+
+lost_password_request
+  Created whenever a client enters an email address on your lost password form
+
+package
+  Each service_type can have various different packages at different price points. Common examples are 'Standard' and 'Premium'.
+
+payment
+  A single instance of a payment which is not neccessarily complete or paid yet.
+
+payment_details
+  Details to complete future payments, which can either be a credit card, bank account, etc.
+
+service
+  A service is a recurring instance on a clients account
+
+service_type
+  A type of service that you can later sell to clients
+
+signup
+  An instance of a single (potentially incomplete) signup
+
+sms
+  A text message that has been sent out
+
+timezone
+  A representation of single timezone
+
+transaction
+  A single transaction for payment that may have been completed. These are created whenever we redirect to PayPal or similar payment methods.
+
+user
+  A user that can login to a clients account, or into your snapbill account
+
+%%%

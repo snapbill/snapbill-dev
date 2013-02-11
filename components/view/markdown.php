@@ -94,6 +94,39 @@ class View_Markdown extends View {
     }, $content);
 
     /***
+     * %uri-table
+     *
+     * new
+     *   This is the state all new accounts are created in
+     * %%%
+     **/
+    $content = preg_replace_callback("/\n%uri-table\n((.|\n)*?)\n%%%\n/", function ($m) {
+      $md = "\n<table class='table'><thead><tr>";
+      $md .= '<th>Path</th><th>Description</th>';
+      $md .= '</tr></thead><tbody>';
+
+      $rows = explode("\n", $m[1]);
+      while ($rows) {
+        $row = trim(array_shift($rows));
+        if (!$row) continue;
+
+        $row = preg_replace_callback('/{([^}]+)}/', function($m) {
+          return '<span style="color:green;">'.HTML($m[1]).'</span>';
+        }, $row);
+
+        $md .= '<tr><td nowrap>'.$row.'</td>';
+        $md .= '<td markdown=1>'."\n";
+        while ($row = trim(array_shift($rows))) {
+          $md .= "$row\n";
+        }
+        $md .= '</td></tr>'."\n";
+      }
+      $md .= "</tbody></table>\n";
+
+      return $md;
+    }, $content);
+
+    /***
      * %state-table
      *
      * new

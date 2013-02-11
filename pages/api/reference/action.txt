@@ -1,4 +1,4 @@
-API Reference: Batch
+API Reference: Action
 ===========
 
 <section class="api-call" id="get" data-title="/get" markdown=1>

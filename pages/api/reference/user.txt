@@ -22,6 +22,8 @@ This api call will create a user. Since we have not specified the username and p
 </pre>
 </pre>
 
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 

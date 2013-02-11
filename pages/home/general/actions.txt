@@ -1,11 +1,47 @@
 Actions
 =======
 
-<section id="actions" markdown=1>
+<section id="description" markdown=1>
 Every change to your account on SnapBill is automatically recorded and stored as
 an **action** on your account. The actions contain a full audit log and will allow
 you to see exactly when each change was made, and who made the change.
-
-For a listing of all the parameters included with actions, please check out the
-[action object](/api/reference/action) under our API reference.
 </section>
+
+<section id="actions" data-title="Actions" markdown=1>
+
+### Action paths ###
+
+Each action is given a path that allows you to easily select and categorise each action.
+
+%uri-table
+/{object}/add
+    An object (client, contact, invoice, ...) was added
+
+/{object}/update/{name}
+    The given field of the object was updated
+
+/{object}/update/data/{name}
+    The given custom field of the object was updated
+
+/{object}/delete
+    The object was removed. This only applies to the few objects that can be removed, most other objects will receive a state update to the 'dead' state.
+
+/setting/{name}
+    The setting on your account was changed.
+
+/bulk/{action}
+    A bulk action was added to the job queue (email, sms, etc.)
+
+/batch/build
+    A number of clients were added to the given batch
+    
+%%%
+</section>
+
+<section id="api" data-title="API" markdown=1>
+### Action object and reference ###
+
+For a listing of all the parameters included with actions and possible API calls, please 
+check out the [action object](/api/reference/action) under our API reference.
+</section>
+
