@@ -9,6 +9,7 @@ foreach (glob(__DIR__.'/api/reference/*.txt') as $file) {
 Layout_Menu::setup('Home', array(
   'General' => array(
     'Actions' => '/home/general/actions',
+    'Objects' => '/home/general/objects',
     'Permissions' => '/home/general/permissions',
     'Xid' => '/home/general/xid',
   ),
@@ -22,6 +23,7 @@ Layout_Menu::setup('Home', array(
     'Including files' => '/home/templates/files',
   ),
   'API' => array(
+    'Clients' => '/api/clients',
     'Requests' => '/api/introduction/requests',
   ),
   'Reference' => $reference
