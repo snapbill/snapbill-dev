@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li  class="active"><a href="/home">Home</a></li>
+              <li ><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>  <li class="nav-header">General</li><li><a href="/home/general/actions">Actions</a></li><li class="fixed-active"><a href="/home/general/objects">Objects</a></li><li class="level2"><a href="#objects">Objects</a></li><li><a href="/home/general/permissions">Permissions</a></li><li><a href="/home/general/xid">Xid</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/clients">API</a></li><li class="nav-header closed"><a href="/api/reference/action">Reference</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Objects</h1>
+
+<p><section id="description" markdown=1>
+Our API uses a very standardised interface to access each object within the SnapBill system.
+</section></p>
+
+<p><section id="objects" data-title="Objects" markdown=1></p>
+
+<h3>Object listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr><td>action</td><td>
+Actions are single events that happen on an account
+</td></tr>
+<tr><td>batch</td><td>
+A batch is a group of payments that are usually submitted to the bank together
+</td></tr>
+<tr><td>charge</td><td>
+A charge is a once-off or recurring amount that automatically generates invoices on the account.
+</td></tr>
+<tr><td>client</td><td>
+A client is a single debtor to which payments, invoices, charges, etc. are linked
+</td></tr>
+<tr><td>contact</td><td>
+A different contact representative for a client
+</td></tr>
+<tr><td>country</td><td>
+A representation of one of the available countries in forms
+</td></tr>
+<tr><td>currency</td><td>
+A representation of a monetary currency
+</td></tr>
+<tr><td>email</td><td>
+An email that has been sent out
+</td></tr>
+<tr><td>export</td><td>
+An available export that can be generated and downloaded
+</td></tr>
+<tr><td>field</td><td>
+A custom field that is linked to either all clients, or a specific service_type
+</td></tr>
+<tr><td>file</td><td>
+An uploaded or generated file
+</td></tr>
+<tr><td>import</td><td>
+A single run of an import with associated data to be imported
+</td></tr>
+<tr><td>import_type</td><td>
+A type of available imports, for example a 'Client' or 'Service' import.
+</td></tr>
+<tr><td>invoice</td><td>
+An invoice is an object for the major invoice types. <strong>This includes</strong> quotes, credit notes, debit notes, and the rest.
+</td></tr>
+<tr><td>lost_password_request</td><td>
+Created whenever a client enters an email address on your lost password form
+</td></tr>
+<tr><td>package</td><td>
+Each service_type can have various different packages at different price points. Common examples are 'Standard' and 'Premium'.
+</td></tr>
+<tr><td>payment</td><td>
+A single instance of a payment which is not neccessarily complete or paid yet.
+</td></tr>
+<tr><td>payment_details</td><td>
+Details to complete future payments, which can either be a credit card, bank account, etc.
+</td></tr>
+<tr><td>service</td><td>
+A service is a recurring instance on a clients account
+</td></tr>
+<tr><td>service_type</td><td>
+A type of service that you can later sell to clients
+</td></tr>
+<tr><td>signup</td><td>
+An instance of a single (potentially incomplete) signup
+</td></tr>
+<tr><td>sms</td><td>
+A text message that has been sent out
+</td></tr>
+<tr><td>timezone</td><td>
+A representation of single timezone
+</td></tr>
+<tr><td>transaction</td><td>
+A single transaction for payment that may have been completed. These are created whenever we redirect to PayPal or similar payment methods.
+</td></tr>
+<tr><td>user</td><td>
+A user that can login to a clients account, or into your snapbill account
+</td></tr>
+</tbody></table>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;These are not the droids you&#039;re looking for&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

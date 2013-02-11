@@ -28,23 +28,59 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-    <h3>Home</h3>  <li class="nav-header">General</li><li class="fixed-active"><a href="/home/general/actions">Actions</a></li><li><a href="/home/general/permissions">Permissions</a></li><li><a href="/home/general/xid">Xid</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/introduction/requests">API</a></li><li class="nav-header closed"><a href="/api/reference/action">Reference</a></li>  </ul>
+    <h3>Home</h3>  <li class="nav-header">General</li><li class="fixed-active"><a href="/home/general/actions">Actions</a></li><li class="level2"><a href="#actions">Actions</a></li><li class="level2"><a href="#api">API</a></li><li><a href="/home/general/objects">Objects</a></li><li><a href="/home/general/permissions">Permissions</a></li><li><a href="/home/general/xid">Xid</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/clients">API</a></li><li class="nav-header closed"><a href="/api/reference/action">Reference</a></li>  </ul>
   </div>
 </div>
     <div class="page span10"><h1>Actions</h1>
 
-<p><section id="actions" markdown=1>
+<p><section id="description" markdown=1>
 Every change to your account on SnapBill is automatically recorded and stored as
 an <strong>action</strong> on your account. The actions contain a full audit log and will allow
-you to see exactly when each change was made, and who made the change.</p>
+you to see exactly when each change was made, and who made the change.
+</section></p>
 
-<p>For a listing of all the parameters included with actions, please check out the
-<a href="/api/reference/action">action object</a> under our API reference.
+<p><section id="actions" data-title="Actions" markdown=1></p>
+
+<h3>Action paths</h3>
+
+<p>Each action is given a path that allows you to easily select and categorise each action.</p>
+
+<table class='table'><thead><tr><th>Path</th><th>Description</th></tr></thead><tbody><tr><td nowrap>/<span style="color:green;">object</span>/add</td><td>
+An object (client, contact, invoice, ...) was added
+</td></tr>
+<tr><td nowrap>/<span style="color:green;">object</span>/update/<span style="color:green;">name</span></td><td>
+The given field of the object was updated
+</td></tr>
+<tr><td nowrap>/<span style="color:green;">object</span>/update/data/<span style="color:green;">name</span></td><td>
+The given custom field of the object was updated
+</td></tr>
+<tr><td nowrap>/<span style="color:green;">object</span>/delete</td><td>
+The object was removed. This only applies to the few objects that can be removed, most other objects will receive a state update to the 'dead' state.
+</td></tr>
+<tr><td nowrap>/setting/<span style="color:green;">name</span></td><td>
+The setting on your account was changed.
+</td></tr>
+<tr><td nowrap>/bulk/<span style="color:green;">action</span></td><td>
+A bulk action was added to the job queue (email, sms, etc.)
+</td></tr>
+<tr><td nowrap>/batch/build</td><td>
+A number of clients were added to the given batch
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<p><section id="api" data-title="API" markdown=1></p>
+
+<h3>Action object and reference</h3>
+
+<p>For a listing of all the parameters included with actions and possible API calls, please 
+check out the <a href="/api/reference/action">action object</a> under our API reference.
 </section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;I love it when a plan comes together!&rdquo;</p>
+    <p>&ldquo;These are not the droids you&#039;re looking for&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
