@@ -44,19 +44,26 @@ class View_Markdown extends View {
 
     }, $content);
     /***
-     * %parameter-table
+     * %parameter-table / %option-table
      *
      * depth: add, get
      *    This is the depth bla bla bla
      *
      * %%%
      **/
-    $content = preg_replace_callback("/\n%parameter-table\n((.|\n)*?)\n%%%\n/", function ($m) {
+    $content = preg_replace_callback("/\n%(parameter|option)-table\n((.|\n)*?)\n%%%\n/", function ($m) use ($header) {
+
+      if ($m[1] == 'option') {
+        $column = 'Required';
+      }else{
+        $column = 'Availability';
+      }
+
       $md = "\n<table class='table'><thead><tr>";
-      $md .= '<th>Name</th><th colspan="3">Availability</th><th>Description</th>';
+      $md .= '<th>Name</th><th colspan="4">'.$column.'</th><th>Description</th>';
       $md .= '</tr></thead><tbody>';
 
-      $rows = explode("\n", $m[1]);
+      $rows = explode("\n", $m[2]);
       while ($rows) {
         $row = trim(array_shift($rows));
         if (!$row) continue;
@@ -71,7 +78,7 @@ class View_Markdown extends View {
         }
 
         $md .= '<tr><td nowrap="nowrap">'.$name.'</td>';
-        foreach (array('add', 'get', 'update') as $column) {
+        foreach (array('add', 'get', 'update', 'optional') as $column) {
           if (in_array($column, $tags, True)) {
             $label = '<span class="label label-'.$column.'">'.$column.'</span>';
             if ($column != 'deprecated') {
@@ -79,7 +86,7 @@ class View_Markdown extends View {
             }
             $md .= '<td>'.$label.'</td>';
           }else{
-            $md .= '<td></td>';
+            $md .= '<td style="padding:0;margin:0"></td>';
           }
         }
         $md .= '<td markdown=1>'."\n";

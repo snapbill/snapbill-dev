@@ -4,10 +4,10 @@
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 1178,
-        "xid": "CVL:Sa",
+        "id": 1180,
+        "xid": "CVr:Sc",
         "state": "ready",
-        "action_date": "2013-02-08",
+        "action_date": "2013-02-18",
         "submit_date": null,
         "payment_method": {
           "depth": 1,
@@ -21,8 +21,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 9547,
-          "xid": "CVL:CVL",
+          "id": 9579,
+          "xid": "CVr:CVr",
           "username": "demo"
         },
         "totals": {
