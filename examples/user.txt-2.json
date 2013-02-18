@@ -1,0 +1,78 @@
+    {
+      "code": 200,
+      "type": "list",
+      "page": 1,
+      "numpages": 1,
+      "class": "user",
+      "list": [
+        {
+          "depth": 0,
+          "id": 2403,
+          "xid": "CVr:lj",
+          "username": "george",
+          "name": "George",
+          "email": "george@example.com",
+          "type": "user",
+          "client": {
+            "depth": 1,
+            "id": 109334,
+            "xid": "CVr:asW",
+            "state": "new",
+            "number": "001",
+            "name": "test9584",
+            "firstname": "test9584",
+            "surname": "",
+            "company": "",
+            "email": "",
+            "cell": "",
+            "country": {
+              "code": "ZA",
+              "iso2": "ZA",
+              "iso3": "ZAF",
+              "name": "South Africa"
+            },
+            "credit": "0.00",
+            "credit_cents": 0,
+            "currency": {
+              "code": "ZAR",
+              "format": "R%.2f",
+              "enabled": true
+            },
+            "payment": "netcash",
+            "payment_method": {
+              "depth": 2,
+              "code": "netcash",
+              "name": "Netcash Collect",
+              "enabled": true
+            },
+            "account": {
+              "depth": 1,
+              "id": 9579,
+              "xid": "CVr:CVr",
+              "username": "demo"
+            },
+            "totals": {
+              "unpaid_invoices": "0.00",
+              "unpaid_invoices_cents": 0,
+              "paid_payments": "0.00",
+              "paid_payments_cents": 0
+            },
+            "urls": {
+              "statement": "https://demo.snapbill.com/statement/CVr:asW/=ZmU5NDMzNzc3",
+              "payment": "https://demo.snapbill.com/payment/client/CVr:asW/=NmZiMTg1MzU1"
+            },
+            "data": {
+              "public_city": false,
+              "public_country": false,
+              "public_fax": false,
+              "public_phone": false,
+              "public_postal": false,
+              "public_postcode": false,
+              "public_province": false,
+              "public_street": false,
+              "vat_number": false
+            }
+          }
+        }
+      ]
+    }
