@@ -4,21 +4,21 @@
       "class": "user",
       "user": {
         "depth": 0,
-        "id": 2369,
-        "xid": "CVL:lB",
-        "username": "george4",
-        "password": "qQpED9$X",
+        "id": 2403,
+        "xid": "CVr:lj",
+        "username": "george",
+        "password": "n?h8YLML",
         "name": "George",
         "email": "george@example.com",
         "type": "user",
         "client": {
           "depth": 1,
-          "id": 109242,
-          "xid": "CVL:aq6",
+          "id": 109334,
+          "xid": "CVr:asW",
           "state": "new",
           "number": "001",
-          "name": "test0012",
-          "firstname": "test0012",
+          "name": "test9584",
+          "firstname": "test9584",
           "surname": "",
           "company": "",
           "email": "",
@@ -45,19 +45,19 @@
           },
           "account": {
             "depth": 1,
-            "id": 9547,
-            "xid": "CVL:CVL",
+            "id": 9579,
+            "xid": "CVr:CVr",
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "802.53",
-            "unpaid_invoices_cents": 80253,
+            "unpaid_invoices": "0.00",
+            "unpaid_invoices_cents": 0,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CVL:aq6/=YjZjZjJjMGEw",
-            "payment": "https://demo.snapbill.com/payment/client/CVL:aq6/=MWRhYmE4YTc4"
+            "statement": "https://demo.snapbill.com/statement/CVr:asW/=ZmU5NDMzNzc3",
+            "payment": "https://demo.snapbill.com/payment/client/CVr:asW/=NmZiMTg1MzU1"
           },
           "data": {
             "public_city": false,

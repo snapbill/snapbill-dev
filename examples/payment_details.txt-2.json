@@ -3,21 +3,21 @@
       "type": "item",
       "class": "payment_details",
       "payment_details": {
-        "id": 95032,
-        "xid": "CVL:XM4",
+        "id": 95061,
+        "xid": "CVr:XNV",
         "type": "credit_card",
         "bank": "mastercard",
-        "number": "****-****-****-4904",
-        "last4": "4904",
+        "number": "****-****-****-0107",
+        "last4": "0107",
         "expiry": "2025-06",
         "client": {
           "depth": 1,
-          "id": 109243,
-          "xid": "CVL:aq7",
+          "id": 109335,
+          "xid": "CVr:asX",
           "state": "new",
           "number": "002",
-          "name": "test8334",
-          "firstname": "test8334",
+          "name": "test2779",
+          "firstname": "test2779",
           "surname": "",
           "company": "",
           "email": "",
@@ -44,8 +44,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9547,
-            "xid": "CVL:CVL",
+            "id": 9579,
+            "xid": "CVr:CVr",
             "username": "demo"
           },
           "totals": {
@@ -55,8 +55,8 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CVL:aq7/=ZTkxMzkxNmU4",
-            "payment": "https://demo.snapbill.com/payment/client/CVL:aq7/=MWY2NTFhOWI5"
+            "statement": "https://demo.snapbill.com/statement/CVr:asX/=MmU5MWZlZjkz",
+            "payment": "https://demo.snapbill.com/payment/client/CVr:asX/=YmM0YmEwMjc3"
           },
           "data": {
             "public_city": false,

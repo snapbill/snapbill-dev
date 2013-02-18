@@ -6,16 +6,16 @@
       "class": "payment",
       "list": [
         {
-          "id": 643777,
-          "xid": "CVL:CdLB",
+          "id": 643810,
+          "xid": "CVr:CdLi",
           "client": {
             "depth": 0,
-            "id": 109242,
-            "xid": "CVL:aq6",
+            "id": 109334,
+            "xid": "CVr:asW",
             "state": "new",
             "number": "001",
-            "name": "test0012",
-            "firstname": "test0012",
+            "name": "test9584",
+            "firstname": "test9584",
             "surname": "",
             "company": "",
             "email": "",
@@ -42,19 +42,19 @@
             },
             "account": {
               "depth": 1,
-              "id": 9547,
-              "xid": "CVL:CVL",
+              "id": 9579,
+              "xid": "CVr:CVr",
               "username": "demo"
             },
             "totals": {
-              "unpaid_invoices": "1058.52",
-              "unpaid_invoices_cents": 105852,
+              "unpaid_invoices": "34.56",
+              "unpaid_invoices_cents": 3456,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CVL:aq6/=YjZjZjJjMGEw",
-              "payment": "https://demo.snapbill.com/payment/client/CVL:aq6/=MWRhYmE4YTc4"
+              "statement": "https://demo.snapbill.com/statement/CVr:asW/=ZmU5NDMzNzc3",
+              "payment": "https://demo.snapbill.com/payment/client/CVr:asW/=NmZiMTg1MzU1"
             },
             "data": {
               "public_city": false,
@@ -67,271 +67,14 @@
               "public_street": false,
               "vat_number": false
             },
-            "services": {
-              "106174": {
-                "id": 106174,
-                "xid": "CVL:Z6-",
-                "state": "new",
-                "name": "Pancake Delivery",
-                "username": null,
-                "created": "2013-02-08 15:09:41",
-                "renewal": "2013-03-01 00:00:00",
-                "package": {
-                  "depth": 2,
-                  "id": 25657,
-                  "name": "Delicious Pancakes",
-                  "setup": "50.00",
-                  "setup_cents": 5000,
-                  "terms": [
-                    {
-                      "type": "daymonth",
-                      "day": 1,
-                      "interval": 1,
-                      "description": "Monthly",
-                      "fee": "240.00",
-                      "fee_cents": 24000
-                    }
-                  ],
-                  "currency": {
-                    "code": "ZAR",
-                    "format": "R%.2f",
-                    "enabled": true
-                  },
-                  "service_type": {
-                    "id": 572,
-                    "xid": "CVL:I8",
-                    "name": "Pancake Delivery"
-                  },
-                  "flags": {
-                    "hide-signup": false,
-                    "hide-all": false
-                  },
-                  "state": "active",
-                  "available": false
-                },
-                "term": "1",
-                "service_type": {
-                  "id": 572,
-                  "xid": "CVL:I8",
-                  "name": "Pancake Delivery"
-                },
-                "client": {
-                  "depth": 2,
-                  "id": 109242,
-                  "xid": "CVL:aq6",
-                  "state": "new",
-                  "number": "001",
-                  "name": "test0012"
-                },
-                "variables": [],
-                "data": {
-                  "created": "2013-02-08 15:09:41",
-                  "name": "Pancake Delivery",
-                  "package_name": "Delicious Pancakes",
-                  "renewal": "2013-03-01 00:00:00",
-                  "term": "1"
-                }
-              },
-              "106175": {
-                "id": 106175,
-                "xid": "CVL:Z6_",
-                "state": "new",
-                "name": "Pancake Delivery",
-                "username": null,
-                "created": "2013-02-08 15:36:14",
-                "renewal": "2013-03-01 00:00:00",
-                "package": {
-                  "depth": 2,
-                  "id": 25657,
-                  "name": "Delicious Pancakes",
-                  "setup": "50.00",
-                  "setup_cents": 5000,
-                  "terms": [
-                    {
-                      "type": "daymonth",
-                      "day": 1,
-                      "interval": 1,
-                      "description": "Monthly",
-                      "fee": "240.00",
-                      "fee_cents": 24000
-                    }
-                  ],
-                  "currency": {
-                    "code": "ZAR",
-                    "format": "R%.2f",
-                    "enabled": true
-                  },
-                  "service_type": {
-                    "id": 572,
-                    "xid": "CVL:I8",
-                    "name": "Pancake Delivery"
-                  },
-                  "flags": {
-                    "hide-signup": false,
-                    "hide-all": false
-                  },
-                  "state": "active",
-                  "available": false
-                },
-                "term": "1",
-                "service_type": {
-                  "id": 572,
-                  "xid": "CVL:I8",
-                  "name": "Pancake Delivery"
-                },
-                "client": {
-                  "depth": 2,
-                  "id": 109242,
-                  "xid": "CVL:aq6",
-                  "state": "new",
-                  "number": "001",
-                  "name": "test0012"
-                },
-                "variables": [],
-                "data": {
-                  "created": "2013-02-08 15:36:14",
-                  "name": "Pancake Delivery",
-                  "package_name": "Delicious Pancakes",
-                  "renewal": "2013-03-01 00:00:00",
-                  "term": "1"
-                }
-              },
-              "106176": {
-                "id": 106176,
-                "xid": "CVL:Z7A",
-                "state": "new",
-                "name": "Pancake Delivery",
-                "username": null,
-                "created": "2013-02-08 15:36:49",
-                "renewal": "2013-03-01 00:00:00",
-                "package": {
-                  "depth": 2,
-                  "id": 25657,
-                  "name": "Delicious Pancakes",
-                  "setup": "50.00",
-                  "setup_cents": 5000,
-                  "terms": [
-                    {
-                      "type": "daymonth",
-                      "day": 1,
-                      "interval": 1,
-                      "description": "Monthly",
-                      "fee": "240.00",
-                      "fee_cents": 24000
-                    }
-                  ],
-                  "currency": {
-                    "code": "ZAR",
-                    "format": "R%.2f",
-                    "enabled": true
-                  },
-                  "service_type": {
-                    "id": 572,
-                    "xid": "CVL:I8",
-                    "name": "Pancake Delivery"
-                  },
-                  "flags": {
-                    "hide-signup": false,
-                    "hide-all": false
-                  },
-                  "state": "active",
-                  "available": false
-                },
-                "term": "1",
-                "service_type": {
-                  "id": 572,
-                  "xid": "CVL:I8",
-                  "name": "Pancake Delivery"
-                },
-                "client": {
-                  "depth": 2,
-                  "id": 109242,
-                  "xid": "CVL:aq6",
-                  "state": "new",
-                  "number": "001",
-                  "name": "test0012"
-                },
-                "variables": [],
-                "data": {
-                  "created": "2013-02-08 15:36:49",
-                  "name": "Pancake Delivery",
-                  "package_name": "Delicious Pancakes",
-                  "renewal": "2013-03-01 00:00:00",
-                  "term": "1"
-                }
-              },
-              "106177": {
-                "id": 106177,
-                "xid": "CVL:Z7B",
-                "state": "new",
-                "name": "Pancake Delivery",
-                "username": null,
-                "created": "2013-02-08 15:40:14",
-                "renewal": "2013-03-01 00:00:00",
-                "package": {
-                  "depth": 2,
-                  "id": 25657,
-                  "name": "Delicious Pancakes",
-                  "setup": "50.00",
-                  "setup_cents": 5000,
-                  "terms": [
-                    {
-                      "type": "daymonth",
-                      "day": 1,
-                      "interval": 1,
-                      "description": "Monthly",
-                      "fee": "240.00",
-                      "fee_cents": 24000
-                    }
-                  ],
-                  "currency": {
-                    "code": "ZAR",
-                    "format": "R%.2f",
-                    "enabled": true
-                  },
-                  "service_type": {
-                    "id": 572,
-                    "xid": "CVL:I8",
-                    "name": "Pancake Delivery"
-                  },
-                  "flags": {
-                    "hide-signup": false,
-                    "hide-all": false
-                  },
-                  "state": "active",
-                  "available": false
-                },
-                "term": "1",
-                "service_type": {
-                  "id": 572,
-                  "xid": "CVL:I8",
-                  "name": "Pancake Delivery"
-                },
-                "client": {
-                  "depth": 2,
-                  "id": 109242,
-                  "xid": "CVL:aq6",
-                  "state": "new",
-                  "number": "001",
-                  "name": "test0012"
-                },
-                "variables": [],
-                "data": {
-                  "created": "2013-02-08 15:40:14",
-                  "name": "Pancake Delivery",
-                  "package_name": "Delicious Pancakes",
-                  "renewal": "2013-03-01 00:00:00",
-                  "term": "1"
-                }
-              }
-            }
+            "services": []
           },
           "batch": {
             "depth": 1,
-            "id": 1178,
-            "xid": "CVL:Sa",
+            "id": 1180,
+            "xid": "CVr:Sc",
             "state": "ready",
-            "action_date": "2013-02-08",
+            "action_date": "2013-02-18",
             "submit_date": null,
             "payment_method": {
               "depth": 2,
@@ -345,8 +88,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9547,
-              "xid": "CVL:CVL",
+              "id": 9579,
+              "xid": "CVr:CVr",
               "username": "demo"
             }
           },
@@ -367,16 +110,16 @@
           "state": "pending"
         },
         {
-          "id": 643787,
-          "xid": "CVL:CdLL",
+          "id": 643799,
+          "xid": "CVr:CdLX",
           "client": {
             "depth": 0,
-            "id": 109243,
-            "xid": "CVL:aq7",
+            "id": 109335,
+            "xid": "CVr:asX",
             "state": "new",
             "number": "002",
-            "name": "test8334",
-            "firstname": "test8334",
+            "name": "test2779",
+            "firstname": "test2779",
             "surname": "",
             "company": "",
             "email": "",
@@ -403,8 +146,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9547,
-              "xid": "CVL:CVL",
+              "id": 9579,
+              "xid": "CVr:CVr",
               "username": "demo"
             },
             "totals": {
@@ -414,8 +157,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CVL:aq7/=ZTkxMzkxNmU4",
-              "payment": "https://demo.snapbill.com/payment/client/CVL:aq7/=MWY2NTFhOWI5"
+              "statement": "https://demo.snapbill.com/statement/CVr:asX/=MmU5MWZlZjkz",
+              "payment": "https://demo.snapbill.com/payment/client/CVr:asX/=YmM0YmEwMjc3"
             },
             "data": {
               "public_city": false,
@@ -432,10 +175,10 @@
           },
           "batch": {
             "depth": 1,
-            "id": 1178,
-            "xid": "CVL:Sa",
+            "id": 1180,
+            "xid": "CVr:Sc",
             "state": "ready",
-            "action_date": "2013-02-08",
+            "action_date": "2013-02-18",
             "submit_date": null,
             "payment_method": {
               "depth": 2,
@@ -449,8 +192,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9547,
-              "xid": "CVL:CVL",
+              "id": 9579,
+              "xid": "CVr:CVr",
               "username": "demo"
             }
           },
