@@ -12,7 +12,7 @@ Add an invoice for a client. The example adds an invoice with two items.
     $ curl -u user:pass -d "first=2013-06-01&mode=DAYMONTH&number=1" \
     >   -d "description[]=rolls&unit_cost[]=5&quantity[]=12" \
     >   -d "description[]=cakes&unit_cost[]=120&quantity[]=1" \
-    >   https://api.snapbill.com/v1/client/<!-- client_id -->109856/add_recurring_invoice.json
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->109869/add_recurring_invoice.json
 </pre><pre class="output">
 %%json:examples/recurring_invoice.txt-1.json%
 </pre>

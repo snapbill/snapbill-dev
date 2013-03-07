@@ -4,34 +4,37 @@
       "class": "action",
       "action": {
         "depth": 0,
-        "id": 10883476,
-        "xid": "CVr:phGU",
-        "url": "/service/add",
-        "path": "/service/add",
-        "link": "/service/CVr:Z7q",
+        "id": 10952945,
+        "xid": "CXG:pyDx",
+        "url": "/service/update/state",
+        "path": "/service/update/state",
+        "link": "/service/CXG:Z91",
         "item_type": "service",
-        "description": "Added pancake delivery service to test9584",
-        "details": [],
-        "date": "2013-02-18 11:31:57",
+        "description": "Pancake Delivery service was activated",
+        "details": {
+          "from": "new",
+          "to": "active"
+        },
+        "date": "2013-03-07 16:20:51",
         "client": {
           "depth": 2,
-          "id": 109334,
-          "xid": "CVr:asW",
-          "state": "new",
+          "id": 109869,
+          "xid": "CXG:a0t",
+          "state": "active",
           "number": "001",
-          "name": "test9584"
+          "name": "test2212"
         },
         "service": {
-          "id": 106218,
-          "xid": "CVr:Z7q",
-          "state": "new",
+          "id": 106357,
+          "xid": "CXG:Z91",
+          "state": "active",
           "name": "Pancake Delivery",
           "username": null,
-          "created": "2013-02-18 11:31:57",
-          "renewal": "2013-02-18 00:00:00",
+          "created": "2013-03-07 16:20:50",
+          "renewal": "2013-03-07 00:00:00",
           "package": {
             "depth": 3,
-            "id": 25673,
+            "id": 25700,
             "name": "Delicious Pancakes",
             "setup": "50.00",
             "setup_cents": 5000,
@@ -51,8 +54,8 @@
               "enabled": true
             },
             "service_type": {
-              "id": 584,
-              "xid": "CVr:JI",
+              "id": 611,
+              "xid": "CXG:Jj",
               "name": "Pancake Delivery"
             },
             "flags": {
@@ -62,33 +65,33 @@
             "state": "active",
             "available": false
           },
-          "term": "1",
+          "term": 1,
           "service_type": {
-            "id": 584,
-            "xid": "CVr:JI",
+            "id": 611,
+            "xid": "CXG:Jj",
             "name": "Pancake Delivery"
           },
           "client": {
             "depth": 2,
-            "id": 109334,
-            "xid": "CVr:asW",
-            "state": "new",
+            "id": 109869,
+            "xid": "CXG:a0t",
+            "state": "active",
             "number": "001",
-            "name": "test9584"
+            "name": "test2212"
           },
           "variables": [],
           "data": {
-            "created": "2013-02-18 11:31:57",
+            "created": "2013-03-07 16:20:50",
             "name": "Pancake Delivery",
             "package_name": "Delicious Pancakes",
-            "renewal": "2013-02-18 00:00:00",
-            "term": "1"
+            "renewal": "2013-03-07 00:00:00",
+            "term": 1
           }
         },
         "user": {
           "depth": 2,
-          "id": 2402,
-          "xid": "CVr:li",
+          "id": 2499,
+          "xid": "CXG:nD",
           "username": "demo"
         }
       }

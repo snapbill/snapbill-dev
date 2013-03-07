@@ -5,8 +5,8 @@
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 109345,
-        "xid": "CVr:ash",
+        "id": 109880,
+        "xid": "CXG:a04",
         "state": "new",
         "number": "012",
         "name": "helkom (jane)",
@@ -37,8 +37,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 9579,
-          "xid": "CVr:CVr",
+          "id": 9670,
+          "xid": "CXG:CXG",
           "username": "demo"
         },
         "totals": {
@@ -48,19 +48,19 @@
           "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/CVr:ash/=OGQwNTg3Yjk4",
-          "payment": "https://demo.snapbill.com/payment/client/CVr:ash/=OTkwZGY3OThk"
+          "statement": "https://demo.snapbill.com/statement/CXG:a04/=M2JjNjRkOGU5",
+          "payment": "https://demo.snapbill.com/payment/client/CXG:a04/=NDMyNGZjN2Yx"
         },
         "data": {
-          "public_city": false,
-          "public_country": false,
-          "public_fax": false,
-          "public_phone": false,
-          "public_postal": false,
-          "public_postcode": false,
-          "public_province": false,
-          "public_street": false,
-          "vat_number": false
+          "public_city": null,
+          "public_country": null,
+          "public_fax": null,
+          "public_phone": null,
+          "public_postal": null,
+          "public_postcode": null,
+          "public_province": null,
+          "public_street": null,
+          "vat_number": null
         },
         "services": []
       }

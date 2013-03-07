@@ -3,21 +3,21 @@
       "type": "item",
       "class": "payment_details",
       "payment_details": {
-        "id": 95061,
-        "xid": "CVr:XNV",
+        "id": 95102,
+        "xid": "CXG:XN-",
         "type": "credit_card",
         "bank": "mastercard",
-        "number": "****-****-****-0107",
-        "last4": "0107",
+        "number": "****-****-****-1687",
+        "last4": "1687",
         "expiry": "2025-06",
         "client": {
           "depth": 1,
-          "id": 109335,
-          "xid": "CVr:asX",
-          "state": "new",
+          "id": 109870,
+          "xid": "CXG:a0u",
+          "state": "active",
           "number": "002",
-          "name": "test2779",
-          "firstname": "test2779",
+          "name": "test3624",
+          "firstname": "test3624",
           "surname": "",
           "company": "",
           "email": "",
@@ -44,8 +44,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9579,
-            "xid": "CVr:CVr",
+            "id": 9670,
+            "xid": "CXG:CXG",
             "username": "demo"
           },
           "totals": {
@@ -55,19 +55,19 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CVr:asX/=MmU5MWZlZjkz",
-            "payment": "https://demo.snapbill.com/payment/client/CVr:asX/=YmM0YmEwMjc3"
+            "statement": "https://demo.snapbill.com/statement/CXG:a0u/=YTZmNzMxMGRj",
+            "payment": "https://demo.snapbill.com/payment/client/CXG:a0u/=MjQ4MzJhNmZl"
           },
           "data": {
-            "public_city": false,
-            "public_country": false,
-            "public_fax": false,
-            "public_phone": false,
-            "public_postal": false,
-            "public_postcode": false,
-            "public_province": false,
-            "public_street": false,
-            "vat_number": false
+            "public_city": null,
+            "public_country": null,
+            "public_fax": null,
+            "public_phone": null,
+            "public_postal": null,
+            "public_postcode": null,
+            "public_province": null,
+            "public_street": null,
+            "vat_number": null
           }
         }
       }

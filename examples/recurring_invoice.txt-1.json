@@ -1,16 +1,45 @@
     {
       "code": 200,
       "type": "item",
-      "class": "user",
-      "user": {
-        "depth": 0,
-        "id": 2500,
-        "xid": "CXG:nE",
-        "username": "george",
-        "password": "hdfeL?4b",
-        "name": "George",
-        "email": "george@example.com",
-        "type": "user",
+      "class": "recurring_invoice",
+      "recurring_invoice": {
+        "id": 18459,
+        "xid": "CXG:Egb",
+        "state": "active",
+        "created": "2013-03-07 16:20:50",
+        "total": "18000.00",
+        "total_cents": 18000,
+        "mode": "DAYMONTH",
+        "weekday": 0,
+        "number": 1,
+        "interval": 1,
+        "first": "2013-06-01 00:00:00",
+        "last": null,
+        "next": null,
+        "lines": [
+          {
+            "id": 31982,
+            "xid": 31982,
+            "item_name": "",
+            "description": "rolls",
+            "quantity": "12.00",
+            "unit_cost": "5.00",
+            "unit_cost_cents": 500,
+            "total": "60.00",
+            "total_cents": 6000
+          },
+          {
+            "id": 31983,
+            "xid": 31983,
+            "item_name": "",
+            "description": "cakes",
+            "quantity": "1.00",
+            "unit_cost": "120.00",
+            "unit_cost_cents": 12000,
+            "total": "120.00",
+            "total_cents": 12000
+          }
+        ],
         "client": {
           "depth": 1,
           "id": 109869,
@@ -50,8 +79,8 @@
             "username": "demo"
           },
           "totals": {
-            "unpaid_invoices": "0.00",
-            "unpaid_invoices_cents": 0,
+            "unpaid_invoices": "34.56",
+            "unpaid_invoices_cents": 3456,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },

@@ -3,16 +3,16 @@
       "type": "item",
       "class": "service",
       "service": {
-        "id": 106218,
-        "xid": "CVr:Z7q",
-        "state": "new",
+        "id": 106357,
+        "xid": "CXG:Z91",
+        "state": "active",
         "name": "Pancake Delivery",
         "username": null,
-        "created": "2013-02-18 11:31:57",
-        "renewal": "2013-02-18 11:31:57",
+        "created": "2013-03-07 16:20:50",
+        "renewal": "2013-03-07 16:20:50",
         "package": {
           "depth": 1,
-          "id": 25673,
+          "id": 25700,
           "name": "Delicious Pancakes",
           "setup": "50.00",
           "setup_cents": 5000,
@@ -32,8 +32,8 @@
             "enabled": true
           },
           "service_type": {
-            "id": 584,
-            "xid": "CVr:JI",
+            "id": 611,
+            "xid": "CXG:Jj",
             "name": "Pancake Delivery"
           },
           "flags": {
@@ -45,18 +45,18 @@
         },
         "term": 1,
         "service_type": {
-          "id": 584,
-          "xid": "CVr:JI",
+          "id": 611,
+          "xid": "CXG:Jj",
           "name": "Pancake Delivery"
         },
         "client": {
           "depth": 1,
-          "id": 109334,
-          "xid": "CVr:asW",
-          "state": "new",
+          "id": 109869,
+          "xid": "CXG:a0t",
+          "state": "active",
           "number": "001",
-          "name": "test9584",
-          "firstname": "test9584",
+          "name": "test2212",
+          "firstname": "test2212",
           "surname": "",
           "company": "",
           "email": "",
@@ -83,8 +83,8 @@
           },
           "account": {
             "depth": 1,
-            "id": 9579,
-            "xid": "CVr:CVr",
+            "id": 9670,
+            "xid": "CXG:CXG",
             "username": "demo"
           },
           "totals": {
@@ -94,27 +94,27 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CVr:asW/=ZmU5NDMzNzc3",
-            "payment": "https://demo.snapbill.com/payment/client/CVr:asW/=NmZiMTg1MzU1"
+            "statement": "https://demo.snapbill.com/statement/CXG:a0t/=OTVmODQwZTdm",
+            "payment": "https://demo.snapbill.com/payment/client/CXG:a0t/=ZWM3MDdjNzU4"
           },
           "data": {
-            "public_city": false,
-            "public_country": false,
-            "public_fax": false,
-            "public_phone": false,
-            "public_postal": false,
-            "public_postcode": false,
-            "public_province": false,
-            "public_street": false,
-            "vat_number": false
+            "public_city": null,
+            "public_country": null,
+            "public_fax": null,
+            "public_phone": null,
+            "public_postal": null,
+            "public_postcode": null,
+            "public_province": null,
+            "public_street": null,
+            "vat_number": null
           }
         },
         "variables": [],
         "data": {
-          "created": "2013-02-18 11:31:57",
+          "created": "2013-03-07 16:20:50",
           "name": "Pancake Delivery",
           "package_name": "Delicious Pancakes",
-          "renewal": "2013-02-18 11:31:57",
+          "renewal": "2013-03-07 16:20:50",
           "term": 1
         }
       }
