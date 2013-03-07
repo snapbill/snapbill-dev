@@ -28,10 +28,10 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-    <h3>Home</h3>  <li class="nav-header closed"><a href="/home/general/actions">General</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/clients">API</a></li><li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li class="fixed-active"><a href="/api/reference/signup">Signup</a></li><li class="level2"><a href="#creating">creating signups</a></li><li class="level2"><a href="#add-client-signup">/add_signup</a></li><li class="level2"><a href="#add-signup">/signup/add</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+    <h3>Home</h3>  <li class="nav-header closed"><a href="/home/general/actions">General</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/clients">API</a></li><li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li class="fixed-active"><a href="/api/reference/signup">Signup</a></li><li class="level2"><a href="#creating">creating signups</a></li><li class="level2"><a href="#add-client-signup">/client/add_signup</a></li><li class="level2"><a href="#add-signup">/add</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
   </div>
 </div>
-    <div class="page span10"><h1>API Reference: Signup</h1>
+    <div class="page span10"><h1>Signups</h1>
 
 <p><section id="description" markdown=1>
 The signup object gives you a level of control over signups that are completed, as well as ones in progress.
@@ -48,7 +48,7 @@ to jump straight to certain points which is fully described by our <a href="/hom
 
 <p></section></p>
 
-<p><section class="api-call" id="add-client-signup" data-title="/add_signup" markdown=1></p>
+<p><section class="api-call" id="add-client-signup" data-title="/client/add_signup" markdown=1></p>
 
 <h3>/v1/client/<em>id</em>/add_signup</h3>
 
@@ -58,17 +58,17 @@ to jump straight to certain points which is fully described by our <a href="/hom
 
 <pre><pre class="input">
     $ curl -u user:pass -d 'options={"service_type":"Sample Service","service-package":"Small","service-term":1}'
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109334/add_signup.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109869/add_signup.json
 </pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;signup&quot;</span>,</li><li><span class="key">signup</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">35161</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CVr:IlZ&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-02-18 11:31:54&quot;</span>,</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">signup</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/signup\/CVr:IlZ\/=Y2M3MWQ3ZDlj&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;signup&quot;</span>,</li><li><span class="key">signup</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">35243</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CXG:Imr&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-03-07 16:20:46&quot;</span>,</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">signup</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/signup\/CXG:Imr\/=ODY3M2M2Y2E1&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
 </pre>
 </pre>
 
 <p></section></p>
 
-<p><section class="api-call" id="add-signup" data-title="/signup/add" markdown=1></p>
+<p><section class="api-call" id="add-signup" data-title="/add" markdown=1></p>
 
-<h3>/v1/client/<em>id</em>/add_signup</h3>
+<h3>/v1/signup/add</h3>
 
 <p>This api creates a signup for an invoice. Full details about invoice signups are available in our <a href="/home/signup/signup">Signup forms</a> article.</p>
 
@@ -76,7 +76,7 @@ to jump straight to certain points which is fully described by our <a href="/hom
     $ curl -u user:pass -d 'options={"signup_type":"Invoice","description[0]":"Cheese","price[0]":500}'
     >      https://api.snapbill.com/v1/signup/add.json
 </pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;signup&quot;</span>,</li><li><span class="key">signup</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">35162</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CVr:Ila&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-02-18 11:31:54&quot;</span>,</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">signup</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/signup\/CVr:Ila\/=MzEwNmNkYjBl&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;signup&quot;</span>,</li><li><span class="key">signup</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">35244</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CXG:Ims&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-03-07 16:20:46&quot;</span>,</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">signup</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/signup\/CXG:Ims\/=Njg0ZDZkNGM4&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
 </pre>
 </pre>
 
@@ -101,7 +101,7 @@ The xid of the signup in the system. This is guaranteed to be unique over all ac
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
+    <p>&ldquo;A d&eacute;j&agrave; vu is usually a glitch in the Matrix. It happens when they change something.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+              <li ><a href="/home">Home</a></li>
+              <li  class="active"><a href="/api">API</a></li>
+              <li ><a href="/blog">Blog</a></li>
+            </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+    <h3>Home</h3>  <li class="nav-header closed"><a href="/home/general/actions">General</a></li><li class="nav-header closed"><a href="/home/signup/signup">Signup &amp; payments</a></li><li class="nav-header closed"><a href="/home/templates/reference">Templates</a></li><li class="nav-header closed"><a href="/api/clients">API</a></li><li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li class="fixed-active"><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li class="level2"><a href="#add-recurring-invoice">/add</a></li><li class="level2"><a href="#recurring-modes">modes</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Recurring Invoices</h1>
+
+<p><section class="api-call" id="add-recurring-invoice" data-title="/add" markdown=1></p>
+
+<h3>/v1/client/<strong>id</strong>/add_recurring_invoice</h3>
+
+<p>Add an invoice for a client. The example adds an invoice with two items.</p>
+
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "first=2013-06-01&mode=DAYMONTH&number=1" \
+    >   -d "description[]=rolls&unit_cost[]=5&quantity[]=12" \
+    >   -d "description[]=cakes&unit_cost[]=120&quantity[]=1" \
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->109869/add_recurring_invoice.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;recurring_invoice&quot;</span>,</li><li><span class="key">recurring_invoice</span>: {<ul class="obj closeable"><li><span class="key">id</span>: <span class="number">18459</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CXG:Egb&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">created</span>: <span class="string">&quot;2013-03-07 16:20:50&quot;</span>,</li><li><span class="key">total</span>: <span class="string">&quot;18000.00&quot;</span>,</li><li><span class="key">total_cents</span>: <span class="number">18000</span>,</li><li><span class="key">mode</span>: <span class="string">&quot;DAYMONTH&quot;</span>,</li><li><span class="key">weekday</span>: <span class="number">0</span>,</li><li><span class="key">number</span>: <span class="number">1</span>,</li><li><span class="key">interval</span>: <span class="number">1</span>,</li><li><span class="key">first</span>: <span class="string">&quot;2013-06-01 00:00:00&quot;</span>,</li><li><span class="key">last</span>: <span class="null">null</span>,</li><li><span class="key">next</span>: <span class="null">null</span>,</li><li><span class="key">lines</span>: [<ul class="obj closeable"><li>{<ul class="obj closeable"><li><span class="key">id</span>: <span class="number">31982</span>,</li><li><span class="key">xid</span>: <span class="number">31982</span>,</li><li><span class="key">item_name</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">description</span>: <span class="string">&quot;rolls&quot;</span>,</li><li><span class="key">quantity</span>: <span class="string">&quot;12.00&quot;</span>,</li><li><span class="key">unit_cost</span>: <span class="string">&quot;5.00&quot;</span>,</li><li><span class="key">unit_cost_cents</span>: <span class="number">500</span>,</li><li><span class="key">total</span>: <span class="string">&quot;60.00&quot;</span>,</li><li><span class="key">total_cents</span>: <span class="number">6000</span></li></ul>},</li><li>{<ul class="obj closeable"><li><span class="key">id</span>: <span class="number">31983</span>,</li><li><span class="key">xid</span>: <span class="number">31983</span>,</li><li><span class="key">item_name</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">description</span>: <span class="string">&quot;cakes&quot;</span>,</li><li><span class="key">quantity</span>: <span class="string">&quot;1.00&quot;</span>,</li><li><span class="key">unit_cost</span>: <span class="string">&quot;120.00&quot;</span>,</li><li><span class="key">unit_cost_cents</span>: <span class="number">12000</span>,</li><li><span class="key">total</span>: <span class="string">&quot;120.00&quot;</span>,</li><li><span class="key">total_cents</span>: <span class="number">12000</span></li></ul>}</li></ul>],</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">109869</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CXG:a0t&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;001&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;test2212&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;test2212&quot;</span>,</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">2</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">9670</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;CXG:CXG&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;34.56&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">3456</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/CXG:a0t\/=OTVmODQwZTdm&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/CXG:a0t\/=ZWM3MDdjNzU4&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>}</li></ul>}</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<h4>Add Recurring Invoice Parameters</h4>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">first</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The first date the recurring invoice is to run on
+</td></tr>
+<tr><td nowrap="nowrap">last</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+An optional date after which the recurring invoice should not go off.
+</td></tr>
+<tr><td nowrap="nowrap">mode</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The mode of recurring invoice. This can either be <strong>ONCEOFF</strong> (only once), <strong>DAYWEEK</strong> (specific day of each week), <strong>DAYMONTH</strong> (specific day of each month), or <strong>WEEKDAYMONTH</strong> (specific weekday of each month). Each of these are explained in detail below.
+</td></tr>
+<tr><td nowrap="nowrap">weekday</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+Field required if mode is <strong>DAYWEEK</strong> or <strong>WEEKDAYMONTH</strong>. 0 through 6 (Sunday=0, Monday=1, ... Sunday=6).
+</td></tr>
+<tr><td nowrap="nowrap">number</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+For <strong>DAYMONTH</strong> this is the day number (6 = 6th), or the week number for <strong>WEEKDAYMONTH</strong> (2 = 2nd week)
+</td></tr>
+<tr><td nowrap="nowrap">interval</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+This is the interval between each recurring invoice. Default value is 1, setting it to 12 on <strong>DAYMONTH</strong> will send invoices once a year.
+</td></tr>
+<tr><td nowrap="nowrap">description[]</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+A description for an invoice item
+</td></tr>
+<tr><td nowrap="nowrap">unit_cost[]</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The cost for a unit of an invoice item
+</td></tr>
+<tr><td nowrap="nowrap">quantity[]</td><td><a href="#add"><span class="label label-add">add</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The amount of units of an invoice item
+</td></tr>
+</tbody></table>
+
+<p>The invoice items can be repeated (description, unit_cost, quantity). The
+first description matches up with the first unit_cost and quantity. Similarly
+for the 2nd description, etc.</p>
+
+<p></section></p>
+
+<p><section id="recurring-modes" data-title="modes" markdown=1></p>
+
+<h3>Recurring Modes</h3>
+
+<h4>ONCEOFF</h4>
+
+<p>The recurring invoice will run once, and only once.</p>
+
+<h4>DAYWEEK</h4>
+
+<p>This recurring mode can be used to invoice once a week. The <strong>weekday</strong> field specifies which day of the week (Sunday=0, Monday=1, ..., Sunday=6). The <strong>interval</strong> field specifies the number of weeks between charges (i.e. a <strong>interval</strong>=2 value will charge the invoice every second week.)</p>
+
+<h4>DAYMONTH</h4>
+
+<p>This mode can be used to invoice clients every number of months. The <strong>number</strong> field indicates the day of the month to charge. A <strong>number</strong>=6 value will charge on the 6th day of each month. Number can also be negative in which case it is counted from the end of the month (<strong>number</strong>=-1 will charge on the last day of each month). The <strong>interval</strong> field specifies the number of months between charges (i.e. a <strong>interval</strong>=6 value will charge the invoice every six months.)</p>
+
+<h4>WEEKDAYMONTH</h4>
+
+<p>The recurring invoice will run on a specified weekday each month. This is useful for invoicing on the first Monday, or the last Friday. The <strong>weekday</strong> field (similar to DAYWEEK mode) specifies which weekday to charge on, while the <strong>number</strong> field specifies which week to charge. Interval indicates the number of months between charges. For example <strong>weekday</strong>=2,<strong>number</strong>=1,<strong>interval</strong>=12 will run on the first Tuesday once a yearg</p>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    
