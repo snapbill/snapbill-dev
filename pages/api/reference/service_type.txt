@@ -1,4 +1,4 @@
-API Reference: Service Type
+Service Types
 =======================
 
 <section class="api-call" id="list" data-title="/list" markdown=1>

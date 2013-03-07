@@ -1,4 +1,4 @@
-API Reference: Payment Method
+Payment Methods
 =======================
 
 <section class="api-call" id="list" data-title="/list" markdown=1>

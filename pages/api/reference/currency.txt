@@ -1,4 +1,4 @@
-API Reference: Currency
+Currencies
 =======================
 
 <section class="api-call" id="list" data-title="/list" markdown=1>

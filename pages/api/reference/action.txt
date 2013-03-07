@@ -1,4 +1,4 @@
-API Reference: Action
+Action
 ===========
 
 <section class="api-call" id="get" data-title="/get" markdown=1>
@@ -10,7 +10,7 @@ Fetch an action and return the details
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/action/<!-- action_id -->10883476/get.json
+    >      https://api.snapbill.com/v1/action/<!-- action_id -->10952817/get.json
 </pre><pre class="output">
 %%json:examples/action.txt-1.json%
 </pre>

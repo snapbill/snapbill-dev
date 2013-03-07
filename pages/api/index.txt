@@ -55,7 +55,7 @@ Search for clients named **josh**
 Change the clients name to **george**
 <pre><pre class="input">
     $ curl -u user:pass -d "firstname=george" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109344/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109866/update.json
 </pre><pre class="output">
 %%json:examples/index.txt-3.json%
 </pre>
@@ -64,7 +64,7 @@ Change the clients name to **george**
 Remove the client
 <pre><pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109344/delete.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109866/delete.json
 </pre><pre class="output">
 %%json:examples/index.txt-4.json%
 </pre>

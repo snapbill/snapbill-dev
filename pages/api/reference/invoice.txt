@@ -1,4 +1,4 @@
-API Reference: Invoice
+Invoices
 =======================
 
 <section id="quotations" data-title="quotations" markdown=1>
@@ -19,7 +19,7 @@ Add an invoice for a client. The example adds an invoice with two items.
     $ curl -u user:pass -d "date=2013-01-07" \
     >   -d "description[]=rolls&unit_cost[]=1.12&quantity[]=13" \
     >   -d "description[]=chips&unit_cost[]=20&quantity[]=1" \
-    >   https://api.snapbill.com/v1/client/<!-- client_id -->109334/add_invoice.json
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->109856/add_invoice.json
 </pre><pre class="output">
 %%json:examples/invoice.txt-1.json%
 </pre>
@@ -67,7 +67,7 @@ Generate a single invoice for a given client
 
 <pre><pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109334/generate_invoice.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109856/generate_invoice.json
 </pre><pre class="output">
 %%json:examples/invoice.txt-2.json%
 </pre>
@@ -91,7 +91,7 @@ Generate a single invoice for a given client
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->817238/get.json
+    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->817350/get.json
 </pre><pre class="output">
 %%json:examples/invoice.txt-4.json%
 </pre>

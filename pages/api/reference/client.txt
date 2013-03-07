@@ -1,4 +1,4 @@
-API Reference: Client
+Clients
 ===========
 
 <section class="api-call" id="add" data-title="/add" markdown=1>
@@ -24,7 +24,7 @@ Returns the details of a client.
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109345/get.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109867/get.json
 </pre><pre class="output">
 %%json:examples/client.txt-2.json%
 </pre>
@@ -39,7 +39,7 @@ Updates details about the given client in the database
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109345/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109867/update.json
 </pre><pre class="output">
 %%json:examples/client.txt-3.json%
 </pre>
@@ -78,7 +78,7 @@ The example below updates the payment type to other which requires no extra para
 
 <pre><pre class="input">
     $ curl -u user:pass -d "payment_method_code=other" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109345/set_payment.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109867/set_payment.json
 </pre><pre class="output">
 %%json:examples/client.txt-4.json%
 </pre>
@@ -93,7 +93,7 @@ Deletes a client from the database
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->109345/delete.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->109867/delete.json
 </pre><pre class="output">
 %%json:examples/client.txt-5.json%
 </pre>

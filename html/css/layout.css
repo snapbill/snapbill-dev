@@ -36,6 +36,11 @@ footer {
 h3 + p {
   margin-top: 12px;
 }
+
+h3 + h4 {
+  margin-top: 12px;
+}
+
 /***
  * Styling
  **/
