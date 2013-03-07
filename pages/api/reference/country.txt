@@ -1,4 +1,4 @@
-API Reference: Country
+Countries
 =======================
 
 <section id="parameters" data-title="parameters" markdown=1>

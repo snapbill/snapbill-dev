@@ -1,4 +1,4 @@
-API Reference: Batch
+Batches
 ===========
 
 <section class="api-call" id="get" data-title="/get" markdown=1>
@@ -11,7 +11,7 @@ Fetch a batch and return the details
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->1180/get.json
+    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->1182/get.json
 </pre><pre class="output">
 %%json:examples/batch.txt-1.json%
 </pre>
