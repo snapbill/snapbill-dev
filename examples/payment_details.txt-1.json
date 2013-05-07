@@ -6,21 +6,22 @@
       "class": "payment_details",
       "list": [
         {
-          "id": 95101,
-          "xid": "CXG:XN9",
+          "id": 103058,
+          "xid": "CYY:ZKS",
           "type": "bank_account",
           "bank": "ABSA BANK",
-          "number": "************2667",
-          "last4": "2667",
+          "number": "************9406",
+          "last4": "9406",
           "expiry": null,
+          "created": "2013-05-07 16:56:14",
           "client": {
             "depth": 1,
-            "id": 109869,
-            "xid": "CXG:a0t",
+            "id": 117559,
+            "xid": "CYY:cs3",
             "state": "active",
             "number": "001",
-            "name": "test2212",
-            "firstname": "test2212",
+            "name": "test2328",
+            "firstname": "test2328",
             "surname": "",
             "company": "",
             "email": "",
@@ -47,8 +48,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9670,
-              "xid": "CXG:CXG",
+              "id": 9752,
+              "xid": "CYY:CYY",
               "username": "demo"
             },
             "totals": {
@@ -58,8 +59,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CXG:a0t/=OTVmODQwZTdm",
-              "payment": "https://demo.snapbill.com/payment/client/CXG:a0t/=ZWM3MDdjNzU4"
+              "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
+              "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
             },
             "data": {
               "public_city": null,
@@ -75,21 +76,22 @@
           }
         },
         {
-          "id": 95102,
-          "xid": "CXG:XN-",
+          "id": 103059,
+          "xid": "CYY:ZKT",
           "type": "credit_card",
-          "bank": "mastercard",
-          "number": "****-****-****-1687",
-          "last4": "1687",
-          "expiry": "2013-11",
+          "bank": "visa",
+          "number": "****-****-****-7770",
+          "last4": "7770",
+          "expiry": "2014-01",
+          "created": "2013-05-07 16:56:16",
           "client": {
             "depth": 1,
-            "id": 109870,
-            "xid": "CXG:a0u",
+            "id": 117560,
+            "xid": "CYY:cs4",
             "state": "active",
             "number": "002",
-            "name": "test3624",
-            "firstname": "test3624",
+            "name": "test8361",
+            "firstname": "test8361",
             "surname": "",
             "company": "",
             "email": "",
@@ -116,8 +118,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9670,
-              "xid": "CXG:CXG",
+              "id": 9752,
+              "xid": "CYY:CYY",
               "username": "demo"
             },
             "totals": {
@@ -127,8 +129,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CXG:a0u/=YTZmNzMxMGRj",
-              "payment": "https://demo.snapbill.com/payment/client/CXG:a0u/=MjQ4MzJhNmZl"
+              "statement": "https://demo.snapbill.com/statement/CYY:cs4/=NjIxNzEwOGY3",
+              "payment": "https://demo.snapbill.com/payment/client/CYY:cs4/=ZGFlNGI4NmM1"
             },
             "data": {
               "public_city": null,

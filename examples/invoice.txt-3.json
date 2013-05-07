@@ -6,16 +6,16 @@
       "class": "invoice",
       "list": [
         {
-          "id": 817361,
-          "xid": "CXG:DHjR",
-          "created": "2013-03-07 16:20:36",
+          "id": 853509,
+          "xid": "CYY:DQYF",
+          "created": "2013-05-07 16:56:28",
           "type": "invoice",
           "state": "pending",
           "po_number": "",
-          "date": "2013-03-07",
-          "due_date": "2013-03-07",
-          "name": "Pending invoice 001/0003",
-          "number": "001/0003",
+          "date": "2013-05-07",
+          "due_date": "2013-05-07",
+          "name": "Pending invoice 001/0002",
+          "number": "001/0002",
           "currency": {
             "code": "ZAR",
             "format": "R%.2f",
@@ -29,8 +29,8 @@
           "total_cents": 5000,
           "lines": [
             {
-              "id": 1422646,
-              "xid": 1422646,
+              "id": 1496080,
+              "xid": 1496080,
               "item_name": "",
               "description": "Sample",
               "unit_cost": "50.00",
@@ -41,23 +41,23 @@
               "package": null,
               "term": null,
               "recurring_invoice": {
-                "id": 18449,
-                "xid": "CXG:EgR",
+                "id": 8002,
+                "xid": "CYY:B9C",
                 "state": "disabled",
-                "created": "2013-03-07 16:20:23",
+                "created": "2013-05-07 16:56:14",
                 "total": "5000.00",
                 "total_cents": 5000,
                 "mode": "ONCEOFF",
                 "weekday": null,
                 "number": null,
                 "interval": null,
-                "first": "2013-03-07 00:00:00",
-                "last": "2013-03-07 00:00:00",
+                "first": "2013-05-07 00:00:00",
+                "last": "2013-05-07 00:00:00",
                 "next": null,
                 "lines": [
                   {
-                    "id": 31972,
-                    "xid": 31972,
+                    "id": 20358,
+                    "xid": 20358,
                     "item_name": "",
                     "description": "Sample",
                     "quantity": "1.00",
@@ -69,23 +69,23 @@
                 ],
                 "client": {
                   "depth": 2,
-                  "id": 109869,
-                  "xid": "CXG:a0t",
+                  "id": 117559,
+                  "xid": "CYY:cs3",
                   "state": "active",
                   "number": "001",
-                  "name": "test2212"
+                  "name": "test2328"
                 }
               }
             }
           ],
           "client": {
             "depth": 1,
-            "id": 109869,
-            "xid": "CXG:a0t",
+            "id": 117559,
+            "xid": "CYY:cs3",
             "state": "active",
             "number": "001",
-            "name": "test2212",
-            "firstname": "test2212",
+            "name": "test2328",
+            "firstname": "test2328",
             "surname": "",
             "company": "",
             "email": "",
@@ -112,8 +112,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9670,
-              "xid": "CXG:CXG",
+              "id": 9752,
+              "xid": "CYY:CYY",
               "username": "demo"
             },
             "totals": {
@@ -123,8 +123,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CXG:a0t/=OTVmODQwZTdm",
-              "payment": "https://demo.snapbill.com/payment/client/CXG:a0t/=ZWM3MDdjNzU4"
+              "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
+              "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
             },
             "data": {
               "public_city": null,
@@ -139,19 +139,19 @@
             }
           },
           "urls": {
-            "view": "https://demo.snapbill.com/invoice/CXG:DHjR/=NWRmNGVhMjUz",
-            "payment": "https://demo.snapbill.com/payment/invoice/CXG:DHjR/=YWM5N2Q1NTVk"
+            "view": "https://demo.snapbill.com/invoice/CYY:DQYF/=ZjQ0ZjRhMTNi",
+            "payment": "https://demo.snapbill.com/payment/invoice/CYY:DQYF/=YzVkMzZmN2My"
           }
         },
         {
-          "id": 817369,
-          "xid": "CXG:DHjZ",
-          "created": "2013-03-07 16:20:47",
+          "id": 853518,
+          "xid": "CYY:DQYO",
+          "created": "2013-05-07 16:56:41",
           "type": "invoice",
           "state": "unpaid",
           "po_number": "",
-          "date": "2013-03-07",
-          "due_date": "2013-03-07",
+          "date": "2013-05-07",
+          "due_date": "2013-05-07",
           "name": "Invoice 001/0011",
           "number": "001/0011",
           "currency": {
@@ -167,8 +167,8 @@
           "total_cents": 3456,
           "lines": [
             {
-              "id": 1422654,
-              "xid": 1422654,
+              "id": 1496089,
+              "xid": 1496089,
               "item_name": "",
               "description": "rolls",
               "unit_cost": "1.12",
@@ -180,8 +180,8 @@
               "term": null
             },
             {
-              "id": 1422655,
-              "xid": 1422655,
+              "id": 1496090,
+              "xid": 1496090,
               "item_name": "",
               "description": "chips",
               "unit_cost": "20.00",
@@ -195,12 +195,12 @@
           ],
           "client": {
             "depth": 1,
-            "id": 109869,
-            "xid": "CXG:a0t",
+            "id": 117559,
+            "xid": "CYY:cs3",
             "state": "active",
             "number": "001",
-            "name": "test2212",
-            "firstname": "test2212",
+            "name": "test2328",
+            "firstname": "test2328",
             "surname": "",
             "company": "",
             "email": "",
@@ -227,8 +227,8 @@
             },
             "account": {
               "depth": 1,
-              "id": 9670,
-              "xid": "CXG:CXG",
+              "id": 9752,
+              "xid": "CYY:CYY",
               "username": "demo"
             },
             "totals": {
@@ -238,8 +238,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CXG:a0t/=OTVmODQwZTdm",
-              "payment": "https://demo.snapbill.com/payment/client/CXG:a0t/=ZWM3MDdjNzU4"
+              "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
+              "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
             },
             "data": {
               "public_city": null,
@@ -254,8 +254,8 @@
             }
           },
           "urls": {
-            "view": "https://demo.snapbill.com/invoice/CXG:DHjZ/=ODEyYTY2ZDU0",
-            "payment": "https://demo.snapbill.com/payment/invoice/CXG:DHjZ/=MzVlM2QxODlh"
+            "view": "https://demo.snapbill.com/invoice/CYY:DQYO/=OTM3NWQyOGNj",
+            "payment": "https://demo.snapbill.com/payment/invoice/CYY:DQYO/=N2U0NWIxZTFk"
           }
         }
       ]

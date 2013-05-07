@@ -4,11 +4,18 @@
       "class": "signup",
       "signup": {
         "depth": 0,
-        "id": 35244,
-        "xid": "CXG:Ims",
-        "created": "2013-03-07 16:20:46",
+        "id": 36844,
+        "xid": "CYY:I_s",
+        "created": "2013-05-07 16:56:39",
+        "step": "customer",
+        "options": {
+          "signup_type": "Invoice",
+          "description[0]": "Cheese",
+          "price[0]": 500
+        },
+        "errors": [],
         "urls": {
-          "signup": "https://demo.snapbill.com/signup/CXG:Ims/=Njg0ZDZkNGM4"
+          "signup": "https://demo.snapbill.com/signup/CYY:I_s/=OTdlYTA4MGUw"
         }
       }
     }

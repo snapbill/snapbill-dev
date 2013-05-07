@@ -51,7 +51,7 @@ class View_Markdown extends View {
      *
      * %%%
      **/
-    $content = preg_replace_callback("/\n%(parameter|option)-table\n((.|\n)*?)\n%%%\n/", function ($m) use ($header) {
+    $content = preg_replace_callback("/\n%(parameter|option)-table\n((.|\n)*?)\n%%%\n/", function ($m) {
 
       if ($m[1] == 'option') {
         $column = 'Required';
