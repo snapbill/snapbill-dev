@@ -4,8 +4,8 @@
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 109880,
-        "xid": "CXG:a04",
+        "id": 117570,
+        "xid": "CYY:ctC",
         "state": "new",
         "number": "012",
         "name": "jane",
@@ -36,8 +36,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 9670,
-          "xid": "CXG:CXG",
+          "id": 9752,
+          "xid": "CYY:CYY",
           "username": "demo"
         },
         "totals": {
@@ -47,8 +47,8 @@
           "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/CXG:a04/=M2JjNjRkOGU5",
-          "payment": "https://demo.snapbill.com/payment/client/CXG:a04/=NDMyNGZjN2Yx"
+          "statement": "https://demo.snapbill.com/statement/CYY:ctC/=MGVmM2ZhYWEy",
+          "payment": "https://demo.snapbill.com/payment/client/CYY:ctC/=ZjY0OTk1ZjVl"
         },
         "data": {
           "public_city": null,

@@ -4,10 +4,10 @@
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 1182,
-        "xid": "CXG:Se",
+        "id": 1232,
+        "xid": "CYY:TQ",
         "state": "ready",
-        "action_date": "2013-03-07",
+        "action_date": "2013-05-07",
         "submit_date": null,
         "payment_method": {
           "depth": 1,
@@ -21,9 +21,14 @@
         },
         "account": {
           "depth": 1,
-          "id": 9670,
-          "xid": "CXG:CXG",
+          "id": 9752,
+          "xid": "CYY:CYY",
           "username": "demo"
+        },
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "enabled": true
         },
         "totals": {
           "total": 10,
