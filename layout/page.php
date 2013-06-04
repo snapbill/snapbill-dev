@@ -15,8 +15,11 @@ class Layout_Page {
     $uri = Request::getUri();
 
     $sections = array(
-      'home' => 'Home',
-      'api'  => 'API',
+      'home/general' => 'General',
+      'home/signup' => 'Signup & Payments',
+      'home/templates' => 'Templates',
+      'api/clients'  => 'API Clients',
+      'api/reference'  => 'Reference',
       'blog' => 'Blog'
     );
     ?>
@@ -37,9 +40,23 @@ class Layout_Page {
     <div class="container">
       <a href="/" class="brand">SnapBill &ndash; Developers</a>
       <ul class="nav">
-      <?php foreach ($sections as $section => $title) { ?>
-        <li <?php echo $uri->getPart(0) == $section ? ' class="active"' : ''; ?>><a href="/<?php echo $section; ?>"><?php echo HTML($title); ?></a></li>
-      <?php } ?>
+      <?php 
+        $current = $uri->get();
+        if (starts_with($current, '/home/signup')) {
+          $selected = 'home/signup';
+        }elseif (starts_with($current, '/home/templates')) {
+          $selected = 'home/templates';
+        }elseif (starts_with($current, '/api/clients')) {
+          $selected = 'api/clients';
+        }elseif (starts_with($current, '/api/reference')) {
+          $selected = 'api/reference';
+        }else{
+          $selected = 'home/general';
+        }
+
+        foreach ($sections as $section => $title) { ?>
+          <li <?php echo $section==$selected ? ' class="active"' : ''; ?>><a href="/<?php echo $section; ?>"><?php echo HTML($title); ?></a></li>
+        <?php } ?>
       </ul>
     </div>
   </div>
