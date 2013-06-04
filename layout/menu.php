@@ -36,10 +36,6 @@ class Layout_Menu {
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-    <?php
-      $heading = HTML(self::$section);
-      print "<h3>$heading</h3>";
-  ?>
   <?php foreach (self::$menu as $section => $links) {
 
     // See if the page is active
@@ -63,8 +59,6 @@ class Layout_Menu {
 
     if ($active) {
       print '<li class="nav-header">'.HTML($section).'</li>';
-    }else{
-      print '<li class="nav-header closed"><a href="'.HTML($first).'">'.HTML($section).'</a></li>';
     }
 
     if ($active) {
