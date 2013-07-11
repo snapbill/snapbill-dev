@@ -1,0 +1,71 @@
+Webhooks
+===========
+
+<section id="webhooks" markdown=1>
+Webhooks allow you to trigger changes on external systems as events on your SnapBill account. Every <a href="/home/general/actions">action</a> can be delivered to your system as a webhook and can help maintain a tight integration between two systems.
+
+Webhook delivery uses an "atleast once" model, and will keep retrying until your server responds with an HTTP OKAY (2XX) response code. If your destination url fails for longer than a week, we will send a warning email and subsequently disable the webhook if the problem is not resolved.
+
+The webhook payload is generated on delivery. This means that any changes between when the event happens and when the webhook is delivered to you *will* be reflected in the data we send. It is entirely possible that an event describing an invoice state change to **paid** will include an invoice object whose state is **cancelled** (if the invoice is cancelled before we deliver the webhook.)
+</section>
+
+<section id="setup" markdown=1>
+
+Setting up webhooks
+--------------------------
+
+Webhooks can be enabled in SnapBill inside our <a href="https://billing.snapbill.com/setup/apps">Apps</a> section. Once enabled it is trivial to add new webhooks and view recent actions from our <a href="https://billing.snapbill.com/setup">Setup section</a>.
+
+The easiest way to test out webhooks is with <a href="http://requestb.in/">http://requestb.in</a> and <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a>. Simply create a new bin on the requestb.in site, and enter the URL they give you in SnapBill. Once a webhook has been sent through, you should see it if you refresh the requestb.in page. The data comes through in an ugly format, but if you paste the entire 'body' into jsbeautifier, it will clean it up for you.
+
+</section>
+
+<section id="samples" markdown=1>
+Sample webhook code (PHP)
+--------------------------
+
+<pre class="prettyprint">&lt;?php
+
+// Pull the JSON body out of the post
+$input = json_decode(file_get_contents('php://input'), True);
+
+// Take out the unique id of this webhook delivery
+// This (or $input['body']['id']) can be used to ensure you only act on each event once
+$uuid = $input['uuid'];
+
+// Only take invoice state updates
+if ($input['body']['path'] == '/invoice/update/state') {
+  // Check that the invoice was marked as paid
+  if ($input['body']['details'] == 'paid') {
+    // Pull out the invoice number and total cents
+    $number = $input['body']['invoice']['number'];
+    $total_cents = $input['body']['invoice']['total_cents'];
+
+    /*** Do something here. ***/
+  }
+}
+</pre>
+
+Sample webhook code (Python - Flask)
+----------------------------
+
+<pre class="prettyprint">import flask
+app = flask.Flask(__name__)
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+  body = flask.request.json['body']
+
+  # Check that we have gotten a new client
+  if body['path'] == '/client/add':
+    client_id = body['client']['id']
+    name = body['client']['name']
+
+    # Just print out to stdin (you can be more creative)
+    print 'Client #%d added: %s' % (client_id, name)
+
+
+app.run()
+</pre>
+
+</section>
