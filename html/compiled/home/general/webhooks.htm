@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+                <li  class="active"><a href="/home/general">General</a></li>
+                  <li ><a href="/home/signup">Signup &amp; Payments</a></li>
+                  <li ><a href="/home/templates">Templates</a></li>
+                  <li ><a href="/api/clients">API Clients</a></li>
+                  <li ><a href="/api/reference">Reference</a></li>
+                  <li ><a href="/blog">Blog</a></li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+  <li class="nav-header">General</li><li><a href="/home/general/actions">Actions</a></li><li><a href="/home/general/objects">Objects</a></li><li><a href="/home/general/permissions">Permissions</a></li><li class="fixed-active"><a href="/home/general/webhooks">Webhooks</a></li><li><a href="/home/general/xid">Xid</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Webhooks</h1>
+
+<p><section id="webhooks" markdown=1>
+Webhooks allow you to trigger changes on external systems as events on your SnapBill account. Every <a href="/home/general/actions">action</a> can be delivered to your system as a webhook and can help maintain a tight integration between two systems.</p>
+
+<p>Webhook delivery uses an "atleast once" model, and will keep retrying until your server responds with an HTTP OKAY (2XX) response code. If your destination url fails for longer than a week, we will send a warning email and subsequently disable the webhook if the problem is not resolved.</p>
+
+<p>The webhook payload is generated on delivery. This means that any changes between when the event happens and when the webhook is delivered to you <em>will</em> be reflected in the data we send. It is entirely possible that an event describing an invoice state change to <strong>paid</strong> will include an invoice object whose state is <strong>cancelled</strong> (if the invoice is cancelled before we deliver the webhook.)
+</section></p>
+
+<p><section id="setup" markdown=1></p>
+
+<h2>Setting up webhooks</h2>
+
+<p>Webhooks can be enabled in SnapBill inside our <a href="https://billing.snapbill.com/setup/apps">Apps</a> section. Once enabled it is trivial to add new webhooks and view recent actions from our <a href="https://billing.snapbill.com/setup">Setup section</a>.</p>
+
+<p>The easiest way to test out webhooks is with <a href="http://requestb.in/">http://requestb.in</a> and <a href="http://jsbeautifier.org/">http://jsbeautifier.org/</a>. Simply create a new bin on the requestb.in site, and enter the URL they give you in SnapBill. Once a webhook has been sent through, you should see it if you refresh the requestb.in page. The data comes through in an ugly format, but if you paste the entire 'body' into jsbeautifier, it will clean it up for you.</p>
+
+<p></section></p>
+
+<p><section id="samples" markdown=1></p>
+
+<h2>Sample webhook code (PHP)</h2>
+
+<pre class="prettyprint">&lt;?php
+
+// Pull the JSON body out of the post
+$input = json_decode(file_get_contents('php://input'), True);
+
+// Take out the unique id of this webhook delivery
+// This (or $input['body']['id']) can be used to ensure you only act on each event once
+$uuid = $input['uuid'];
+
+// Only take invoice state updates
+if ($input['body']['path'] == '/invoice/update/state') {
+  // Check that the invoice was marked as paid
+  if ($input['body']['details'] == 'paid') {
+    // Pull out the invoice number and total cents
+    $number = $input['body']['invoice']['number'];
+    $total_cents = $input['body']['invoice']['total_cents'];
+
+    /*** Do something here. ***/
+  }
+}
+</pre>
+
+<h2>Sample webhook code (Python - Flask)</h2>
+
+<pre class="prettyprint">import flask
+app = flask.Flask(__name__)
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+  body = flask.request.json['body']
+
+  # Check that we have gotten a new client
+  if body['path'] == '/client/add':
+    client_id = body['client']['id']
+    name = body['client']['name']
+
+    # Just print out to stdin (you can be more creative)
+    print 'Client #%d added: %s' % (client_id, name)
+
+
+app.run()
+</pre>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    
