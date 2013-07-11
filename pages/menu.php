@@ -11,6 +11,7 @@ Layout_Menu::setup('Home', array(
     'Actions' => '/home/general/actions',
     'Objects' => '/home/general/objects',
     'Permissions' => '/home/general/permissions',
+    'Webhooks' => '/home/general/webhooks',
     'Xid' => '/home/general/xid',
   ),
   'Signup & payments' => array(
