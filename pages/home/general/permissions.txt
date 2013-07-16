@@ -50,10 +50,11 @@ to contact support and we'll try help you out.
 <pre><strong>/setup</strong>: Access to the setup area</pre>
 <pre><strong>/statistics/growth</strong>: Access to a specific statistics page</pre>
 <pre><strong>/statistics</strong>: Access to the statistics area</pre>
+</section>
 
 <section id="examples" markdown=1>
-Sompe examples
----------------
+Example permission setups
+-------------------------
 
 Allow access to search and view clients, but not to do anything else with them
 <pre>
