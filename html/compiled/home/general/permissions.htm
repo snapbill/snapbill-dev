@@ -41,22 +41,61 @@
 <h2>System design</h2>
 
 <p>The SnapBill permission system runs according to a
-<a href="#longest-prefix">longest prefix match</a> based URL system that matches the
-structure within SnapBill. By default all users simply have the <strong>/</strong>
-permission enabled. You can enable or disable <strong>/client</strong> (access to a single
-client) or <strong>/contact/update</strong> (ability to update a contact)</p>
+<a href="#longest-prefix">longest prefix match</a> based system on top of the URL 
+structure that we use in SnapBill.</p>
 
-<h2 id="longest-prefix">Longest prefix match<a href="#longest-prefix" class="hidden-selflink">&larr;</a></h2>
+<p>By default all new users simply have the <strong>/</strong> permission enabled which gives 
+them access to everything. If you choose to <strong>DENY /client</strong> (access to a single
+client) it will also block off the ability to add a client <strong>/client/add</strong>. A rule
+such as <strong>DENY /</strong>; <strong>ALLOW /client/add</strong> will block the user from doing anything 
+except adding new clients.</p>
 
-<p>The system works by looking for the <strong>ALLOW</strong>/<strong>DENY</strong> code on the longest matching prefix of the current URL or required permission. For example if you wanted to disallow access to everything by default, allow access to single clients (but not to update them) - you could use the following rules:</p>
+<p>Whether we allow or deny a given address to one of your users, depends on the action
+of the longest matching rule that you have defined.</p>
 
-<pre>
-<strong>DENY</strong> /
-<strong>ALLOW</strong> /client
-<strong>DENY </strong> /client/update
-</pre>
+<p>Allowing <strong>/client/&#42;</strong> will allow anything under <strong>/client</strong> excluding <strong>/client</strong> itself. 
+See the examples section for use cases of this.
+</section></p>
 
-<h2>Simple examples</h2>
+<p><section id="strings" markdown=1></p>
+
+<h2>Url prefix examples</h2>
+
+<pre><strong>/clients</strong>: View simple listings and search all clients on the account</pre>
+
+<pre><strong>/client</strong>: View details about a specific client</pre>
+
+<pre><strong>/client/*</strong>: All the "/client" links below, but not including "/client" itself</pre>
+
+<pre><strong>/client/add</strong>: Add a new client to the account</pre>
+
+<pre><strong>/client/update</strong>: Update general details of a client</pre>
+
+<pre><strong>/client/change_state</strong>: Change the state of an existing client</pre>
+
+<pre><strong>/client/payment_method</strong>: Change the payment method of an existing client</pre>
+
+<pre><strong>/client/remove</strong>: Remove a client from the account</pre>
+
+<pre><strong>/billing</strong>: Access to the billing area</pre>
+
+<pre><strong>/editor</strong>: Access to the invoice editor</pre>
+
+<pre><strong>/report</strong>: Access to the reporting section</pre>
+
+<pre><strong>/report/clients</strong>: Access to a specific report (the 'Clients' report)</pre>
+
+<pre><strong>/statistics</strong>: Access to the statistics area</pre>
+
+<pre><strong>/statistics/growth</strong>: Access to a specific statistics page</pre>
+
+<pre><strong>/email</strong>: View an email that has been sent previously</pre>
+
+<pre><strong>/email/add</strong>: Add (send) a new email to a client</pre>
+
+<p><section id="examples" markdown=1></p>
+
+<h2>Sompe examples</h2>
 
 <p>Allow access to search and view clients, but not to do anything else with them</p>
 
@@ -67,7 +106,8 @@ client) or <strong>/contact/update</strong> (ability to update a contact)</p>
 <strong>DENY </strong> /client/*
 </pre>
 
-<p>Allow access to the system as usual, but don't allow anything in the setup or
+<p><br>
+Allow access to the system as usual, but don't allow anything in the setup or
 statistics area</p>
 
 <pre>
@@ -76,11 +116,21 @@ statistics area</p>
 <strong>DENY </strong> /statistics
 </pre>
 
+<p><br>
+Allow only access to the 'Stacked Income' statistics report</p>
+
+<pre>
+<strong>DENY</strong> /
+<strong>ALLOW </strong> /statistics
+<strong>DENY </strong> /statistics/*
+<strong>ALLOW </strong> /statistics/stacked_income
+</pre>
+
 <p></section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;Zed&#039;s dead, baby. Zed&#039;s dead.&rdquo;</p>
+    <p>&ldquo;I love it when a plan comes together!&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
