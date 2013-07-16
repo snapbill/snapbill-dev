@@ -26,22 +26,30 @@ See the examples section for use cases of this.
 Url prefix examples
 --------------------
 
+There are thousands of potential permissions throughout SnapBill so unfortunately
+we can't list them all here. If you're looking for a single one please feel free 
+to contact support and we'll try help you out.
+
+<pre><strong>/billing</strong>: Access to the billing area</pre>
 <pre><strong>/clients</strong>: View simple listings and search all clients on the account</pre>
 <pre><strong>/client</strong>: View details about a specific client</pre>
 <pre><strong>/client/*</strong>: All the "/client" links below, but not including "/client" itself</pre>
 <pre><strong>/client/add</strong>: Add a new client to the account</pre>
-<pre><strong>/client/update</strong>: Update general details of a client</pre>
 <pre><strong>/client/change_state</strong>: Change the state of an existing client</pre>
 <pre><strong>/client/payment_method</strong>: Change the payment method of an existing client</pre>
 <pre><strong>/client/remove</strong>: Remove a client from the account</pre>
-<pre><strong>/billing</strong>: Access to the billing area</pre>
+<pre><strong>/client/update</strong>: Update general details of a client</pre>
 <pre><strong>/editor</strong>: Access to the invoice editor</pre>
-<pre><strong>/report</strong>: Access to the reporting section</pre>
-<pre><strong>/report/clients</strong>: Access to a specific report (the 'Clients' report)</pre>
-<pre><strong>/statistics</strong>: Access to the statistics area</pre>
-<pre><strong>/statistics/growth</strong>: Access to a specific statistics page</pre>
-<pre><strong>/email</strong>: View an email that has been sent previously</pre>
 <pre><strong>/email/add</strong>: Add (send) a new email to a client</pre>
+<pre><strong>/email</strong>: View an email that has been sent previously</pre>
+<pre><strong>/import/add</strong>: Upload a new import to SnapBill</pre>
+<pre><strong>/imports</strong>: Access to the imports area</pre>
+<pre><strong>/import</strong>: Access to a single import</pre>
+<pre><strong>/report/clients</strong>: Access to a specific report (the 'Clients' report)</pre>
+<pre><strong>/report</strong>: Access to the reporting section</pre>
+<pre><strong>/setup</strong>: Access to the setup area</pre>
+<pre><strong>/statistics/growth</strong>: Access to a specific statistics page</pre>
+<pre><strong>/statistics</strong>: Access to the statistics area</pre>
 
 <section id="examples" markdown=1>
 Sompe examples
