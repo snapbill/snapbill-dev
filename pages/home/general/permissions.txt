@@ -6,25 +6,45 @@ System design
 -------------
 
 The SnapBill permission system runs according to a
-[longest prefix match](#longest-prefix) based URL system that matches the
-structure within SnapBill. By default all users simply have the **/**
-permission enabled. You can enable or disable **/client** (access to a single
-client) or **/contact/update** (ability to update a contact)
+[longest prefix match](#longest-prefix) based system on top of the URL 
+structure that we use in SnapBill.
 
+By default all new users simply have the **/** permission enabled which gives 
+them access to everything. If you choose to **DENY /client** (access to a single
+client) it will also block off the ability to add a client **/client/add**. A rule
+such as **DENY /**; **ALLOW /client/add** will block the user from doing anything 
+except adding new clients.
 
-Longest prefix match    {#longest-prefix}
+Whether we allow or deny a given address to one of your users, depends on the action
+of the longest matching rule that you have defined.
+
+Allowing **/client/\*** will allow anything under **/client** excluding **/client** itself. 
+See the examples section for use cases of this.
+</section>
+
+<section id="strings" markdown=1>
+Url prefix examples
 --------------------
 
-The system works by looking for the **ALLOW**/**DENY** code on the longest matching prefix of the current URL or required permission. For example if you wanted to disallow access to everything by default, allow access to single clients (but not to update them) - you could use the following rules:
+<pre><strong>/clients</strong>: View simple listings and search all clients on the account</pre>
+<pre><strong>/client</strong>: View details about a specific client</pre>
+<pre><strong>/client/*</strong>: All the "/client" links below, but not including "/client" itself</pre>
+<pre><strong>/client/add</strong>: Add a new client to the account</pre>
+<pre><strong>/client/update</strong>: Update general details of a client</pre>
+<pre><strong>/client/change_state</strong>: Change the state of an existing client</pre>
+<pre><strong>/client/payment_method</strong>: Change the payment method of an existing client</pre>
+<pre><strong>/client/remove</strong>: Remove a client from the account</pre>
+<pre><strong>/billing</strong>: Access to the billing area</pre>
+<pre><strong>/editor</strong>: Access to the invoice editor</pre>
+<pre><strong>/report</strong>: Access to the reporting section</pre>
+<pre><strong>/report/clients</strong>: Access to a specific report (the 'Clients' report)</pre>
+<pre><strong>/statistics</strong>: Access to the statistics area</pre>
+<pre><strong>/statistics/growth</strong>: Access to a specific statistics page</pre>
+<pre><strong>/email</strong>: View an email that has been sent previously</pre>
+<pre><strong>/email/add</strong>: Add (send) a new email to a client</pre>
 
-<pre>
-<strong>DENY</strong> /
-<strong>ALLOW</strong> /client
-<strong>DENY </strong> /client/update
-</pre>
-
-
-Simple examples
+<section id="examples" markdown=1>
+Sompe examples
 ---------------
 
 Allow access to search and view clients, but not to do anything else with them
@@ -34,8 +54,7 @@ Allow access to search and view clients, but not to do anything else with them
 <strong>ALLOW</strong> /client
 <strong>DENY </strong> /client/*
 </pre>
-
-
+<br>
 Allow access to the system as usual, but don't allow anything in the setup or
 statistics area
 <pre>
@@ -43,4 +62,13 @@ statistics area
 <strong>DENY </strong> /setup
 <strong>DENY </strong> /statistics
 </pre>
+<br>
+Allow only access to the 'Stacked Income' statistics report
+<pre>
+<strong>DENY</strong> /
+<strong>ALLOW </strong> /statistics
+<strong>DENY </strong> /statistics/*
+<strong>ALLOW </strong> /statistics/stacked_income
+</pre>
 </section>
+
