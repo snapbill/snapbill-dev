@@ -66,10 +66,8 @@ user: get
     
 {item_type}: get
     %Optional%. If item_type was provided and the action includes sufficient depth, then an object of that type will be included
-    
-
-
 %%%
 
 
 </section>
+
