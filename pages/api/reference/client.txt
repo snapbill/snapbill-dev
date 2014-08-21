@@ -15,6 +15,13 @@ Creates a new client and returns the details.
 </pre>
 </section>
 
+<section class="api_call" id="list" data-title="/list" markdown=1>
+### /v1/client/list ###
+
+Lists all the current accounts clients. Valid filters are email, query, page and perpage.
+
+</section>
+
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/client/*id*/get ###
 
