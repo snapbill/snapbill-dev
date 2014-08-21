@@ -1,10 +1,17 @@
 Currencies
 =======================
 
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/currency/*code*/get ###
+
+Get the specified currency details.
+
+</section>
+
 <section class="api-call" id="list" data-title="/list" markdown=1>
 ### /v1/currency/list ###
 
-List all the currencies that are enabled on the account.
+List currencies on the system. If you don't specify a 'state' argument, then only currencies which are enabled will be shown. Valid filters are code, state (enabled or disabled), page and perpage.
 
 <pre><pre class="input">
     $ curl -u user:pass -d "" \
@@ -18,9 +25,6 @@ List all the currencies that are enabled on the account.
 ### Parameter listing ###
 
 %parameter-table
-depth: get
-The depth parameter signals the amount of data for the currency that was provided. depth=0 is the highest level that provides full detail.
-
 code: get
     The unique ISO 4217 code three letter code for the currency, which is always specified in upper case.
 
