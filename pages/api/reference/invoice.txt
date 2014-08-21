@@ -55,6 +55,14 @@ for the 2nd description, etc.
 
 </section>
 
+<section class="api-call" id="add-recurring-invoice" data-title="/add_recurring_invoice" markdown=1>
+### /v1/client/*id*/add_recurring_invoice ###
+
+<!-- TODO: add an example. -->
+Add a recurring invoice to the client.
+
+</section>
+
 <section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
 ### /v1/client/*id*/generate_invoice ###
 
