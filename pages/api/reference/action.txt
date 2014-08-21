@@ -17,6 +17,15 @@ Fetch an action and return the details
 </pre>
 </section>
 
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/action/list ###
+
+List all the actions of the current account. Valid filters are page and perpage.
+
+</section>
+
+
 <section class="parameters" id="parameters" data-title="parameters">
 ### Parameter listing ###
 
