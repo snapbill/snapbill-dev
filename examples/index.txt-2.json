@@ -7,16 +7,19 @@
       "list": [
         {
           "depth": 0,
-          "id": 117569,
-          "xid": "CYY:ctB",
-          "state": "new",
+          "id": 158955,
+          "xid": "Clv:mzr",
+          "state": "active",
           "number": "011",
           "name": "josh",
-          "firstname": "josh",
-          "surname": "",
-          "company": "",
-          "email": "josh@example.com",
+          "account": {
+            "depth": 1,
+            "id": 10607,
+            "xid": "Clv:Clv",
+            "username": "demo"
+          },
           "cell": "",
+          "company": "",
           "country": {
             "code": "ZA",
             "iso2": "ZA",
@@ -30,6 +33,9 @@
             "format": "R%.2f",
             "enabled": true
           },
+          "discount": "0.00",
+          "email": "josh@example.com",
+          "firstname": "josh",
           "payment": "netcash",
           "payment_method": {
             "depth": 1,
@@ -37,12 +43,7 @@
             "name": "Netcash Collect",
             "enabled": true
           },
-          "account": {
-            "depth": 1,
-            "id": 9752,
-            "xid": "CYY:CYY",
-            "username": "demo"
-          },
+          "surname": "",
           "totals": {
             "unpaid_invoices": "0.00",
             "unpaid_invoices_cents": 0,
@@ -50,8 +51,8 @@
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CYY:ctB/=ZDVmMGZlZDNi",
-            "payment": "https://demo.snapbill.com/payment/client/CYY:ctB/=YzEzOGE5ZWQ0"
+            "statement": "https://demo.snapbill.com/statement/Clv:mzr/=YTU3MzFmYzI0",
+            "payment": "https://demo.snapbill.com/payment/client/Clv:mzr/=ODZkMmNlYzc0"
           },
           "data": {
             "public_city": null,
