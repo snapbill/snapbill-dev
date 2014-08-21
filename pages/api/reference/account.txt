@@ -1,0 +1,32 @@
+Account
+=======
+
+<section class="api-call" id="current" data-title="/current" markdown=1>
+
+Fetch the current account.
+
+</section>
+
+<section class="parameters" id="parameters" data-title="parameters">
+### Parameter listing ###
+
+%parameter-table
+
+depth: get
+	The depth parameter signals the amount of data for the given account. depth=0 is the highest level which provides full detail.
+
+id: get
+	The id of the current account.
+
+xid: get
+	The xid of the current account in the system.. This is guaranteed to be unique over all accounts (see [Concepts - Xid] (/home/concepts/xid))
+
+username: get
+	The username of the current account.
+
+settings: get
+	The settings of the current account including branding data, company data, billing data and payment methods.
+
+%%%
+
+</section>
