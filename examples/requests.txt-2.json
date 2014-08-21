@@ -72,6 +72,12 @@
           "tip": "Shown as primary account name"
         },
         {
+          "type": "textbox",
+          "name": "discount",
+          "caption": "Discount",
+          "tip": "Discount given to user (%)"
+        },
+        {
           "type": "hidden",
           "name": "country_code",
           "value": "ZA"
