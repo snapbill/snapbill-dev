@@ -11,11 +11,18 @@ Fetch a batch and return the details
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->1232/get.json
+    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->1499/get.json
 </pre><pre class="output">
 %%json:examples/batch.txt-1.json%
 </pre>
 </pre>
+</section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/batch/list
+
+List all batches belonging to the current account. Valid filters are submit_date, state, payment_method, page and perpage.
+
 </section>
 
 <section class="states" id="states" data-title="states" markdown=1>
