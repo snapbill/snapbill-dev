@@ -68,6 +68,20 @@ Adds an invoice for the client. [Full documentation is in the Invoice section.](
 
 </section>
 
+<section class="api-call" id="add-recurring-invoice" data-title="/add_recurring_invoice" markdown=1>
+### /v1/client/*id*/add_recurring_invoice ###
+
+Adds a recurring invoice to the client. [Full documentation is in the Invoice section.](/api/reference/invoice#add-recurring-invoice)
+
+</section>
+
+<section class="api-call" id="add-user" data-title="/add_user" markdown=1>
+### /v1/client/*id*/add_user ###
+
+Adds a user to the client. [Full documentation is available in the User section.](/api/reference/user#add-user)
+
+</section>
+
 <section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
 
 ### /v1/client/*id*/generate_invoice ###
@@ -77,7 +91,14 @@ Generate an invoice for the client with due services and charges. [Full document
 <section class="api-call" id="add-service" data-title="/add_service" markdown=1>
 ### /v1/client/*id*/add_service ###
 
-Adds a service to a client. [Full documentation is in the service section.](/api/reerence/service#add-service)
+Adds a service to a client. [Full documentation is in the service section.](/api/reference/service.htm#add-service)
+
+</section>
+
+<section class="api-call" id="add-signup" data-title="/add_signup" markdown=1>
+### /v1/client/*id*/add_signup ###
+
+Adds a Signup to the client. [Full documentation is available in the Signup section.](/api/reference/signup.htm)
 
 </section>
 
