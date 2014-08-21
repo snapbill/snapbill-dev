@@ -35,6 +35,28 @@ data-*customfieldname*: add
 
 </section>
 
+
+<section class="api-call" id="remove-service" data-title="/remove_service" markdown=1>
+### /v1/service/*id*/remove
+
+Removes a service from a client.
+
+<!-- eval: service_id = self.fetch_single('service', 'id') -->
+<!-- eval: client_id = self.fetch_single('client', 'id') -->
+
+<pre><pre class="input">
+	$ curl -u user:pass -d "service_type_id"=<-- service_id -->666 \
+	> 	   https://api.snapbill.com/v1/service/<!-- service_id -->1566/remove.json
+</pre><pre class="output">
+%%json:examples/service.txt-2.json%
+</pre>
+</pre>
+
+#### Remove Service Parameters ####
+hello
+
+</section>
+
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
