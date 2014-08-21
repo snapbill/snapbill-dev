@@ -4,15 +4,22 @@ Packages
 <section class="api-call" id="list" data-title="/list" markdown=1>
 ### /v1/packages/list ###
 
-List all the packages that match the given options. Optionally 'service_type_id' and 'name' may be provided
+List all the packages. Valid filters are service_type, name, page and perpage.
 
 <!-- eval: service_type_id = self.fetch_single('service_type', 'id') -->
 <pre><pre class="input">
-    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->584" \
+    $ curl -u user:pass -d "service_type_id=<!-- service_type_id -->595" \
     >      https://api.snapbill.com/v1/package/list.json
 </pre><pre class="output">
 %%json:examples/package.txt-1.json%
 </pre></pre>
+</section>
+
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/package/*id*/get ###
+
+Get the package with the given id.
+
 </section>
 
 <section id="parameters" data-title="parameters" markdown=1>
