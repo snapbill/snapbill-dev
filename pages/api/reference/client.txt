@@ -4,7 +4,7 @@ Clients
 <section class="api-call" id="add" data-title="/add" markdown=1>
 ### /v1/client/add ###
 
-Creates a new client and returns the details
+Creates a new client and returns the details.
 
 <pre><pre class="input">
     $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
