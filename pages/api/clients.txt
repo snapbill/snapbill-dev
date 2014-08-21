@@ -4,7 +4,7 @@ API Clients
 <section id="python" data-title="Python" markdown=1>
 ### Python ###
 
-The python client library is available at [https://github.com/snapbill/snapbill-pyapi](https://github.com/snapbill/snapbill-pyapi)
+A python client library is available at [https://github.com/snapbill/snapbill-pyapi](https://github.com/snapbill/snapbill-pyapi)
 </section>
 
 
