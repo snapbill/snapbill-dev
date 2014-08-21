@@ -46,11 +46,19 @@ Updates details about the given client in the database
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->117570/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158969/update.json
 </pre><pre class="output">
 %%json:examples/client.txt-3.json%
 </pre>
 </pre>
+</section>
+
+<section class="api-call" id="lost-password" data-title="/lost_password" markdown=1>
+### /v1/client/*id*/lost_password
+
+<!-- TODO: Figure out how lost password works.-->
+Used to recover a client's password.
+
 </section>
 
 <section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
