@@ -2,7 +2,7 @@ SMSes
 ===
 
 <section class="api-call" id="get" data-title="/get" markdown=1>
-### /v1/sms/*id/get ###
+### /v1/sms/*id*/get ###
 
 Retrieve an SMS by id and return it's details.
 
