@@ -5,16 +5,19 @@
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 117570,
-        "xid": "CYY:ctC",
-        "state": "new",
-        "number": "012",
+        "id": 158975,
+        "xid": "Clw:mz_",
+        "state": "active",
+        "number": "018",
         "name": "helkom (jane)",
-        "firstname": "jane",
-        "surname": "",
-        "company": "helkom",
-        "email": "jane@example.com",
+        "account": {
+          "depth": 1,
+          "id": 10608,
+          "xid": "Clw:Clw",
+          "username": "demo"
+        },
         "cell": "",
+        "company": "helkom",
         "country": {
           "code": "ZA",
           "iso2": "ZA",
@@ -28,6 +31,9 @@
           "format": "R%.2f",
           "enabled": true
         },
+        "discount": "0.00",
+        "email": "jane@example.com",
+        "firstname": "jane",
         "payment": "netcash",
         "payment_method": {
           "depth": 1,
@@ -35,12 +41,7 @@
           "name": "Netcash Collect",
           "enabled": true
         },
-        "account": {
-          "depth": 1,
-          "id": 9752,
-          "xid": "CYY:CYY",
-          "username": "demo"
-        },
+        "surname": "",
         "totals": {
           "unpaid_invoices": "0.00",
           "unpaid_invoices_cents": 0,
@@ -48,8 +49,8 @@
           "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/CYY:ctC/=MGVmM2ZhYWEy",
-          "payment": "https://demo.snapbill.com/payment/client/CYY:ctC/=ZjY0OTk1ZjVl"
+          "statement": "https://demo.snapbill.com/statement/Clw:mz_/=YzhjNzU1Y2Mx",
+          "payment": "https://demo.snapbill.com/payment/client/Clw:mz_/=NTdkMTBmMTIz"
         },
         "data": {
           "public_city": null,

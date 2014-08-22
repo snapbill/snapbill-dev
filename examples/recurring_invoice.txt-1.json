@@ -3,10 +3,10 @@
       "type": "item",
       "class": "recurring_invoice",
       "recurring_invoice": {
-        "id": 8012,
-        "xid": "CYY:B9M",
+        "id": 10027,
+        "xid": "Clw:Ccr",
         "state": "active",
-        "created": "2013-05-07 16:56:44",
+        "created": "2014-08-22 09:57:40",
         "total": "18000.00",
         "total_cents": 18000,
         "mode": "DAYMONTH",
@@ -18,40 +18,45 @@
         "next": null,
         "lines": [
           {
-            "id": 20368,
-            "xid": 20368,
+            "id": 25545,
+            "xid": 25545,
             "item_name": "",
             "description": "rolls",
             "quantity": "12.00",
             "unit_cost": "5.00",
             "unit_cost_cents": 500,
+            "taxed": true,
             "total": "60.00",
             "total_cents": 6000
           },
           {
-            "id": 20369,
-            "xid": 20369,
+            "id": 25546,
+            "xid": 25546,
             "item_name": "",
             "description": "cakes",
             "quantity": "1.00",
             "unit_cost": "120.00",
             "unit_cost_cents": 12000,
+            "taxed": true,
             "total": "120.00",
             "total_cents": 12000
           }
         ],
         "client": {
           "depth": 1,
-          "id": 117559,
-          "xid": "CYY:cs3",
+          "id": 158958,
+          "xid": "Clw:mzu",
           "state": "active",
           "number": "001",
-          "name": "test2328",
-          "firstname": "test2328",
-          "surname": "",
-          "company": "",
-          "email": "",
+          "name": "test4128",
+          "account": {
+            "depth": 1,
+            "id": 10608,
+            "xid": "Clw:Clw",
+            "username": "demo"
+          },
           "cell": "",
+          "company": "",
           "country": {
             "code": "ZA",
             "iso2": "ZA",
@@ -65,6 +70,9 @@
             "format": "R%.2f",
             "enabled": true
           },
+          "discount": "0.00",
+          "email": "",
+          "firstname": "test4128",
           "payment": "netcash",
           "payment_method": {
             "depth": 2,
@@ -72,21 +80,16 @@
             "name": "Netcash Collect",
             "enabled": true
           },
-          "account": {
-            "depth": 1,
-            "id": 9752,
-            "xid": "CYY:CYY",
-            "username": "demo"
-          },
+          "surname": "",
           "totals": {
-            "unpaid_invoices": "34.56",
-            "unpaid_invoices_cents": 3456,
+            "unpaid_invoices": "555.58",
+            "unpaid_invoices_cents": 55558,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
-            "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
+            "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+            "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
           },
           "data": {
             "public_city": null,

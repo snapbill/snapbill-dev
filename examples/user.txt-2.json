@@ -7,24 +7,27 @@
       "list": [
         {
           "depth": 0,
-          "id": 2392,
-          "xid": "CYY:lY",
+          "id": 2480,
+          "xid": "Clw:mw",
           "username": "george",
           "name": "George",
           "email": "george@example.com",
           "type": "user",
           "client": {
             "depth": 1,
-            "id": 117559,
-            "xid": "CYY:cs3",
+            "id": 158958,
+            "xid": "Clw:mzu",
             "state": "active",
             "number": "001",
-            "name": "test2328",
-            "firstname": "test2328",
-            "surname": "",
-            "company": "",
-            "email": "",
+            "name": "test4128",
+            "account": {
+              "depth": 1,
+              "id": 10608,
+              "xid": "Clw:Clw",
+              "username": "demo"
+            },
             "cell": "",
+            "company": "",
             "country": {
               "code": "ZA",
               "iso2": "ZA",
@@ -38,6 +41,9 @@
               "format": "R%.2f",
               "enabled": true
             },
+            "discount": "0.00",
+            "email": "",
+            "firstname": "test4128",
             "payment": "netcash",
             "payment_method": {
               "depth": 2,
@@ -45,21 +51,16 @@
               "name": "Netcash Collect",
               "enabled": true
             },
-            "account": {
-              "depth": 1,
-              "id": 9752,
-              "xid": "CYY:CYY",
-              "username": "demo"
-            },
+            "surname": "",
             "totals": {
-              "unpaid_invoices": "0.00",
-              "unpaid_invoices_cents": 0,
+              "unpaid_invoices": "555.58",
+              "unpaid_invoices_cents": 55558,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
-              "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
+              "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+              "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
             },
             "data": {
               "public_city": null,

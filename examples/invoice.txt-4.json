@@ -3,16 +3,16 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 853509,
-        "xid": "CYY:DQYF",
-        "created": "2013-05-07 16:56:28",
+        "id": 1055387,
+        "xid": "Clw:EBqb",
+        "created": "2014-08-21 16:25:34",
         "type": "invoice",
         "state": "pending",
         "po_number": "",
-        "date": "2013-05-07",
-        "due_date": "2013-05-07",
-        "name": "Pending invoice 001/0002",
-        "number": "001/0002",
+        "date": "2014-08-21",
+        "due_date": "2014-08-21",
+        "name": "Pending invoice 001/0001",
+        "number": "001/0001",
         "currency": {
           "code": "ZAR",
           "format": "R%.2f",
@@ -21,13 +21,13 @@
         "subtotal": "50.00",
         "subtotal_cents": 5000,
         "taxes": [],
-        "discount": "50.00",
+        "discount": "0.00",
         "total": "50.00",
         "total_cents": 5000,
         "lines": [
           {
-            "id": 1496080,
-            "xid": 1496080,
+            "id": 1898286,
+            "xid": 1898286,
             "item_name": "",
             "description": "Sample",
             "unit_cost": "50.00",
@@ -35,58 +35,63 @@
             "quantity": "1.00",
             "total": "50.00",
             "total_cents": 5000,
+            "taxed": true,
             "package": null,
             "term": null,
             "recurring_invoice": {
-              "id": 8002,
-              "xid": "CYY:B9C",
+              "id": 10016,
+              "xid": "Clw:Ccg",
               "state": "disabled",
-              "created": "2013-05-07 16:56:14",
+              "created": "2014-08-21 16:23:40",
               "total": "5000.00",
               "total_cents": 5000,
               "mode": "ONCEOFF",
               "weekday": null,
               "number": null,
               "interval": null,
-              "first": "2013-05-07 00:00:00",
-              "last": "2013-05-07 00:00:00",
+              "first": "2014-08-21 00:00:00",
+              "last": "2014-08-21 00:00:00",
               "next": null,
               "lines": [
                 {
-                  "id": 20358,
-                  "xid": 20358,
+                  "id": 25533,
+                  "xid": 25533,
                   "item_name": "",
                   "description": "Sample",
                   "quantity": "1.00",
                   "unit_cost": "50.00",
                   "unit_cost_cents": 5000,
+                  "taxed": true,
                   "total": "50.00",
                   "total_cents": 5000
                 }
               ],
               "client": {
                 "depth": 2,
-                "id": 117559,
-                "xid": "CYY:cs3",
+                "id": 158958,
+                "xid": "Clw:mzu",
                 "state": "active",
                 "number": "001",
-                "name": "test2328"
+                "name": "test4128"
               }
             }
           }
         ],
         "client": {
           "depth": 1,
-          "id": 117559,
-          "xid": "CYY:cs3",
+          "id": 158958,
+          "xid": "Clw:mzu",
           "state": "active",
           "number": "001",
-          "name": "test2328",
-          "firstname": "test2328",
-          "surname": "",
-          "company": "",
-          "email": "",
+          "name": "test4128",
+          "account": {
+            "depth": 1,
+            "id": 10608,
+            "xid": "Clw:Clw",
+            "username": "demo"
+          },
           "cell": "",
+          "company": "",
           "country": {
             "code": "ZA",
             "iso2": "ZA",
@@ -100,6 +105,9 @@
             "format": "R%.2f",
             "enabled": true
           },
+          "discount": "0.00",
+          "email": "",
+          "firstname": "test4128",
           "payment": "netcash",
           "payment_method": {
             "depth": 2,
@@ -107,21 +115,16 @@
             "name": "Netcash Collect",
             "enabled": true
           },
-          "account": {
-            "depth": 1,
-            "id": 9752,
-            "xid": "CYY:CYY",
-            "username": "demo"
-          },
+          "surname": "",
           "totals": {
-            "unpaid_invoices": "34.56",
-            "unpaid_invoices_cents": 3456,
+            "unpaid_invoices": "555.58",
+            "unpaid_invoices_cents": 55558,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
-            "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
+            "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+            "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
           },
           "data": {
             "public_city": null,
@@ -136,8 +139,8 @@
           }
         },
         "urls": {
-          "view": "https://demo.snapbill.com/invoice/CYY:DQYF/=ZjQ0ZjRhMTNi",
-          "payment": "https://demo.snapbill.com/payment/invoice/CYY:DQYF/=YzVkMzZmN2My"
+          "view": "https://demo.snapbill.com/invoice/Clw:EBqb/=MGYyZGNkZWNl",
+          "payment": "https://demo.snapbill.com/payment/invoice/Clw:EBqb/=NjQ5NTg5MTNk"
         }
       }
     }
