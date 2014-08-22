@@ -90,12 +90,12 @@ List all batches belonging to the current account.
 
 Results can optionally be filtered by the filters listed below.
 
-Valid filters are submit_date, state, payment_method, page and perpage.
 </section>
 
 <section class="parameters" id="list-filters" data-title="list-filters">
 ### List Batches Filters ###
 
+%parameter-table
 submit_date: get
     The date the batches were submitted.
 
@@ -110,6 +110,7 @@ page: get
 
 perpage: get
     The number of results per page to return.
+%%%
     
 </section>
 

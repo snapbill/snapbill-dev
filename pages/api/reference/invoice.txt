@@ -215,7 +215,9 @@ client: get
 <section class="api-call" id="list" data-title="/list" markdown=1>
 ### /v1/invoice/list ###
 
-List all the invoices associated with this account. Valid filters are client_id, page and perpage.
+List all the invoices associated with this account.
+
+Results can optionally be filtered by the filters listed below.
 
 <pre><pre class="input">
     $ curl -u user:pass -d "perpage=2" \
@@ -229,6 +231,8 @@ List all the invoices associated with this account. Valid filters are client_id,
 <section class="parameters" id="list-parameters" data-title="list-parameters">
 ### List Invoices Filters ###
 
+%parameter-table
+
 client_id: get
     The id of the clients.
 
@@ -237,4 +241,6 @@ page: get
 
 perpage: get
     The number of results per page to return.
+
+%%%
 </section>

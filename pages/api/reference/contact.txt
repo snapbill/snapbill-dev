@@ -1,7 +1,7 @@
 Contacts
 ========
 <section class="api-call" id="get" data-title="/get" markdown=1>
-### /v1/contact/*id/get
+### /v1/contact/*id*/get ###
 
 Retrieve a contact.
 
@@ -36,7 +36,7 @@ cell: get
 </section>
 
 <section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/contact/list
+### /v1/contact/list ###
 
 List all contacts for all clients for the current account.
 
@@ -47,6 +47,7 @@ Results can optionally be filtered by the filters listed below.
 <section class="paramaters" id="list-filters" data-title="list-filters">
 ### List Contacts Filters ###
 
+%parameter-table
 client_id: get
     The client_id of the contacts.
 

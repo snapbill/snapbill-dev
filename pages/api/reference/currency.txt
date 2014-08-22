@@ -44,6 +44,8 @@ Results can optionally be filtered by the filters mentioned below.
 <section class="parameters" id="list-parameters" data-title="list-parameters">
 ### List Currencies Filters ###
 
+%parameter-table
+
 state: get
 	The state (enabled or disabled) of the currencies. The default value of this argument is enabled.
 
@@ -56,5 +58,6 @@ page: get
 perpage: get
 	The number of results per page to return.
 
+%%%
 
 </section>

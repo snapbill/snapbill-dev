@@ -187,14 +187,14 @@ Generate an invoice for the client with due services and charges. [Full document
 <section class="api-call" id="add-service" data-title="/add_service" markdown=1>
 ### /v1/client/*id*/add_service ###
 
-Adds a service to a client. [Full documentation is in the service section.](/api/reference/service.htm#add-service)
+Adds a service to a client. [Full documentation is in the service section.](/api/reference/service#add-service)
 
 </section>
 
 <section class="api-call" id="add-signup" data-title="/add_signup" markdown=1>
 ### /v1/client/*id*/add_signup ###
 
-Adds a Signup to the client. [Full documentation is available in the Signup section.](/api/reference/signup.htm)
+Adds a Signup to the client. [Full documentation is available in the Signup section.](/api/reference/signup)
 
 </section>
 
@@ -245,6 +245,7 @@ Results can optionally be filtered by the filters listed below.
 <section class="paramaters" id="list-filters" data-title="list-filters">
 ### List Clients Filters ###
 
+%parameter-table
 email: get
     The email address of the clients.
 

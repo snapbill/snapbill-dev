@@ -1,9 +1,6 @@
 Packages
 ========
 
-<section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/packages/list ###
-
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/package/*id*/get ###
 
@@ -65,7 +62,12 @@ state: get
 
 </section>
 
-List all the packages of all the clients in your account.
+
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/packages/list ###
+
+List all the packages of all the clients of this account.
 
 Results can optionally be filtered by the filters listed below.
 
