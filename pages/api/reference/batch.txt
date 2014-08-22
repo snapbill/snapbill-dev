@@ -1,5 +1,5 @@
 Batches
-===========
+=======
 
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/batch/*id*/get ###
@@ -11,7 +11,7 @@ Fetch a batch and return the details
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->1499/get.json
+    >      https://api.snapbill.com/v1/batch/<!-- batch_id -->1500/get.json
 </pre><pre class="output">
 %%json:examples/batch.txt-1.json%
 </pre>
@@ -48,6 +48,7 @@ dead
 
 </section>
 
+
 <section class="parameters" id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -81,3 +82,34 @@ reseller: get
 
 %%%
 </section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/batch/list
+
+List all batches belonging to the current account.
+
+Results can optionally be filtered by the filters listed below.
+
+Valid filters are submit_date, state, payment_method, page and perpage.
+</section>
+
+<section class="parameters" id="list-filters" data-title="list-filters">
+### List Batches Filters ###
+
+submit_date: get
+    The date the batches were submitted.
+
+state: get
+    The state of the batches. 
+
+payment_method: get
+    The payment methods of the batches.
+
+page: get
+    The page of results to be returned.
+
+perpage: get
+    The number of results per page to return.
+    
+</section>
+

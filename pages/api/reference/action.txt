@@ -1,16 +1,16 @@
-Action
-===========
+Actions
+=======
 
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/action/*id*/get ###
 
-Fetch an action and return the details
+Retrieve an action by id and return it's details.
 
 <!-- eval: action_id = self.fetch_single('action', 'id') -->
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/action/<!-- action_id -->869/get.json
+    >      https://api.snapbill.com/v1/action/<!-- action_id -->1034/get.json
 </pre><pre class="output">
 %%json:examples/action.txt-1.json%
 </pre>
@@ -18,7 +18,7 @@ Fetch an action and return the details
 </section>
 
 <section class="parameters" id="parameters" data-title="parameters">
-### Parameter listing ###
+### Action Parameter Listing ###
 
 %parameter-table
 
@@ -57,10 +57,32 @@ user: get
     
 {item_type}: get
     %Optional%. If item_type was provided and the action includes sufficient depth, then an object of that type will be included
-    
-
-
 %%%
 
 
 </section>
+
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/action/list ###
+
+Retrieve all the actions of the current account and return their details.
+
+Results can optionally be filtered by the filters listed below.
+
+</section>
+
+<section class="paramaters" id="list-filters" data-title="list-filters">
+### List Actions Filters ###
+
+%parameter-table
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+%%%
+
+</section>
+
+

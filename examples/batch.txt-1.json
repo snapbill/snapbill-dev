@@ -4,8 +4,8 @@
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 1499,
-        "xid": "Clv:Xb",
+        "id": 1500,
+        "xid": "Clw:Xc",
         "state": "build",
         "action_date": "2014-08-21",
         "submit_date": null,
@@ -22,8 +22,8 @@
         },
         "account": {
           "depth": 1,
-          "id": 10607,
-          "xid": "Clv:Clv",
+          "id": 10608,
+          "xid": "Clw:Clw",
           "username": "demo"
         },
         "currency": {

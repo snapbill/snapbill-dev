@@ -4,30 +4,30 @@
       "class": "action",
       "action": {
         "depth": 0,
-        "id": 869,
-        "xid": "Clv:Nl",
+        "id": 1062,
+        "xid": "Clw:Qm",
         "url": "/client/update/state",
         "path": "/client/update/state",
-        "link": "/client/Clv:mzs",
+        "link": "/client/Clw:mz_",
         "item_type": "client",
         "description": "helkom (jane) was removed",
         "details": {
           "from": "active",
           "to": "dead"
         },
-        "date": "2014-08-21 13:54:32",
+        "date": "2014-08-22 09:54:31",
         "client": {
           "depth": 2,
-          "id": 158956,
-          "xid": "Clv:mzs",
+          "id": 158975,
+          "xid": "Clw:mz_",
           "state": "dead",
-          "number": "012",
+          "number": "018",
           "name": "helkom (jane)"
         },
         "user": {
           "depth": 2,
-          "id": 2477,
-          "xid": "Clv:mt",
+          "id": 2479,
+          "xid": "Clw:mv",
           "username": "demo"
         }
       }

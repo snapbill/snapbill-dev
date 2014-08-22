@@ -1,8 +1,6 @@
 Invoices
 =======================
 
-</section>
-
 <section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
 ### /v1/client/*id*/add_invoice ###
 
@@ -14,7 +12,7 @@ Add an invoice for a client. The example adds an invoice with two items.
     $ curl -u user:pass -d "date=2013-01-07" \
     >   -d "description[]=rolls&unit_cost[]=1.12&quantity[]=13" \
     >   -d "description[]=chips&unit_cost[]=20&quantity[]=1" \
-    >   https://api.snapbill.com/v1/client/<!-- client_id -->158945/add_invoice.json
+    >   https://api.snapbill.com/v1/client/<!-- client_id -->158958/add_invoice.json
 </pre><pre class="output">
 %%json:examples/invoice.txt-1.json%
 </pre>
@@ -55,6 +53,14 @@ for the 2nd description, etc.
 
 </section>
 
+<section class="api-call" id="add-recurring-invoice" data-title="/add_recurring_invoice" markdown=1>
+### /v1/client/*id*/add_recurring_invoice ###
+
+<!-- TODO: add an example. -->
+Add a recurring invoice to the client.
+
+</section>
+
 <section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
 ### /v1/client/*id*/generate_invoice ###
 
@@ -62,22 +68,13 @@ Generate a single invoice for a given client
 
 <pre><pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->158945/generate_invoice.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158958/generate_invoice.json
 </pre><pre class="output">
 %%json:examples/invoice.txt-2.json%
 </pre>
 </pre>
 </section>
 
-<section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/invoice/list ###
-
-<pre><pre class="input">
-    $ curl -u user:pass -d "perpage=2" \
-    >      https://api.snapbill.com/v1/invoice/list.json
-</pre><pre class="output">
-%%json:examples/invoice.txt-3.json%
-</pre></pre>
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/invoice/*id*/get ###
 
@@ -86,7 +83,7 @@ Generate a single invoice for a given client
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->1055375/get.json
+    >      https://api.snapbill.com/v1/invoice/<!-- invoice_id -->1055387/get.json
 </pre><pre class="output">
 %%json:examples/invoice.txt-4.json%
 </pre>
@@ -213,4 +210,31 @@ client: get
 
 %%%
 
+</section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/invoice/list ###
+
+List all the invoices associated with this account. Valid filters are client_id, page and perpage.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/invoice/list.json
+</pre><pre class="output">
+%%json:examples/invoice.txt-3.json%
+</pre></pre>
+
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Invoices Filters ###
+
+client_id: get
+    The id of the clients.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
 </section>

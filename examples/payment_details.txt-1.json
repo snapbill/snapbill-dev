@@ -6,26 +6,26 @@
       "class": "payment_details",
       "list": [
         {
-          "id": 143465,
-          "xid": "Clv:jBp",
+          "id": 143475,
+          "xid": "Clw:jBz",
           "type": "bank_account",
           "bank": "ABSA BANK",
-          "number": "************7584",
-          "last4": "7584",
+          "number": "************7015",
+          "last4": "7015",
           "expiry": null,
-          "created": "2014-08-21 13:53:06",
+          "created": "2014-08-21 16:23:40",
           "tokens": [],
           "client": {
             "depth": 1,
-            "id": 158945,
-            "xid": "Clv:mzh",
+            "id": 158958,
+            "xid": "Clw:mzu",
             "state": "active",
             "number": "001",
-            "name": "test5178",
+            "name": "test4128",
             "account": {
               "depth": 1,
-              "id": 10607,
-              "xid": "Clv:Clv",
+              "id": 10608,
+              "xid": "Clw:Clw",
               "username": "demo"
             },
             "cell": "",
@@ -45,7 +45,7 @@
             },
             "discount": "0.00",
             "email": "",
-            "firstname": "test5178",
+            "firstname": "test4128",
             "payment": "netcash",
             "payment_method": {
               "depth": 2,
@@ -55,14 +55,14 @@
             },
             "surname": "",
             "totals": {
-              "unpaid_invoices": "161.98",
-              "unpaid_invoices_cents": 16198,
+              "unpaid_invoices": "555.58",
+              "unpaid_invoices_cents": 55558,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/Clv:mzh/=YWE3NzkzNGFm",
-              "payment": "https://demo.snapbill.com/payment/client/Clv:mzh/=ZDcxMDIxYjU4"
+              "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+              "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
             },
             "data": {
               "public_city": null,
@@ -78,26 +78,26 @@
           }
         },
         {
-          "id": 143466,
-          "xid": "Clv:jBq",
+          "id": 143476,
+          "xid": "Clw:jB0",
           "type": "credit_card",
-          "bank": "visa",
-          "number": "****-****-****-3480",
-          "last4": "3480",
+          "bank": "mastercard",
+          "number": "****-****-****-1064",
+          "last4": "1064",
           "expiry": "2015-04",
-          "created": "2014-08-21 13:53:08",
+          "created": "2014-08-21 16:23:42",
           "tokens": [],
           "client": {
             "depth": 1,
-            "id": 158946,
-            "xid": "Clv:mzi",
+            "id": 158959,
+            "xid": "Clw:mzv",
             "state": "active",
             "number": "002",
-            "name": "test8071",
+            "name": "test8587",
             "account": {
               "depth": 1,
-              "id": 10607,
-              "xid": "Clv:Clv",
+              "id": 10608,
+              "xid": "Clw:Clw",
               "username": "demo"
             },
             "cell": "",
@@ -117,7 +117,7 @@
             },
             "discount": "0.00",
             "email": "",
-            "firstname": "test8071",
+            "firstname": "test8587",
             "payment": "netcash",
             "payment_method": {
               "depth": 2,
@@ -133,8 +133,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/Clv:mzi/=MmE3YmM1Y2Nj",
-              "payment": "https://demo.snapbill.com/payment/client/Clv:mzi/=MjAyMWVhYTg1"
+              "statement": "https://demo.snapbill.com/statement/Clw:mzv/=NTk0M2I0MjI4",
+              "payment": "https://demo.snapbill.com/payment/client/Clw:mzv/=NTA5MmY3MzU3"
             },
             "data": {
               "public_city": null,

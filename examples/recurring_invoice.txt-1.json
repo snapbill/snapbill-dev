@@ -3,10 +3,10 @@
       "type": "item",
       "class": "recurring_invoice",
       "recurring_invoice": {
-        "id": 10015,
-        "xid": "Clv:Ccf",
+        "id": 10027,
+        "xid": "Clw:Ccr",
         "state": "active",
-        "created": "2014-08-21 13:56:55",
+        "created": "2014-08-22 09:57:40",
         "total": "18000.00",
         "total_cents": 18000,
         "mode": "DAYMONTH",
@@ -18,8 +18,8 @@
         "next": null,
         "lines": [
           {
-            "id": 25531,
-            "xid": 25531,
+            "id": 25545,
+            "xid": 25545,
             "item_name": "",
             "description": "rolls",
             "quantity": "12.00",
@@ -30,8 +30,8 @@
             "total_cents": 6000
           },
           {
-            "id": 25532,
-            "xid": 25532,
+            "id": 25546,
+            "xid": 25546,
             "item_name": "",
             "description": "cakes",
             "quantity": "1.00",
@@ -44,15 +44,15 @@
         ],
         "client": {
           "depth": 1,
-          "id": 158945,
-          "xid": "Clv:mzh",
+          "id": 158958,
+          "xid": "Clw:mzu",
           "state": "active",
           "number": "001",
-          "name": "test5178",
+          "name": "test4128",
           "account": {
             "depth": 1,
-            "id": 10607,
-            "xid": "Clv:Clv",
+            "id": 10608,
+            "xid": "Clw:Clw",
             "username": "demo"
           },
           "cell": "",
@@ -72,7 +72,7 @@
           },
           "discount": "0.00",
           "email": "",
-          "firstname": "test5178",
+          "firstname": "test4128",
           "payment": "netcash",
           "payment_method": {
             "depth": 2,
@@ -82,14 +82,14 @@
           },
           "surname": "",
           "totals": {
-            "unpaid_invoices": "161.98",
-            "unpaid_invoices_cents": 16198,
+            "unpaid_invoices": "555.58",
+            "unpaid_invoices_cents": 55558,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/Clv:mzh/=YWE3NzkzNGFm",
-            "payment": "https://demo.snapbill.com/payment/client/Clv:mzh/=ZDcxMDIxYjU4"
+            "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+            "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
           },
           "data": {
             "public_city": null,
