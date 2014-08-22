@@ -42,6 +42,8 @@ Results can optionally be filtered by the filters listed below.
 <section class="paramaters" id="list-filters" data-title="list-filters">
 ### List Countries Filters ###
 
+%parameter-table
+
 iso2: get
      The iso2 code (see above) of the counties.
 
