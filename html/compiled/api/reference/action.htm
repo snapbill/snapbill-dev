@@ -31,25 +31,25 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-  <li class="nav-header">Reference</li><li class="fixed-active"><a href="/api/reference/action">Action</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li class="fixed-active"><a href="/api/reference/action">Action</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#parameters">parameters</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#list-filters">list-filters</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/contact">Contact</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/job_offer">Job offer</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
   </div>
 </div>
-    <div class="page span10"><h1>Action</h1>
+    <div class="page span10"><h1>Actions</h1>
 
 <p><section class="api-call" id="get" data-title="/get" markdown=1></p>
 
 <h3>/v1/action/<em>id</em>/get</h3>
 
-<p>Fetch an action and return the details</p>
+<p>Retrieve an action by id and return it's details.</p>
 
 <!-- eval: action_id = self.fetch_single('action', 'id') -->
 
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/action/<!-- action_id -->869/get.json
+    >      https://api.snapbill.com/v1/action/<!-- action_id -->1034/get.json
 </pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;action&quot;</span>,</li><li><span class="key">action</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">869</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:Nl&quot;</span>,</li><li><span class="key">url</span>: <span class="string">&quot;\/client\/update\/state&quot;</span>,</li><li><span class="key">path</span>: <span class="string">&quot;\/client\/update\/state&quot;</span>,</li><li><span class="key">link</span>: <span class="string">&quot;\/client\/Clv:mzs&quot;</span>,</li><li><span class="key">item_type</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">description</span>: <span class="string">&quot;helkom (jane) was removed&quot;</span>,</li><li><span class="key">details</span>: {<ul class="obj closeable"><li><span class="key">from</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">to</span>: <span class="string">&quot;dead&quot;</span></li></ul>},</li><li><span class="key">date</span>: <span class="string">&quot;2014-08-21 13:54:32&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">2</span>,</li><li><span class="key">id</span>: <span class="number">158956</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:mzs&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;dead&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;012&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;helkom (jane)&quot;</span></li></ul>},</li><li><span class="key">user</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">2</span>,</li><li><span class="key">id</span>: <span class="number">2477</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:mt&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;action&quot;</span>,</li><li><span class="key">action</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">1062</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:Qm&quot;</span>,</li><li><span class="key">url</span>: <span class="string">&quot;\/client\/update\/state&quot;</span>,</li><li><span class="key">path</span>: <span class="string">&quot;\/client\/update\/state&quot;</span>,</li><li><span class="key">link</span>: <span class="string">&quot;\/client\/Clw:mz_&quot;</span>,</li><li><span class="key">item_type</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">description</span>: <span class="string">&quot;helkom (jane) was removed&quot;</span>,</li><li><span class="key">details</span>: {<ul class="obj closeable"><li><span class="key">from</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">to</span>: <span class="string">&quot;dead&quot;</span></li></ul>},</li><li><span class="key">date</span>: <span class="string">&quot;2014-08-22 09:54:31&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">2</span>,</li><li><span class="key">id</span>: <span class="number">158975</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:mz_&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;dead&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;018&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;helkom (jane)&quot;</span></li></ul>},</li><li><span class="key">user</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">2</span>,</li><li><span class="key">id</span>: <span class="number">2479</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:mv&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>}</li></ul>}</li></ul>}</div>
 </pre>
 </pre>
 
@@ -57,7 +57,7 @@
 
 <p><section class="parameters" id="parameters" data-title="parameters"></p>
 
-<h3>Parameter listing</h3>
+<h3>Action Parameter Listing</h3>
 
 <table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">depth</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
 The depth parameter signals the amount of data for the action that was provided. depth=0 is the highest level that provides full detail.
@@ -98,10 +98,34 @@ An object detailing the actual change that was made
 </tbody></table>
 
 <p></section></p>
+
+<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/action/list</h3>
+
+<p>Retrieve all the actions of the current account and return their details.</p>
+
+<p>Results can optionally be filtered by the filters listed below.</p>
+
+<p></section></p>
+
+<p><section class="paramaters" id="list-filters" data-title="list-filters"></p>
+
+<h3>List Actions Filters</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">page</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The page of results to return.
+</td></tr>
+<tr><td nowrap="nowrap">perpage</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The number of results per page to return.
+</td></tr>
+</tbody></table>
+
+<p></section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;A d&eacute;j&agrave; vu is usually a glitch in the Matrix. It happens when they change something.&rdquo;</p>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

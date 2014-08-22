@@ -31,10 +31,18 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-  <li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li class="fixed-active"><a href="/api/reference/country">Country</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/contact">Contact</a></li><li class="fixed-active"><a href="/api/reference/country">Country</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#parameters">parameters</a></li><li class="level2"><a href="#get">/list</a></li><li class="level2"><a href="#list-filters">list-filters</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/job_offer">Job offer</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
   </div>
 </div>
     <div class="page span10"><h1>Countries</h1>
+
+<p><section id="get" data-title="/get" markdown=1></p>
+
+<h3>/v1/country/<em>code</em>/get</h3>
+
+<p>Get the specified country. 'code' must be the iso2 code.</p>
+
+<p></section></p>
 
 <p><section id="parameters" data-title="parameters" markdown=1></p>
 
@@ -46,16 +54,49 @@ The depth parameter signals the amount of data for the country that was provided
 <tr><td nowrap="nowrap">code</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
 The unique ISO 2 code two letter code for the country, which is always specified in upper case.
 </td></tr>
-<tr><td nowrap="nowrap">format</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
-A printf style format string for rendering amounts in this currencies standard format.
+<tr><td nowrap="nowrap">iso2</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+See 'code'.
+</td></tr>
+<tr><td nowrap="nowrap">iso3</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The unique ISO 3 code three letter code for the country, which is always specified in upper case.
+</td></tr>
+<tr><td nowrap="nowrap">name</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The name of the country.
 </td></tr>
 </tbody></table>
+
+<p></section></p>
+
+<p><section id="get" data-title="/list" markdown=1></p>
+
+<h3>/v1/country/list</h3>
+
+<p>List all countries.</p>
+
+<p>Results can optionally be filtered by the filters listed below.</p>
+
+<p></section></p>
+
+<p><section class="paramaters" id="list-filters" data-title="list-filters"></p>
+
+<h3>List Countries Filters</h3>
+
+<p>iso2: get
+     The iso2 code (see above) of the counties.</p>
+
+<p>page: get
+    The page of results to return.</p>
+
+<p>perpage: get
+    The number of results per page to return.</p>
+
+<p>%%%</p>
 
 <p></section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;It is not the spoon that bends, it is only yourself.&rdquo;</p>
+    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

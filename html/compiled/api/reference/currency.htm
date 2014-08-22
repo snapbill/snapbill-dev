@@ -31,34 +31,24 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-  <li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/country">Country</a></li><li class="fixed-active"><a href="/api/reference/currency">Currency</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/contact">Contact</a></li><li><a href="/api/reference/country">Country</a></li><li class="fixed-active"><a href="/api/reference/currency">Currency</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#parameters">parameters</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#list-parameters">list-parameters</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/job_offer">Job offer</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
   </div>
 </div>
     <div class="page span10"><h1>Currencies</h1>
 
-<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+<p><section class="api-call" id="get" data-title="/get" markdown=1></p>
 
-<h3>/v1/currency/list</h3>
+<h3>/v1/currency/<em>code</em>/get</h3>
 
-<p>List all the currencies that are enabled on the account.</p>
-
-<pre><pre class="input">
-    $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/currency/list.json
-</pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;list&quot;</span>,</li><li><span class="key">page</span>: <span class="number">1</span>,</li><li><span class="key">numpages</span>: <span class="number">1</span>,</li><li><span class="key">class</span>: <span class="string">&quot;currency&quot;</span>,</li><li><span class="key">list</span>: [<ul class="obj closeable"><li>{<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>}</li></ul>]</li></ul>}</div>
-</pre></pre>
+<p>Get the specified currency details.</p>
 
 <p></section></p>
 
-<p><section id="parameters" data-title="parameters" markdown=1></p>
+<p><section class="parameters" id="parameters" data-title="parameters"></p>
 
 <h3>Parameter listing</h3>
 
-<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">depth</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
-The depth parameter signals the amount of data for the currency that was provided. depth=0 is the highest level that provides full detail.
-</td></tr>
-<tr><td nowrap="nowrap">code</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">code</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
 The unique ISO 4217 code three letter code for the currency, which is always specified in upper case.
 </td></tr>
 <tr><td nowrap="nowrap">format</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
@@ -70,10 +60,47 @@ Boolean value indicating whether the currency is enabled on the current account 
 </tbody></table>
 
 <p></section></p>
+
+<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/currency/list</h3>
+
+<p>List currencies on the system.</p>
+
+<p>If you don't specify a 'state' argument, then only currencies which are enabled will be shown.</p>
+
+<p>Results can optionally be filtered by the filters mentioned below.</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/currency/list.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;list&quot;</span>,</li><li><span class="key">page</span>: <span class="number">1</span>,</li><li><span class="key">numpages</span>: <span class="number">1</span>,</li><li><span class="key">class</span>: <span class="string">&quot;currency&quot;</span>,</li><li><span class="key">list</span>: [<ul class="obj closeable"><li>{<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>}</li></ul>]</li></ul>}</div>
+</pre></pre>
+
+<p></section></p>
+
+<p><section class="parameters" id="list-parameters" data-title="list-parameters"></p>
+
+<h3>List Currencies Filters</h3>
+
+<p>state: get
+    The state (enabled or disabled) of the currencies. The default value of this argument is enabled.</p>
+
+<p>code: get
+    The code (see above) of the countries.</p>
+
+<p>page: get
+    The page of results to return.</p>
+
+<p>perpage: get
+    The number of results per page to return.</p>
+
+<p></section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;This is my dig site now. Go away.&rdquo;</p>
+    <p>&ldquo;I love it when a plan comes together!&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>

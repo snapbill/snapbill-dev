@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+                <li ><a href="/home/general">General</a></li>
+                  <li ><a href="/home/signup">Signup &amp; Payments</a></li>
+                  <li ><a href="/home/templates">Templates</a></li>
+                  <li ><a href="/api/clients">API Clients</a></li>
+                  <li  class="active"><a href="/api/reference">Reference</a></li>
+                  <li ><a href="/blog">Blog</a></li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/contact">Contact</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li class="fixed-active"><a href="/api/reference/job_offer">Job offer</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#list-parameters">list-parameters</a></li><li class="level2"><a href="#apply-parameters">application-parameters</a></li><li class="level2"><a href="#apply">/apply</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Job Offer</h1>
+
+<p>SnapBill does not offer a programmatic way to add job offers, if you would like this feature, please contact us.</p>
+
+<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/job_offer/list</h3>
+
+<p>List all job offers in the account. Valid filters are page and perpage.
+</section></p>
+
+<p><section class="parameters" id="list-parameters" data-title="list-parameters"></p>
+
+<h3>List Job Offers Filters</h3>
+
+<p>page: get
+    The page of results to return.</p>
+
+<p>perpage: get
+    The number of results to return per page.
+</section></p>
+
+<p><section class="parameters" id="apply-parameters" data-title="application-parameters"></p>
+
+<h3>Parameter list</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">title</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The title of the position on offer.
+</td></tr>
+<tr><td nowrap="nowrap">description</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+A description of the position on offer.
+</td></tr>
+<tr><td nowrap="nowrap">location</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The location of the position on offer.
+</td></tr>
+<tr><td nowrap="nowrap">remote_option</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+A field representing whether a given offer will accept remote candidates.
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<p><section class="api-call" id="apply" data-title="/apply" markdown=1></p>
+
+<h3>/v1/job_offer/<em>id</em>/apply</h3>
+
+<p>Apply for a job by id. There is a verification to prevent abuse. This route uses
+the id of the job_offer as opposed to the xid.
+</section></p>
+
+<p><section class="parameters" id="apply-parameters" data-title="application-parameters"></p>
+
+<h3>Parameters for Job Application</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">name</td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The name of the applicant.
+</td></tr>
+<tr><td nowrap="nowrap">email</td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The email address of the applicant.
+</td></tr>
+<tr><td nowrap="nowrap">verify</td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The verification string.
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;These are not the droids you&#039;re looking for&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

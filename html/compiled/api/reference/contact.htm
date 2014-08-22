@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+                <li ><a href="/home/general">General</a></li>
+                  <li ><a href="/home/signup">Signup &amp; Payments</a></li>
+                  <li ><a href="/home/templates">Templates</a></li>
+                  <li ><a href="/api/clients">API Clients</a></li>
+                  <li  class="active"><a href="/api/reference">Reference</a></li>
+                  <li ><a href="/blog">Blog</a></li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li class="fixed-active"><a href="/api/reference/contact">Contact</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#parameters">parameters</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#list-filters">list-filters</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/job_offer">Job offer</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>Contacts</h1>
+
+<p><section class="api-call" id="get" data-title="/get" markdown=1></p>
+
+<h3>/v1/contact/*id/get</h3>
+
+<p>Retrieve a contact.</p>
+
+<p></section></p>
+
+<p><section class="parameters" id="parameters" data-title="parameters"></p>
+
+<h3>Parameter listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">id</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The id of the contact. This is guaranteed to be unique per client.
+</td></tr>
+<tr><td nowrap="nowrap">xid</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The xid of the contact. This is guaranteed to be globally unique. (see <a href="/home/concepts/xid">Concepts - xid</a>)
+</td></tr>
+<tr><td nowrap="nowrap">firstname</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The firstname of the contact.
+</td></tr>
+<tr><td nowrap="nowrap">surname</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The surname of the contact.
+</td></tr>
+<tr><td nowrap="nowrap">email</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The email address of the contact.
+</td></tr>
+<tr><td nowrap="nowrap">cell</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The cellphone number of the contact.
+</td></tr>
+<tr><td nowrap="nowrap"><!-- TODO</td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/contact/list</h3>
+
+<p>List all contacts for all clients for the current account.</p>
+
+<p>Results can optionally be filtered by the filters listed below.</p>
+
+<p></section></p>
+
+<p><section class="paramaters" id="list-filters" data-title="list-filters"></p>
+
+<h3>List Contacts Filters</h3>
+
+<p>client_id: get
+    The client_id of the contacts.</p>
+
+<p>page: get
+    The page of results to return.</p>
+
+<p>perpage: get
+    The number of results per page to return.</p>
+
+<p>%%%</p>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;Gentlemen, you can&#039;t fight in here! This is the War Room.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    

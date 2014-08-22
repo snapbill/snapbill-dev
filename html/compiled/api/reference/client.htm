@@ -31,41 +31,41 @@
   &nbsp;
   <div id="menu">
   <ul class="nav nav-list">
-  <li class="nav-header">Reference</li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li class="fixed-active"><a href="/api/reference/client">Client</a></li><li class="level2"><a href="#add">/add</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#update">/update</a></li><li class="level2"><a href="#add-invoice">/add_invoice</a></li><li class="level2"><a href="#generate-invoice">/generate_invoice</a></li><li class="level2"><a href="#add-service">/add_service</a></li><li class="level2"><a href="#set-payment">/set_payment</a></li><li class="level2"><a href="#delete">/delete</a></li><li class="level2"><a href="#states">states</a></li><li class="level2"><a href="#parameters">parameters</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li class="fixed-active"><a href="/api/reference/client">Client</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#add">/add</a></li><li class="level2"><a href="#update">/update</a></li><li class="level2"><a href="#states">states</a></li><li class="level2"><a href="#parameters">parameters</a></li><li class="level2"><a href="#lost-password">/lost_password</a></li><li class="level2"><a href="#add-invoice">/add_invoice</a></li><li class="level2"><a href="#add-recurring-invoice">/add_recurring_invoice</a></li><li class="level2"><a href="#add-user">/add_user</a></li><li class="level2"><a href="#generate-invoice">/generate_invoice</a></li><li class="level2"><a href="#add-service">/add_service</a></li><li class="level2"><a href="#add-signup">/add_signup</a></li><li class="level2"><a href="#set-payment">/set_payment</a></li><li class="level2"><a href="#delete">/delete</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#list-filters">list-filters</a></li><li><a href="/api/reference/contact">Contact</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/job_offer">Job offer</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
   </div>
 </div>
     <div class="page span10"><h1>Clients</h1>
-
-<p><section class="api-call" id="add" data-title="/add" markdown=1></p>
-
-<h3>/v1/client/add</h3>
-
-<p>Creates a new client and returns the details</p>
-
-<pre><pre class="input">
-    $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
-    >      https://api.snapbill.com/v1/client/add.json
-</pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">158956</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:mzs&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;012&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">10607</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:Clv&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">discount</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/Clv:mzs\/=ZTNiYTA1ZGYx&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/Clv:mzs\/=ZTUxZjE2YTBi&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
-</pre>
-</pre>
-
-<p></section></p>
 
 <p><section class="api-call" id="get" data-title="/get" markdown=1></p>
 
 <h3>/v1/client/<em>id</em>/get</h3>
 
-<p>Returns the details of a client.</p>
+<p>Retrieve a client by id and return it's details.</p>
 
 <!-- eval: client_id = self.previous['client']['id'] -->
 
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->158956/get.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/get.json
 </pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">158956</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:mzs&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;012&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">10607</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:Clv&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">discount</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/Clv:mzs\/=ZTNiYTA1ZGYx&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/Clv:mzs\/=ZTUxZjE2YTBi&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">158975</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:mz_&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;018&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">10608</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:Clw&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">discount</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/Clw:mz_\/=YzhjNzU1Y2Mx&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/Clw:mz_\/=NTdkMTBmMTIz&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="add" data-title="/add" markdown=1></p>
+
+<h3>/v1/client/add</h3>
+
+<p>Creates a new client and returns it's details.</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
+    >      https://api.snapbill.com/v1/client/add.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;item&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">158975</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:mz_&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;018&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">10608</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:Clw&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">discount</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/Clw:mz_\/=YzhjNzU1Y2Mx&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/Clw:mz_\/=NTdkMTBmMTIz&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
 </pre>
 </pre>
 
@@ -80,70 +80,9 @@
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->158956/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/update.json
 </pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">158956</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:mzs&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;012&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;helkom (jane)&quot;</span>,</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">10607</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clv:Clv&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;helkom&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">discount</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/Clv:mzs\/=ZTNiYTA1ZGYx&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/Clv:mzs\/=ZTUxZjE2YTBi&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
-</pre>
-</pre>
-
-<p></section></p>
-
-<p><section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1></p>
-
-<h3>/v1/client/<em>id</em>/add_invoice</h3>
-
-<p>Adds an invoice for the client. <a href="/api/reference/invoice#add-invoice">Full documentation is in the Invoice section.</a></p>
-
-<p></section></p>
-
-<p><section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1></p>
-
-<h3>/v1/client/<em>id</em>/generate_invoice</h3>
-
-<p>Generate an invoice for the client with due services and charges. <a href="/api/reference/invoice#generate-invoice">Full documentation is in the Invoice section.</a>
-</section></p>
-
-<p><section class="api-call" id="add-service" data-title="/add_service" markdown=1></p>
-
-<h3>/v1/client/<em>id</em>/add_service</h3>
-
-<p>Adds a service to a client. <a href="/api/reerence/service#add-service">Full documentation is in the service section.</a></p>
-
-<p></section></p>
-
-<p><section class="api-call" id="set-payment" data-title="/set_payment" markdown=1></p>
-
-<h3>/v1/client/<em>id</em>/set_payment</h3>
-
-<p>Sets the payment method and details for a client. The parameters passed in
-depend on the payment method. To find out the parameters visit
-https://api.snapbill.com/v1/client/<em>id</em>/set_payment.json?post or
-https://api.snapbill.com/v1/client/<em>id</em>/set_payment</p>
-
-<p>The example below updates the payment type to other which requires no extra parameters.</p>
-
-<pre><pre class="input">
-    $ curl -u user:pass -d "payment_method_code=other" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->158956/set_payment.json
-</pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
-</pre>
-</pre>
-
-<p></section></p>
-
-<p><section class="api-call" id="delete" data-title="/delete" markdown=1></p>
-
-<h3>/v1/client/<em>id</em>/delete</h3>
-
-<p>Deletes a client from the database</p>
-
-<pre>
-<pre class="input">
-    $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->158956/delete.json
-</pre><pre class="output">
-<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span>,</li><li><span class="key">class</span>: <span class="string">&quot;client&quot;</span>,</li><li><span class="key">client</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">0</span>,</li><li><span class="key">id</span>: <span class="number">158975</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:mz_&quot;</span>,</li><li><span class="key">state</span>: <span class="string">&quot;active&quot;</span>,</li><li><span class="key">number</span>: <span class="string">&quot;018&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;helkom (jane)&quot;</span>,</li><li><span class="key">account</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">id</span>: <span class="number">10608</span>,</li><li><span class="key">xid</span>: <span class="string">&quot;Clw:Clw&quot;</span>,</li><li><span class="key">username</span>: <span class="string">&quot;demo&quot;</span></li></ul>},</li><li><span class="key">cell</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">company</span>: <span class="string">&quot;helkom&quot;</span>,</li><li><span class="key">country</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso2</span>: <span class="string">&quot;ZA&quot;</span>,</li><li><span class="key">iso3</span>: <span class="string">&quot;ZAF&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;South Africa&quot;</span></li></ul>},</li><li><span class="key">credit</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">credit_cents</span>: <span class="number">0</span>,</li><li><span class="key">currency</span>: {<ul class="obj closeable"><li><span class="key">code</span>: <span class="string">&quot;ZAR&quot;</span>,</li><li><span class="key">format</span>: <span class="string">&quot;R%.2f&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">discount</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">email</span>: <span class="string">&quot;jane@example.com&quot;</span>,</li><li><span class="key">firstname</span>: <span class="string">&quot;jane&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">payment_method</span>: {<ul class="obj closeable"><li><span class="key">depth</span>: <span class="number">1</span>,</li><li><span class="key">code</span>: <span class="string">&quot;netcash&quot;</span>,</li><li><span class="key">name</span>: <span class="string">&quot;Netcash Collect&quot;</span>,</li><li><span class="key">enabled</span>: <span class="bool">true</span></li></ul>},</li><li><span class="key">surname</span>: <span class="string">&quot;&quot;</span>,</li><li><span class="key">totals</span>: {<ul class="obj closeable"><li><span class="key">unpaid_invoices</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">unpaid_invoices_cents</span>: <span class="number">0</span>,</li><li><span class="key">paid_payments</span>: <span class="string">&quot;0.00&quot;</span>,</li><li><span class="key">paid_payments_cents</span>: <span class="number">0</span></li></ul>},</li><li><span class="key">urls</span>: {<ul class="obj closeable"><li><span class="key">statement</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/statement\/Clw:mz_\/=YzhjNzU1Y2Mx&quot;</span>,</li><li><span class="key">payment</span>: <span class="string">&quot;https:\/\/demo.snapbill.com\/payment\/client\/Clw:mz_\/=NTdkMTBmMTIz&quot;</span></li></ul>},</li><li><span class="key">data</span>: {<ul class="obj closeable"><li><span class="key">public_city</span>: <span class="null">null</span>,</li><li><span class="key">public_country</span>: <span class="null">null</span>,</li><li><span class="key">public_fax</span>: <span class="null">null</span>,</li><li><span class="key">public_phone</span>: <span class="null">null</span>,</li><li><span class="key">public_postal</span>: <span class="null">null</span>,</li><li><span class="key">public_postcode</span>: <span class="null">null</span>,</li><li><span class="key">public_province</span>: <span class="null">null</span>,</li><li><span class="key">public_street</span>: <span class="null">null</span>,</li><li><span class="key">vat_number</span>: <span class="null">null</span></li></ul>},</li><li><span class="key">services</span>: [ ]</li></ul>}</li></ul>}</div>
 </pre>
 </pre>
 
@@ -251,10 +190,135 @@ A permalink to the clients statement in the client area (includes authorization)
 </tbody></table>
 
 <p></section></p>
+
+<p><section class="api-call" id="lost-password" data-title="/lost_password" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/lost_password</h3>
+
+<p>Used to recover a client's password. Submit a post request and a password recovery email will be sent
+to the email account associated with this client.</p>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_invoice</h3>
+
+<p>Adds an invoice for the client. <a href="/api/reference/invoice#add-invoice">Full documentation is in the Invoice section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-recurring-invoice" data-title="/add_recurring_invoice" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_recurring_invoice</h3>
+
+<p>Adds a recurring invoice to the client. <a href="/api/reference/invoice#add-recurring-invoice">Full documentation is in the Invoice section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-user" data-title="/add_user" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_user</h3>
+
+<p>Adds a user to the client. <a href="/api/reference/user#add-user">Full documentation is available in the User section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/generate_invoice</h3>
+
+<p>Generate an invoice for the client with due services and charges. <a href="/api/reference/invoice#generate-invoice">Full documentation is in the Invoice section.</a>
+</section></p>
+
+<p><section class="api-call" id="add-service" data-title="/add_service" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_service</h3>
+
+<p>Adds a service to a client. <a href="/api/reference/service.htm#add-service">Full documentation is in the service section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="add-signup" data-title="/add_signup" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/add_signup</h3>
+
+<p>Adds a Signup to the client. <a href="/api/reference/signup.htm">Full documentation is available in the Signup section.</a></p>
+
+<p></section></p>
+
+<p><section class="api-call" id="set-payment" data-title="/set_payment" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/set_payment</h3>
+
+<p>Sets the payment method and details for a client. The parameters passed in
+depend on the payment method. To find out the parameters visit
+https://api.snapbill.com/v1/client/<em>id</em>/set_payment.json?post or
+https://api.snapbill.com/v1/client/<em>id</em>/set_payment</p>
+
+<p>The example below updates the payment type to other which requires no extra parameters.</p>
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "payment_method_code=other" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/set_payment.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api-call" id="delete" data-title="/delete" markdown=1></p>
+
+<h3>/v1/client/<em>id</em>/delete</h3>
+
+<p>Deletes a client from the database</p>
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/delete.json
+</pre><pre class="output">
+<div class="json">{<ul class="obj closeable"><li><span class="key">code</span>: <span class="number">200</span>,</li><li><span class="key">type</span>: <span class="string">&quot;result&quot;</span>,</li><li><span class="key">status</span>: <span class="string">&quot;ok&quot;</span></li></ul>}</div>
+</pre>
+</pre>
+
+<p></section></p>
+
+<p><section class="api_call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/client/list</h3>
+
+<p>Lists all the current accounts clients.</p>
+
+<p>Results can optionally be filtered by the filters listed below.</p>
+
+<p></section></p>
+
+<p><section class="paramaters" id="list-filters" data-title="list-filters"></p>
+
+<h3>List Clients Filters</h3>
+
+<p>email: get
+    The email address of the clients.</p>
+
+<p>query: get
+    <!--TODO: Add more notes about how search works. -->
+    A search query. This parameter is handled in the same way as the search on billing.snapbill.com works.</p>
+
+<p>page: get
+    The page of results to return.</p>
+
+<p>perpage: get
+    The number of results per page to return.</p>
+
+<p>%%%</p>
+
+<p></section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;Zed&#039;s dead, baby. Zed&#039;s dead.&rdquo;</p>
+    <p>&ldquo;Gentlemen, you can&#039;t fight in here! This is the War Room.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
