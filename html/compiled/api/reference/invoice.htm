@@ -259,7 +259,9 @@ A <a href="/api/reference/client">client</a> object that the invoice was generat
 
 <h3>/v1/invoice/list</h3>
 
-<p>List all the invoices associated with this account. Valid filters are client_id, page and perpage.</p>
+<p>List all the invoices associated with this account.</p>
+
+<p>Results can optionally be filtered by the filters listed below.</p>
 
 <pre><pre class="input">
     $ curl -u user:pass -d "perpage=2" \
@@ -274,19 +276,22 @@ A <a href="/api/reference/client">client</a> object that the invoice was generat
 
 <h3>List Invoices Filters</h3>
 
-<p>client_id: get
-    The id of the clients.</p>
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">client_id</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The id of the clients.
+</td></tr>
+<tr><td nowrap="nowrap">page</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The page of results to return.
+</td></tr>
+<tr><td nowrap="nowrap">perpage</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The number of results per page to return.
+</td></tr>
+</tbody></table>
 
-<p>page: get
-    The page of results to return.</p>
-
-<p>perpage: get
-    The number of results per page to return.
-</section></p>
+<p></section></p>
 </div>  </div>
   <footer>
     <hr/>
-    <p>&ldquo;These are not the droids you&#039;re looking for&rdquo;</p>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
   </footer>
 </div>
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
