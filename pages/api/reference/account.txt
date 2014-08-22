@@ -1,9 +1,9 @@
-Account
-=======
+Accounts
+========
 
 <section class="api-call" id="current" data-title="/current" markdown=1>
 
-Fetch the current account.
+Retrieve the current account and return it's details.
 
 </section>
 
