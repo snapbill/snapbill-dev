@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SnapBill Developers</title>
+<link href="/ext/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/layout.css" rel="stylesheet">
+<link href="/ext/google-code-prettify/prettify.css" rel="stylesheet">
+<link rel="SHORTCUT ICON" href="http://static.snapbill.com/favicon.ico" />
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" class="brand">SnapBill &ndash; Developers</a>
+      <ul class="nav">
+                <li ><a href="/home/general">General</a></li>
+                  <li ><a href="/home/signup">Signup &amp; Payments</a></li>
+                  <li ><a href="/home/templates">Templates</a></li>
+                  <li ><a href="/api/clients">API Clients</a></li>
+                  <li  class="active"><a href="/api/reference">Reference</a></li>
+                  <li ><a href="/blog">Blog</a></li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span2">
+  &nbsp;
+  <div id="menu">
+  <ul class="nav nav-list">
+  <li class="nav-header">Reference</li><li><a href="/api/reference/account">Account</a></li><li><a href="/api/reference/action">Action</a></li><li><a href="/api/reference/batch">Batch</a></li><li><a href="/api/reference/client">Client</a></li><li><a href="/api/reference/contact">Contact</a></li><li><a href="/api/reference/country">Country</a></li><li><a href="/api/reference/currency">Currency</a></li><li><a href="/api/reference/invoice">Invoice</a></li><li><a href="/api/reference/package">Package</a></li><li><a href="/api/reference/payment">Payment</a></li><li><a href="/api/reference/payment_details">Payment details</a></li><li><a href="/api/reference/payment_method">Payment method</a></li><li><a href="/api/reference/recurring_invoice">Recurring invoice</a></li><li><a href="/api/reference/service">Service</a></li><li><a href="/api/reference/service_type">Service type</a></li><li><a href="/api/reference/signup">Signup</a></li><li class="fixed-active"><a href="/api/reference/sms">Sms</a></li><li class="level2"><a href="#get">/get</a></li><li class="level2"><a href="#parameters">parameters</a></li><li class="level2"><a href="#list">/list</a></li><li class="level2"><a href="#list-parameters">list-parameters</a></li><li><a href="/api/reference/user">User</a></li>  </ul>
+  </div>
+</div>
+    <div class="page span10"><h1>SMSes</h1>
+
+<p><section class="api-call" id="get" data-title="/get" markdown=1></p>
+
+<h3>/v1/sms/*id/get</h3>
+
+<p>Retrieve an SMS by id and return it's details.</p>
+
+<p></section></p>
+
+<p><section class="parameters" id="parameters" data-title="parameters"></p>
+
+<h3>SMS Parameter Listing</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">to</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The phone number the SMS was sent to.
+</td></tr>
+<tr><td nowrap="nowrap">state</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The current state of the SMS.
+</td></tr>
+<tr><td nowrap="nowrap">user</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The user associated with the sending of the SMS.
+</td></tr>
+<tr><td nowrap="nowrap">message</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The text body of the SMS.
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+
+<!--todo -->
+
+<p><section class="api-call" id="list" data-title="/list" markdown=1></p>
+
+<h3>/v1/sms/list</h3>
+
+<p>List all SMSes associated with the current account.</p>
+
+<p></section></p>
+
+<p><section class="parameters" id="list-parameters" data-title="list-parameters"></p>
+
+<h3>List SMS Filters</h3>
+
+<table class='table'><thead><tr><th>Name</th><th colspan="4">Availability</th><th>Description</th></tr></thead><tbody><tr><td nowrap="nowrap">client_id</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The client_id of the SMS.
+</td></tr>
+<tr><td nowrap="nowrap">page</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The page of results to return.
+</td></tr>
+<tr><td nowrap="nowrap">perpage</td><td style="padding:0;margin:0"></td><td><a href="#get"><span class="label label-get">get</span></a></td><td style="padding:0;margin:0"></td><td style="padding:0;margin:0"></td><td>
+The number of results per page to return.
+</td></tr>
+</tbody></table>
+
+<p></section></p>
+</div>  </div>
+  <footer>
+    <hr/>
+    <p>&ldquo;I&#039;m sorry, Dave. I&#039;m afraid I can&#039;t do that.&rdquo;</p>
+  </footer>
+</div>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/ext/jquery/jquery.color.js"></script>
+<script type="text/javascript" src="/ext/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ext/google-code-prettify/prettify.js"></script>
+<script src="/js/code.js"></script>
+</body>
+</html>
+    
