@@ -1,11 +1,21 @@
 Job Offer
 =========
 
-Snapbill does not offer a programmatic way to create job offers, but if you would like this feature, please contact us.
+SnapBill does not offer a programmatic way to add job offers, if you would like this feature, please contact us.
 
 <section class="api-call" id="list" data-title="/list" markdown=1>
 ### /v1/job_offer/list
 List all job offers in the account. Valid filters are page and perpage.
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Job Offers Filters ###
+
+page: get
+	The page of results to return.
+
+perpage: get
+	The number of results to return per page.
 </section>
 
 <section class="parameters" id="apply-parameters" data-title="application-parameters">
@@ -22,10 +32,8 @@ description: get
 location: get
 	The location of the position on offer.
 
-<!--
 remote_option: get
-	pass
--->
+	A field representing whether a given offer will accept remote candidates.
 
 %%%
 </section>

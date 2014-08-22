@@ -1,5 +1,31 @@
 Service Types
-=======================
+=============
+
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/service_type/*id*/get
+
+Retrieve a service_type by id and return it's details.
+
+</section>
+
+<section id="parameters" data-title="parameters" markdown=1>
+### Parameter listing ###
+
+%parameter-table
+depth: get
+The depth parameter signals the amount of data for the payment method that was provided. depth=0 is the highest level that provides full detail.
+
+id: get
+The id of this service type. Unique over a single accounts.
+
+xid: get
+The [xid](/home/concepts/xid) of the service type. This is guaranteed to be unique over all accounts.
+
+name: get
+The name of the service type as chosen by the user.
+
+%%%
+</section>
 
 <section class="api-call" id="list" data-title="/list" markdown=1>
 ### /v1/service_type/list ###
@@ -12,22 +38,17 @@ Service Types
 %%json:examples/service_type.txt-1.json%
 </pre></pre>
 
-<section id="parameters" data-title="parameters" markdown=1>
-### Parameter listing ###
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Service Types Filters ###
 
 %parameter-table
-depth: get
-The depth parameter signals the amount of data for the payment method that was provided. depth=0 is the highest level that provides full detail.
-
-id: get
-The id of this service type. Unique over a single accounts.
-
-
-xid: get
-The [xid](/home/concepts/xid) of the service type. This is guaranteed to be unique over all accounts.
-
 name: get
-The name of the service type as chosen by the user.
+	The name of the service types.
 
+page: get
+	The number of pages of results to return.
+
+perpage: get
+	The number of results per page to return.
 %%%
 </section>

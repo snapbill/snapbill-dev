@@ -1,25 +1,22 @@
 Payment Details
-==============================
+===============
 
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/payment_details/*id*/get ###
 
-<section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/payment_details/list ###
+Retrieve payment_details by id and return the details.
 
-<pre><pre class="input">
-    $ curl -u user:pass -d "perpage=2" \
-    >      https://api.snapbill.com/v1/payment_details/list.json
-</pre><pre class="output">
-%%json:examples/payment_details.txt-1.json%
-</pre></pre>
 </section>
 
 <!-- eval: id = self.previous['list'][1]['id'] -->
 <section class="api-call" id="update" data-title="/update" markdown=1>
-### /v1/payment_details/update ###
+### /v1/payment_details/*id*/update ###
+
+Update payment details by id.
 
 <pre><pre class="input">
     $ curl -u user:pass -d "expiry=2025-06" \
-    >      https://api.snapbill.com/v1/payment_details/<!-- id -->103059/update.json
+    >      https://api.snapbill.com/v1/payment_details/<!-- id -->143476/update.json
 </pre><pre class="output">
 %%json:examples/payment_details.txt-2.json%
 </pre></pre>
@@ -60,4 +57,37 @@ state: get
     The current state of the payment details (active, disabled, expired or dead).
 %%%
 
+</section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/payment_details/list ###
+
+List all payment_details of all clients on the account.
+
+Results can optionally be filtered by the filters listed below.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/payment_details/list.json
+</pre><pre class="output">
+%%json:examples/payment_details.txt-1.json%
+</pre></pre>
+</section>
+
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Payment Details Filters ###
+
+%parameter-table
+
+client_id: get
+    The client associated with the payment details.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+
+%%%
 </section>

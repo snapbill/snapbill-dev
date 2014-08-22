@@ -8,13 +8,6 @@ Get the specified country. 'code' must be the iso2 code.
 
 </section>
 
-<section id="get" data-title="/list" markdown=1>
-### /v1/country/list ###
-
-List all countries. Valid filters are code (an iso2 code), page and perpage.
-
-</section>
-
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
 
@@ -36,3 +29,30 @@ name: get
 
 %%%
 </section>
+
+<section id="get" data-title="/list" markdown=1>
+### /v1/country/list ###
+
+List all countries.
+
+Results can optionally be filtered by the filters listed below.
+
+</section>
+
+<section class="paramaters" id="list-filters" data-title="list-filters">
+### List Countries Filters ###
+
+iso2: get
+     The iso2 code (see above) of the counties.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+
+%%%
+
+</section>
+
+

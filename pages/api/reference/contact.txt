@@ -1,13 +1,5 @@
-Contact
-=======
-
-<section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/contact/list
-
-List all contacts for all clients for the current account. Valid filters are client_id, page and perpage.
-
-</section>
-
+Contacts
+========
 <section class="api-call" id="get" data-title="/get" markdown=1>
 ### /v1/contact/*id/get
 
@@ -42,3 +34,29 @@ cell: get
 
 %%%
 </section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/contact/list
+
+List all contacts for all clients for the current account.
+
+Results can optionally be filtered by the filters listed below.
+
+</section>
+
+<section class="paramaters" id="list-filters" data-title="list-filters">
+### List Contacts Filters ###
+
+client_id: get
+    The client_id of the contacts.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+
+%%%
+
+</section>
+
