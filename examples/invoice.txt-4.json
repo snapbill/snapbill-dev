@@ -3,9 +3,9 @@
       "type": "item",
       "class": "invoice",
       "invoice": {
-        "id": 1055375,
-        "xid": "Clv:EBqP",
-        "created": "2014-08-21 13:53:24",
+        "id": 1055387,
+        "xid": "Clw:EBqb",
+        "created": "2014-08-21 16:25:34",
         "type": "invoice",
         "state": "pending",
         "po_number": "",
@@ -26,8 +26,8 @@
         "total_cents": 5000,
         "lines": [
           {
-            "id": 1898272,
-            "xid": 1898272,
+            "id": 1898286,
+            "xid": 1898286,
             "item_name": "",
             "description": "Sample",
             "unit_cost": "50.00",
@@ -39,10 +39,10 @@
             "package": null,
             "term": null,
             "recurring_invoice": {
-              "id": 10005,
-              "xid": "Clv:CcV",
+              "id": 10016,
+              "xid": "Clw:Ccg",
               "state": "disabled",
-              "created": "2014-08-21 13:53:06",
+              "created": "2014-08-21 16:23:40",
               "total": "5000.00",
               "total_cents": 5000,
               "mode": "ONCEOFF",
@@ -54,8 +54,8 @@
               "next": null,
               "lines": [
                 {
-                  "id": 25521,
-                  "xid": 25521,
+                  "id": 25533,
+                  "xid": 25533,
                   "item_name": "",
                   "description": "Sample",
                   "quantity": "1.00",
@@ -68,26 +68,26 @@
               ],
               "client": {
                 "depth": 2,
-                "id": 158945,
-                "xid": "Clv:mzh",
+                "id": 158958,
+                "xid": "Clw:mzu",
                 "state": "active",
                 "number": "001",
-                "name": "test5178"
+                "name": "test4128"
               }
             }
           }
         ],
         "client": {
           "depth": 1,
-          "id": 158945,
-          "xid": "Clv:mzh",
+          "id": 158958,
+          "xid": "Clw:mzu",
           "state": "active",
           "number": "001",
-          "name": "test5178",
+          "name": "test4128",
           "account": {
             "depth": 1,
-            "id": 10607,
-            "xid": "Clv:Clv",
+            "id": 10608,
+            "xid": "Clw:Clw",
             "username": "demo"
           },
           "cell": "",
@@ -107,7 +107,7 @@
           },
           "discount": "0.00",
           "email": "",
-          "firstname": "test5178",
+          "firstname": "test4128",
           "payment": "netcash",
           "payment_method": {
             "depth": 2,
@@ -117,14 +117,14 @@
           },
           "surname": "",
           "totals": {
-            "unpaid_invoices": "161.98",
-            "unpaid_invoices_cents": 16198,
+            "unpaid_invoices": "555.58",
+            "unpaid_invoices_cents": 55558,
             "paid_payments": "0.00",
             "paid_payments_cents": 0
           },
           "urls": {
-            "statement": "https://demo.snapbill.com/statement/Clv:mzh/=YWE3NzkzNGFm",
-            "payment": "https://demo.snapbill.com/payment/client/Clv:mzh/=ZDcxMDIxYjU4"
+            "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+            "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
           },
           "data": {
             "public_city": null,
@@ -139,8 +139,8 @@
           }
         },
         "urls": {
-          "view": "https://demo.snapbill.com/invoice/Clv:EBqP/=MmViMDI3MTQz",
-          "payment": "https://demo.snapbill.com/payment/invoice/Clv:EBqP/=NDcwYWUzNDI2"
+          "view": "https://demo.snapbill.com/invoice/Clw:EBqb/=MGYyZGNkZWNl",
+          "payment": "https://demo.snapbill.com/payment/invoice/Clw:EBqb/=NjQ5NTg5MTNk"
         }
       }
     }

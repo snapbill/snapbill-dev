@@ -1,17 +1,12 @@
 Payments
-=======================
+========
 
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/payment/*id*/get
 
-<section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/payment/list ###
-
-<pre><pre class="input">
-    $ curl -u user:pass -d "perpage=2" \
-    >      https://api.snapbill.com/v1/payment/list.json
-</pre><pre class="output">
-%%json:examples/payment.txt-1.json%
-</pre></pre>
+Retrieve a payment by id and return it's details.
 </section>
+
 
 <section id="parameters" data-title="parameters" markdown=1>
 ### Parameter listing ###
@@ -52,3 +47,46 @@ state: get
 %%%
 
 </section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/payment/list ###
+
+List payments.
+
+Results can optionally be filtered by the filters listed below.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "perpage=2" \
+    >      https://api.snapbill.com/v1/payment/list.json
+</pre><pre class="output">
+%%json:examples/payment.txt-1.json%
+</pre></pre>
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Payments Filters
+
+%parameter-table
+
+client_id: get
+    The client associated with the payments.
+
+batch_id: get
+    The batch associated with the payments.
+
+state: get
+    <!--TODO: add payment state table. -->
+    The state of the payments.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+
+%%%
+</section>
+
+
+
+

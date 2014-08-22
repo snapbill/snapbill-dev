@@ -1,0 +1,63 @@
+Job Offer
+=========
+
+SnapBill does not offer a programmatic way to add job offers, if you would like this feature, please contact us.
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/job_offer/list
+List all job offers in the account. Valid filters are page and perpage.
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Job Offers Filters ###
+
+page: get
+	The page of results to return.
+
+perpage: get
+	The number of results to return per page.
+</section>
+
+<section class="parameters" id="apply-parameters" data-title="application-parameters">
+### Parameter list ###
+
+%parameter-table
+
+title: get
+	The title of the position on offer.
+
+description: get
+	A description of the position on offer.
+
+location: get
+	The location of the position on offer.
+
+remote_option: get
+	A field representing whether a given offer will accept remote candidates.
+
+%%%
+</section>
+
+<section class="api-call" id="apply" data-title="/apply" markdown=1>
+### /v1/job_offer/*id*/apply
+Apply for a job by id. There is a verification to prevent abuse. This route uses
+the id of the job_offer as opposed to the xid.
+</section>
+
+<section class="parameters" id="apply-parameters" data-title="application-parameters">
+### Parameters for Job Application ###
+
+%parameter-table
+
+name: apply
+	The name of the applicant.
+
+email: apply
+	The email address of the applicant.
+
+verify: apply
+	The verification string.
+
+%%%
+</section>
+

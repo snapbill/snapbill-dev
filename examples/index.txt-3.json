@@ -5,15 +5,15 @@
       "class": "client",
       "client": {
         "depth": 0,
-        "id": 158955,
-        "xid": "Clv:mzr",
+        "id": 158988,
+        "xid": "Clx:m0M",
         "state": "active",
         "number": "011",
         "name": "george",
         "account": {
           "depth": 1,
-          "id": 10607,
-          "xid": "Clv:Clv",
+          "id": 10609,
+          "xid": "Clx:Clx",
           "username": "demo"
         },
         "cell": "",
@@ -49,8 +49,8 @@
           "paid_payments_cents": 0
         },
         "urls": {
-          "statement": "https://demo.snapbill.com/statement/Clv:mzr/=YTU3MzFmYzI0",
-          "payment": "https://demo.snapbill.com/payment/client/Clv:mzr/=ODZkMmNlYzc0"
+          "statement": "https://demo.snapbill.com/statement/Clx:m0M/=NTY2Mjk1ZTNk",
+          "payment": "https://demo.snapbill.com/payment/client/Clx:m0M/=NGU0NzU5NTFh"
         },
         "data": {
           "public_city": null,

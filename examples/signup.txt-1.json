@@ -4,9 +4,9 @@
       "class": "signup",
       "signup": {
         "depth": 0,
-        "id": 41047,
-        "xid": "Clv:KBX",
-        "created": "2014-08-21 13:57:16",
+        "id": 41051,
+        "xid": "Clw:KBb",
+        "created": "2014-08-22 09:58:12",
         "step": "service",
         "options": {
           "service_type": "Sample Service",
@@ -15,7 +15,7 @@
         },
         "errors": [],
         "urls": {
-          "signup": "https://demo.snapbill.com/signup/Clv:KBX/=YzE5ZWJlNjMw"
+          "signup": "https://demo.snapbill.com/signup/Clw:KBb/=OTJhZjllZWM2"
         }
       }
     }

@@ -1,5 +1,5 @@
 Signups
-=======================
+=======
 
 <section id="description" markdown=1>
 The signup object gives you a level of control over signups that are completed, as well as ones in progress.
@@ -25,7 +25,7 @@ This api call will create a signup. Once created just redirect the client to url
 
 <pre><pre class="input">
     $ curl -u user:pass -d 'options={"service_type":"Sample Service","service-package":"Small","service-term":1}'
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->158945/add_signup.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158958/add_signup.json
 </pre><pre class="output">
 %%json:examples/signup.txt-1.json%
 </pre>
