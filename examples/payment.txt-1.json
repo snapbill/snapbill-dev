@@ -6,20 +6,23 @@
       "class": "payment",
       "list": [
         {
-          "id": 668665,
-          "xid": "CYY:CjP5",
+          "id": 932850,
+          "xid": "Clw:Djvy",
           "client": {
             "depth": 0,
-            "id": 117559,
-            "xid": "CYY:cs3",
+            "id": 158958,
+            "xid": "Clw:mzu",
             "state": "active",
             "number": "001",
-            "name": "test2328",
-            "firstname": "test2328",
-            "surname": "",
-            "company": "",
-            "email": "",
+            "name": "test4128",
+            "account": {
+              "depth": 1,
+              "id": 10608,
+              "xid": "Clw:Clw",
+              "username": "demo"
+            },
             "cell": "",
+            "company": "",
             "country": {
               "code": "ZA",
               "iso2": "ZA",
@@ -33,6 +36,9 @@
               "format": "R%.2f",
               "enabled": true
             },
+            "discount": "0.00",
+            "email": "",
+            "firstname": "test4128",
             "payment": "netcash",
             "payment_method": {
               "depth": 1,
@@ -40,21 +46,16 @@
               "name": "Netcash Collect",
               "enabled": true
             },
-            "account": {
-              "depth": 1,
-              "id": 9752,
-              "xid": "CYY:CYY",
-              "username": "demo"
-            },
+            "surname": "",
             "totals": {
-              "unpaid_invoices": "34.56",
-              "unpaid_invoices_cents": 3456,
+              "unpaid_invoices": "555.58",
+              "unpaid_invoices_cents": 55558,
               "paid_payments": "0.00",
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CYY:cs3/=MGYyYWNmZjdi",
-              "payment": "https://demo.snapbill.com/payment/client/CYY:cs3/=ZWQ2NTc0YjY5"
+              "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+              "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
             },
             "data": {
               "public_city": null,
@@ -67,14 +68,204 @@
               "public_street": null,
               "vat_number": null
             },
-            "services": []
+            "services": {
+              "155686": {
+                "id": 155686,
+                "xid": "Clw:mAm",
+                "state": "active",
+                "name": "Pancake Delivery",
+                "username": null,
+                "created": "2014-08-22 09:45:24",
+                "renewal": "2014-09-01 00:00:00",
+                "package": {
+                  "depth": 2,
+                  "id": 25756,
+                  "name": "Delicious Pancakes",
+                  "setup": "50.00",
+                  "setup_cents": 5000,
+                  "terms": [
+                    {
+                      "type": "daymonth",
+                      "day": 1,
+                      "interval": 1,
+                      "description": "Monthly",
+                      "fee": "240.00",
+                      "fee_cents": 24000
+                    }
+                  ],
+                  "currency": {
+                    "code": "ZAR",
+                    "format": "R%.2f",
+                    "enabled": true
+                  },
+                  "service_type": {
+                    "id": 596,
+                    "xid": "Clw:JU",
+                    "name": "Pancake Delivery"
+                  },
+                  "flags": {
+                    "hide-signup": false,
+                    "hide-all": false
+                  },
+                  "state": "active",
+                  "available": false
+                },
+                "term": 1,
+                "service_type": {
+                  "id": 596,
+                  "xid": "Clw:JU",
+                  "name": "Pancake Delivery"
+                },
+                "client": {
+                  "depth": 2,
+                  "id": 158958,
+                  "xid": "Clw:mzu",
+                  "state": "active",
+                  "number": "001",
+                  "name": "test4128"
+                },
+                "variables": [],
+                "data": {
+                  "created": "2014-08-22 09:45:24",
+                  "package_name": "Delicious Pancakes",
+                  "renewal": "2014-09-01 00:00:00",
+                  "term": 1
+                }
+              },
+              "155687": {
+                "id": 155687,
+                "xid": "Clw:mAn",
+                "state": "active",
+                "name": "Pancake Delivery",
+                "username": null,
+                "created": "2014-08-22 09:50:39",
+                "renewal": "2014-09-01 00:00:00",
+                "package": {
+                  "depth": 2,
+                  "id": 25756,
+                  "name": "Delicious Pancakes",
+                  "setup": "50.00",
+                  "setup_cents": 5000,
+                  "terms": [
+                    {
+                      "type": "daymonth",
+                      "day": 1,
+                      "interval": 1,
+                      "description": "Monthly",
+                      "fee": "240.00",
+                      "fee_cents": 24000
+                    }
+                  ],
+                  "currency": {
+                    "code": "ZAR",
+                    "format": "R%.2f",
+                    "enabled": true
+                  },
+                  "service_type": {
+                    "id": 596,
+                    "xid": "Clw:JU",
+                    "name": "Pancake Delivery"
+                  },
+                  "flags": {
+                    "hide-signup": false,
+                    "hide-all": false
+                  },
+                  "state": "active",
+                  "available": false
+                },
+                "term": 1,
+                "service_type": {
+                  "id": 596,
+                  "xid": "Clw:JU",
+                  "name": "Pancake Delivery"
+                },
+                "client": {
+                  "depth": 2,
+                  "id": 158958,
+                  "xid": "Clw:mzu",
+                  "state": "active",
+                  "number": "001",
+                  "name": "test4128"
+                },
+                "variables": [],
+                "data": {
+                  "created": "2014-08-22 09:50:39",
+                  "package_name": "Delicious Pancakes",
+                  "renewal": "2014-09-01 00:00:00",
+                  "term": 1
+                }
+              },
+              "155688": {
+                "id": 155688,
+                "xid": "Clw:mAo",
+                "state": "active",
+                "name": "Pancake Delivery",
+                "username": null,
+                "created": "2014-08-22 09:55:19",
+                "renewal": "2014-09-01 00:00:00",
+                "package": {
+                  "depth": 2,
+                  "id": 25756,
+                  "name": "Delicious Pancakes",
+                  "setup": "50.00",
+                  "setup_cents": 5000,
+                  "terms": [
+                    {
+                      "type": "daymonth",
+                      "day": 1,
+                      "interval": 1,
+                      "description": "Monthly",
+                      "fee": "240.00",
+                      "fee_cents": 24000
+                    }
+                  ],
+                  "currency": {
+                    "code": "ZAR",
+                    "format": "R%.2f",
+                    "enabled": true
+                  },
+                  "service_type": {
+                    "id": 596,
+                    "xid": "Clw:JU",
+                    "name": "Pancake Delivery"
+                  },
+                  "flags": {
+                    "hide-signup": false,
+                    "hide-all": false
+                  },
+                  "state": "active",
+                  "available": false
+                },
+                "term": 1,
+                "service_type": {
+                  "id": 596,
+                  "xid": "Clw:JU",
+                  "name": "Pancake Delivery"
+                },
+                "client": {
+                  "depth": 2,
+                  "id": 158958,
+                  "xid": "Clw:mzu",
+                  "state": "active",
+                  "number": "001",
+                  "name": "test4128"
+                },
+                "variables": [],
+                "data": {
+                  "created": "2014-08-22 09:55:19",
+                  "package_name": "Delicious Pancakes",
+                  "renewal": "2014-09-01 00:00:00",
+                  "term": 1
+                }
+              }
+            }
           },
           "batch": {
             "depth": 1,
-            "id": 1232,
-            "xid": "CYY:TQ",
-            "state": "ready",
-            "action_date": "2013-05-07",
+            "id": 1500,
+            "xid": "Clw:Xc",
+            "state": "build",
+            "action_date": "2014-08-21",
             "submit_date": null,
             "payment_method": {
               "depth": 2,
@@ -82,14 +273,15 @@
               "name": "Netcash Collect",
               "enabled": true
             },
+            "number": "001",
             "options": {
               "type": "two-day",
               "account": ""
             },
             "account": {
               "depth": 1,
-              "id": 9752,
-              "xid": "CYY:CYY",
+              "id": 10608,
+              "xid": "Clw:Clw",
               "username": "demo"
             },
             "currency": {
@@ -113,40 +305,44 @@
             "enabled": true
           },
           "payment_details": {
-            "id": 103058,
-            "xid": "CYY:ZKS",
+            "id": 143475,
+            "xid": "Clw:jBz",
             "type": "bank_account",
             "bank": "ABSA BANK",
-            "number": "************9406",
-            "last4": "9406",
+            "number": "************7015",
+            "last4": "7015",
             "expiry": null,
-            "created": "2013-05-07 16:56:14",
+            "created": "2014-08-21 16:23:40",
+            "tokens": [],
             "client": {
               "depth": 2,
-              "id": 117559,
-              "xid": "CYY:cs3",
+              "id": 158958,
+              "xid": "Clw:mzu",
               "state": "active",
               "number": "001",
-              "name": "test2328"
+              "name": "test4128"
             }
           },
           "state": "pending"
         },
         {
-          "id": 668654,
-          "xid": "CYY:CjPu",
+          "id": 932851,
+          "xid": "Clw:Djvz",
           "client": {
             "depth": 0,
-            "id": 117560,
-            "xid": "CYY:cs4",
+            "id": 158959,
+            "xid": "Clw:mzv",
             "state": "active",
             "number": "002",
-            "name": "test8361",
-            "firstname": "test8361",
-            "surname": "",
-            "company": "",
-            "email": "",
+            "name": "test8587",
+            "account": {
+              "depth": 1,
+              "id": 10608,
+              "xid": "Clw:Clw",
+              "username": "demo"
+            },
             "cell": "",
+            "company": "",
             "country": {
               "code": "ZA",
               "iso2": "ZA",
@@ -160,6 +356,9 @@
               "format": "R%.2f",
               "enabled": true
             },
+            "discount": "0.00",
+            "email": "",
+            "firstname": "test8587",
             "payment": "netcash",
             "payment_method": {
               "depth": 1,
@@ -167,12 +366,7 @@
               "name": "Netcash Collect",
               "enabled": true
             },
-            "account": {
-              "depth": 1,
-              "id": 9752,
-              "xid": "CYY:CYY",
-              "username": "demo"
-            },
+            "surname": "",
             "totals": {
               "unpaid_invoices": "0.00",
               "unpaid_invoices_cents": 0,
@@ -180,8 +374,8 @@
               "paid_payments_cents": 0
             },
             "urls": {
-              "statement": "https://demo.snapbill.com/statement/CYY:cs4/=NjIxNzEwOGY3",
-              "payment": "https://demo.snapbill.com/payment/client/CYY:cs4/=ZGFlNGI4NmM1"
+              "statement": "https://demo.snapbill.com/statement/Clw:mzv/=NTk0M2I0MjI4",
+              "payment": "https://demo.snapbill.com/payment/client/Clw:mzv/=NTA5MmY3MzU3"
             },
             "data": {
               "public_city": null,
@@ -198,10 +392,10 @@
           },
           "batch": {
             "depth": 1,
-            "id": 1232,
-            "xid": "CYY:TQ",
-            "state": "ready",
-            "action_date": "2013-05-07",
+            "id": 1500,
+            "xid": "Clw:Xc",
+            "state": "build",
+            "action_date": "2014-08-21",
             "submit_date": null,
             "payment_method": {
               "depth": 2,
@@ -209,14 +403,15 @@
               "name": "Netcash Collect",
               "enabled": true
             },
+            "number": "001",
             "options": {
               "type": "two-day",
               "account": ""
             },
             "account": {
               "depth": 1,
-              "id": 9752,
-              "xid": "CYY:CYY",
+              "id": 10608,
+              "xid": "Clw:Clw",
               "username": "demo"
             },
             "currency": {
@@ -240,21 +435,22 @@
             "enabled": true
           },
           "payment_details": {
-            "id": 103059,
-            "xid": "CYY:ZKT",
+            "id": 143476,
+            "xid": "Clw:jB0",
             "type": "credit_card",
-            "bank": "visa",
-            "number": "****-****-****-7770",
-            "last4": "7770",
-            "expiry": "2025-06",
-            "created": "2013-05-07 16:56:16",
+            "bank": "mastercard",
+            "number": "****-****-****-1064",
+            "last4": "1064",
+            "expiry": "2015-04",
+            "created": "2014-08-21 16:23:42",
+            "tokens": [],
             "client": {
               "depth": 2,
-              "id": 117560,
-              "xid": "CYY:cs4",
+              "id": 158959,
+              "xid": "Clw:mzv",
               "state": "active",
               "number": "002",
-              "name": "test8361"
+              "name": "test8587"
             }
           },
           "state": "pending"

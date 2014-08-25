@@ -4,10 +4,10 @@
       "class": "batch",
       "batch": {
         "depth": 0,
-        "id": 1232,
-        "xid": "CYY:TQ",
-        "state": "ready",
-        "action_date": "2013-05-07",
+        "id": 1500,
+        "xid": "Clw:Xc",
+        "state": "build",
+        "action_date": "2014-08-21",
         "submit_date": null,
         "payment_method": {
           "depth": 1,
@@ -15,14 +15,15 @@
           "name": "Netcash Collect",
           "enabled": true
         },
+        "number": "001",
         "options": {
           "type": "two-day",
           "account": ""
         },
         "account": {
           "depth": 1,
-          "id": 9752,
-          "xid": "CYY:CYY",
+          "id": 10608,
+          "xid": "Clw:Clw",
           "username": "demo"
         },
         "currency": {

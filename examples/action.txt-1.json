@@ -4,94 +4,30 @@
       "class": "action",
       "action": {
         "depth": 0,
-        "id": 927,
-        "xid": "CYY:Of",
-        "url": "/service/update/state",
-        "path": "/service/update/state",
-        "link": "/service/CYY:b8l",
-        "item_type": "service",
-        "description": "Pancake Delivery service was activated",
+        "id": 1062,
+        "xid": "Clw:Qm",
+        "url": "/client/update/state",
+        "path": "/client/update/state",
+        "link": "/client/Clw:mz_",
+        "item_type": "client",
+        "description": "helkom (jane) was removed",
         "details": {
-          "from": "new",
-          "to": "active"
+          "from": "active",
+          "to": "dead"
         },
-        "date": "2013-05-07 16:56:45",
+        "date": "2014-08-22 09:54:31",
         "client": {
           "depth": 2,
-          "id": 117559,
-          "xid": "CYY:cs3",
-          "state": "active",
-          "number": "001",
-          "name": "test2328"
-        },
-        "service": {
-          "id": 114469,
-          "xid": "CYY:b8l",
-          "state": "active",
-          "name": "Pancake Delivery",
-          "username": null,
-          "created": "2013-05-07 16:56:45",
-          "renewal": "2013-05-07 00:00:00",
-          "package": {
-            "depth": 3,
-            "id": 25732,
-            "name": "Delicious Pancakes",
-            "setup": "50.00",
-            "setup_cents": 5000,
-            "terms": [
-              {
-                "type": "daymonth",
-                "day": 1,
-                "interval": 1,
-                "description": "Monthly",
-                "fee": "240.00",
-                "fee_cents": 24000
-              }
-            ],
-            "currency": {
-              "code": "ZAR",
-              "format": "R%.2f",
-              "enabled": true
-            },
-            "service_type": {
-              "id": 584,
-              "xid": "CYY:JI",
-              "name": "Pancake Delivery"
-            },
-            "flags": {
-              "hide-signup": false,
-              "hide-all": false
-            },
-            "state": "active",
-            "available": false
-          },
-          "term": 1,
-          "service_type": {
-            "id": 584,
-            "xid": "CYY:JI",
-            "name": "Pancake Delivery"
-          },
-          "client": {
-            "depth": 2,
-            "id": 117559,
-            "xid": "CYY:cs3",
-            "state": "active",
-            "number": "001",
-            "name": "test2328"
-          },
-          "variables": [],
-          "data": {
-            "created": "2013-05-07 16:56:45",
-            "name": "Pancake Delivery",
-            "package_name": "Delicious Pancakes",
-            "renewal": "2013-05-07 00:00:00",
-            "term": 1
-          }
+          "id": 158975,
+          "xid": "Clw:mz_",
+          "state": "dead",
+          "number": "018",
+          "name": "helkom (jane)"
         },
         "user": {
           "depth": 2,
-          "id": 2391,
-          "xid": "CYY:lX",
+          "id": 2479,
+          "xid": "Clw:mv",
           "username": "demo"
         }
       }

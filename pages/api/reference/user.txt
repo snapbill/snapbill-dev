@@ -16,7 +16,7 @@ This api call will create a user. Since we have not specified the username and p
 
 <pre><pre class="input">
     $ curl -u user:pass -d "name=George&email=george@example.com" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->117559/add_user.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158958/add_user.json
 </pre><pre class="output">
 %%json:examples/user.txt-1.json%
 </pre>
@@ -67,7 +67,7 @@ This api call will create a session in the client area for a given user. This al
 
 <pre><pre class="input">
     $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/user/<!-- user_id -->2392/add_session.json
+    >      https://api.snapbill.com/v1/user/<!-- user_id -->2480/add_session.json
 </pre><pre class="output">
 %%json:examples/user.txt-3.json%
 </pre>

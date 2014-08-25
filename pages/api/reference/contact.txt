@@ -1,0 +1,63 @@
+Contacts
+========
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/contact/*id*/get ###
+
+Retrieve a contact.
+
+</section>
+
+<section class="parameters" id="parameters" data-title="parameters">
+### Parameter listing ###
+
+%parameter-table
+
+id: get
+	The id of the contact. This is guaranteed to be unique per client.
+
+xid: get
+	The xid of the contact. This is guaranteed to be globally unique. (see [Concepts - xid](/home/concepts/xid))
+
+firstname: get
+	The firstname of the contact.
+
+surname: get
+	The surname of the contact.
+
+email: get
+	The email address of the contact.
+
+cell: get
+	The cellphone number of the contact.
+
+<!-- TODO: Figure out what send_general, send_billing etc do. -->
+
+%%%
+</section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/contact/list ###
+
+List all contacts for all clients for the current account.
+
+Results can optionally be filtered by the filters listed below.
+
+</section>
+
+<section class="paramaters" id="list-filters" data-title="list-filters">
+### List Contacts Filters ###
+
+%parameter-table
+client_id: get
+    The client_id of the contacts.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+
+%%%
+
+</section>
+

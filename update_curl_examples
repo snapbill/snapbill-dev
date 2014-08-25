@@ -203,7 +203,7 @@ if __name__ == '__main__':
                       help='Username to use against the API endpoint')
   parser.add_argument('--password', default='correct',
                       help='Password to use against the API endpoint')
-  parser.add_argument('--apiendpoint', default='http://api.snap',
+  parser.add_argument('--apiendpoint', default='http://api.submarin.es',
                       help='The API endpoint to hit')
   parser.add_argument('--dryrun', default=False, action='store_true',
                       help="Don't update any files")

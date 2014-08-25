@@ -1,32 +1,32 @@
 Clients
-===========
+=======
+
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/client/*id*/get ###
+
+Retrieve a client by id and return it's details.
+
+<!-- eval: client_id = self.previous['client']['id'] -->
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/get.json
+</pre><pre class="output">
+%%json:examples/client.txt-2.json%
+</pre>
+</pre>
+</section>
 
 <section class="api-call" id="add" data-title="/add" markdown=1>
 ### /v1/client/add ###
 
-Creates a new client and returns the details
+Creates a new client and returns it's details.
 
 <pre><pre class="input">
     $ curl -u user:pass -d "firstname=jane&email=jane@example.com" \
     >      https://api.snapbill.com/v1/client/add.json
 </pre><pre class="output">
 %%json:examples/client.txt-1.json%
-</pre>
-</pre>
-</section>
-
-<section class="api-call" id="get" data-title="/get" markdown=1>
-### /v1/client/*id*/get ###
-
-Returns the details of a client.
-
-<!-- eval: client_id = self.previous['client']['id'] -->
-<pre>
-<pre class="input">
-    $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->117570/get.json
-</pre><pre class="output">
-%%json:examples/client.txt-2.json%
 </pre>
 </pre>
 </section>
@@ -39,63 +39,9 @@ Updates details about the given client in the database
 <pre>
 <pre class="input">
     $ curl -u user:pass -d "company=helkom&state=suspended" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->117570/update.json
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/update.json
 </pre><pre class="output">
 %%json:examples/client.txt-3.json%
-</pre>
-</pre>
-</section>
-
-<section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
-### /v1/client/*id*/add_invoice ###
-
-Adds an invoice for the client. [Full documentation is in the Invoice section.](/api/reference/invoice#add-invoice)
-
-</section>
-
-<section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
-
-### /v1/client/*id*/generate_invoice ###
-Generate an invoice for the client with due services and charges. [Full documentation is in the Invoice section.](/api/reference/invoice#generate-invoice)
-</section>
-
-<section class="api-call" id="add-service" data-title="/add_service" markdown=1>
-### /v1/client/*id*/add_service ###
-
-Adds a service to a client. [Full documentation is in the service section.](/api/reerence/service#add-service)
-
-</section>
-
-<section class="api-call" id="set-payment" data-title="/set_payment" markdown=1>
-### /v1/client/*id*/set_payment ###
-
-Sets the payment method and details for a client. The parameters passed in
-depend on the payment method. To find out the parameters visit
-https://api.snapbill.com/v1/client/*id*/set_payment.json?post or
-https://api.snapbill.com/v1/client/*id*/set_payment
-
-The example below updates the payment type to other which requires no extra parameters.
-
-<pre><pre class="input">
-    $ curl -u user:pass -d "payment_method_code=other" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->117570/set_payment.json
-</pre><pre class="output">
-%%json:examples/client.txt-4.json%
-</pre>
-</pre>
-</section>
-
-<section class="api-call" id="delete" data-title="/delete" markdown=1>
-### /v1/client/*id*/delete ###
-
-Deletes a client from the database
-
-<pre>
-<pre class="input">
-    $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/client/<!-- client_id -->117570/delete.json
-</pre><pre class="output">
-%%json:examples/client.txt-5.json%
 </pre>
 </pre>
 </section>
@@ -202,3 +148,119 @@ urls: get
 %%%
 
 </section>
+
+<section class="api-call" id="lost-password" data-title="/lost_password" markdown=1>
+### /v1/client/*id*/lost_password
+
+Used to recover a client's password. Submit a post request and a password recovery email will be sent
+to the email account associated with this client.
+
+</section>
+
+<section class="api-call" id="add-invoice" data-title="/add_invoice" markdown=1>
+### /v1/client/*id*/add_invoice ###
+
+Adds an invoice for the client. [Full documentation is in the Invoice section.](/api/reference/invoice#add-invoice)
+
+</section>
+
+<section class="api-call" id="add-recurring-invoice" data-title="/add_recurring_invoice" markdown=1>
+### /v1/client/*id*/add_recurring_invoice ###
+
+Adds a recurring invoice to the client. [Full documentation is in the Invoice section.](/api/reference/invoice#add-recurring-invoice)
+
+</section>
+
+<section class="api-call" id="add-user" data-title="/add_user" markdown=1>
+### /v1/client/*id*/add_user ###
+
+Adds a user to the client. [Full documentation is available in the User section.](/api/reference/user#add-user)
+
+</section>
+
+<section class="api-call" id="generate-invoice" data-title="/generate_invoice" markdown=1>
+
+### /v1/client/*id*/generate_invoice ###
+Generate an invoice for the client with due services and charges. [Full documentation is in the Invoice section.](/api/reference/invoice#generate-invoice)
+</section>
+
+<section class="api-call" id="add-service" data-title="/add_service" markdown=1>
+### /v1/client/*id*/add_service ###
+
+Adds a service to a client. [Full documentation is in the service section.](/api/reference/service#add-service)
+
+</section>
+
+<section class="api-call" id="add-signup" data-title="/add_signup" markdown=1>
+### /v1/client/*id*/add_signup ###
+
+Adds a Signup to the client. [Full documentation is available in the Signup section.](/api/reference/signup)
+
+</section>
+
+<section class="api-call" id="set-payment" data-title="/set_payment" markdown=1>
+### /v1/client/*id*/set_payment ###
+
+Sets the payment method and details for a client. The parameters passed in
+depend on the payment method. To find out the parameters visit
+https://api.snapbill.com/v1/client/*id*/set_payment.json?post or
+https://api.snapbill.com/v1/client/*id*/set_payment
+
+The example below updates the payment type to other which requires no extra parameters.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "payment_method_code=other" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/set_payment.json
+</pre><pre class="output">
+%%json:examples/client.txt-4.json%
+</pre>
+</pre>
+</section>
+
+<section class="api-call" id="delete" data-title="/delete" markdown=1>
+### /v1/client/*id*/delete ###
+
+Deletes a client from the database
+
+<pre>
+<pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/client/<!-- client_id -->158975/delete.json
+</pre><pre class="output">
+%%json:examples/client.txt-5.json%
+</pre>
+</pre>
+</section>
+
+<section class="api_call" id="list" data-title="/list" markdown=1>
+### /v1/client/list ###
+
+Lists all the current accounts clients.
+
+Results can optionally be filtered by the filters listed below.
+
+</section>
+
+
+<section class="paramaters" id="list-filters" data-title="list-filters">
+### List Clients Filters ###
+
+%parameter-table
+email: get
+    The email address of the clients.
+
+query: get
+    <!--TODO: Add more notes about how search works. -->
+    A search query. This parameter is handled in the same way as the search on billing.snapbill.com works.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+
+%%%
+
+</section>
+
+

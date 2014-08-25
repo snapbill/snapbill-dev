@@ -1,5 +1,249 @@
     {
       "code": 200,
-      "type": "result",
-      "status": "ok"
+      "type": "item",
+      "class": "invoice",
+      "invoice": {
+        "id": 1055400,
+        "xid": "Clw:EBqo",
+        "created": "2014-08-22 09:56:24",
+        "type": "invoice",
+        "state": "unpaid",
+        "po_number": "",
+        "date": "2014-08-22",
+        "due_date": "2014-08-22",
+        "name": "Invoice 001/0014",
+        "number": "001/0014",
+        "currency": {
+          "code": "ZAR",
+          "format": "R%.2f",
+          "enabled": true
+        },
+        "subtotal": "119.68",
+        "subtotal_cents": 11968,
+        "taxes": [],
+        "discount": "0.00",
+        "total": "119.68",
+        "total_cents": 11968,
+        "lines": [
+          {
+            "id": 1898306,
+            "xid": 1898306,
+            "item_name": "",
+            "description": "Pancake Delivery: Delicious Pancakes Setup Fee",
+            "unit_cost": "50.00",
+            "unit_cost_cents": 5000,
+            "quantity": "1.00",
+            "total": "50.00",
+            "total_cents": 5000,
+            "taxed": true,
+            "package": "Delicious Pancakes",
+            "term": null,
+            "service": {
+              "id": 155688,
+              "xid": "Clw:mAo",
+              "state": "active",
+              "name": "Pancake Delivery",
+              "username": null,
+              "created": "2014-08-22 09:55:19",
+              "renewal": "2014-09-01 00:00:00",
+              "package": {
+                "depth": 2,
+                "id": 25756,
+                "name": "Delicious Pancakes",
+                "setup": "50.00",
+                "setup_cents": 5000,
+                "terms": [
+                  {
+                    "type": "daymonth",
+                    "day": 1,
+                    "interval": 1,
+                    "description": "Monthly",
+                    "fee": "240.00",
+                    "fee_cents": 24000
+                  }
+                ],
+                "currency": {
+                  "code": "ZAR",
+                  "format": "R%.2f",
+                  "enabled": true
+                },
+                "service_type": {
+                  "id": 596,
+                  "xid": "Clw:JU",
+                  "name": "Pancake Delivery"
+                },
+                "flags": {
+                  "hide-signup": false,
+                  "hide-all": false
+                },
+                "state": "active",
+                "available": false
+              },
+              "term": 1,
+              "service_type": {
+                "id": 596,
+                "xid": "Clw:JU",
+                "name": "Pancake Delivery"
+              },
+              "client": {
+                "depth": 2,
+                "id": 158958,
+                "xid": "Clw:mzu",
+                "state": "active",
+                "number": "001",
+                "name": "test4128"
+              },
+              "variables": [],
+              "data": {
+                "created": "2014-08-22 09:55:19",
+                "package_name": "Delicious Pancakes",
+                "renewal": "2014-09-01 00:00:00",
+                "term": 1
+              }
+            }
+          },
+          {
+            "id": 1898307,
+            "xid": 1898307,
+            "item_name": "",
+            "description": "Pancake Delivery: Delicious Pancakes Prorated Fee (Rest of August)",
+            "unit_cost": "69.68",
+            "unit_cost_cents": 6968,
+            "quantity": "1.00",
+            "total": "69.68",
+            "total_cents": 6968,
+            "taxed": true,
+            "package": "Delicious Pancakes",
+            "term": null,
+            "service": {
+              "id": 155688,
+              "xid": "Clw:mAo",
+              "state": "active",
+              "name": "Pancake Delivery",
+              "username": null,
+              "created": "2014-08-22 09:55:19",
+              "renewal": "2014-09-01 00:00:00",
+              "package": {
+                "depth": 2,
+                "id": 25756,
+                "name": "Delicious Pancakes",
+                "setup": "50.00",
+                "setup_cents": 5000,
+                "terms": [
+                  {
+                    "type": "daymonth",
+                    "day": 1,
+                    "interval": 1,
+                    "description": "Monthly",
+                    "fee": "240.00",
+                    "fee_cents": 24000
+                  }
+                ],
+                "currency": {
+                  "code": "ZAR",
+                  "format": "R%.2f",
+                  "enabled": true
+                },
+                "service_type": {
+                  "id": 596,
+                  "xid": "Clw:JU",
+                  "name": "Pancake Delivery"
+                },
+                "flags": {
+                  "hide-signup": false,
+                  "hide-all": false
+                },
+                "state": "active",
+                "available": false
+              },
+              "term": 1,
+              "service_type": {
+                "id": 596,
+                "xid": "Clw:JU",
+                "name": "Pancake Delivery"
+              },
+              "client": {
+                "depth": 2,
+                "id": 158958,
+                "xid": "Clw:mzu",
+                "state": "active",
+                "number": "001",
+                "name": "test4128"
+              },
+              "variables": [],
+              "data": {
+                "created": "2014-08-22 09:55:19",
+                "package_name": "Delicious Pancakes",
+                "renewal": "2014-09-01 00:00:00",
+                "term": 1
+              }
+            }
+          }
+        ],
+        "client": {
+          "depth": 1,
+          "id": 158958,
+          "xid": "Clw:mzu",
+          "state": "active",
+          "number": "001",
+          "name": "test4128",
+          "account": {
+            "depth": 1,
+            "id": 10608,
+            "xid": "Clw:Clw",
+            "username": "demo"
+          },
+          "cell": "",
+          "company": "",
+          "country": {
+            "code": "ZA",
+            "iso2": "ZA",
+            "iso3": "ZAF",
+            "name": "South Africa"
+          },
+          "credit": "0.00",
+          "credit_cents": 0,
+          "currency": {
+            "code": "ZAR",
+            "format": "R%.2f",
+            "enabled": true
+          },
+          "discount": "0.00",
+          "email": "",
+          "firstname": "test4128",
+          "payment": "netcash",
+          "payment_method": {
+            "depth": 2,
+            "code": "netcash",
+            "name": "Netcash Collect",
+            "enabled": true
+          },
+          "surname": "",
+          "totals": {
+            "unpaid_invoices": "555.58",
+            "unpaid_invoices_cents": 55558,
+            "paid_payments": "0.00",
+            "paid_payments_cents": 0
+          },
+          "urls": {
+            "statement": "https://demo.snapbill.com/statement/Clw:mzu/=NTYxY2UyN2E5",
+            "payment": "https://demo.snapbill.com/payment/client/Clw:mzu/=YjE5YTM0YWNm"
+          },
+          "data": {
+            "public_city": null,
+            "public_country": null,
+            "public_fax": null,
+            "public_phone": null,
+            "public_postal": null,
+            "public_postcode": null,
+            "public_province": null,
+            "public_street": null,
+            "vat_number": null
+          }
+        },
+        "urls": {
+          "view": "https://demo.snapbill.com/invoice/Clw:EBqo/=Y2RjNzQ5MDVh",
+          "payment": "https://demo.snapbill.com/payment/invoice/Clw:EBqo/=ZmMzMzMyN2M1"
+        }
+      }
     }

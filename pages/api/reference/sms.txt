@@ -1,0 +1,54 @@
+SMSes
+===
+
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/sms/*id*/get ###
+
+Retrieve an SMS by id and return it's details.
+
+</section>
+
+
+<section class="parameters" id="parameters" data-title="parameters">
+### SMS Parameter Listing ###
+
+%parameter-table
+to: get
+	The phone number the SMS was sent to.
+
+state: get
+	The current state of the SMS.
+
+user: get
+	The user associated with the sending of the SMS.
+
+message: get
+	The text body of the SMS.
+%%%
+
+</section>
+
+<!--todo -->
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/sms/list ###
+
+List all SMSes associated with the current account.
+
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List SMS Filters ###
+
+%parameter-table
+
+client_id: get
+	The client_id of the SMS.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+%%%
+</section>

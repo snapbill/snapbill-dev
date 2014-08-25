@@ -4,9 +4,9 @@
       "class": "signup",
       "signup": {
         "depth": 0,
-        "id": 36844,
-        "xid": "CYY:I_s",
-        "created": "2013-05-07 16:56:39",
+        "id": 41052,
+        "xid": "Clw:KBc",
+        "created": "2014-08-22 09:58:18",
         "step": "customer",
         "options": {
           "signup_type": "Invoice",
@@ -15,7 +15,7 @@
         },
         "errors": [],
         "urls": {
-          "signup": "https://demo.snapbill.com/signup/CYY:I_s/=OTdlYTA4MGUw"
+          "signup": "https://demo.snapbill.com/signup/Clw:KBc/=MGRkNGY2MjRi"
         }
       }
     }

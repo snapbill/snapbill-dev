@@ -1,26 +1,17 @@
 Currencies
 =======================
 
-<section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/currency/list ###
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/currency/*code*/get ###
 
-List all the currencies that are enabled on the account.
+Get the specified currency details.
 
-<pre><pre class="input">
-    $ curl -u user:pass -d "" \
-    >      https://api.snapbill.com/v1/currency/list.json
-</pre><pre class="output">
-%%json:examples/currency.txt-1.json%
-</pre></pre>
 </section>
 
-<section id="parameters" data-title="parameters" markdown=1>
+<section class="parameters" id="parameters" data-title="parameters">
 ### Parameter listing ###
 
 %parameter-table
-depth: get
-The depth parameter signals the amount of data for the currency that was provided. depth=0 is the highest level that provides full detail.
-
 code: get
     The unique ISO 4217 code three letter code for the currency, which is always specified in upper case.
 
@@ -31,4 +22,42 @@ enabled: get
     Boolean value indicating whether the currency is enabled on the current account or not.
 
 %%%
+</section>
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/currency/list ###
+
+List currencies on the system.
+
+If you don't specify a 'state' argument, then only currencies which are enabled will be shown.
+
+Results can optionally be filtered by the filters mentioned below.
+
+<pre><pre class="input">
+    $ curl -u user:pass -d "" \
+    >      https://api.snapbill.com/v1/currency/list.json
+</pre><pre class="output">
+%%json:examples/currency.txt-1.json%
+</pre></pre>
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Currencies Filters ###
+
+%parameter-table
+
+state: get
+	The state (enabled or disabled) of the currencies. The default value of this argument is enabled.
+
+code: get
+	The code (see above) of the countries.
+
+page: get
+	The page of results to return.
+
+perpage: get
+	The number of results per page to return.
+
+%%%
+
 </section>
