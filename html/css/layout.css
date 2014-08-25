@@ -41,6 +41,11 @@ h3 + h4 {
   margin-top: 12px;
 }
 
+/* Move content out from under menu */
+.container .span10 {
+    margin-left: 210px;
+}
+
 /***
  * Styling
  **/
