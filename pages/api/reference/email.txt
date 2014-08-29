@@ -1,0 +1,80 @@
+Emails
+===
+
+<section class="api-call" id="get" data-title="/get" markdown=1>
+### /v1/email/*id*/get ###
+
+Retrieve an Email by id and return it's details.
+
+</section>
+
+
+    'id' => $this->id,
+    'xid' => $this->xid,
+	'state' => $this->state,
+	'date' => $this->date,
+	'client' => $this->client_id ? $this->client->get_data($level+1) : NULL,
+	'user' => $this->from_user_id ? $this->from_user->get_data($level+1) : NULL,
+	'from' => $this->from,
+	'to' => $this->to,
+	'subject' => $this->subject
+
+
+<section class="parameters" id="parameters" data-title="parameters">
+### Email Parameter Listing ###
+
+%parameter-table
+id: get
+	The id of the Email.
+
+xid: get
+	The globally unique id of the Email.
+
+state: get
+	The current state of the Email.
+
+date: get
+	The date this email was sent.
+
+client: get
+	The client this email was sent to.
+
+user: get
+	The account user that initiated the action of sending the email.
+
+from: get
+	The from address of the email.
+
+to: get
+	The to address of the email.
+
+subject: get
+	The subject line of the email.
+%%%
+
+</section>
+
+<!--todo -->
+
+<section class="api-call" id="list" data-title="/list" markdown=1>
+### /v1/email/list ###
+
+List all Emails associated with the current account.
+
+</section>
+
+<section class="parameters" id="list-parameters" data-title="list-parameters">
+### List Email Filters ###
+
+%parameter-table
+
+client_id: get
+	The client_id of the SMS.
+
+page: get
+    The page of results to return.
+
+perpage: get
+    The number of results per page to return.
+%%%
+</section>
