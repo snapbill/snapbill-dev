@@ -65,7 +65,7 @@ state: get
 
 
 <section class="api-call" id="list" data-title="/list" markdown=1>
-### /v1/packages/list ###
+### /v1/package/list ###
 
 List all the packages of all the clients of this account.
 
